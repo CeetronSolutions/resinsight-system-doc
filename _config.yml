@@ -1,0 +1,7 @@
+theme: jekyll-theme-midnight
+
+collections:
+  docs:
+    output: true
+
+baseurl: /resinsight-system-doc
