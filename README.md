@@ -14,7 +14,7 @@
 ## References
 [Doxygen Doc for Application Framework](http://10.10.0.26:8080/job/ResInsight-static-code-analysis/ws/Fwk/AppFwk/Doxygen/html/index.html)
 
-Published at [https://magnesj.github.io/resinsight-system-doc](https://magnesj.github.io/resinsight-system-doc)
+Published at [https://ceetronsolutions.github.io/resinsight-system-doc](https://ceetronsolutions.github.io/resinsight-system-doc)
 
 Themes are located at [https://github.com/pages-themes](https://github.com/pages-themes)
 
