@@ -6,8 +6,10 @@ layout: default
 
 # GitHub Submodules
 
-We are using more and more submodules in the ResInsight repo. Current submodules are Qwt and vcpkg.
+We are using more and more submodules in the ResInsight repo. Current submodules are Qwt, GSL and vcpkg.
 
-When the content of the external repo is updated, we need to update the committ of the external repo we want to use. This procedure is described here
+When the content of the external repo is updated, we need to update the committ of the external repo we want to use. 
 
-https://www.vogella.com/tutorials/GitSubmodules/article.html#submodules_track
+[Description of use of sub modules ](https://www.vogella.com/tutorials/GitSubmodules/article.html#submodules_track)
+
+
