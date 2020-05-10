@@ -1,5 +1,5 @@
 ---
-title: Using GitHub Submodules
+title: Using Git Submodules
 permalink: /editor/git-submodules
 layout: default
 ---
