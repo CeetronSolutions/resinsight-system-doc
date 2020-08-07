@@ -13,6 +13,7 @@ However, this leads to a lot of noise in the code, with lots of code lines deali
 through the ProgressInfo::task() method. This returns a RAII (Resource Aquisition Is Initialization) type object that causes the progress update to occur when the object
 is deleted by going out of scope. Example:
 
+    caf::ProgressInfo progInfo( 100, "Creating Fracture Model Plot" );
     {
         auto task = progInfo.task( "Creating formation track", 2 );
         createFormationTrack( plot, fractureModel, eclipseCase );
