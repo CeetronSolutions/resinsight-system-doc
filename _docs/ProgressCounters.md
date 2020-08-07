@@ -31,5 +31,6 @@ is deleted by going out of scope. Example:
     {
         auto task = progInfo.task( "Creating parameters track", 15 );
     ...
+    }
     
 This technique creates code that more clearly shows different sub-tasks and uses just one line for each sub-task to deal with progress updates.
