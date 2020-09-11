@@ -15,7 +15,7 @@ The intention is to activate use the integrated VS2017 clang-format on save. The
 
 2. Install clang-format
 - Currently supported version is clang-format 6
-- Download and install from https://releases.llvm.org/download.html#6.0.1
+- Download and install from [LLVM](https://releases.llvm.org/download.html#6.0.1)
 - Set the path to clang-format.exe in the configuration of Clang Power Tools
 
 ![Config of Clang Power Tools VS2017]({{site.baseurl}}/assets/images/clang-power-tools.png)
