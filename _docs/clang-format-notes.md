@@ -6,7 +6,7 @@ layout: default
 
 # Clang Format Notes
 
-The intention is to activate use the integrated VS2017 clang-format on save. The currently shipped version of clang-format in VS2017 is clang-format 6.0.0.
+The intention is to activate format-on-save in Visual Studio. Either use integration in Visual Studio for format-on-save, or use Clang Power Tools.
 
 ## Install Clang Power Tools
 
