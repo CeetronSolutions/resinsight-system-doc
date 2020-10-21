@@ -33,6 +33,16 @@ Go to the source code folder ResInsight/Thirdparty
 
     vcpkg/boostrap-vcpkg.sh
     vcpkg/vcpkg install grpc --triplet x64-linux
+    
+## cmake configuration
+When vcpkg is compiled, and the grpc dependencies are compiled, the ResInsight cmake configuration must be updated to use the vcpkg configuration. This is done using the following define for cmake
+
+    -DCMAKE_TOOLCHAIN_FILE=../ThirdParty/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+Using the GUI, the toolchain must be specified as the first step when you are creating your build folder 
+
+![cmake toolchain file]({{site.baseurl}}/assets/images/cmake_toolchain_file.png)
+
 
 ## Links 
 [vcpkg main documentation](https://vcpkg.readthedocs.io/en/latest/)
