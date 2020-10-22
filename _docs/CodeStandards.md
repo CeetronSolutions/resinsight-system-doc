@@ -19,7 +19,7 @@ auto cvfObject = cvf::make_ref<cvf::Object>();
 rather than 
 ```
 std::unique_ptr ptr (new Object);
-cvf::ref<cvf::Object> = new cvf::Object;
+cvf::ref<cvf::Object> cvfObject = new cvf::Object;
 ```
 PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting. This policy will allow us to start using static code analysers which look for uses of new/delete.
   
