@@ -14,10 +14,12 @@ Use PdmField / PdmChildField for PdmObjects which own other PdmObjects. Otherwis
 Use the new C++14 creation rather than new. I.e use:
 ```
 auto object = std::make_unique<Object>();
+auto cvfObject = cvf::make_ref<cvf::Object>();
 ```
 rather than 
 ```
-std::unique_ptr ptr (new Object).
+std::unique_ptr ptr (new Object);
+cvf::ref<cvf::Object> = new cvf::Object;
 ```
 PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting.
   
