@@ -50,6 +50,7 @@ bool save(QString* errorMsg)
   ...
 }
 ```
+gsl::not_null will issue a runtime-failure similar to CAF_ASSERT if a nullptr is assigned to it dynamically.
 
 ## Use structured binding assignment for pairs and tuples. 
 Use
