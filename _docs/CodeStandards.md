@@ -23,10 +23,10 @@ PdmPointer<T> should only be used for referencing objects owned somewhere else a
   
 ### Exception for Qt
 Qt widgets and layouts takes over ownership of widgets assigned to them. It would thus be dangerous to pass a unique_ptr into it.
-The following is thus ***dangerous***:
+The following is thus ***dangerous*** since the unique_ptr and layout both assumes ownership.
 ```
 auto label = std::make_unique<QLabel>();
-layout->addWidget(label.release());
+layout->addWidget(label.get());
 ```
 
 However, the following is acceptable (and safer than using new, because you don't risk leaks if you forget to assign a widget):
