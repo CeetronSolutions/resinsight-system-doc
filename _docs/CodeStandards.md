@@ -11,7 +11,7 @@ New code should be based on C++17 and follow the C++ Core Guidelines to the best
 ## No "naked new/delete" in application code
 Use PdmField / PdmChildField for PdmObjects which own other PdmObjects. Otherwise use smart pointers (std::unique_ptr, std::shared_ptr, cvf::ref).
 
-Use the new C++14 creation rather than new. I.e:
+Use the new C++14 creation rather than new. I.e use:
 ```
 auto object = std::make_unique<Object>();
 ```
@@ -22,8 +22,11 @@ std::unique_ptr ptr (new Object).
 PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting.
 
 ## Avoid passing bare pointers to methods which require the pointer to not be null. 
-
-I.e. instead of 
+Use 
+```
+bool save(gsl::not_null<QString*> errorMsg);
+```
+instead of 
 ```
 bool save(QString* errorMsg)
 {
@@ -31,13 +34,9 @@ bool save(QString* errorMsg)
   ...
 }
 ```
-use 
-```
-bool save(gsl::not_null<QString*> errorMsg);
-```
 
 ## Use structured binding assignment for pairs and tuples. 
-I.e.
+Use
 ```
 for (auto [startMD, endMD] : wellSegments())
 {
