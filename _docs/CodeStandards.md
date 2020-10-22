@@ -11,7 +11,7 @@ New code should be based on C++17 and follow the C++ Core Guidelines to the best
 ## No "naked new/delete" in application code
 Use PdmField / PdmChildField for PdmObjects which own other PdmObjects. Otherwise use smart pointers (std::unique_ptr, std::shared_ptr, cvf::ref).
 
-Use the new C++14 creation rather than new. I.e use:
+Use the new C++14 creation rather than directly using new. I.e use:
 ```
 auto object = std::make_unique<Object>();
 auto cvfObject = cvf::make_ref<cvf::Object>();
@@ -21,7 +21,7 @@ rather than
 std::unique_ptr ptr (new Object);
 cvf::ref<cvf::Object> = new cvf::Object;
 ```
-PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting.
+PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting. This policy will allow us to start using static code analysers which look for uses of new/delete.
   
 ### Exception for Qt
 Qt widgets and layouts takes over ownership of widgets assigned to them. It would thus be dangerous to pass a unique_ptr into it.
