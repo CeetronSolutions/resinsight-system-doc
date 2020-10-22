@@ -20,6 +20,20 @@ rather than
 std::unique_ptr ptr (new Object).
 ```
 PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting.
+  
+### Exception for Qt
+Qt widgets and layouts takes over ownership of widgets assigned to them. It would thus be dangerous to pass a unique_ptr into it.
+The following is thus ***dangerous***:
+```
+auto label = std::make_unique<QLabel>();
+layout->addWidget(label.release());
+```
+
+However, the following is acceptable (and safer than using new, because you don't risk leaks if you forget to assign a widget):
+```
+auto label = std::make_unique<QLabel>();
+layout->addWidget(label.release());
+```
 
 ## Avoid passing bare pointers to methods which require the pointer to not be null. 
 Use 
