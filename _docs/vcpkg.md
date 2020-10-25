@@ -25,14 +25,14 @@ Go to the source code folder ResInsight/Thirdparty
 Run the following commands
 
     vcpkg/boostrap-vcpkg.bat
-    vcpkg/vcpkg install grpc --triplet x64-windows
+    vcpkg/vcpkg install grpc boost-filesystem eigen3 --triplet x64-windows
 
 
 ## Linux Configuration
 Go to the source code folder ResInsight/Thirdparty
 
     vcpkg/boostrap-vcpkg.sh
-    vcpkg/vcpkg install grpc --triplet x64-linux
+    vcpkg/vcpkg install grpc boost-filesystem eigen3 --triplet x64-linux
     
 ## cmake configuration
 When vcpkg is compiled, and the grpc dependencies are compiled, the ResInsight cmake configuration must be updated to use the vcpkg configuration. This is done using the following define for cmake
