@@ -25,7 +25,7 @@ This document describes how to use the Linux variant of Flow on Windows.
 
 Based on [INSTALLING FROM BINARY PACKAGES](https://opm-project.org/?page_id=245)
 
-`
+```
 sudo apt-get update
 sudo apt-get install software-properties-common
 
@@ -34,7 +34,7 @@ sudo apt-get update
 
 sudo apt-get install mpi-default-bin
 sudo apt-get install libopm-simulators-bin
-`
+```
 
 # Use Flow
 
