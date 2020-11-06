@@ -13,7 +13,12 @@ The intention is to activate format-on-save in Visual Studio. Either use integra
 1. Install plugin
 [Clang Power Tools Plugin](https://marketplace.visualstudio.com/items?itemName=caphyon.ClangPowerTools)
 
-2. Install clang-format
+2. (obsolete) Use default clang-format in VS2019
+Clear the content of "Custom executable" from Clang Power Tools. If this field is empty, the default clang-format is used.
+
+Current clang-format for VS2019 is clang-format 10
+
+2. (obsolete) Install clang-format 
 - Currently supported version is clang-format 6
 - Download and install from [LLVM](https://releases.llvm.org/download.html#6.0.1)
 - Set the path to clang-format.exe in the configuration of Clang Power Tools
