@@ -20,19 +20,23 @@ Check in the Thirdpary/vcpkg folder to make sure source files are downloaded cor
 On Windows, open a x64 Native Tools Command Prompt for VS 2019
 ![x64 Native tool]({{site.baseurl}}/assets/images/x64_native_tool.png)
 
-Go to the source code folder ResInsight/Thirdparty
+Go to the source code folder
+
+    ResInsight/Thirdparty/vcpkg
 
 Run the following commands
 
-    vcpkg/boostrap-vcpkg.bat
-    vcpkg/vcpkg install grpc boost-filesystem eigen3 --triplet x64-windows
+    boostrap-vcpkg.bat
+    vcpkg install grpc boost-filesystem boost-spirit eigen3 --triplet x64-windows
 
 
 ## Linux Configuration
-Go to the source code folder ResInsight/Thirdparty
+Go to the source code folder
 
-    vcpkg/boostrap-vcpkg.sh
-    vcpkg/vcpkg install grpc boost-filesystem eigen3 --triplet x64-linux
+    ResInsight/Thirdparty/vcpkg
+
+    boostrap-vcpkg.sh
+    vcpkg install grpc boost-filesystem boost-spirit eigen3 --triplet x64-linux
     
 ## cmake configuration
 When vcpkg is compiled, and the grpc dependencies are compiled, the ResInsight cmake configuration must be updated to use the vcpkg configuration. This is done using the following define for cmake
