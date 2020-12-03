@@ -35,6 +35,8 @@ Go to the source code folder
 
     ResInsight/Thirdparty/vcpkg
 
+Run the following commands
+
     boostrap-vcpkg.sh
     vcpkg install grpc boost-filesystem boost-spirit eigen3 --triplet x64-linux
     
