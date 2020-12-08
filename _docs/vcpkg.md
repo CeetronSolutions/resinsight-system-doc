@@ -26,7 +26,7 @@ Go to the source code folder
 
 Run the following commands
 
-    boostrap-vcpkg.bat
+    bootstrap-vcpkg.bat
     vcpkg install grpc boost-filesystem boost-spirit eigen3 --triplet x64-windows
 
 
