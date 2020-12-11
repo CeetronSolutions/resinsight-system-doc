@@ -22,7 +22,21 @@ std::unique_ptr ptr (new Object);
 cvf::ref<cvf::Object> cvfObject = new cvf::Object;
 ```
 PdmPointer<T> should only be used for referencing objects owned somewhere else and not for ownership as it contains no reference counting. This policy will allow us to start using static code analysers which look for uses of new/delete.
-  
+
+### Assignment to ChildFields and ChildArrayFields
+A child field or child array field can be assigned from a std::unique_ptr.
+
+i.e:
+```
+oilField->wellPathCollection = std::make_unique<RimWellPathCollection>();
+```
+rather than
+```
+oilField->wellPathCollection = new RimWellPathCollection
+```
+### Remove deletion of child objects from destructors whenever you come across it
+A child field or child array field does not need an explicit delete of the contained object. This is handled automatically by the field destructor. However the code base still contains some explicit deletes that can (and should be) be safely removed whenever you come across them.
+
 ### Exception for Qt
 Qt widgets and layouts takes over ownership of widgets assigned to them. It would thus be dangerous to pass a unique_ptr into it.
 The following is thus ***dangerous*** since the unique_ptr and layout both assumes ownership.
