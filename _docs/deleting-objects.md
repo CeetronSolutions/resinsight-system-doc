@@ -7,7 +7,9 @@ layout: default
 ## Deleting an object in a caf::PdmChildArrayField
 The easisest way to delete an object in a `childArrayField` is to mark the object as deletable using `setDeletable(true)`. Then the Pdm framework will make sure the general delete feature is active on the object. This will make sure the Delete feature is available from the context menu of the object.
 
-The virtual method `PdmObjectHandle::onChildDeleted()` can be used when you need to trigger code after an object is deleted. If additional updates are required, `caf::Signal` can be used.
+The virtual method `PdmObjectHandle::onChildDeleted()` can be used when you need to trigger code after an object is deleted. This method will be called on the object having a `childArrayField` as member.
+
+If additional updates are required, `caf::Signal` can be used.
 
 
 [PdmObjectHandle::setDeletable()](https://github.com/OPM/ResInsight/blob/d11e109c7ec14bd10197b641c70616fa8d457e38/Fwk/AppFwk/cafProjectDataModel/cafPdmCore/cafPdmObjectHandle.cpp#L206)
