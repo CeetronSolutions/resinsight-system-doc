@@ -4,7 +4,23 @@ permalink: /editor/custom-context-menu
 layout: default
 ---
 
-# Custom Context Menu
+# Context Menu
+Context menus can be customized both from by right-click on an object in the project tree, right-click on a widget and right-click in the 3D view.
+
+# Custom Context Menu on a widget
+The easiest pattern to enable and configure a context menu on a widget is to use `RiuContextMenuLauncher`
+
+See example of use in `RimVfpPlot::doCreatePlotViewWidget`
+
+        QWidget plotWidget = new QWidget;
+
+        caf::CmdFeatureMenuBuilder menuBuilder;
+        menuBuilder << "RicShowPlotDataFeature";
+        new RiuContextMenuLauncher( plotWidget, menuBuilder );
+
+An alternative approach is to override the virtual function `contextMenuEvent`. This approach can be useful if more logic is required to create the context menu
+
+# Custom Context Menu in project tree
 
 ## Header
     caf::PdmChildArrayField<RicCreateMultipleFracturesOptionItemUi*> m_options;
