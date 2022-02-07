@@ -14,6 +14,10 @@ This can be done by modifying the properties for ResInsight
 
 `PYTHONPATH=d:\gitroot\ResInsight\ApplicationCode\GrpcInterface\Python;$PYTHONPATH`
 
+Powershell
+
+`$Env:PYTHONPATH += ";E:\gitroot-second\ResInsight\GrpcInterface\Python"`
+
 ## Debugging from Visual Studio
 To be able to Python code without a GUI, ResInsight can be started in console mode. When running in console mode, the Python tests can be started using `--existing`. Then pytest will launch the tests using an existing running instance of ResInsight.
 
