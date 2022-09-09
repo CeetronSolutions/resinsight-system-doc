@@ -21,6 +21,9 @@ Powershell
 ## Debugging from Visual Studio
 To be able to Python code without a GUI, ResInsight can be started in console mode. When running in console mode, the Python tests can be started using `--existing`. Then pytest will launch the tests using an existing running instance of ResInsight.
 
-Set working folder to rips (GrpcInterface\Python\rips) and launch **pytest** using this statement
+Start ResInsight in console mode by adding `--console` to start up arguments in "Debugging->Command Arguments"
 
+From the command line (powershell), set working folder to rips and launch **pytest** using this statement
+    
+    cd GrpcInterface\Python\rips 
     python -m pytest --existing
