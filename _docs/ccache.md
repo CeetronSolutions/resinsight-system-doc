@@ -19,6 +19,12 @@ A rebuild of the full solutions can be as long as 10 mins, depending on the conf
 3. Make sure that all `CXX_*` compiler flags use `/Z7` instead of `/Zi`. If `/Zi` is used, ccache will not work.
 4. To see where your cache is located on your system, use the `ccache -p`
 
+
+![ccache setting]({{site.baseurl}}/assets/images/ccache-01.png)
+
+![build setting]({{site.baseurl}}/assets/images/ccache-02.png)
+
+
 ## References
 [buildcache](https://github.com/mbitsnbites/buildcache)
 
