@@ -8,10 +8,9 @@ layout: default
 
 A rebuild of the full solutions can be as long as 10 mins, depending on the configuration. A few tricks can be used to reduce build times.
 
-1. Do not include more than you need. Use forward declares as much as possible, and never include anything you dont need. 
-2. Unity build: Cmake offers an option to batch source files to reduce the number of files for faster compilation. This is used on some build servers and on some development workstations.
-3. Caching using `buildcache`. When GitHub actions was introduced, there was a need to have a build cache working for both Linux and Windows. At that time, `buildcache` was the only option for one crossplatform tool. `buildcache` caching is now used on ResInsight GitHub Actions.
-4. Recent deveopment has now made `ccache` easily available on Windows. The speedup in compilation time can be quite impressive. A complete rebuild of the ResInsight solution takes 1.10 on one workstation.
+1. Unity build: Cmake offers an option to batch source files to reduce the number of files for faster compilation. This is used on some build servers and on some development workstations.
+2. Caching using `buildcache`. When GitHub actions was introduced, there was a need to have a build cache working for both Linux and Windows. At that time, `buildcache` was the only option for one crossplatform tool. `buildcache` caching is now used on ResInsight GitHub Actions.
+3. Recent deveopment has now made `ccache` easily available on Windows. The speedup in compilation time can be quite impressive. A complete rebuild of the ResInsight solution takes 1.10 on one workstation.
 
 ## Configuration and use of ccache (Windows)
 1. Download and install ccache https://ccache.dev/download.html
