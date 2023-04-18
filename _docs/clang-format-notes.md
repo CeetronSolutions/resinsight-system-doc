@@ -13,15 +13,15 @@ The intention is to activate format-on-save in Visual Studio. Either use integra
 1. Install plugin
 [Clang Power Tools Plugin](https://marketplace.visualstudio.com/items?itemName=caphyon.ClangPowerTools)
 
-2. Install LLVM 10 in Clang Power Tools
+2. Install LLVM 15 in Clang Power Tools
 ![Clang Power Tools LLVM]({{site.baseurl}}/assets/images/clang-power-tools-llvm.png)
 
-4. Set path to clang-format
+4. The version selected in GUI can be overriden by manually setting the to clang-format
 Set the path to clang-format in "Custom executable" for Clang Power Tools. clang-format installed by Clang Power Tools will put the executable
 in path similar to :
 
 ```
-C:\Users\ruben\AppData\Roaming\ClangPowerTools\LLVM\LLVM10.0.0\bin\clang-format.exe
+C:\Users\ruben\AppData\Roaming\ClangPowerTools\LLVM\LLVM15.0.0\bin\clang-format.exe
 ```
 
 
@@ -34,7 +34,7 @@ A GitHub Action is running clang-format when changes is pushed to a branch. If c
 ## Use with PowerShell
 If you need to do apply clang format on all files, it is useful to use PowerShell
 
-1. Add clang-format to path. Use the same executable as shipped with VS2017 installation
+1. Add clang-format to path
 
 ```
 $env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\vcpackages\"
