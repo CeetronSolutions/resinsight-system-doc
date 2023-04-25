@@ -9,7 +9,7 @@ For enhanced interaction and debugging functionality of python code, the IDE [Vi
 
 Python code is to be found in `\gitroot\ResInsight\GrpcInterface\Python\rips`. The `rips` library code represents the Python API for interaction with ResInsight, contianing both source code and tests by use of `pytest`.
 
-To modify and test the Python API, an instance of ResInsight can be built and runned locally (e.g. using `Visual Studio`) or by running a released version at [https://resinsight.org/getting-started/download-and-install/](https://resinsight.org/getting-started/download-and-install/).
+To modify and test the Python API, an instance of ResInsight can be built and runned locally (e.g. using `Visual Studio`) or by running a released version from [https://resinsight.org/getting-started/download-and-install/](https://resinsight.org/getting-started/download-and-install/).
 
 ## Setting up Visual Studio Code
 Create `New Window` and select `Open Folder...`, and browse to `\gitroot\ResInsight\GrpcInterface\Python\rips`:
@@ -26,13 +26,20 @@ If not suggested, got to the extension toolbar and write `"Python"` in the searc
 
 ![image](https://user-images.githubusercontent.com/82032112/234199476-cbbefccb-653d-49cc-94ed-edaf03535eff.png)
 
+## Python Tests
+Tests can be started without any running instance of `ResInsight`, which the launches `RESINSIGHT_EXECUTABLE` in environment variables automatically, or it can run towards an existing build and run ResInsight instance.
+To run Python tests against existing instance of `ResInsight` the test arguments for `pytest` must be modified in the `VS Code` settings file in `.vscode/settings.json` by adding the argument `--existing` to `"python.testing.pytestArgs"`:
+
+![image](https://user-images.githubusercontent.com/82032112/234214135-8fb1d2db-6e5b-476b-82b5-490fef271a39.png)
+
 
 ## Python Tests in Visual Studio Code
 
 - Open files in `tests\` to modify automatic tests implemented using `pytest`.
-- Have a running instance of `ResInsight`
 - Open the `Testing` tab in left side toolbar to show all detected tests in the folder.
 - One can run all detected test files, individual files or even individual tests within a test file.
+
+- Note: If tests settings are configured with argument `--existing` a local build must be running.
 
 ![image](https://user-images.githubusercontent.com/82032112/234201312-abf6dff6-ee84-4c70-820f-d10368e2ed17.png)
 
