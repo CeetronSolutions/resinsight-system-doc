@@ -1,5 +1,5 @@
 ---
-title: Python In Visual Studio Code
+title: Python Tests In Visual Studio Code
 permalink: /editor/python-in-visual-studio-code
 layout: default
 ---
