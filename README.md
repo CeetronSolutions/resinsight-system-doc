@@ -1,5 +1,7 @@
 ## ResInsight System Documentation
 
+### How to configure GitHub pages with Jekyll
+https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
 
 ### Documents
 <ul>
