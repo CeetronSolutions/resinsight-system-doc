@@ -38,6 +38,10 @@ D:\ResInsightPythonScripts>".ResInsightVenv\Scripts\activate"
 
 ### For Ubuntu
 The same steps can be done for Ubutu, providing the same folder, venv and `rips` package install. VS Code can be utilized (for WSL distro if used from Windows) as for Windows in the `"Run and debug scripts"`-section below.
+```
+sudo apt install python3-venv
+source .ResInsightVenv/bin/activate
+```
 
 # Run and debug scripts
 Open VS Code and select `"Open Folder..."`. Navigate to the `"ResInsightPythonScripts"`-folder.
