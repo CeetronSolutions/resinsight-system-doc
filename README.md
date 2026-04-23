@@ -12,6 +12,9 @@
   {% endfor %}
 </ul>
 
+### Stacktrace Reports
+[Weekly ResInsight crash telemetry]({{ '/stacktrace-reports/' | prepend:site.baseurl }}), deduplicated by call-stack signature and linked to upstream issues on [OPM/ResInsight](https://github.com/OPM/ResInsight/issues).
+
 
 ## References
 [Doxygen Doc for Application Framework](http://10.10.0.26:8080/job/ResInsight-static-code-analysis/ws/Fwk/AppFwk/Doxygen/html/index.html)
