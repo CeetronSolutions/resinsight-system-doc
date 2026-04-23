@@ -29,11 +29,23 @@ A new CSV lands every week. Processing it is five steps:
        --output stacktrace-reports/reports/YYYY-MM-DD.md
    ```
 
-3. **Link to upstream issues.** For each unique stack in the generated report, search [OPM/ResInsight issues](https://github.com/OPM/ResInsight/issues) using the top ResInsight frame (function or file name). Paste the issue URL next to the stack, or write `none found` if no match.
-4. **Update `incoming-csvs.md`.** Add a new row with the CSV date, filename, total rows, unique stacks, and a link to the weekly report.
-5. **Update `index.md`.** Add a new row at the top of the weekly-reports table.
+3. **Link to upstream issues.** For each unique stack, search [OPM/ResInsight issues](https://github.com/OPM/ResInsight/issues) using the top ResInsight-specific frame (skip `performCrashLogging` / `manageSegFailure` — those are the crash handler). Example search:
 
-Commit the CSV, the generated MD, and the two updated index pages together.
+   ```
+   gh search issues --repo OPM/ResInsight "RimFileSummaryCase createSummaryReaderInterfaceThreadSafe" --limit 5
+   ```
+
+   Replace `**OPM issue:** none found` with `**OPM issue:** [#NNNN](https://github.com/OPM/ResInsight/issues/NNNN)` when a match is found; leave `none found` otherwise so gaps stay visible.
+
+4. **Update `incoming-csvs.md`.** Append a row using the total-rows and unique-stacks numbers printed by `analyze_crashes.py` (first two lines of its text output). Row template:
+
+   ```
+   | YYYY-MM-DD | [YYYY-MM-DD-query_data.csv](./csv/YYYY-MM-DD-query_data.csv) | <total> | <unique> | [YYYY-MM-DD](./reports/YYYY-MM-DD.md) |
+   ```
+
+5. **Update `index.md`.** Insert a new row at the top of the weekly-reports table with the same totals.
+
+Commit the CSV, the generated MD, and the two updated index pages together on a feature branch.
 
 ## Jekyll integration
 
