@@ -35,7 +35,13 @@ A new CSV lands every week. Processing it is five steps:
    gh search issues --repo OPM/ResInsight "RimFileSummaryCase createSummaryReaderInterfaceThreadSafe" --limit 5
    ```
 
-   Replace `**OPM issue:** none found` with `**OPM issue:** [#NNNN](https://github.com/OPM/ResInsight/issues/NNNN)` when a match is found; leave `none found` otherwise so gaps stay visible.
+   Fetch the issue state at the same time:
+
+   ```
+   gh issue view 13883 --repo OPM/ResInsight --json number,state
+   ```
+
+   Replace `**OPM issue:** none found` with `**OPM issue:** [#NNNN](https://github.com/OPM/ResInsight/issues/NNNN) — OPEN` (or `CLOSED`) when a match is found; leave `none found` otherwise so gaps stay visible. The state is captured at link-time — rerun `gh issue view` for stale reports if the current state matters.
 
 4. **Update `incoming-csvs.md`.** Append a row using the total-rows and unique-stacks numbers printed by `analyze_crashes.py` (first two lines of its text output). Row template:
 

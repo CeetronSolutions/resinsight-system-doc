@@ -45,17 +45,25 @@ def group_by_stack(rows: list[dict]) -> dict:
     stacks = {}
     for row in rows:
         raw_stack = row.get(stack_col, "")
+        ts = row.get(ts_col, "")
         lines = [l.strip() for l in raw_stack.strip().splitlines() if l.strip()]
         ri_lines = extract_ri_frames(lines)
         sig_key = "\n".join(ri_lines)
         if sig_key not in stacks:
             stacks[sig_key] = {
                 "count": 0,
-                "first_seen": row.get(ts_col, ""),
+                "first_seen": ts,
+                "last_seen": ts,
                 "stack": lines,
                 "ri_frames": ri_lines,
             }
-        stacks[sig_key]["count"] += 1
+        entry = stacks[sig_key]
+        entry["count"] += 1
+        # Timestamps in these CSVs are ISO-8601 UTC, so lexicographic ordering == chronological.
+        if ts and ts < entry["first_seen"]:
+            entry["first_seen"] = ts
+        if ts and ts > entry["last_seen"]:
+            entry["last_seen"] = ts
     return stacks
 
 
@@ -73,7 +81,11 @@ def format_report(stacks: dict, min_count: int = 1) -> str:
 
     for i, (key, info) in enumerate(filtered, 1):
         lines.append(f"{'=' * 70}")
-        lines.append(f"Stack #{i}  (count: {info['count']}, first seen: {info['first_seen']})")
+        lines.append(
+            f"Stack #{i}  (count: {info['count']}, "
+            f"first seen: {info['first_seen']}, "
+            f"last seen: {info['last_seen']})"
+        )
         lines.append(f"{'=' * 70}")
         for frame in info["ri_frames"]:
             lines.append(f"  {frame}")
@@ -109,7 +121,8 @@ def format_report_md(stacks: dict, csv_path: Path, min_count: int = 1) -> str:
     for i, (_, info) in enumerate(filtered, 1):
         lines.append(f"## Stack #{i} — count {info['count']}")
         lines.append("")
-        lines.append(f"First seen: `{info['first_seen']}`")
+        lines.append(f"First seen: `{info['first_seen']}`  ")
+        lines.append(f"Last seen: `{info['last_seen']}`")
         lines.append("")
         lines.append("```")
         for frame in info["ri_frames"]:
