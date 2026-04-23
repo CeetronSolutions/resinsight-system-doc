@@ -2,7 +2,7 @@
 analyze_crashes.py - Identify unique call stacks in ResInsight crash report CSV files.
 
 Usage:
-    python analyze_crashes.py <csv_file> [--min-count N] [--output FILE]
+    python analyze_crashes.py <csv_file> [--min-count N] [--format {text,md}] [--output FILE]
 """
 
 import argparse
@@ -82,6 +82,46 @@ def format_report(stacks: dict, min_count: int = 1) -> str:
     return "\n".join(lines)
 
 
+def format_report_md(stacks: dict, csv_path: Path, min_count: int = 1) -> str:
+    sorted_stacks = sorted(stacks.items(), key=lambda x: -x[1]["count"])
+    filtered = [(k, v) for k, v in sorted_stacks if v["count"] >= min_count]
+    total = sum(v["count"] for v in stacks.values())
+
+    date_stem = csv_path.stem.replace("-query_data", "")
+    csv_rel = f"../csv/{csv_path.name}"
+
+    lines = []
+    lines.append("---")
+    lines.append(f"title: Stacktrace report {date_stem}")
+    lines.append(f"permalink: /stacktrace-reports/reports/{date_stem}/")
+    lines.append("layout: default")
+    lines.append("---")
+    lines.append("")
+    lines.append(f"# Stacktrace report {date_stem}")
+    lines.append("")
+    lines.append(f"- **Source CSV:** [{csv_path.name}]({csv_rel})")
+    lines.append(f"- **Total crash reports:** {total}")
+    lines.append(f"- **Unique call stacks:** {len(stacks)}")
+    if min_count > 1:
+        lines.append(f"- **Showing stacks with ≥ {min_count} occurrences:** {len(filtered)}")
+    lines.append("")
+
+    for i, (_, info) in enumerate(filtered, 1):
+        lines.append(f"## Stack #{i} — count {info['count']}")
+        lines.append("")
+        lines.append(f"First seen: `{info['first_seen']}`")
+        lines.append("")
+        lines.append("```")
+        for frame in info["ri_frames"]:
+            lines.append(frame)
+        lines.append("```")
+        lines.append("")
+        lines.append("**OPM issue:** none found")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Identify unique call stacks in ResInsight crash report CSV files."
@@ -93,6 +133,12 @@ def main():
         default=1,
         metavar="N",
         help="Only show stacks with at least N occurrences (default: 1)",
+    )
+    parser.add_argument(
+        "--format",
+        choices=("text", "md"),
+        default="text",
+        help="Output format: plain text (default) or Markdown page for the Jekyll site",
     )
     parser.add_argument(
         "--output",
@@ -108,7 +154,10 @@ def main():
 
     rows = parse_csv(str(csv_path))
     stacks = group_by_stack(rows)
-    report = format_report(stacks, min_count=args.min_count)
+    if args.format == "md":
+        report = format_report_md(stacks, csv_path, min_count=args.min_count)
+    else:
+        report = format_report(stacks, min_count=args.min_count)
 
     if args.output:
         Path(args.output).write_text(report, encoding="utf-8")
