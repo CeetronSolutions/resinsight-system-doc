@@ -108,8 +108,8 @@ pre {
   border-radius: 2px;
   border:1px solid #121212;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
-  overflow: auto;
-  overflow-y: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 
   code {
     color: #efefef;
