@@ -1,7 +1,7 @@
 ---
 title: Weekly Stacktrace Reports
 permalink: /stacktrace-reports/index/
-layout: default
+layout: wide
 ---
 
 # Weekly Stacktrace Reports

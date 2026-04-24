@@ -106,7 +106,7 @@ def format_report_md(stacks: dict, csv_path: Path, min_count: int = 1) -> str:
     lines.append("---")
     lines.append(f"title: Stacktrace report {date_stem}")
     lines.append(f"permalink: /stacktrace-reports/reports/{date_stem}/")
-    lines.append("layout: default")
+    lines.append("layout: wide")
     lines.append("---")
     lines.append("")
     lines.append(f"# Stacktrace report {date_stem}")
