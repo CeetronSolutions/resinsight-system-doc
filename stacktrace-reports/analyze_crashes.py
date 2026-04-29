@@ -10,7 +10,7 @@ import csv
 import sys
 from pathlib import Path
 
-RI_PREFIXES = ("Rim", "Ria", "Rif", "Ric", "Riu", "Riv", "Rig")
+RI_PREFIXES = ("Rim", "Ria", "Rif", "Ric", "Riu", "Riv", "Rig", "caf", "cvf")
 
 
 def is_resinsight_frame(line: str) -> bool:
