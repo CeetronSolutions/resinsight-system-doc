@@ -14,6 +14,7 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 - [Weekly reports](./index.md) — list of per-week analyses, newest first.
 - [Analyzer](./analyze_crashes.py) — the Python script that groups raw stack traces into unique signatures.
 - [Analyzer usage](./analyzer-README.md) — full command-line reference for the script.
+- [Top-frame grouper](./extract_top_frames.py) — reads a generated report and groups stacks by their first non-handler frame, so each unique signature only needs one OPM issue search.
 
 ## Workflow
 
@@ -29,7 +30,13 @@ A new CSV lands every week. Processing it is five steps:
        --output stacktrace-reports/reports/YYYY-MM-DD.md
    ```
 
-3. **Link to upstream issues.** For each unique stack, search [OPM/ResInsight issues](https://github.com/OPM/ResInsight/issues) using the top ResInsight-specific frame (skip `performCrashLogging` / `manageSegFailure` — those are the crash handler). Example search:
+3. **Link to upstream issues.** For each unique stack, search [OPM/ResInsight issues](https://github.com/OPM/ResInsight/issues) using the top ResInsight-specific frame (skip `performCrashLogging` / `manageSegFailure` — those are the crash handler). To avoid one search per stack, run
+
+   ```
+   python stacktrace-reports/extract_top_frames.py stacktrace-reports/reports/YYYY-MM-DD.md
+   ```
+
+   first — it prints stacks grouped by their top non-handler frame, so each unique signature only needs one search. Example search:
 
    ```
    gh search issues --repo OPM/ResInsight "RimFileSummaryCase createSummaryReaderInterfaceThreadSafe" --limit 5
