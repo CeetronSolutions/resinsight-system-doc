@@ -50,6 +50,8 @@ A new CSV lands every week. Processing it is five steps:
 
    Replace `**OPM issue:** none found` with `**OPM issue:** [#NNNN](https://github.com/OPM/ResInsight/issues/NNNN) — OPEN` (or `CLOSED`) when a match is found; leave `none found` otherwise so gaps stay visible. The state is captured at link-time — rerun `gh issue view` for stale reports if the current state matters.
 
+   After all issues are linked, move any stack entries whose linked issue is `CLOSED` to the bottom of the report, keeping them in their own section so open and unmatched stacks remain at the top.
+
 4. **Update `incoming-csvs.md`.** Append a row using the total-rows and unique-stacks numbers printed by `analyze_crashes.py` (first two lines of its text output). Row template:
 
    ```
