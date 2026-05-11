@@ -10,7 +10,7 @@ import csv
 import sys
 from pathlib import Path
 
-RI_PREFIXES = ("Rim", "Ria", "Rif", "Ric", "Riu", "Riv", "Rig")
+RI_PREFIXES = ("Rim", "Ria", "Rif", "Ric", "Riu", "Riv", "Rig", "caf", "cvf")
 HANDLER_SYMBOLS = ("performCrashLogging", "manageSegFailure")
 
 # Default number of top non-handler RI frames used as the grouping signature.
