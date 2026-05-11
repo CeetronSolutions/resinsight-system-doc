@@ -11,6 +11,12 @@ import sys
 from pathlib import Path
 
 RI_PREFIXES = ("Rim", "Ria", "Rif", "Ric", "Riu", "Riv", "Rig")
+HANDLER_SYMBOLS = ("performCrashLogging", "manageSegFailure")
+
+# Default number of top non-handler RI frames used as the grouping signature.
+# Crash reports that share their top N frames but diverge in deeper call sites
+# (typically the UI invocation path) are treated as the same bug.
+DEFAULT_SIGNATURE_DEPTH = 5
 
 
 def is_resinsight_frame(line: str) -> bool:
@@ -19,6 +25,33 @@ def is_resinsight_frame(line: str) -> bool:
 
 def extract_ri_frames(lines: list[str]) -> list[str]:
     return [l for l in lines if is_resinsight_frame(l)]
+
+
+def _symbol_after_index(line: str) -> str:
+    s = line.lstrip()
+    if not s.startswith("["):
+        return ""
+    rbr = s.find("]")
+    if rbr < 0:
+        return ""
+    return s[rbr + 1 :].lstrip()
+
+
+def is_handler_frame(line: str) -> bool:
+    sym = _symbol_after_index(line)
+    return any(sym.startswith(h) for h in HANDLER_SYMBOLS)
+
+
+def signature_for(ri_lines: list[str], depth: int) -> str:
+    """Top `depth` non-handler frames, joined as the grouping key."""
+    sig: list[str] = []
+    for line in ri_lines:
+        if is_handler_frame(line):
+            continue
+        sig.append(line)
+        if len(sig) >= depth:
+            break
+    return "\n".join(sig)
 
 
 def parse_csv(filepath: str) -> list[dict]:
@@ -40,7 +73,7 @@ def detect_columns(rows: list[dict]) -> tuple[str, str]:
     return stack_col, ts_col
 
 
-def group_by_stack(rows: list[dict]) -> dict:
+def group_by_stack(rows: list[dict], signature_depth: int = DEFAULT_SIGNATURE_DEPTH) -> dict:
     stack_col, ts_col = detect_columns(rows)
     stacks = {}
     for row in rows:
@@ -48,7 +81,7 @@ def group_by_stack(rows: list[dict]) -> dict:
         ts = row.get(ts_col, "")
         lines = [l.strip() for l in raw_stack.strip().splitlines() if l.strip()]
         ri_lines = extract_ri_frames(lines)
-        sig_key = "\n".join(ri_lines)
+        sig_key = signature_for(ri_lines, signature_depth)
         if sig_key not in stacks:
             stacks[sig_key] = {
                 "count": 0,
@@ -158,6 +191,17 @@ def main():
         metavar="FILE",
         help="Write report to FILE instead of stdout",
     )
+    parser.add_argument(
+        "--signature-depth",
+        type=int,
+        default=DEFAULT_SIGNATURE_DEPTH,
+        metavar="N",
+        help=(
+            "Number of top non-handler RI frames used for grouping "
+            f"(default: {DEFAULT_SIGNATURE_DEPTH}). Lower = more fuzzy, "
+            "more stacks merge."
+        ),
+    )
     args = parser.parse_args()
 
     csv_path = Path(args.csv_file)
@@ -166,7 +210,7 @@ def main():
         sys.exit(1)
 
     rows = parse_csv(str(csv_path))
-    stacks = group_by_stack(rows)
+    stacks = group_by_stack(rows, signature_depth=args.signature_depth)
     if args.format == "md":
         report = format_report_md(stacks, csv_path, min_count=args.min_count)
     else:

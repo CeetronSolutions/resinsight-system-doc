@@ -9,7 +9,9 @@ Tools for analyzing ResInsight crash report CSV files exported from the telemetr
 
 ## analyze_crashes.py
 
-Groups crash reports by unique call stack and prints a ranked summary. The signature used for grouping is the set of ResInsight-specific frames (classes prefixed with `Rim`, `Ria`, `Rif`, `Ric`, `Riu`, `Riv`, `Rig`), so minor differences in lower-level system or Qt frames are ignored.
+Groups crash reports by unique call stack and prints a ranked summary. The signature used for grouping is the **top N non-handler ResInsight-specific frames** (classes prefixed with `Rim`, `Ria`, `Rif`, `Ric`, `Riu`, `Riv`, `Rig`). The crash-handler frames (`performCrashLogging`, `manageSegFailure*`) are skipped before taking the top N, so the signature focuses on the actual crash site and the immediate call path rather than the deeper UI invocation. Two reports that crash through the same library code but reach it from different UI features merge into one group.
+
+`N` defaults to 5 and can be tuned with `--signature-depth`. Lower values are more fuzzy (more merging); higher values are stricter.
 
 ### Basic usage
 
@@ -28,6 +30,7 @@ python analyze_crashes.py "..\2026-04-09-query_data.csv"
 | Option | Description |
 |---|---|
 | `--min-count N` | Only show stacks that appear at least N times |
+| `--signature-depth N` | Number of top non-handler RI frames used for grouping (default: 5). Lower = more fuzzy. |
 | `--output FILE` | Write the report to a file instead of printing to the terminal |
 
 ### Examples
