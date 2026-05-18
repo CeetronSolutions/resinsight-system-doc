@@ -13,7 +13,7 @@ import argparse
 import re
 from pathlib import Path
 
-HANDLER_RE = re.compile(r"^\[\d+\]\s+(performCrashLogging|manageSegFailure)")
+HANDLER_RE = re.compile(r"^\[\d+\]\s+(performCrashLogging|manageSegFailure|cvf::AssertHandlerConsole)")
 FRAME_RE = re.compile(r"^\[\d+\]\s+(\S.*?)(?:\(.*)?\s+at\s+(\S+):(\d+)$")
 STACK_HDR_RE = re.compile(r"^## Stack #(\d+) — count (\d+)\s*$")
 OPM_LINE_RE = re.compile(r"^\*\*OPM issue:\*\*\s*(.*)$")

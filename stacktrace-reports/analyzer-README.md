@@ -31,6 +31,7 @@ python analyze_crashes.py "..\2026-04-09-query_data.csv"
 |---|---|
 | `--min-count N` | Only show stacks that appear at least N times |
 | `--signature-depth N` | Number of top non-handler RI frames used for grouping (default: 5). Lower = more fuzzy. |
+| `--min-version VER` | Drop rows whose `APPversion` is older than VER (default: `2026.02.2`). Versions with a `-dev.NN` suffix are always kept regardless of base. Pass an empty string to disable. |
 | `--output FILE` | Write the report to a file instead of printing to the terminal |
 
 ### Examples
