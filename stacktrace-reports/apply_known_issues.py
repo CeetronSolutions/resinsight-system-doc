@@ -13,7 +13,8 @@ import argparse
 import re
 from pathlib import Path
 
-HANDLER_RE = re.compile(r"^\[\d+\]\s+(performCrashLogging|manageSegFailure|cvf::AssertHandlerConsole)")
+from analyze_crashes import is_handler_frame
+
 FRAME_RE = re.compile(r"^\[\d+\]\s+(\S.*?)(?:\(.*)?\s+at\s+(\S+):(\d+)$")
 STACK_HDR_RE = re.compile(r"^## Stack #(\d+) — count (\d+)\s*$")
 OPM_LINE_RE = re.compile(r"^\*\*OPM issue:\*\*\s*(.*)$")
@@ -23,7 +24,7 @@ STATE_RE = re.compile(r"(OPEN|CLOSED)")
 
 def first_meaningful_frame(frames):
     for line in frames:
-        if HANDLER_RE.match(line):
+        if is_handler_frame(line):
             continue
         m = FRAME_RE.match(line)
         if not m:

@@ -8,14 +8,15 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-HANDLER_RE = re.compile(r"^\[\d+\]\s+(performCrashLogging|manageSegFailure)")
+from analyze_crashes import is_handler_frame
+
 FRAME_RE = re.compile(r"^\[\d+\]\s+(\S.*?)(?:\(.*)?\s+at\s+(\S+):(\d+)$")
 STACK_HDR_RE = re.compile(r"^## Stack #(\d+) — count (\d+)\s*$")
 
 
 def first_meaningful_frame(lines):
     for line in lines:
-        if HANDLER_RE.match(line):
+        if is_handler_frame(line):
             continue
         m = FRAME_RE.match(line)
         if not m:
