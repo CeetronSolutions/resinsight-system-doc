@@ -6145,12 +6145,8 @@
     },
     "f3d2f3e86a63": {
       "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": {
-        "number": 12756,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/12756"
-      },
+      "notes": "Auto-link to #12756 was a false positive: that issue is an MSW import/visualization enhancement that only mentions RifReaderEclipseWell::readWellCells in prose, not a crash report. Unlinked.",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -6180,7 +6176,7 @@
         "RiaImportEclipseCaseTools::openEclipseCasesFromFile"
       ],
       "signature_id": "f3d2f3e86a63",
-      "status": "linked",
+      "status": "new",
       "top_frame": "RifReaderEclipseWell::readWellCells",
       "weeks": {
         "2026-06-05": {

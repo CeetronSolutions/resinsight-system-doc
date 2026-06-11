@@ -29,6 +29,7 @@ import time
 from registry import (
     OPM_ISSUES_URL,
     UNSYMBOLIZED,
+    frame_symbol,
     load_registry,
     save_registry,
 )
@@ -88,12 +89,23 @@ def gh_json(args: list[str], *, is_search: bool = False) -> object:
 
 
 def issue_mentions(symbol: str, title: str, body: str) -> bool:
-    """A confident match: the full normalised symbol appears verbatim in the
-    issue title or body. Auto-generated `Stacktrace …` issues embed the raw
-    stack, so the qualified `Class::method` shows up exactly; matching only the
-    full symbol (never a bare method name) avoids false positives on common
-    words like `render` or `calculate`."""
-    return bool(symbol) and symbol in f"{title}\n{body}"
+    """A confident match: `symbol` appears as an actual stack *frame* in the
+    issue, not merely somewhere in its prose.
+
+    Auto-generated `Stacktrace …` issues embed the raw stack, so each frame line
+    normalises - via the same `frame_symbol` that defines signature identity -
+    to a qualified `Class::method`. A hand-written issue that only *mentions* the
+    function in passing has no such frame line: e.g. the enhancement request
+    OPM/ResInsight#12756 contains the sentence "See `RifReaderEclipseWell::
+    readWellCells`", which is not a crash site. Requiring a real frame line
+    (symbol followed by ` at <path>:<line>`) rejects that false positive while
+    still matching every genuine crash report."""
+    if not symbol:
+        return False
+    for line in f"{title}\n{body}".splitlines():
+        if frame_symbol(line) == symbol:
+            return True
+    return False
 
 
 def search_issue(symbol: str, limit: int) -> dict | None:
