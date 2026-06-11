@@ -1471,8 +1471,16 @@
     "2c12a4cbd830": {
       "last_updated": "2026-06-11",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14209,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14209"
+      },
+      "pr": {
+        "branch": "fix-14209-contour-map-result-index",
+        "number": 14210,
+        "url": "https://github.com/OPM/ResInsight/pull/14210"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -1484,7 +1492,7 @@
         "RigEclipseContourMapProjection::generateResults"
       ],
       "signature_id": "2c12a4cbd830",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigContourMapCalculator::calculateMeanValue",
       "weeks": {
         "2026-04-29": {
