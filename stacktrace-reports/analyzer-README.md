@@ -6,8 +6,27 @@ Tools for analyzing ResInsight crash report CSV files exported from the telemetr
 
 - Python 3.10 or newer
 - No third-party packages required (uses stdlib only)
+- `link_issues.py` additionally needs an authenticated GitHub CLI (`gh`)
 
-## analyze_crashes.py
+## registry.py (primary tool)
+
+`registry.py` is the entry point for the weekly workflow; `analyze_crashes.py`
+below is now a library it reuses. It maintains `registry.json`, the persistent
+per-signature state.
+
+| Subcommand | Description |
+|---|---|
+| `update --csv FILE [--date D] [--signature-depth N] [--min-version VER]` | Fold a weekly CSV into `registry.json`. Idempotent per week. |
+| `render [--date D \| --all]` | Regenerate report(s) + `index.md` + `incoming-csvs.md` from the registry. Default: latest week. |
+| `worklist [--all]` | Print unlinked signatures, highest total count first. |
+| `set --id SID [--issue N --state S] [--pr N --branch B] [--status S] [--note "..."]` | Record an investigation outcome (used by the `crash-triage` skill). |
+
+Typical run is via `process_week.py`, which chains `update` → `link_issues.py`
+→ `render` → `worklist`. Signatures are keyed by their top-N non-handler frame
+*symbols* (file/line and template noise stripped) so identity is stable across
+builds.
+
+## analyze_crashes.py (library / standalone)
 
 Groups crash reports by unique call stack and prints a ranked summary. The signature used for grouping is the **top N non-handler ResInsight-specific frames** (classes prefixed with `Rim`, `Ria`, `Rif`, `Ric`, `Riu`, `Riv`, `Rig`). The crash-handler frames (`performCrashLogging`, `manageSegFailure*`) are skipped before taking the top N, so the signature focuses on the actual crash site and the immediate call path rather than the deeper UI invocation. Two reports that crash through the same library code but reach it from different UI features merge into one group.
 
