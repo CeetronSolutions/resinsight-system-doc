@@ -912,10 +912,18 @@
       }
     },
     "1b9375c78288": {
-      "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-12",
+      "notes": "Already fixed on dev. Original code in RimEclipseContourMapView append-to-model methods called legendConfig()->scalarMapper() unchecked; a null cvf::ref<cvf::ScalarMapper> deref via .p() produced the top frame. PR #13925 (merged 2026-04-29) added mapGrid/legendConfig/scalarMapper null guards. Field crash reports (last_seen 2026-05-06) come from released builds predating the fix.",
+      "opm_issue": {
+        "number": 13924,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/13924"
+      },
+      "pr": {
+        "branch": "",
+        "number": 13925,
+        "url": "https://github.com/OPM/ResInsight/pull/13925"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -944,7 +952,7 @@
         "RimEclipseView::onCreateDisplayModel"
       ],
       "signature_id": "1b9375c78288",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "cvf::ref<cvf::ScalarMapper>::p",
       "weeks": {
         "2026-04-29": {
