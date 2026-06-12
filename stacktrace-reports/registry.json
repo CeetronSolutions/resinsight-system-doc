@@ -182,10 +182,18 @@
       }
     },
     "041e8de8fa69": {
-      "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-12",
+      "notes": "Already fixed on dev. setValidTimeStepRangeForCase's isTimeStepInCase lambda called std::find( m_case->timeStepDates().cbegin(), m_case->timeStepDates().cend(), ... ). RimCase::timeStepDates() returns std::vector<QDateTime> by value, so cbegin()/cend() in separate invocations produced iterators into two different temporaries; passing the mismatched iterators to std::find is UB and walked off freed memory, crashing in the lambda (operator()). PR #14156 (merged 2026-06-08, issue #14155) snapshots timeStepDates() into a single local vector. All field hits (2026-05-18..2026-06-01) predate the fix.",
+      "opm_issue": {
+        "number": 14155,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14155"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14156,
+        "url": "https://github.com/OPM/ResInsight/pull/14156"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -210,7 +218,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "041e8de8fa69",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "operator",
       "weeks": {
         "2026-05-22": {
