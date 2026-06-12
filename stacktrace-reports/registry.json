@@ -1521,8 +1521,8 @@
       }
     },
     "2fee534b1f8c": {
-      "last_updated": "2026-06-11",
-      "notes": "",
+      "last_updated": "2026-06-12",
+      "notes": "SIGSEGV in createReportStepsMetaData via keywordValueCounts/buildMetaData/open. Fault is a wild-pointer deref deep in ERT: ecl_file_iget_named_data_type/size -> ecl_file_view_get_global_index (unchecked index_vector[ith]) -> ecl_file_view_iget_file_kw (unchecked kw_list[global_index]) -> deref garbage file_kw. However, the ResInsight loop is provably self-consistent single-threaded: numKeywords, kw and namedKeywordCount are all queried from the same active_view, and iOcc is bounded by namedKeywordCount = kw_index.at(kw).size(), so index_vector[iOcc] and kw_list[global_index] are in range whether ecl_file_select_block succeeds (block view) or fails (active_view unchanged); push_block/pop_block save/restore correctly. A simple ResInsight bounds guard cannot be proven to prevent it. Most likely triggers: (1) concurrent mutation of the shared ecl_file->active_view (sibling keywordData() wraps ERT access in omp critical, indicating multi-threaded ecl_file use) dangling kw / reshaping kw_index/kw_list mid-loop; (2) malformed/corrupt UNRST with inconsistent on-disk index. Neither has a minimal verifiable fix. Related prior work: PR #14210/#14140 hardened sibling functions keywordData() and results() with occurrence bounds + select_block return check, but those paths could genuinely exceed the bound; this path cannot single-threaded. No issue/PR filed.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -1553,7 +1553,7 @@
         "RifReaderEclipseOutput::open"
       ],
       "signature_id": "2fee534b1f8c",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RifEclipseOutputFileTools::createReportStepsMetaData",
       "weeks": {
         "2026-04-29": {
