@@ -1790,10 +1790,18 @@
       }
     },
     "3201b263a461": {
-      "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-12",
+      "notes": "Already fixed on dev. updateCellsKIndexEclipse received a K layer computed against the main grid and forwarded it to LGR grids with smaller cellCountK; the unguarded cellIndexFromIJKUnguarded + bounds-unchecked cell() produced an out-of-range cell whose corner-vertex access crashed in cvf::Vec3d::set inside the OpenMP parallel-for. PR #13923 (merged 2026-04-29) added a per-grid K-range guard. All 14 field hits occurred 2026-04-14, predating the fix.",
+      "opm_issue": {
+        "number": 13922,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/13922"
+      },
+      "pr": {
+        "branch": "",
+        "number": 13923,
+        "url": "https://github.com/OPM/ResInsight/pull/13923"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -1805,7 +1813,7 @@
         "RimPolygonFilter::updateCellsKIndexEclipse"
       ],
       "signature_id": "3201b263a461",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "void cvf::Vector3<double>::set<cvf::Vector3<double> >",
       "weeks": {
         "2026-04-29": {
