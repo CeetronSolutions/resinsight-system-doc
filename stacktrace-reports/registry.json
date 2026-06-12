@@ -5158,10 +5158,18 @@
       }
     },
     "c250d46477d4": {
-      "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-12",
+      "notes": "Null deref of m_hdfFile in RifHdf5Exporter::createGroup. Constructor swallows a throwing 'new H5::H5File' (#13883 made m_hdfFile reliably null on failure but did not guard the use); createGroup(nullptr, ...) then dereferences the null m_hdfFile, and the surrounding try/catch(...) cannot catch the SIGSEGV. Fix guards the else branch with 'else if ( m_hdfFile )'. Build-verified (ApplicationLibCode target, clean).",
+      "opm_issue": {
+        "number": 14213,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14213"
+      },
+      "pr": {
+        "branch": "fix-14213-hdf5-creategroup-null",
+        "number": 14214,
+        "url": "https://github.com/OPM/ResInsight/pull/14214"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -5181,7 +5189,7 @@
         "RimFileSummaryCase::findRelatedFilesAndCreateReader"
       ],
       "signature_id": "c250d46477d4",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifHdf5Exporter::createGroup",
       "weeks": {
         "2026-05-22": {
