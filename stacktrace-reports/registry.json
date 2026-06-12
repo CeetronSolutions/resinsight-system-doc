@@ -4234,10 +4234,18 @@
       }
     },
     "97c5e7cd9241": {
-      "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-12",
+      "notes": "Already fixed on dev. Same root cause as signature 3201b263a461 (out-of-range K forwarded to LGR grids in updateCellsKIndexEclipse, crashing in cvf::Vec3d::set inside the OpenMP parallel-for), reached here via RivReservoirViewPartMgr::computeFilterVisibility during display-model creation. PR #13923 (merged 2026-04-29, issue #13922) added the per-grid K-range guard at function entry, which covers this call path too. Both field hits occurred 2026-04-14, predating the fix.",
+      "opm_issue": {
+        "number": 13922,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/13922"
+      },
+      "pr": {
+        "branch": "",
+        "number": 13923,
+        "url": "https://github.com/OPM/ResInsight/pull/13923"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -4267,7 +4275,7 @@
         "RimPolygonFilter::updateCells"
       ],
       "signature_id": "97c5e7cd9241",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "void cvf::Vector3<double>::set<cvf::Vector3<double> >",
       "weeks": {
         "2026-04-29": {
