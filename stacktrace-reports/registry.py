@@ -17,6 +17,11 @@ no crash-site information (`main`, `__libc_start_main`,
 `RiaGuiApplication::notify`) are dropped before taking the top N, so stacks that
 only differ in the deeper UI dispatch path merge into one entry.
 
+The closely-related upstream libraries opm-common (`Opm::`) and libecl (`ecl_`)
+are *shown* in the rendered call stack - they often hold the real crash site -
+but are excluded from the signature, so signature identity stays keyed on
+ResInsight's own frames and is unaffected by upstream symbol changes.
+
 Subcommands
 -----------
     update      Fold a weekly CSV into registry.json.
@@ -42,9 +47,10 @@ from analyze_crashes import (
     DEFAULT_MIN_VERSION,
     DEFAULT_SIGNATURE_DEPTH,
     detect_columns,
-    extract_ri_frames,
+    extract_shown_frames,
     filter_by_version,
     is_handler_frame,
+    is_resinsight_frame,
     parse_csv,
 )
 
@@ -85,11 +91,18 @@ def frame_symbol(line: str) -> str:
     return sym.strip()
 
 
-def signature_symbols(ri_lines: list[str], depth: int) -> list[str]:
-    """Top `depth` informative (non-handler, non-noise) symbols of a stack."""
+def signature_symbols(shown_lines: list[str], depth: int) -> list[str]:
+    """Top `depth` informative (non-handler, non-noise) symbols of a stack.
+
+    opm/ecl frames are shown in the call stack but skipped here, so the
+    signature stays keyed on ResInsight's own frames and signature identity is
+    unaffected by the closely-related upstream libraries.
+    """
     syms: list[str] = []
-    for line in ri_lines:
+    for line in shown_lines:
         if is_handler_frame(line):
+            continue
+        if not is_resinsight_frame(line):
             continue
         sym = frame_symbol(line)
         if not sym or sym in NOISE_SYMBOLS:
@@ -159,12 +172,16 @@ def cmd_update(args: argparse.Namespace) -> None:
 
     total = 0
     new_count = 0
+    # Per-fold guard so representative_stack is refreshed from the *first* row of
+    # each signature in this week (deterministic), not whichever row comes last.
+    first_week_row: dict[str, bool] = {}
     for row in rows:
         raw = row.get(stack_col, "")
         ts = (row.get(ts_col, "") or "").strip()
+        ver = (row.get(ver_col, "") or "").strip() if ver_col else ""
         lines = [l.strip() for l in raw.strip().splitlines() if l.strip()]
-        ri_lines = extract_ri_frames(lines)
-        symbols = signature_symbols(ri_lines, args.signature_depth)
+        shown_lines = extract_shown_frames(lines)
+        symbols = signature_symbols(shown_lines, args.signature_depth)
         sid = signature_id_for(symbols)
         total += 1
 
@@ -174,7 +191,7 @@ def cmd_update(args: argparse.Namespace) -> None:
                 "signature_id": sid,
                 "top_frame": top_frame_for(symbols),
                 "signature_frames": symbols,
-                "representative_stack": ri_lines,
+                "representative_stack": shown_lines,
                 "weeks": {},
                 "opm_issue": None,
                 "pr": None,
@@ -183,12 +200,22 @@ def cmd_update(args: argparse.Namespace) -> None:
             }
             sigs[sid] = entry
             new_count += 1
+        elif first_week_row.get(sid) is None:
+            # Refresh the displayed stack from the first row of this signature in
+            # the week being folded, so signatures first seen before opm/ecl
+            # frames were retained pick them up. Identity (sid) is unchanged.
+            entry["representative_stack"] = shown_lines
+        first_week_row[sid] = True
 
         wk = entry["weeks"].get(week)
         if wk is None:
-            wk = {"count": 0, "first_seen": ts, "last_seen": ts}
+            wk = {"count": 0, "first_seen": ts, "last_seen": ts, "versions": {}}
             entry["weeks"][week] = wk
         wk["count"] += 1
+        # Per-week occurrence count by reporting APPversion.
+        if ver:
+            versions = wk.setdefault("versions", {})
+            versions[ver] = versions.get(ver, 0) + 1
         # ISO-8601 UTC strings sort chronologically.
         if ts and (not wk["first_seen"] or ts < wk["first_seen"]):
             wk["first_seen"] = ts
@@ -297,7 +324,16 @@ def render_week(reg: dict, week: str) -> str:
 def _stack_block(entry: dict, num: int, wk: dict) -> list[str]:
     block = [f"## Stack #{num} — count {wk['count']}", ""]
     block.append(f"First seen: `{wk['first_seen']}`  ")
-    block.append(f"Last seen: `{wk['last_seen']}`")
+    versions = wk.get("versions") or {}
+    # Trailing two spaces = Markdown hard break when a Versions line follows.
+    block.append(f"Last seen: `{wk['last_seen']}`" + ("  " if versions else ""))
+    if versions:
+        # Most-affected version first, then version string for ties.
+        parts = ", ".join(
+            f"`{v}` ({c})"
+            for v, c in sorted(versions.items(), key=lambda kv: (-kv[1], kv[0]))
+        )
+        block.append(f"Versions: {parts}")
     block.append("")
     block.append("```")
     block.extend(entry["representative_stack"])

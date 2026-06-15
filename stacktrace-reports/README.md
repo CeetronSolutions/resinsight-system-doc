@@ -12,7 +12,7 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 
 - [Incoming CSVs](./incoming-csvs.md) — every raw CSV received, with row counts and a link to its weekly report.
 - [Weekly reports](./index.md) — list of per-week analyses, newest first.
-- `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week, the linked OPM issue and its open/closed state, any fix PR, an investigation status, and notes. State persists across weeks here, not in the Markdown.
+- `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week (broken down by reporting `APPversion`), the linked OPM issue and its open/closed state, any fix PR, an investigation status, and notes. State persists across weeks here, not in the Markdown.
 - [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the reports and index pages from it (`render`), lists unlinked signatures by impact (`worklist`), and records an investigation outcome (`set`).
 - [link_issues.py](./link_issues.py) — searches OPM/ResInsight for each unlinked signature's top frame and links the issue when it confidently matches; refreshes the open/closed state of already-linked issues.
 - [process_week.py](./process_week.py) — one-shot driver chaining update → link → render → worklist.
@@ -38,7 +38,10 @@ That performs, in order:
    stable *normalised symbol signature* (top-5 non-handler ResInsight frame
    symbols, with `file:line`, arguments and template noise stripped), so the
    same bug keeps its identity across builds and weeks. Re-running an already
-   folded week is idempotent.
+   folded week is idempotent. The rendered call stack also keeps the
+   closely-related upstream `Opm::` (opm-common) and `ecl_` (libecl) frames,
+   which often hold the real crash site; those frames are *not* part of the
+   signature, so identity stays keyed on ResInsight's own frames.
 2. **`link_issues.py`** — for each signature without a linked issue, searches
    OPM/ResInsight for its top-frame symbol and links the first issue whose title
    or body actually contains that symbol; for already-linked signatures it

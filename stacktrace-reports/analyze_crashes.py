@@ -13,6 +13,13 @@ from pathlib import Path
 RI_PREFIXES = ("Rim", "Ria", "Rif", "Ric", "Riu", "Riv", "Rig", "caf", "cvf")
 HANDLER_SYMBOLS = ("performCrashLogging", "manageSegFailure", "cvf::AssertHandlerConsole")
 
+# opm-common (the `Opm::` C++ namespace) and libecl (the `ecl_` C API) are two
+# closely-related upstream libraries linked into ResInsight. Their frames are
+# kept in the displayed call stack so the real crash site is visible, but they
+# are deliberately NOT used for the grouping signature - that stays keyed on
+# ResInsight's own frames so signature identity is stable across releases.
+OPM_ECL_MARKERS = ("Opm::", "ecl_")
+
 # Default number of top non-handler RI frames used as the grouping signature.
 # Crash reports that share their top N frames but diverge in deeper call sites
 # (typically the UI invocation path) are treated as the same bug.
@@ -43,8 +50,29 @@ def is_resinsight_frame(line: str) -> bool:
     return any(p in line for p in RI_PREFIXES) or "main at" in line
 
 
+def is_opm_ecl_frame(line: str) -> bool:
+    """True for an upstream opm-common (`Opm::`) or libecl (`ecl_`) frame.
+
+    Matched on the symbol (after the `[n]` index), not the whole line, so a
+    source path that merely contains the marker can't trip it.
+    """
+    sym = _symbol_after_index(line)
+    return any(m in sym for m in OPM_ECL_MARKERS)
+
+
+def is_shown_frame(line: str) -> bool:
+    """Frames kept in the displayed call stack: ResInsight plus opm/ecl."""
+    return is_resinsight_frame(line) or is_opm_ecl_frame(line)
+
+
 def extract_ri_frames(lines: list[str]) -> list[str]:
     return [l for l in lines if is_resinsight_frame(l)]
+
+
+def extract_shown_frames(lines: list[str]) -> list[str]:
+    """Frames for display: ResInsight frames plus the closely-related opm/ecl
+    frames that would otherwise hide the real crash site."""
+    return [l for l in lines if is_shown_frame(l)]
 
 
 def _symbol_after_index(line: str) -> str:
