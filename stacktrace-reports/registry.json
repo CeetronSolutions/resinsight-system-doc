@@ -774,10 +774,18 @@
       }
     },
     "167ae9f4735f": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14287,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14287"
+      },
+      "pr": {
+        "branch": "fix-14287-maxfraction-out-of-range",
+        "number": 14288,
+        "url": "https://github.com/OPM/ResInsight/pull/14288"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -804,7 +812,7 @@
         "RimEclipseResultDefinitionTools::updateLegendForFlowDiagnostics"
       ],
       "signature_id": "167ae9f4735f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigFlowDiagResults::calculateDerivedResult",
       "weeks": {
         "2026-06-12": {
