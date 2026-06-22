@@ -2290,7 +2290,7 @@
       }
     },
     "359dda73050e": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -2329,7 +2329,7 @@
         "cvf::BoundingBoxTree::buildTreeFromBoundingBoxes"
       ],
       "signature_id": "359dda73050e",
-      "status": "new",
+      "status": "investigating",
       "top_frame": "cvf::Vector3<double>::Vector3",
       "weeks": {
         "2026-06-05": {
@@ -2705,10 +2705,18 @@
       }
     },
     "3ca67b66b036": {
-      "last_updated": "2026-06-20",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-22",
+      "notes": "Already fixed on dev. Crash at RimWellConnectivityTable::isTimeStepInCase: in v2026.02.2 the body was std::find(m_case->timeStepDates().cbegin(), m_case->timeStepDates().cend(), ts) != m_case->timeStepDates().cend(). timeStepDates() returns std::vector<QDateTime> by value, so cbegin()/cend() came from different temporaries -> std::find walks mismatched iterators -> out-of-bounds read -> SIGSEGV (not a null deref; the !m_case guard always existed). Fixed by commit 9a901d1cac (PR #14156, issue #14155, merged 2026-06-08) which copies into a local vector before iterating. Verified: fix is ancestor of dev, NOT in tag v2026.02.2 (crash predates fix); crash last seen 2026-05-26, fix merged 2026-06-08. PR #14156 swept the same by-value-iterator pattern across files including this one; linking missed it because issue #14155 title names RimWellAllocationOverTimePlot.",
+      "opm_issue": {
+        "number": 14155,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14155"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14156,
+        "url": "https://github.com/OPM/ResInsight/pull/14156"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -2735,7 +2743,7 @@
         "caf::PdmUiFieldHandle::notifyFieldChanged"
       ],
       "signature_id": "3ca67b66b036",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimWellConnectivityTable::isTimeStepInCase",
       "weeks": {
         "2026-05-29": {
