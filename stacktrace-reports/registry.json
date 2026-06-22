@@ -328,7 +328,7 @@
       }
     },
     "0822c8001a77": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -364,7 +364,7 @@
         "RimEclipseCase::openReservoirCase"
       ],
       "signature_id": "0822c8001a77",
-      "status": "new",
+      "status": "investigating",
       "top_frame": "operator",
       "weeks": {
         "2026-06-05": {
@@ -7307,10 +7307,18 @@
       }
     },
     "e16a04b3461e": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14285,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14285"
+      },
+      "pr": {
+        "branch": "fix-14285-drawabletext-undefined-projection",
+        "number": 14286,
+        "url": "https://github.com/OPM/ResInsight/pull/14286"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -7344,7 +7352,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "e16a04b3461e",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::DrawableText::renderText",
       "weeks": {
         "2026-06-20": {
