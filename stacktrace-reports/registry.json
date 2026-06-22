@@ -521,10 +521,18 @@
       }
     },
     "0aef424f6e69": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14275,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14275"
+      },
+      "pr": {
+        "branch": "fix-14275-multiplot-alignaxis-null",
+        "number": 14276,
+        "url": "https://github.com/OPM/ResInsight/pull/14276"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -557,7 +565,7 @@
         "caf::PdmUiToolBarEditor::setFields"
       ],
       "signature_id": "0aef424f6e69",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "operator",
       "weeks": {
         "2026-05-15": {
