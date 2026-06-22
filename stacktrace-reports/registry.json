@@ -3902,10 +3902,18 @@
       }
     },
     "64f0d600d3f1": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14279,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14279"
+      },
+      "pr": {
+        "branch": "fix-14279-guard-line-editor-editing-finished",
+        "number": 14280,
+        "url": "https://github.com/OPM/ResInsight/pull/14280"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -3943,7 +3951,7 @@
         "caf::PdmUiPropertyView::showProperties"
       ],
       "signature_id": "64f0d600d3f1",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmUiFieldHandle::enableAutoValue",
       "weeks": {
         "2026-05-08": {
