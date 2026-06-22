@@ -329,7 +329,7 @@
     },
     "0822c8001a77": {
       "last_updated": "2026-06-22",
-      "notes": "",
+      "notes": "Crash at RiaWellNameComparer.cpp:87 (formatter lambda -> inlined removeWellNamePrefix), a SIGSEGV inside the unsynchronized static std::map caches (sm_nameWithoutPrefix/sm_matchedName, added in 8daf25ffb3). Ruled out: (1) concurrency on the reported path - association loop (RimEclipseCase.cpp:1212) is sequential, plot scheduler is main-thread, and gRPC worker only enqueues (handlers run on main thread via processAllQueuedRequests), so no concurrent map access; (2) std::regex recursion stack overflow - inputs here are Eclipse sim well names (<=8 chars) and a well-path name, far too short; (3) null/dangling refs - proj deref'd earlier without crash, simulationWellNames() temporary lifetime-extended through the chain, eclData null-guarded. With short inputs and a single-threaded path, the fault in the map cache most likely makes this a victim frame of heap/state corruption originating elsewhere, or a rare concurrency not locatable in source. Uncertain because no reproduction and no single provable unsafe operation at this site; low frequency (3 hits, single version 2026.02.2).",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -364,7 +364,7 @@
         "RimEclipseCase::openReservoirCase"
       ],
       "signature_id": "0822c8001a77",
-      "status": "investigating",
+      "status": "no-fix-found",
       "top_frame": "operator",
       "weeks": {
         "2026-06-05": {
