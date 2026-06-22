@@ -6590,10 +6590,18 @@
       }
     },
     "c6d682d471e2": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14281,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14281"
+      },
+      "pr": {
+        "branch": "fix-14281-guard-findreservoir-mainwindow",
+        "number": 14282,
+        "url": "https://github.com/OPM/ResInsight/pull/14282"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -6614,7 +6622,7 @@
         "RiaSocketServer::slotReadyRead"
       ],
       "signature_id": "c6d682d471e2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuMainWindow::subWindowList",
       "weeks": {
         "2026-06-20": {
