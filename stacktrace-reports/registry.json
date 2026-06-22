@@ -1924,10 +1924,18 @@
       }
     },
     "2ffbf9034d82": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14277,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14277"
+      },
+      "pr": {
+        "branch": "fix-14277-hide-property-filter-insert",
+        "number": 14278,
+        "url": "https://github.com/OPM/ResInsight/pull/14278"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -1949,7 +1957,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "2ffbf9034d82",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimEclipsePropertyFilterCollection* caf::PdmObjectHandle::firstAncestorOrThisOfTypeAsserted<RimEclipsePropertyFilterCollection>",
       "weeks": {
         "2026-06-20": {
