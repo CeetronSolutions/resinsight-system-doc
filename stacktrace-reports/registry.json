@@ -4472,8 +4472,8 @@
       }
     },
     "73b3919e646c": {
-      "last_updated": "2026-06-20",
-      "notes": "",
+      "last_updated": "2026-06-22",
+      "notes": "Crash at ecl_grid_set_active_index (ecl_grid.cpp:1863, cell read) via applyActiveCellsToAllGrids -> ecl_grid_reset_actnum -> ecl_grid_update_index. Ruled out: PORV/grid size mismatch (CAF_ASSERT aborts in release, would show different stack), LGR index OOB (vector_iget util_abort, different stack), null currentGrid (would fault at global-size check / reset_actnum write loop first). Note: SIGABRT also routes through manageSegFailureSA, but this stack faults inside set_active_index, not an abort frame. reset_actnum writes grid->cells then set_active_index reads the same array and faults -- implies data-dependent corruption from a malformed EGRID/INIT pair, not a call-site logic bug. No confident fix without the triggering dataset.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -4507,7 +4507,7 @@
         "RiaImportEclipseCaseTools::openEclipseCaseShowTimeStepFilterImpl"
       ],
       "signature_id": "73b3919e646c",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RifActiveCellsReader::applyActiveCellsToAllGrids",
       "weeks": {
         "2026-04-29": {
