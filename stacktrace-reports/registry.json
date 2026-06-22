@@ -4133,8 +4133,8 @@
       }
     },
     "69ff9a60f1fa": {
-      "last_updated": "2026-06-20",
-      "notes": "",
+      "last_updated": "2026-06-22",
+      "notes": "Crash destroying RigStimPlanFractureDefinition std::vector members in an empty destructor during project close (RiaGrpcConsoleApplication::doIdleProcessing -> closeProject). The class has no cvf::ref or raw-pointer members (only std::vector and PODs) and both ~RigStimPlanFractureDefinition and the owning ~RimStimPlanFractureTemplate are empty, so the fault indicates heap corruption / double-free of the object originating outside this class, not a local bug. Uncertain: no minimal, provable fix in this file.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -4166,7 +4166,7 @@
         "caf::PdmChildArrayField<RimFractureTemplate*>::~PdmChildArrayField"
       ],
       "signature_id": "69ff9a60f1fa",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RigStimPlanFractureDefinition::~RigStimPlanFractureDefinition",
       "weeks": {
         "2026-06-12": {
