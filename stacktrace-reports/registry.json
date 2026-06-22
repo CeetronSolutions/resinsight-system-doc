@@ -7039,10 +7039,18 @@
       }
     },
     "db447db3614d": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14283,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14283"
+      },
+      "pr": {
+        "branch": "fix-14283-intehead-guard",
+        "number": 14284,
+        "url": "https://github.com/OPM/ResInsight/pull/14284"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -7070,7 +7078,7 @@
         "RimEclipseResultCase::importGridAndResultMetaData"
       ],
       "signature_id": "db447db3614d",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifEclipseOutputFileTools::findAvailablePhases",
       "weeks": {
         "2026-06-20": {
