@@ -3042,10 +3042,18 @@
       }
     },
     "4b98ba7f3609": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14270,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14270"
+      },
+      "pr": {
+        "branch": "14270-richer-crash-stacktrace",
+        "number": 14271,
+        "url": "https://github.com/OPM/ResInsight/pull/14271"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -3054,7 +3062,7 @@
       ],
       "signature_frames": [],
       "signature_id": "4b98ba7f3609",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "(unsymbolized crash site)",
       "weeks": {
         "2026-04-14": {
