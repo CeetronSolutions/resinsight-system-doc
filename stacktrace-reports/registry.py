@@ -340,6 +340,10 @@ def _stack_block(entry: dict, num: int, wk: dict) -> list[str]:
     block.append("```")
     block.append("")
     block.append(opm_issue_line(entry))
+    notes = (entry.get("notes") or "").strip()
+    if notes:
+        block.append("")
+        block.append(f"**Notes:** {notes}")
     block.append("")
     return block
 
