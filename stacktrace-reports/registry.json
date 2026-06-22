@@ -3569,10 +3569,18 @@
       }
     },
     "532ae6ef21f2": {
-      "last_updated": "2026-06-20",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-06-22",
+      "notes": "Covered by existing upstream PR #14265 (Fixes #14266), currently OPEN. Root cause: setValueFromUiEditor (cafInternalPdmUiFieldCapability.inl:30) hits CAF_ASSERT(optionIndex < m_optionEntryCache.size()) when an activated combo-box index is stale relative to the option cache (cache rebuilt on every valueOptions() call; combo holds an older, now-out-of-range index). CAF_ASSERT is not compiled out (cafAssert.h) and calls std::abort() -> SIGABRT, which manageSegFailureSA also handles (RiaMain.cpp:191), so it surfaces as a crash report. Confirmed line 30 is the assert in tag v2026.02.2. PR #14265 guards the single-value branch against an out-of-range index, mirroring the existing bounds-check in the multi-value branch - the same minimal fix derived independently here. No new issue/PR filed.",
+      "opm_issue": {
+        "number": 14266,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14266"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14265,
+        "url": "https://github.com/OPM/ResInsight/pull/14265"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -3594,7 +3602,7 @@
         "caf::PdmUiComboBoxEditor::slotIndexActivated"
       ],
       "signature_id": "532ae6ef21f2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmFieldUiCap<caf::PdmField<QDateTime> >::setValueFromUiEditor",
       "weeks": {
         "2026-05-29": {
@@ -5023,7 +5031,7 @@
       }
     },
     "8d28fa20f37a": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -5055,7 +5063,7 @@
         "RiuSelectionChangedHandler::handleItemAppended"
       ],
       "signature_id": "8d28fa20f37a",
-      "status": "new",
+      "status": "investigating",
       "top_frame": "RimEclipseResultDefinition::eclipseCase",
       "weeks": {
         "2026-06-12": {
