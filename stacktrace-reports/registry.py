@@ -339,6 +339,8 @@ def _stack_block(entry: dict, num: int, wk: dict) -> list[str]:
     block.extend(entry["representative_stack"])
     block.append("```")
     block.append("")
+    block.append(f"**Status:** {entry.get('status', 'new')}")
+    block.append("")
     block.append(opm_issue_line(entry))
     notes = (entry.get("notes") or "").strip()
     if notes:
@@ -456,7 +458,7 @@ def cmd_worklist(args: argparse.Namespace) -> None:
 # --------------------------------------------------------------------------- #
 VALID_STATUS = (
     "new", "linked", "investigating", "patch-proposed",
-    "pr-open", "resolved", "no-fix-found",
+    "pr-open", "resolved", "no-fix-found", "on-hold",
 )
 
 
