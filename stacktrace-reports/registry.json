@@ -5033,8 +5033,16 @@
     "8d28fa20f37a": {
       "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14289,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14289"
+      },
+      "pr": {
+        "branch": "fix-14289-selection-item-null-resultdef",
+        "number": 14290,
+        "url": "https://github.com/OPM/ResInsight/pull/14290"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -5063,7 +5071,7 @@
         "RiuSelectionChangedHandler::handleItemAppended"
       ],
       "signature_id": "8d28fa20f37a",
-      "status": "investigating",
+      "status": "pr-open",
       "top_frame": "RimEclipseResultDefinition::eclipseCase",
       "weeks": {
         "2026-06-12": {
