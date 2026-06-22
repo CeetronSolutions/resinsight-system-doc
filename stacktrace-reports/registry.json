@@ -5572,10 +5572,18 @@
       }
     },
     "a52535d78adc": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-22",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14266,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14266"
+      },
+      "pr": {
+        "branch": "fix-combobox-stale-option-index",
+        "number": 14265,
+        "url": "https://github.com/OPM/ResInsight/pull/14265"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -5597,7 +5605,7 @@
         "caf::PdmUiComboBoxEditor::slotIndexActivated"
       ],
       "signature_id": "a52535d78adc",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmFieldUiCap<caf::PdmPtrField<RimSummaryEnsemble*> >::setValueFromUiEditor",
       "weeks": {
         "2026-05-01": {
