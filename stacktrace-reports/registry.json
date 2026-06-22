@@ -2291,7 +2291,7 @@
     },
     "359dda73050e": {
       "last_updated": "2026-06-22",
-      "notes": "",
+      "notes": "Crash at cvfBoundingBoxTree.cpp:844, m_leafPool.resize() in BoundingBoxTreeImpl::createLeaves during RigMainGrid::buildCellSearchTree on case import. SIGSEGV in the trivial Vec3d default ctor while value-constructing leaves = memory commit failure (OOM) allocating one AABBTreeNodeLeaf per active cell on a very large grid. Ruled out null/OOB/UAF/overflow and the #14182 deep-tree stack overflow. No confident fix: OOM is not guardable, std::bad_alloc catch won't catch an overcommit SIGSEGV, and reducing per-leaf memory is a non-minimal refactor that only raises the ceiling. Single occurrence (2026-06-02), no recurrence.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -2329,7 +2329,7 @@
         "cvf::BoundingBoxTree::buildTreeFromBoundingBoxes"
       ],
       "signature_id": "359dda73050e",
-      "status": "investigating",
+      "status": "no-fix-found",
       "top_frame": "cvf::Vector3<double>::Vector3",
       "weeks": {
         "2026-06-05": {
