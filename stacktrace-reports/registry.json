@@ -7687,7 +7687,7 @@
     },
     "f008e6cc06cc": {
       "last_updated": "2026-06-23",
-      "notes": "",
+      "notes": "Crash reported at RiuSummaryPlot::showContextMenu:210, the only symbolized ResInsight frame. Line 210 is benign menu-building (addCmdFeatureWithUserData with a formatted QString/QVariant). Frames [2]-[9] (deeper than showContextMenu) are unsymbolized system/Qt code = the real fault, most plausibly Qt's nested event loop inside menu.exec() (line 226). No null-deref/OOB pinpointable on the reported path within ResInsight code. Ruled out: parameterCorrelations OOB (RimSummaryEnsemble.cpp:561 indexes values[i] by timeSteps index without size guard) is a real but separate latent bug - different translation unit, would symbolize as its own frame, absent here. Uncertain because the actual fault is in non-ResInsight frames with no ResInsight-side unsafe operation to guard.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -7703,7 +7703,7 @@
         "RiuSummaryPlot::showContextMenu"
       ],
       "signature_id": "f008e6cc06cc",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuSummaryPlot::showContextMenu",
       "weeks": {
         "2026-05-29": {
