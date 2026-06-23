@@ -4615,8 +4615,16 @@
     "748db0cbcda2": {
       "last_updated": "2026-06-23",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14296,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14296"
+      },
+      "pr": {
+        "branch": "fix-14296-contourmap-degenerate-bounds",
+        "number": 14297,
+        "url": "https://github.com/OPM/ResInsight/pull/14297"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -4649,7 +4657,7 @@
         "Rim3dView::updateDisplayModelForCurrentTimeStepAndRedraw"
       ],
       "signature_id": "748db0cbcda2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::GeometryUtils::tesselatePatchAsTriangles",
       "weeks": {
         "2026-05-22": {
