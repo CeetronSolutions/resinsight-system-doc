@@ -7790,8 +7790,16 @@
     "f326099e1239": {
       "last_updated": "2026-06-23",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14302,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14302"
+      },
+      "pr": {
+        "branch": "fix-14302-linked-view-filter-dialog",
+        "number": 14303,
+        "url": "https://github.com/OPM/ResInsight/pull/14303"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -7814,7 +7822,7 @@
         "RiuTreeViewEventFilter::activateFirstEnabledFeature"
       ],
       "signature_id": "f326099e1239",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimViewController::applyCellFilterCollectionByUserChoice",
       "weeks": {
         "2026-05-29": {
