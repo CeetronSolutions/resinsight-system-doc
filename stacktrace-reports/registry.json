@@ -1,7 +1,7 @@
 {
   "signatures": {
     "0014df24edd7": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14193,
@@ -91,7 +91,7 @@
       }
     },
     "0138c261c5c0": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14174,
@@ -214,7 +214,7 @@
       }
     },
     "041e8de8fa69": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "Already fixed on dev. setValidTimeStepRangeForCase's isTimeStepInCase lambda called std::find( m_case->timeStepDates().cbegin(), m_case->timeStepDates().cend(), ... ). RimCase::timeStepDates() returns std::vector<QDateTime> by value, so cbegin()/cend() in separate invocations produced iterators into two different temporaries; passing the mismatched iterators to std::find is UB and walked off freed memory, crashing in the lambda (operator()). PR #14156 (merged 2026-06-08, issue #14155) snapshots timeStepDates() into a single local vector. All field hits (2026-05-18..2026-06-01) predate the fix.",
       "opm_issue": {
         "number": 14155,
@@ -328,7 +328,7 @@
       }
     },
     "0822c8001a77": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "Crash at RiaWellNameComparer.cpp:87 (formatter lambda -> inlined removeWellNamePrefix), a SIGSEGV inside the unsynchronized static std::map caches (sm_nameWithoutPrefix/sm_matchedName, added in 8daf25ffb3). Ruled out: (1) concurrency on the reported path - association loop (RimEclipseCase.cpp:1212) is sequential, plot scheduler is main-thread, and gRPC worker only enqueues (handlers run on main thread via processAllQueuedRequests), so no concurrent map access; (2) std::regex recursion stack overflow - inputs here are Eclipse sim well names (<=8 chars) and a well-path name, far too short; (3) null/dangling refs - proj deref'd earlier without crash, simulationWellNames() temporary lifetime-extended through the chain, eclData null-guarded. With short inputs and a single-threaded path, the fault in the map cache most likely makes this a victim frame of heap/state corruption originating elsewhere, or a rare concurrency not locatable in source. Uncertain because no reproduction and no single provable unsafe operation at this site; low frequency (3 hits, single version 2026.02.2).",
       "opm_issue": null,
       "pr": null,
@@ -521,11 +521,11 @@
       }
     },
     "0aef424f6e69": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14275,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14275"
       },
       "pr": {
@@ -565,7 +565,7 @@
         "caf::PdmUiToolBarEditor::setFields"
       ],
       "signature_id": "0aef424f6e69",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "operator",
       "weeks": {
         "2026-05-15": {
@@ -599,7 +599,7 @@
       }
     },
     "0babe89e0b6b": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -708,7 +708,7 @@
       }
     },
     "14b589b099a7": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -774,11 +774,11 @@
       }
     },
     "167ae9f4735f": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14287,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14287"
       },
       "pr": {
@@ -812,7 +812,7 @@
         "RimEclipseResultDefinitionTools::updateLegendForFlowDiagnostics"
       ],
       "signature_id": "167ae9f4735f",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RigFlowDiagResults::calculateDerivedResult",
       "weeks": {
         "2026-06-12": {
@@ -834,7 +834,7 @@
       }
     },
     "17047ab66779": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14118,
@@ -968,7 +968,7 @@
       }
     },
     "19c925331f59": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14213,
@@ -1028,7 +1028,7 @@
       }
     },
     "1a992e729555": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14118,
@@ -1230,7 +1230,7 @@
       }
     },
     "1b944453f634": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 13928,
@@ -1289,7 +1289,7 @@
       }
     },
     "1dc7071e0402": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14140,
@@ -1369,7 +1369,7 @@
       }
     },
     "1ed408783b46": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14150,
@@ -1535,7 +1535,7 @@
       }
     },
     "232f8faaea5f": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14179,
@@ -1653,7 +1653,7 @@
       }
     },
     "29e769992730": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14185,
@@ -1719,7 +1719,7 @@
       }
     },
     "2a00a6e3aa2e": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14155,
@@ -1782,7 +1782,7 @@
       }
     },
     "2b80f5a0a843": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14174,
@@ -1932,11 +1932,11 @@
       }
     },
     "2ffbf9034d82": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14277,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14277"
       },
       "pr": {
@@ -1965,7 +1965,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "2ffbf9034d82",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimEclipsePropertyFilterCollection* caf::PdmObjectHandle::firstAncestorOrThisOfTypeAsserted<RimEclipsePropertyFilterCollection>",
       "weeks": {
         "2026-06-20": {
@@ -2017,7 +2017,7 @@
       }
     },
     "309928562adc": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14011,
@@ -2290,7 +2290,7 @@
       }
     },
     "359dda73050e": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "Crash at cvfBoundingBoxTree.cpp:844, m_leafPool.resize() in BoundingBoxTreeImpl::createLeaves during RigMainGrid::buildCellSearchTree on case import. SIGSEGV in the trivial Vec3d default ctor while value-constructing leaves = memory commit failure (OOM) allocating one AABBTreeNodeLeaf per active cell on a very large grid. Ruled out null/OOB/UAF/overflow and the #14182 deep-tree stack overflow. No confident fix: OOM is not guardable, std::bad_alloc catch won't catch an overcommit SIGSEGV, and reducing per-leaf memory is a non-minimal refactor that only raises the ceiling. Single occurrence (2026-06-02), no recurrence.",
       "opm_issue": null,
       "pr": null,
@@ -2406,7 +2406,7 @@
       }
     },
     "36fe75d940bb": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14140,
@@ -2477,7 +2477,7 @@
       }
     },
     "388aa68f79e0": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14112,
@@ -2590,7 +2590,7 @@
       }
     },
     "3b96a7b3aace": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14179,
@@ -2705,7 +2705,7 @@
       }
     },
     "3ca67b66b036": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "Already fixed on dev. Crash at RimWellConnectivityTable::isTimeStepInCase: in v2026.02.2 the body was std::find(m_case->timeStepDates().cbegin(), m_case->timeStepDates().cend(), ts) != m_case->timeStepDates().cend(). timeStepDates() returns std::vector<QDateTime> by value, so cbegin()/cend() came from different temporaries -> std::find walks mismatched iterators -> out-of-bounds read -> SIGSEGV (not a null deref; the !m_case guard always existed). Fixed by commit 9a901d1cac (PR #14156, issue #14155, merged 2026-06-08) which copies into a local vector before iterating. Verified: fix is ancestor of dev, NOT in tag v2026.02.2 (crash predates fix); crash last seen 2026-05-26, fix merged 2026-06-08. PR #14156 swept the same by-value-iterator pattern across files including this one; linking missed it because issue #14155 title names RimWellAllocationOverTimePlot.",
       "opm_issue": {
         "number": 14155,
@@ -2831,7 +2831,7 @@
       }
     },
     "44b82d1da85c": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14116,
@@ -2894,7 +2894,7 @@
       }
     },
     "46812e746c40": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14140,
@@ -2988,7 +2988,7 @@
       }
     },
     "4b301f2f6aca": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14213,
@@ -3058,7 +3058,7 @@
       }
     },
     "4b98ba7f3609": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14270,
@@ -3143,7 +3143,7 @@
       }
     },
     "4bcea50aa6e1": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14140,
@@ -3498,7 +3498,7 @@
       }
     },
     "513ad4d820c5": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14146,
@@ -3569,11 +3569,11 @@
       }
     },
     "532ae6ef21f2": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "Covered by existing upstream PR #14265 (Fixes #14266), currently OPEN. Root cause: setValueFromUiEditor (cafInternalPdmUiFieldCapability.inl:30) hits CAF_ASSERT(optionIndex < m_optionEntryCache.size()) when an activated combo-box index is stale relative to the option cache (cache rebuilt on every valueOptions() call; combo holds an older, now-out-of-range index). CAF_ASSERT is not compiled out (cafAssert.h) and calls std::abort() -> SIGABRT, which manageSegFailureSA also handles (RiaMain.cpp:191), so it surfaces as a crash report. Confirmed line 30 is the assert in tag v2026.02.2. PR #14265 guards the single-value branch against an out-of-range index, mirroring the existing bounds-check in the multi-value branch - the same minimal fix derived independently here. No new issue/PR filed.",
       "opm_issue": {
         "number": 14266,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14266"
       },
       "pr": {
@@ -3602,7 +3602,7 @@
         "caf::PdmUiComboBoxEditor::slotIndexActivated"
       ],
       "signature_id": "532ae6ef21f2",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "caf::PdmFieldUiCap<caf::PdmField<QDateTime> >::setValueFromUiEditor",
       "weeks": {
         "2026-05-29": {
@@ -3684,7 +3684,7 @@
       }
     },
     "5bb150db338d": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14007,
@@ -3934,11 +3934,11 @@
       }
     },
     "64f0d600d3f1": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14279,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14279"
       },
       "pr": {
@@ -3983,7 +3983,7 @@
         "caf::PdmUiPropertyView::showProperties"
       ],
       "signature_id": "64f0d600d3f1",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "caf::PdmUiFieldHandle::enableAutoValue",
       "weeks": {
         "2026-05-08": {
@@ -4054,7 +4054,7 @@
       }
     },
     "694afb4bae44": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -4165,7 +4165,7 @@
       }
     },
     "69ff9a60f1fa": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "Crash destroying RigStimPlanFractureDefinition std::vector members in an empty destructor during project close (RiaGrpcConsoleApplication::doIdleProcessing -> closeProject). The class has no cvf::ref or raw-pointer members (only std::vector and PODs) and both ~RigStimPlanFractureDefinition and the owning ~RimStimPlanFractureTemplate are empty, so the fault indicates heap corruption / double-free of the object originating outside this class, not a local bug. Uncertain: no minimal, provable fix in this file.",
       "opm_issue": null,
       "pr": null,
@@ -4259,7 +4259,7 @@
       }
     },
     "6cb07aef59cb": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -4320,7 +4320,7 @@
       }
     },
     "6e43c5539b5e": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -4417,7 +4417,7 @@
       }
     },
     "6ff11cb88796": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14178,
@@ -4528,7 +4528,7 @@
       }
     },
     "73b3919e646c": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "Crash at ecl_grid_set_active_index (ecl_grid.cpp:1863, cell read) via applyActiveCellsToAllGrids -> ecl_grid_reset_actnum -> ecl_grid_update_index. Ruled out: PORV/grid size mismatch (CAF_ASSERT aborts in release, would show different stack), LGR index OOB (vector_iget util_abort, different stack), null currentGrid (would fault at global-size check / reset_actnum write loop first). Note: SIGABRT also routes through manageSegFailureSA, but this stack faults inside set_active_index, not an abort frame. reset_actnum writes grid->cells then set_active_index reads the same array and faults -- implies data-dependent corruption from a malformed EGRID/INIT pair, not a call-site logic bug. No confident fix without the triggering dataset.",
       "opm_issue": null,
       "pr": null,
@@ -4605,7 +4605,7 @@
       }
     },
     "748db0cbcda2": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -4678,7 +4678,7 @@
       }
     },
     "756f5de23e61": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14185,
@@ -4793,7 +4793,7 @@
       }
     },
     "76e7e40b4edc": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14168,
@@ -4913,7 +4913,7 @@
       }
     },
     "8414fa42bb7b": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 13878,
@@ -4984,7 +4984,7 @@
       }
     },
     "87e3ad865e02": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -5031,11 +5031,11 @@
       }
     },
     "8d28fa20f37a": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14289,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14289"
       },
       "pr": {
@@ -5071,7 +5071,7 @@
         "RiuSelectionChangedHandler::handleItemAppended"
       ],
       "signature_id": "8d28fa20f37a",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimEclipseResultDefinition::eclipseCase",
       "weeks": {
         "2026-06-12": {
@@ -5093,7 +5093,7 @@
       }
     },
     "922f510a0bb7": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 13930,
@@ -5343,7 +5343,7 @@
       }
     },
     "98adc191d3cf": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 13878,
@@ -5506,7 +5506,7 @@
       }
     },
     "9e4139178b72": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -5636,11 +5636,11 @@
       }
     },
     "a52535d78adc": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14266,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14266"
       },
       "pr": {
@@ -5669,7 +5669,7 @@
         "caf::PdmUiComboBoxEditor::slotIndexActivated"
       ],
       "signature_id": "a52535d78adc",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "caf::PdmFieldUiCap<caf::PdmPtrField<RimSummaryEnsemble*> >::setValueFromUiEditor",
       "weeks": {
         "2026-05-01": {
@@ -5694,7 +5694,7 @@
       }
     },
     "a6749f9506ab": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -5909,7 +5909,7 @@
       }
     },
     "b54681a6057b": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -5947,7 +5947,7 @@
       }
     },
     "b570b9f2f0e6": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -6035,7 +6035,7 @@
       }
     },
     "b80de5fc87c2": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14185,
@@ -6099,7 +6099,7 @@
       }
     },
     "b8bc3e3c7278": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14009,
@@ -6171,7 +6171,7 @@
       }
     },
     "bb02459d6dfe": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 11342,
@@ -6412,7 +6412,7 @@
       }
     },
     "c250d46477d4": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "Null deref of m_hdfFile in RifHdf5Exporter::createGroup. Constructor swallows a throwing 'new H5::H5File' (#13883 made m_hdfFile reliably null on failure but did not guard the use); createGroup(nullptr, ...) then dereferences the null m_hdfFile, and the surrounding try/catch(...) cannot catch the SIGSEGV. Fix guards the else branch with 'else if ( m_hdfFile )'. Build-verified (ApplicationLibCode target, clean).",
       "opm_issue": {
         "number": 14213,
@@ -6497,7 +6497,7 @@
       }
     },
     "c44fc451a611": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14138,
@@ -6630,11 +6630,11 @@
       }
     },
     "c6d682d471e2": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14281,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14281"
       },
       "pr": {
@@ -6662,7 +6662,7 @@
         "RiaSocketServer::slotReadyRead"
       ],
       "signature_id": "c6d682d471e2",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RiuMainWindow::subWindowList",
       "weeks": {
         "2026-06-20": {
@@ -6676,7 +6676,7 @@
       }
     },
     "c93afe9d5b9f": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -6746,7 +6746,7 @@
       }
     },
     "cd0b3b9fb17a": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14205,
@@ -6812,7 +6812,7 @@
       }
     },
     "cd0b9c015ffb": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14172,
@@ -6912,7 +6912,7 @@
       }
     },
     "d2161286a077": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -7007,7 +7007,7 @@
       }
     },
     "d6cae2bbf683": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14183,
@@ -7079,11 +7079,11 @@
       }
     },
     "db447db3614d": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14283,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14283"
       },
       "pr": {
@@ -7118,7 +7118,7 @@
         "RimEclipseResultCase::importGridAndResultMetaData"
       ],
       "signature_id": "db447db3614d",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifEclipseOutputFileTools::findAvailablePhases",
       "weeks": {
         "2026-06-20": {
@@ -7186,7 +7186,7 @@
       }
     },
     "dde121c349b6": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14140,
@@ -7339,11 +7339,11 @@
       }
     },
     "e16a04b3461e": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14285,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14285"
       },
       "pr": {
@@ -7384,7 +7384,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "e16a04b3461e",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::DrawableText::renderText",
       "weeks": {
         "2026-06-20": {
@@ -7447,7 +7447,7 @@
       }
     },
     "e4a6d29f4a88": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14213,
@@ -7506,7 +7506,7 @@
       }
     },
     "e934af263f7e": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14185,
@@ -7654,7 +7654,7 @@
       }
     },
     "f008e6cc06cc": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -7756,7 +7756,7 @@
       }
     },
     "f326099e1239": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -7814,7 +7814,7 @@
       }
     },
     "f37897ff8ca4": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
         "number": 14182,
@@ -7910,7 +7910,7 @@
       }
     },
     "f3d2f3e86a63": {
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-06-23",
       "notes": "Auto-link to #12756 was a false positive: that issue is an MSW import/visualization enhancement that only mentions RifReaderEclipseWell::readWellCells in prose, not a crash report. Unlinked.",
       "opm_issue": {
         "number": 14144,
