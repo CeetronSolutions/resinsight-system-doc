@@ -4056,8 +4056,16 @@
     "694afb4bae44": {
       "last_updated": "2026-06-23",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14294,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14294"
+      },
+      "pr": {
+        "branch": "fix-14294-geomech-parentcontainer",
+        "number": 14295,
+        "url": "https://github.com/OPM/ResInsight/pull/14295"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -4084,7 +4092,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<bool> >::setValueFromUiEditor"
       ],
       "signature_id": "694afb4bae44",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimGeoMechPropertyFilter::computeResultValueRange",
       "weeks": {
         "2026-05-29": {
@@ -6072,7 +6080,7 @@
         "RicWellPathExportMswTableData::generateFishbonesMswExportInfoForWell"
       ],
       "signature_id": "b80de5fc87c2",
-      "status": "linked",
+      "status": "investigating",
       "top_frame": "RigEclipseWellLogExtractor::calculateIntersection",
       "weeks": {
         "2026-06-05": {
