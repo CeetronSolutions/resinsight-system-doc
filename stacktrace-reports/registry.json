@@ -1109,10 +1109,18 @@
       }
     },
     "1ad40aff8af6": {
-      "last_updated": "2026-06-15",
+      "last_updated": "2026-06-23",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14300,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14300"
+      },
+      "pr": {
+        "branch": "fix-14300-flowdiag-frame-bounds",
+        "number": 14301,
+        "url": "https://github.com/OPM/ResInsight/pull/14301"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -1140,7 +1148,7 @@
         "RimEclipseView::updateLegendRangesTextAndVisibility"
       ],
       "signature_id": "1ad40aff8af6",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "MinMaxAccumulator::addData",
       "weeks": {
         "2026-05-22": {
