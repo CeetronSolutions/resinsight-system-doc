@@ -4329,7 +4329,7 @@
     },
     "6e43c5539b5e": {
       "last_updated": "2026-06-23",
-      "notes": "",
+      "notes": "Crash at addXmlCapabilityToField<PdmField<int>> while constructing a fresh RimTernaryLegendConfig inside new Rim2dIntersectionView(), on the gRPC CreateChildPdmObject -> onChildAdded -> syncFromExistingIntersections path. Single event (2026-06-02, v2026.02.2; count 3 is one crash re-counted across weeks). Ruled out: stack overflow (no sigaltstack, yet a log exists), null-ancestor aborts (CAF_ASSERT frames absent and both asserts on the path lie above the crash), delete-during-iteration (PDM prepareForDelete nulls guarded pointers in place). Crash site is correct, universally-exercised field-init/allocation code -> heap-corruption symptom of operating on a detached/half-built object graph via gRPC, not an independently guardable fault. Related null-deref on the same path fixed in 221305b741 (2026-06-09, post-crash) but in the reuse branch, a different site. No confident minimal fix; monitor for recurrence on builds after 221305b741.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -4358,7 +4358,7 @@
         "RimIntersectionCollection::onChildAdded"
       ],
       "signature_id": "6e43c5539b5e",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "void caf::addXmlCapabilityToField<caf::PdmField<int> >",
       "weeks": {
         "2026-06-05": {
