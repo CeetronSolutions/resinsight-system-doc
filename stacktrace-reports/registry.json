@@ -6100,7 +6100,7 @@
     },
     "b8bc3e3c7278": {
       "last_updated": "2026-06-23",
-      "notes": "",
+      "notes": "Crash inside the OpenGL driver at glDrawRangeElements (cvfPrimitiveSetIndexedUInt.cpp:125) during paintGL; frames above the call are unsymbolized driver code. The ResInsight call site is already guarded (null indices and numIndices<=0 both early-return), so there is no ResInsight-side null-deref or OOB access on this path. Most plausible cause is the driver reading vertices out of bounds (m_maxIndex >= vertexCount) or a lost/invalid GL context, but neither is confirmable from the stack and there is no reproduction. A bounds guard is not minimal: base cvf::PrimitiveSet exposes only indexCount()/index(), not minIndex()/maxIndex(), and vertexCount lives in DrawableGeo, so it would require cross-class changes to vendored VizFwk and would only address one unconfirmed hypothesis. Low frequency (~2-3 distinct events, all v2026.02.2). No confident fix; #14009 stays open.",
       "opm_issue": {
         "number": 14009,
         "state": "OPEN",
@@ -6129,7 +6129,7 @@
         "cvf::RenderSequence::render"
       ],
       "signature_id": "b8bc3e3c7278",
-      "status": "linked",
+      "status": "no-fix-found",
       "top_frame": "cvf::PrimitiveSetIndexedUInt::render",
       "weeks": {
         "2026-05-15": {
