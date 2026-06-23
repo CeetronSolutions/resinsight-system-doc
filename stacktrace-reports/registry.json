@@ -4269,8 +4269,16 @@
     "6cb07aef59cb": {
       "last_updated": "2026-06-23",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14298,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14298"
+      },
+      "pr": {
+        "branch": "fix-14298-delta-basetimestep-oob",
+        "number": 14299,
+        "url": "https://github.com/OPM/ResInsight/pull/14299"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -4296,7 +4304,7 @@
         "RimEclipseView::onUpdateDisplayModelForCurrentTimeStep"
       ],
       "signature_id": "6cb07aef59cb",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "Rim3dOverlayInfoConfig::resultInfoText",
       "weeks": {
         "2026-05-29": {
