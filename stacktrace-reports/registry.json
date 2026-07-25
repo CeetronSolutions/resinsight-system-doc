@@ -7411,7 +7411,11 @@
     "9f3186ce4814": {
       "last_updated": "2026-07-25",
       "notes": "",
-      "opm_issue": null,
+      "opm_issue": {
+        "number": 14011,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14011"
+      },
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
@@ -7438,7 +7442,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<bool> >::setValueFromUiEditor"
       ],
       "signature_id": "9f3186ce4814",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimWellFlowRateCurve::onLoadDataAndUpdate",
       "weeks": {
         "2026-07-10": {
