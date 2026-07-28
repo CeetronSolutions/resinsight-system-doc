@@ -2240,7 +2240,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14370,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14370"
       },
       "pr": {
@@ -2285,7 +2285,7 @@
         "RimFileSummaryCase::findRelatedFilesAndCreateReader"
       ],
       "signature_id": "24d4fcf84157",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifEclipseSummaryTools::findSummaryFiles",
       "weeks": {
         "2026-06-26": {
@@ -3841,7 +3841,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14372,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14372"
       },
       "pr": {
@@ -3880,7 +3880,7 @@
         "RimEclipseContourMapView::updateGeometry"
       ],
       "signature_id": "402d54b717bf",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::ref<cvf::ScalarMapper>::p",
       "weeks": {
         "2026-04-29": {
