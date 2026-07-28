@@ -877,10 +877,18 @@
       }
     },
     "0babe89e0b6b": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "Pre-#14149 form of the same fault: ecl_kw_fread_alloc returns NULL for truncated SMSPEC and ecl_file_kw_assert_kw dereferences it. Fixed by PR 14202 (shipped 2026.06.0); stopped appearing after rollout. Follow-up completing the fix downstream is issue 14381 / PR 14382 (signature 75ddc6afee6f).",
+      "opm_issue": {
+        "number": 14149,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14149"
+      },
+      "pr": {
+        "branch": "fix-14149-eclkw-null-deref",
+        "number": 14202,
+        "url": "https://github.com/OPM/ResInsight/pull/14202"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -916,7 +924,7 @@
         "RifSummaryCaseRestartSelector::determineFilesToImportFromSummaryFiles"
       ],
       "signature_id": "0babe89e0b6b",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RifEclipseSummaryTools::openEclSum",
       "weeks": {
         "2026-06-05": {
@@ -6560,10 +6568,18 @@
       }
     },
     "75ddc6afee6f": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "Truncated/corrupt SMSPEC: keyword present in file index but data read fails; since #14149 lazy loader returns NULL and ecl_smspec_fread_header dereferences it at ecl_smspec.cpp:1120 (INTEHEAD). Fix adds NULL guards for all header keywords with graceful false return.",
+      "opm_issue": {
+        "number": 14381,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14381"
+      },
+      "pr": {
+        "branch": "fix-14381-smspec-null-keyword",
+        "number": 14382,
+        "url": "https://github.com/OPM/ResInsight/pull/14382"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -6588,7 +6604,7 @@
         "RimFileSummaryCase::findRelatedFilesAndCreateReader"
       ],
       "signature_id": "75ddc6afee6f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifEclipseSummaryTools::openEclSum",
       "weeks": {
         "2026-04-29": {
