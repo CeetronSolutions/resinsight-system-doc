@@ -170,7 +170,7 @@
       "notes": "Opm::FileDeck::dump performs fs::create_directories/fs::canonical/touch_file which throw fs::filesystem_error on unwritable or invalid export paths; uncaught -> terminate. Patch: try/catch in RifOpmFlowDeckFile::saveDeck/saveDeckInline returning false; caller already reports failure gracefully. Build-verified.",
       "opm_issue": {
         "number": 14385,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14385"
       },
       "pr": {
@@ -204,7 +204,7 @@
         "RicExportSectorModelFeature::onActionTriggered"
       ],
       "signature_id": "03196eb40521",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-10": {
@@ -1066,7 +1066,7 @@
       "notes": "ESmry::getListOfArrays (opm-common submodule) missing fopen NULL check -> segfault on locked/deleted UNSMRY. Fix in CeetronSolutions/opm-common#13 (branch fix-esmry-getlistofarrays-fopen, targets development-01); ResInsight PR 14390 bumps the submodule and depends on that merge.",
       "opm_issue": {
         "number": 14386,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14386"
       },
       "pr": {
@@ -1109,7 +1109,7 @@
         "RimSummaryCaseMainCollection::loadFileSummaryCaseData"
       ],
       "signature_id": "14b589b099a7",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifOpmCommonEclipseSummary::open",
       "weeks": {
         "2026-06-05": {
@@ -6588,7 +6588,7 @@
       "notes": "Truncated/corrupt SMSPEC: keyword present in file index but data read fails; since #14149 lazy loader returns NULL and ecl_smspec_fread_header dereferences it at ecl_smspec.cpp:1120 (INTEHEAD). Fix adds NULL guards for all header keywords with graceful false return.",
       "opm_issue": {
         "number": 14381,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14381"
       },
       "pr": {
@@ -6620,7 +6620,7 @@
         "RimFileSummaryCase::findRelatedFilesAndCreateReader"
       ],
       "signature_id": "75ddc6afee6f",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifEclipseSummaryTools::openEclSum",
       "weeks": {
         "2026-04-29": {
@@ -7618,7 +7618,7 @@
       "notes": "Uncaught std::out_of_range from ecl_file_view_get_global_index (kw_index.at) when a keyword is missing in a truncated/malformed restart file, escaping through readWellData -> std::terminate. Patch: try/catch around restartDataAccess->readWellData in RifReaderEclipseWell::readWellCells, log error and skip well import. Build-verified.",
       "opm_issue": {
         "number": 14383,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14383"
       },
       "pr": {
@@ -7655,7 +7655,7 @@
         "RiaImportEclipseCaseTools::openEclipseCaseShowTimeStepFilterImpl"
       ],
       "signature_id": "982829e66bcb",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-03": {
@@ -8902,7 +8902,7 @@
       "notes": "cellScalarResults(SOWCR/SOGCR, 0) called without ensureKnownResultLoaded in RigHydrocarbonFlowTools::residualOilData; missing static result gives UNDEFINED_SIZE_T index -> OOB deref in release. Patch guards oil+gas variants with ensureKnownResultLoaded, falling back to default fill. Build-verified.",
       "opm_issue": {
         "number": 14384,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14384"
       },
       "pr": {
@@ -8932,7 +8932,7 @@
         "RimWellTargetMapping::generateCandidates"
       ],
       "signature_id": "b810a4050ae2",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RigHydrocarbonFlowTools::residualOilData",
       "weeks": {
         "2026-07-03": {
