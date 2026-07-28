@@ -3169,10 +3169,18 @@
       }
     },
     "342276363510": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-28",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14392,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14392"
+      },
+      "pr": {
+        "branch": "fix-14392-pressure-depth-parse-crash",
+        "number": 14393,
+        "url": "https://github.com/OPM/ResInsight/pull/14393"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -3195,7 +3203,7 @@
         "RicImportPressureDepthDataFeature::selectPressureDepthDataPathInDialog"
       ],
       "signature_id": "342276363510",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifPressureDepthTextFileReader::parse",
       "weeks": {
         "2026-06-26": {
