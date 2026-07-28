@@ -5100,7 +5100,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14374,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14374"
       },
       "pr": {
@@ -5138,7 +5138,7 @@
         "RiaImportEclipseCaseTools::openEclipseCaseShowTimeStepFilterImpl"
       ],
       "signature_id": "5a43e5622190",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-10": {
