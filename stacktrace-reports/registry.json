@@ -166,10 +166,18 @@
       }
     },
     "03196eb40521": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "Opm::FileDeck::dump performs fs::create_directories/fs::canonical/touch_file which throw fs::filesystem_error on unwritable or invalid export paths; uncaught -> terminate. Patch: try/catch in RifOpmFlowDeckFile::saveDeck/saveDeckInline returning false; caller already reports failure gracefully. Build-verified.",
+      "opm_issue": {
+        "number": 14385,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14385"
+      },
+      "pr": {
+        "branch": "fix-14385-savedeck",
+        "number": 14389,
+        "url": "https://github.com/OPM/ResInsight/pull/14389"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -196,7 +204,7 @@
         "RicExportSectorModelFeature::onActionTriggered"
       ],
       "signature_id": "03196eb40521",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-10": {
@@ -1054,10 +1062,18 @@
       }
     },
     "14b589b099a7": {
-      "last_updated": "2026-06-28",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "ESmry::getListOfArrays (opm-common submodule) missing fopen NULL check -> segfault on locked/deleted UNSMRY. Fix in CeetronSolutions/opm-common#13 (branch fix-esmry-getlistofarrays-fopen, targets development-01); ResInsight PR 14390 bumps the submodule and depends on that merge.",
+      "opm_issue": {
+        "number": 14386,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14386"
+      },
+      "pr": {
+        "branch": "fix-14386-esmry-submodule",
+        "number": 14390,
+        "url": "https://github.com/OPM/ResInsight/pull/14390"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -1093,7 +1109,7 @@
         "RimSummaryCaseMainCollection::loadFileSummaryCaseData"
       ],
       "signature_id": "14b589b099a7",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifOpmCommonEclipseSummary::open",
       "weeks": {
         "2026-06-05": {
@@ -7598,10 +7614,18 @@
       }
     },
     "982829e66bcb": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "Uncaught std::out_of_range from ecl_file_view_get_global_index (kw_index.at) when a keyword is missing in a truncated/malformed restart file, escaping through readWellData -> std::terminate. Patch: try/catch around restartDataAccess->readWellData in RifReaderEclipseWell::readWellCells, log error and skip well import. Build-verified.",
+      "opm_issue": {
+        "number": 14383,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14383"
+      },
+      "pr": {
+        "branch": "fix-14383-readwellcells",
+        "number": 14387,
+        "url": "https://github.com/OPM/ResInsight/pull/14387"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -7631,7 +7655,7 @@
         "RiaImportEclipseCaseTools::openEclipseCaseShowTimeStepFilterImpl"
       ],
       "signature_id": "982829e66bcb",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-03": {
@@ -8874,10 +8898,18 @@
       }
     },
     "b810a4050ae2": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "cellScalarResults(SOWCR/SOGCR, 0) called without ensureKnownResultLoaded in RigHydrocarbonFlowTools::residualOilData; missing static result gives UNDEFINED_SIZE_T index -> OOB deref in release. Patch guards oil+gas variants with ensureKnownResultLoaded, falling back to default fill. Build-verified.",
+      "opm_issue": {
+        "number": 14384,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14384"
+      },
+      "pr": {
+        "branch": "fix-14384-residual-saturation",
+        "number": 14388,
+        "url": "https://github.com/OPM/ResInsight/pull/14388"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -8900,7 +8932,7 @@
         "RimWellTargetMapping::generateCandidates"
       ],
       "signature_id": "b810a4050ae2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigHydrocarbonFlowTools::residualOilData",
       "weeks": {
         "2026-07-03": {
@@ -11147,10 +11179,18 @@
       }
     },
     "ecc32871d757": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "Crash was inlined askUserToRestoreOriginalCellFilterCollection: activeView->viewer() null deref. Fixed by #14302 / PR #14303 (merged 2026-06-23), not yet in a shipped release; crash events are from 2026.06.0 and earlier.",
+      "opm_issue": {
+        "number": 14302,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14302"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14303,
+        "url": "https://github.com/OPM/ResInsight/pull/14303"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -11174,7 +11214,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "ecc32871d757",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimViewController::applyCellFilterCollectionByUserChoice",
       "weeks": {
         "2026-04-29": {
