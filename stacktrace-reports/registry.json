@@ -5096,10 +5096,18 @@
       }
     },
     "5a43e5622190": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-28",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14374,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14374"
+      },
+      "pr": {
+        "branch": "fix-14374-grid-import-missing-dimens",
+        "number": 14375,
+        "url": "https://github.com/OPM/ResInsight/pull/14375"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -5130,7 +5138,7 @@
         "RiaImportEclipseCaseTools::openEclipseCaseShowTimeStepFilterImpl"
       ],
       "signature_id": "5a43e5622190",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-10": {
