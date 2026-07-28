@@ -13,7 +13,7 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 - [Incoming CSVs](./incoming-csvs.md) — every raw CSV received, with row counts and a link to its weekly report.
 - [Weekly reports](./index.md) — list of per-week analyses, newest first.
 - `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week (broken down by reporting `APPversion`), the linked OPM issue and its open/closed state, any fix PR, an investigation status, and notes. State persists across weeks here, not in the Markdown.
-- [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the reports and index pages from it (`render`), lists unlinked signatures by impact (`worklist`), and records an investigation outcome (`set`).
+- [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the latest report and the index pages from it (`render`), lists unlinked signatures by impact (`worklist`), and records an investigation outcome (`set`).
 - [link_issues.py](./link_issues.py) — searches OPM/ResInsight for each unlinked signature's top frame and links the issue when it confidently matches; refreshes the open/closed state of already-linked issues.
 - [process_week.py](./process_week.py) — one-shot driver chaining update → link → render → worklist.
 - [Analyzer](./analyze_crashes.py) — the original grouping library; `registry.py` reuses its CSV parsing and frame helpers.
@@ -46,9 +46,13 @@ That performs, in order:
    OPM/ResInsight for its top-frame symbol and links the first issue whose title
    or body actually contains that symbol; for already-linked signatures it
    re-fetches the issue state. Paced under the GitHub search rate limit.
-3. **`registry.py render`** — regenerates the week's `reports/YYYY-MM-DD.md`
-   plus `index.md` and `incoming-csvs.md` from the registry. Stacks linked to a
-   `CLOSED` issue are gathered under a `## Closed issues` section automatically.
+3. **`registry.py render`** — regenerates the latest week's
+   `reports/YYYY-MM-DD.md` plus `index.md` and `incoming-csvs.md` from the
+   registry. Stacks linked to a `CLOSED` issue are gathered under a
+   `## Closed issues` section automatically. Only the latest report is ever
+   re-rendered: previous weeks' pages are frozen snapshots of what was known
+   at the time, so do **not** use `render --all` (it rewrites their stack
+   listings and issue states with today's registry contents).
 4. **`registry.py worklist`** — prints the signatures still unlinked, ranked by
    total occurrences. These are the candidates for investigation.
 
