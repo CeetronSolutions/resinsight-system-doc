@@ -3829,10 +3829,18 @@
       }
     },
     "402d54b717bf": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-28",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14372,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14372"
+      },
+      "pr": {
+        "branch": "fix-14372-contourmap-resolve-references",
+        "number": 14373,
+        "url": "https://github.com/OPM/ResInsight/pull/14373"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -3864,7 +3872,7 @@
         "RimEclipseContourMapView::updateGeometry"
       ],
       "signature_id": "402d54b717bf",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::ref<cvf::ScalarMapper>::p",
       "weeks": {
         "2026-04-29": {
