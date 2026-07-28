@@ -8297,10 +8297,18 @@
       }
     },
     "abb388e6c1a3": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-28",
+      "notes": "Exception from ODB API escaping RifOdbReader destructor during project close -> std::terminate. Fixed by PR 14377 (try/catch around close() and odb_finalizeAPI() in destructor), merged to dev as f409fd8a4d.",
+      "opm_issue": {
+        "number": 14376,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14376"
+      },
+      "pr": {
+        "branch": "fix-14376-odb-reader-destructor-terminate",
+        "number": 14377,
+        "url": "https://github.com/OPM/ResInsight/pull/14377"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -8335,7 +8343,7 @@
         "RigFemPartResultsCollection::~RigFemPartResultsCollection"
       ],
       "signature_id": "abb388e6c1a3",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-03": {
