@@ -2228,10 +2228,18 @@
       }
     },
     "24d4fcf84157": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-28",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14370,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14370"
+      },
+      "pr": {
+        "branch": "fix-14370-summary-filelist-null-base",
+        "number": 14371,
+        "url": "https://github.com/OPM/ResInsight/pull/14371"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -2269,7 +2277,7 @@
         "RimFileSummaryCase::findRelatedFilesAndCreateReader"
       ],
       "signature_id": "24d4fcf84157",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifEclipseSummaryTools::findSummaryFiles",
       "weeks": {
         "2026-06-26": {
@@ -4156,7 +4164,7 @@
       }
     },
     "49d08ca2f441": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-28",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -4178,7 +4186,7 @@
         "RigEclipseToStimPlanCalculator::RigEclipseToStimPlanCalculator"
       ],
       "signature_id": "49d08ca2f441",
-      "status": "new",
+      "status": "investigating",
       "top_frame": "caf::AppEnumMapperBase::defaultValue",
       "weeks": {
         "2026-06-26": {
