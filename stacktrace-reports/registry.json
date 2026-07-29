@@ -3589,10 +3589,18 @@
       }
     },
     "3b148a631e23": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-29",
+      "notes": "Null Rim2dIntersectionView dereference in RicNewIntersectionViewFeature::onActionTriggered (RicNewIntersectionViewFeature.cpp:76 in v2026.06.1): correspondingIntersectionView() can return nullptr and setVisible(true) then crashes in PdmField<bool>::operator=. Fixed by PR 14380 (issue 14379), merged to dev 2026-07-28; pending release.",
+      "opm_issue": {
+        "number": 14379,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14379"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14380,
+        "url": "https://github.com/OPM/ResInsight/pull/14380"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -3614,7 +3622,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "3b148a631e23",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "caf::PdmField<bool>::operator=",
       "weeks": {
         "2026-07-03": {
