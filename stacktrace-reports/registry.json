@@ -6949,10 +6949,18 @@
       }
     },
     "87e3ad865e02": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-29",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14398,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14398"
+      },
+      "pr": {
+        "branch": "fix-14398-well-allocation-plot-time-step",
+        "number": 14399,
+        "url": "https://github.com/OPM/ResInsight/pull/14399"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -6982,7 +6990,7 @@
         "RimEclipseView::onLoadDataAndUpdate"
       ],
       "signature_id": "87e3ad865e02",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimWellAllocationPlot::onLoadDataAndUpdate",
       "weeks": {
         "2026-06-20": {
