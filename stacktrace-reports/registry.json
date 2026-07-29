@@ -5065,10 +5065,18 @@
       }
     },
     "57c0db0ee19b": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-29",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14395,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14395"
+      },
+      "pr": {
+        "branch": "fix-14395-summary-table-resampling-none",
+        "number": 14396,
+        "url": "https://github.com/OPM/ResInsight/pull/14396"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -5098,7 +5106,7 @@
         "RimSummaryTable::createTableData"
       ],
       "signature_id": "57c0db0ee19b",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiaTimeHistoryCurveResampler::computeResampledTimeSteps",
       "weeks": {
         "2026-06-26": {
