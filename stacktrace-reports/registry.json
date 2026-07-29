@@ -61,7 +61,11 @@
     "0059448babee": {
       "last_updated": "2026-06-11",
       "notes": "",
-      "opm_issue": null,
+      "opm_issue": {
+        "number": 14381,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14381"
+      },
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -88,7 +92,7 @@
         "RifSummaryCaseRestartSelector::determineFilesToImportFromGridFiles"
       ],
       "signature_id": "0059448babee",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RifEclipseSummaryTools::openEclSum",
       "weeks": {
         "2026-05-08": {
@@ -3173,7 +3177,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14392,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14392"
       },
       "pr": {
@@ -3203,7 +3207,7 @@
         "RicImportPressureDepthDataFeature::selectPressureDepthDataPathInDialog"
       ],
       "signature_id": "342276363510",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifPressureDepthTextFileReader::parse",
       "weeks": {
         "2026-06-26": {
@@ -4216,7 +4220,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14368,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14368"
       },
       "pr": {
@@ -4242,7 +4246,7 @@
         "RigEclipseToStimPlanCalculator::RigEclipseToStimPlanCalculator"
       ],
       "signature_id": "49d08ca2f441",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "caf::AppEnumMapperBase::defaultValue",
       "weeks": {
         "2026-06-26": {
@@ -5069,7 +5073,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14395,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14395"
       },
       "pr": {
@@ -5106,7 +5110,7 @@
         "RimSummaryTable::createTableData"
       ],
       "signature_id": "57c0db0ee19b",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RiaTimeHistoryCurveResampler::computeResampledTimeSteps",
       "weeks": {
         "2026-06-26": {
