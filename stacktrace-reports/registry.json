@@ -6953,7 +6953,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14398,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14398"
       },
       "pr": {
@@ -6990,7 +6990,7 @@
         "RimEclipseView::onLoadDataAndUpdate"
       ],
       "signature_id": "87e3ad865e02",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimWellAllocationPlot::onLoadDataAndUpdate",
       "weeks": {
         "2026-06-20": {
@@ -9302,7 +9302,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14398,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14398"
       },
       "pr": {
@@ -9335,7 +9335,7 @@
         "caf::PdmFieldUiCap<caf::PdmPtrField<RimCase*> >::setValueFromUiEditor"
       ],
       "signature_id": "be1e31972aa4",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimGridCrossPlotDataSet::createAutoName",
       "weeks": {
         "2026-07-10": {
