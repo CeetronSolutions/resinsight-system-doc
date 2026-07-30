@@ -8190,7 +8190,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14414,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14414"
       },
       "pr": {
@@ -8246,7 +8246,7 @@
         "RimEclipseCaseCollection::~RimEclipseCaseCollection"
       ],
       "signature_id": "a6749f9506ab",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimEclipseCase::~RimEclipseCase",
       "weeks": {
         "2026-06-05": {
