@@ -8589,7 +8589,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14409,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14409"
       },
       "pr": {
@@ -8628,7 +8628,7 @@
         "RifSummaryReaderAggregator::createReadersAndImportMetaData"
       ],
       "signature_id": "b5081518115b",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-10": {
