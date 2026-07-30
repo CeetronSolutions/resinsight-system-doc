@@ -8186,7 +8186,7 @@
       }
     },
     "a6749f9506ab": {
-      "last_updated": "2026-06-28",
+      "last_updated": "2026-07-30",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -8585,10 +8585,18 @@
       }
     },
     "b5081518115b": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-30",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14409,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14409"
+      },
+      "pr": {
+        "branch": "fix-14409-h5-export-missing-time",
+        "number": 14410,
+        "url": "https://github.com/OPM/ResInsight/pull/14410"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -8620,7 +8628,7 @@
         "RifSummaryReaderAggregator::createReadersAndImportMetaData"
       ],
       "signature_id": "b5081518115b",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-10": {
