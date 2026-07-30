@@ -8188,8 +8188,16 @@
     "a6749f9506ab": {
       "last_updated": "2026-07-30",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14414,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14414"
+      },
+      "pr": {
+        "branch": "fix-14414-crash-handler-reentrancy",
+        "number": 14415,
+        "url": "https://github.com/OPM/ResInsight/pull/14415"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -8238,7 +8246,7 @@
         "RimEclipseCaseCollection::~RimEclipseCaseCollection"
       ],
       "signature_id": "a6749f9506ab",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::~RimEclipseCase",
       "weeks": {
         "2026-06-05": {
