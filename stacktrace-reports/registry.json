@@ -8662,7 +8662,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14420,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14420"
       },
       "pr": {
@@ -8690,7 +8690,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "b54681a6057b",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::Camera::setProjectionAsPerspective",
       "weeks": {
         "2026-06-20": {
