@@ -7330,10 +7330,18 @@
       }
     },
     "95d0cb22fd70": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-31",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14434,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14434"
+      },
+      "pr": {
+        "branch": "fix-14434-valve-template-updated",
+        "number": 14435,
+        "url": "https://github.com/OPM/ResInsight/pull/14435"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -7362,7 +7370,7 @@
         "RimWellPathValve::templateUpdated"
       ],
       "signature_id": "95d0cb22fd70",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "std::_Rb_tree<caf::PdmFieldHandle*, caf::PdmFieldHandle*, std::_Identity<caf::PdmFieldHandle*>, std::less<caf::PdmFieldHandle*>, std::allocator<caf::PdmFieldHandle*> >::begin",
       "weeks": {
         "2026-07-03": {
