@@ -2396,9 +2396,13 @@
       }
     },
     "29c742313dc2": {
-      "last_updated": "2026-06-11",
-      "notes": "",
-      "opm_issue": null,
+      "last_updated": "2026-07-31",
+      "notes": "Fixed in dev by 791a58c9a7 (#13874). Out-of-range read of parameter.values[caseIdx] in RimParameterResultCrossPlot::createCaseData; caseIdx iterates allSummaryCases() while values is sized by the ensemble parameter. Bounds check added 2026-04-16. Crash build predates the fix (h:48/cpp:518 match commit 4798a879d0). All sibling parameter.values[] sites in CorrelationPlots are guarded.",
+      "opm_issue": {
+        "number": 13874,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/13874"
+      },
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -2426,7 +2430,7 @@
         "RimAbstractCorrelationPlot::fieldChangedByUi"
       ],
       "signature_id": "29c742313dc2",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimParameterResultCrossPlot::createCaseData",
       "weeks": {
         "2026-04-29": {
