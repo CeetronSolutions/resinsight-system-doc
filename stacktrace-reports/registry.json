@@ -1157,10 +1157,10 @@
     },
     "1642fce4aefc": {
       "last_updated": "2026-07-31",
-      "notes": "",
+      "notes": "Fixed by PR #14432 (merged 2026-07-31, af2c5d4). Integer division by zero: valueCount % matrixActiveCellCount in validKeywordsForPorosityModel when the matrix porosity model has no active cells. Early return added for the matrix model plus guards on the remaining matrix divisors; unit tests added.",
       "opm_issue": {
         "number": 14431,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14431"
       },
       "pr": {
@@ -1196,7 +1196,7 @@
         "RimEclipseResultCase::importGridAndResultMetaData"
       ],
       "signature_id": "1642fce4aefc",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifEclipseOutputFileTools::validKeywordsForPorosityModel",
       "weeks": {
         "2026-07-24": {
