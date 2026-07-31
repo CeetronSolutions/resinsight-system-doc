@@ -26,7 +26,7 @@ Subcommands
 -----------
     update      Fold a weekly CSV into registry.json.
     render      Regenerate reports/<date>.md (one or all weeks) + the indexes.
-    worklist    Print unlinked signatures ranked by total occurrence count.
+    worklist    Print unlinked signatures, latest-version crashes first.
 
 Usage
 -----
@@ -52,6 +52,7 @@ from analyze_crashes import (
     is_handler_frame,
     is_resinsight_frame,
     parse_csv,
+    parse_version,
 )
 
 HERE = Path(__file__).resolve().parent
@@ -258,6 +259,55 @@ def global_last_seen(entry: dict) -> str:
     return max((w["last_seen"] for w in entry["weeks"].values() if w["last_seen"]), default="")
 
 
+def entry_versions(entry: dict) -> dict[str, int]:
+    """All-weeks occurrence count per reporting APPversion for one signature."""
+    totals: dict[str, int] = {}
+    for wk in entry["weeks"].values():
+        for ver, count in (wk.get("versions") or {}).items():
+            totals[ver] = totals.get(ver, 0) + count
+    return totals
+
+
+def latest_release_version(reg: dict) -> tuple[tuple[int, ...] | None, str]:
+    """Newest *released* APPversion seen anywhere in the registry.
+
+    Pre-release builds (`-dev.NN`, `-RC_N`) are ignored when picking the line:
+    a single developer's `2026.06.2-dev.01` report must not become the yardstick
+    everything else is ranked against. Crashes *on* those newer pre-release
+    builds still count towards the line, since their base sorts at or above it.
+
+    Returns (base_tuple, version_string); (None, "") when the registry carries
+    no parseable release version (weeks folded before APPversion was exported).
+    """
+    best: tuple[int, ...] | None = None
+    best_str = ""
+    for entry in reg["signatures"].values():
+        for ver in entry_versions(entry):
+            base, has_dev = parse_version(ver)
+            if base is None or has_dev:
+                continue
+            if best is None or base > best:
+                best, best_str = base, ver
+    return best, best_str
+
+
+def count_from_version(entry: dict, min_base: tuple[int, ...] | None) -> int:
+    """Occurrences reported by builds at or newer than `min_base`.
+
+    Comparison is on the parsed base only, so `2026.06.1`, `2026.06.1-dev.02`
+    and `2026.06.2-dev.01` all count towards a `2026.06.1` line. Unparseable
+    versions are excluded - they cannot be shown to be current.
+    """
+    if min_base is None:
+        return 0
+    total = 0
+    for ver, count in entry_versions(entry).items():
+        base, _ = parse_version(ver)
+        if base is not None and base >= min_base:
+            total += count
+    return total
+
+
 def issue_is_closed(entry: dict) -> bool:
     iss = entry.get("opm_issue")
     return bool(iss and iss.get("state") == "CLOSED")
@@ -444,10 +494,28 @@ def cmd_worklist(args: argparse.Namespace) -> None:
         if e["status"] in ("no-fix-found",) and not args.all:
             continue
         rows.append(e)
-    rows.sort(key=lambda e: -total_count(e))
+
+    # Triage order is "still crashing the current release first". Ranking on the
+    # all-time total instead would put bugs whose volume comes from a superseded
+    # version - often already fixed - above ones users hit today.
+    if args.from_version:
+        min_base, min_label = parse_version(args.from_version)[0], args.from_version
+        if min_base is None:
+            raise SystemExit(f"Error: cannot parse --from-version: {args.from_version}")
+    else:
+        min_base, min_label = latest_release_version(reg)
+
+    if min_base is None:
+        print("(no APPversion data in registry - ranking by total count)")
+    else:
+        print(f"Ranked by occurrences on {min_label} or newer, then by total count.")
+    print(f"{'cur':>4}  {'all':>4}  signature     status            top frame")
+
+    rows.sort(key=lambda e: (-count_from_version(e, min_base), -total_count(e)))
     for e in rows:
         print(
-            f"{total_count(e):4d}  {e['signature_id']}  [{e['status']}]  {e['top_frame']}"
+            f"{count_from_version(e, min_base):4d}  {total_count(e):4d}  "
+            f"{e['signature_id']}  [{e['status']}]  {e['top_frame']}"
         )
     if not rows:
         print("(no unlinked signatures)")
@@ -513,8 +581,11 @@ def main() -> None:
     g.add_argument("--all", action="store_true", help="render every week")
     rd.set_defaults(func=cmd_render)
 
-    wl = sub.add_parser("worklist", help="unlinked signatures by impact")
+    wl = sub.add_parser("worklist", help="unlinked signatures, latest version first")
     wl.add_argument("--all", action="store_true", help="include no-fix-found signatures")
+    wl.add_argument("--from-version", metavar="VER",
+                    help="count VER and newer as current "
+                         "(default: newest released APPversion in the registry)")
     wl.set_defaults(func=cmd_worklist)
 
     st = sub.add_parser("set", help="record investigation outcome for a signature")
