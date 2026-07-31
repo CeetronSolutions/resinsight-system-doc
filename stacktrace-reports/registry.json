@@ -2017,10 +2017,10 @@
     },
     "20dc100c5afe": {
       "last_updated": "2026-07-31",
-      "notes": "",
+      "notes": "Fixed by PR #14430 (merged 2026-07-31): cell visibility array is ignored when its size does not match the reservoir cell count.",
       "opm_issue": {
         "number": 14429,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14429"
       },
       "pr": {
@@ -2055,7 +2055,7 @@
         "RimTypedPlotCollection<RimGridCrossPlot>::loadDataAndUpdateAllPlots"
       ],
       "signature_id": "20dc100c5afe",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RigEclipseCrossPlotDataExtractor::extract",
       "weeks": {
         "2026-04-29": {
