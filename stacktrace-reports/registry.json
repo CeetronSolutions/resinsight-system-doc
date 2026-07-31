@@ -8658,10 +8658,18 @@
       }
     },
     "b54681a6057b": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-31",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14420,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14420"
+      },
+      "pr": {
+        "branch": "fix-14420-near-far-clipping-planes",
+        "number": 14421,
+        "url": "https://github.com/OPM/ResInsight/pull/14421"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -8682,7 +8690,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "b54681a6057b",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "cvf::Camera::setProjectionAsPerspective",
       "weeks": {
         "2026-06-20": {
