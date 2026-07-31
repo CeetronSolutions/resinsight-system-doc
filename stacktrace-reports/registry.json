@@ -7331,10 +7331,10 @@
     },
     "95d0cb22fd70": {
       "last_updated": "2026-07-31",
-      "notes": "",
+      "notes": "Fixed by PR #14435 (merged 2026-07-31, 134befe). Null dereference in RimWellPathValve::templateUpdated: firstAncestorOrThisOfType<RimPerforationInterval>() returns nullptr for stand-alone valves, tie-in outlet valves and well path group valves. Guard added, unit test added.",
       "opm_issue": {
         "number": 14434,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14434"
       },
       "pr": {
@@ -7370,7 +7370,7 @@
         "RimWellPathValve::templateUpdated"
       ],
       "signature_id": "95d0cb22fd70",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "std::_Rb_tree<caf::PdmFieldHandle*, caf::PdmFieldHandle*, std::_Identity<caf::PdmFieldHandle*>, std::less<caf::PdmFieldHandle*>, std::allocator<caf::PdmFieldHandle*> >::begin",
       "weeks": {
         "2026-07-03": {
