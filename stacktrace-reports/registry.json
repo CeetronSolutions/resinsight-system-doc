@@ -429,10 +429,18 @@
       }
     },
     "058897b720ea": {
-      "last_updated": "2026-07-25",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-07-31",
+      "notes": "Fixed on dev by 189bf3e35c (#14324 / PR #14325, merged 2026-06-26): SWCR/MULTPV are now dropped when their size differs from PORV. Crash event is from 2026-06-23 on 2026.06.0, predating the fix. Not present in v2026.06.0 or v2026.06.1.",
+      "opm_issue": {
+        "number": 14324,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14324"
+      },
+      "pr": {
+        "branch": "bugfix/mobile-pore-volume-size-mismatch",
+        "number": 14325,
+        "url": "https://github.com/OPM/ResInsight/pull/14325"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -465,7 +473,7 @@
         "RigEclipseNativeVisibleCellsStatCalc::mobileVolumeWeightedMean"
       ],
       "signature_id": "058897b720ea",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigMobilePoreVolumeResultCalculator::calculate",
       "weeks": {
         "2026-06-26": {
