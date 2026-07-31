@@ -680,10 +680,18 @@
       }
     },
     "0a4d1ff3c6e9": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-07-31",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14437,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14437"
+      },
+      "pr": {
+        "branch": "fix-14437-well-target-spheres",
+        "number": 14438,
+        "url": "https://github.com/OPM/ResInsight/pull/14438"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -708,7 +716,7 @@
         "Rim3dView::addWellPathsToModel"
       ],
       "signature_id": "0a4d1ff3c6e9",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "cvf::DrawableVectors::setVectors",
       "weeks": {
         "2026-07-10": {
