@@ -8790,10 +8790,18 @@
       }
     },
     "b570b9f2f0e6": {
-      "last_updated": "2026-06-28",
+      "last_updated": "2026-07-31",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14423,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14423"
+      },
+      "pr": {
+        "branch": "fix-14423-delta-ensemble-close-cases",
+        "number": 14424,
+        "url": "https://github.com/OPM/ResInsight/pull/14424"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -8818,7 +8826,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "b570b9f2f0e6",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmObjectHandle::prepareForDelete",
       "weeks": {
         "2026-06-05": {
