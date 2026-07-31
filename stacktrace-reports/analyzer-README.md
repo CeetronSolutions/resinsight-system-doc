@@ -18,7 +18,7 @@ per-signature state.
 |---|---|
 | `update --csv FILE [--date D] [--signature-depth N] [--min-version VER]` | Fold a weekly CSV into `registry.json`. Idempotent per week. |
 | `render [--date D \| --all]` | Regenerate report(s) + `index.md` + `incoming-csvs.md` from the registry. Default: latest week. Use the default in the weekly workflow — older reports are frozen snapshots, so avoid `--all`. |
-| `worklist [--all]` | Print unlinked signatures, highest total count first. |
+| `worklist [--all] [--from-version VER]` | Print unlinked signatures, those still crashing the newest released `APPversion` first (ties broken by total count). `--from-version` overrides which version line counts as current. |
 | `set --id SID [--issue N --state S] [--pr N --branch B] [--status S] [--note "..."]` | Record an investigation outcome (used by the `crash-triage` skill). |
 
 Typical run is via `process_week.py`, which chains `update` → `link_issues.py`

@@ -13,7 +13,7 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 - [Incoming CSVs](./incoming-csvs.md) — every raw CSV received, with row counts and a link to its weekly report.
 - [Weekly reports](./index.md) — list of per-week analyses, newest first.
 - `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week (broken down by reporting `APPversion`), the linked OPM issue and its open/closed state, any fix PR, an investigation status, and notes. State persists across weeks here, not in the Markdown.
-- [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the latest report and the index pages from it (`render`), lists unlinked signatures by impact (`worklist`), and records an investigation outcome (`set`).
+- [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the latest report and the index pages from it (`render`), lists unlinked signatures latest-version-first (`worklist`), and records an investigation outcome (`set`).
 - [link_issues.py](./link_issues.py) — searches OPM/ResInsight for each unlinked signature's top frame and links the issue when it confidently matches; refreshes the open/closed state of already-linked issues.
 - [process_week.py](./process_week.py) — one-shot driver chaining update → link → render → worklist.
 - [Analyzer](./analyze_crashes.py) — the original grouping library; `registry.py` reuses its CSV parsing and frame helpers.
@@ -53,10 +53,16 @@ That performs, in order:
    re-rendered: previous weeks' pages are frozen snapshots of what was known
    at the time, so do **not** use `render --all` (it rewrites their stack
    listings and issue states with today's registry contents).
-4. **`registry.py worklist`** — prints the signatures still unlinked, ranked by
-   total occurrences. These are the candidates for investigation.
+4. **`registry.py worklist`** — prints the signatures still unlinked, **ranked by
+   how many times they crashed the newest released `APPversion` or later**
+   (`cur` column), with all-time occurrences (`all`) only as the tie-breaker.
+   Ranking on the all-time total alone would promote bugs whose volume comes
+   from a superseded version — often already fixed — above the ones users hit
+   today. Pre-release builds (`-dev.NN`, `-RC_N`) never define the current line,
+   but crashes reported *by* a build newer than it do count; `--from-version`
+   pins the line manually. These are the candidates for investigation.
 
-Then **investigate the top unlinked signatures** with the `crash-triage` skill
+Then **investigate the unlinked signatures top-down** with the `crash-triage` skill
 in the ResInsight repo: it locates the crash site in source, proposes and
 build-verifies a fix, and — after a human gate — files the OPM issue, pushes a
 fix branch to the `magnesj` fork, opens the PR, and writes the issue/PR back

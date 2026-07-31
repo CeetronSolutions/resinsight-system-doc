@@ -7,7 +7,8 @@ dropped into `csv/`, it:
   2. links/refreshes OPM issues for every signature (link_issues.py)
   3. regenerates the week's report + index pages    (registry.py render)
   4. prints the investigation worklist - unlinked   (registry.py worklist)
-     signatures ranked by total occurrence count
+     signatures, those still crashing the newest
+     released version first
 
 After it finishes, hand the worklist to the `crash-triage` workflow in the
 ResInsight repo to investigate the top unlinked signatures (step 3 of the
@@ -59,13 +60,14 @@ def main() -> None:
         render_args += ["--date", args.date]
     run("registry.py", *render_args)
 
-    print("\n=== Investigation worklist (unlinked signatures by impact) ===")
+    print("\n=== Investigation worklist (unlinked signatures, latest version first) ===")
     run("registry.py", "worklist")
 
     print(
-        "\nNext: investigate the top unlinked signatures with the `crash-triage` "
-        "workflow in the ResInsight repo, then commit the CSV, registry.json, the "
-        "regenerated report and the two index pages together."
+        "\nNext: investigate the worklist top-down with the `crash-triage` workflow "
+        "in the ResInsight repo - the `cur` column is what the current release is "
+        "still crashing on, so take those first. Then commit the CSV, registry.json, "
+        "the regenerated report and the two index pages together."
     )
 
 
