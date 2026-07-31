@@ -2016,10 +2016,18 @@
       }
     },
     "20dc100c5afe": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-07-31",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14429,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14429"
+      },
+      "pr": {
+        "branch": "fix-14429-cross-plot-cell-visibility",
+        "number": 14430,
+        "url": "https://github.com/OPM/ResInsight/pull/14430"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -2047,7 +2055,7 @@
         "RimTypedPlotCollection<RimGridCrossPlot>::loadDataAndUpdateAllPlots"
       ],
       "signature_id": "20dc100c5afe",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigEclipseCrossPlotDataExtractor::extract",
       "weeks": {
         "2026-04-29": {
