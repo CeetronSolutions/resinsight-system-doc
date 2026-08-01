@@ -169,8 +169,54 @@
         }
       }
     },
+    "024f64fb61b2": {
+      "last_updated": "2026-08-01",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[5] RiuGuiTheme::applyStyleSheet(RiaDefines::ThemeEnum) at ResInsight/ApplicationLibCode/UserInterface/RiuGuiTheme.cpp:387",
+        "[6] RiuGuiTheme::updateGuiTheme(RiaDefines::ThemeEnum) at ResInsight/ApplicationLibCode/UserInterface/RiuGuiTheme.cpp:355",
+        "[7] caf::PdmUiFieldHandle::notifyFieldChanged(QVariant const&, QVariant const&) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiFieldHandle.cpp:75",
+        "[8] caf::PdmFieldUiCap<caf::PdmField<caf::AppEnum<RiaDefines::ThemeEnum> > >::setValueFromUiEditor(QVariant const&, bool) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafInternalPdmUiFieldCapability.inl:116",
+        "[9] caf::CmdFieldChangeExec::redo() at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFieldChangeExec.cpp:139",
+        "[11] caf::CmdUiCommandSystemImpl::fieldChangedCommand(std::vector<caf::PdmFieldHandle*, std::allocator<caf::PdmFieldHandle*> > const&, QVariant const&) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdUiCommandSystemImpl.cpp:146",
+        "[12] caf::PdmUiCommandSystemProxy::setUiValueToField(caf::PdmUiFieldHandle*, QVariant const&) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiCommandSystemProxy.cpp:113",
+        "[13] caf::PdmUiComboBoxEditor::slotIndexActivated(int) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiComboBoxEditor.cpp:455",
+        "[24] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[30] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[41] RicEditPreferencesFeature::onActionTriggered(bool) at ResInsight/ApplicationLibCode/Commands/ApplicationCommands/RicEditPreferencesFeature.cpp:71",
+        "[42] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
+        "[51] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[57] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[68] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[69] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "RiuGuiTheme::applyStyleSheet",
+        "RiuGuiTheme::updateGuiTheme",
+        "caf::PdmUiFieldHandle::notifyFieldChanged",
+        "caf::PdmFieldUiCap<caf::PdmField<caf::AppEnum<RiaDefines::ThemeEnum> > >::setValueFromUiEditor",
+        "caf::CmdFieldChangeExec::redo"
+      ],
+      "signature_id": "024f64fb61b2",
+      "status": "new",
+      "top_frame": "RiuGuiTheme::applyStyleSheet",
+      "weeks": {
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-29T14:13:20.335Z",
+          "last_seen": "2026-07-29T14:13:20.335Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        }
+      }
+    },
     "03196eb40521": {
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-08-01",
       "notes": "Opm::FileDeck::dump performs fs::create_directories/fs::canonical/touch_file which throw fs::filesystem_error on unwritable or invalid export paths; uncaught -> terminate. Patch: try/catch in RifOpmFlowDeckFile::saveDeck/saveDeckInline returning false; caller already reports failure gracefully. Build-verified.",
       "opm_issue": {
         "number": 14385,
@@ -220,6 +266,14 @@
           }
         },
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-09T10:14:52.739Z",
+          "last_seen": "2026-07-09T10:14:53.047Z",
+          "versions": {
+            "2026.06.1": 2
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-09T10:14:52.739Z",
           "last_seen": "2026-07-09T10:14:53.047Z",
@@ -391,7 +445,7 @@
       }
     },
     "04591db2be9e": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -419,6 +473,14 @@
       "top_frame": "std::vector<caf::PdmFieldHandle*, std::allocator<caf::PdmFieldHandle*> >::size",
       "weeks": {
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-23T07:37:28.258Z",
+          "last_seen": "2026-07-23T07:37:28.258Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-23T07:37:28.258Z",
           "last_seen": "2026-07-23T07:37:28.258Z",
@@ -680,7 +742,7 @@
       }
     },
     "0a4d1ff3c6e9": {
-      "last_updated": "2026-07-31",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14437,
@@ -728,6 +790,14 @@
           }
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-07T08:18:40.066Z",
+          "last_seen": "2026-07-07T08:18:40.066Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-07T08:18:40.066Z",
           "last_seen": "2026-07-07T08:18:40.066Z",
@@ -1038,7 +1108,7 @@
       }
     },
     "0f6ddddd87ad": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -1072,6 +1142,14 @@
       "top_frame": "caf::PdmUiEditorHandle::updateUi",
       "weeks": {
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-14T10:25:27.899Z",
+          "last_seen": "2026-07-14T10:25:27.899Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-14T10:25:27.899Z",
           "last_seen": "2026-07-14T10:25:27.899Z",
@@ -1164,7 +1242,7 @@
       }
     },
     "1642fce4aefc": {
-      "last_updated": "2026-07-31",
+      "last_updated": "2026-08-01",
       "notes": "Fixed by PR #14432 (merged 2026-07-31, af2c5d4). Integer division by zero: valueCount % matrixActiveCellCount in validKeywordsForPorosityModel when the matrix porosity model has no active cells. Early return added for the matrix model plus guards on the remaining matrix divisors; unit tests added.",
       "opm_issue": {
         "number": 14431,
@@ -1214,11 +1292,19 @@
           "versions": {
             "2026.06.1": 2
           }
+        },
+        "2026-07-31": {
+          "count": 2,
+          "first_seen": "2026-07-16T11:46:38.951Z",
+          "last_seen": "2026-07-16T11:46:57.431Z",
+          "versions": {
+            "2026.06.1": 2
+          }
         }
       }
     },
     "167ae9f4735f": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14287,
@@ -1307,11 +1393,19 @@
           "versions": {
             "2026.06.1": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-06T19:25:23.227Z",
+          "last_seen": "2026-07-06T19:25:23.227Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "17047ab66779": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14118,
@@ -1320,27 +1414,22 @@
       },
       "pr": null,
       "representative_stack": [
-        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
-        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
-        "[3] ecl_grid_alloc_EGRID__ at ResInsight/ThirdParty/Ert/lib/ecl/ecl_grid.cpp:3085",
-        "[4] ecl_grid_alloc_EGRID_all_grids at ResInsight/ThirdParty/Ert/lib/ecl/ecl_grid.cpp:3106",
-        "[5] RifReaderEclipseOutput::loadAllGrids() const at ResInsight/ApplicationLibCode/FileInterface/RifReaderEclipseOutput.cpp:1161",
-        "[6] RifReaderEclipseOutput::open(QString const&, RigEclipseCaseData*) at ResInsight/ApplicationLibCode/FileInterface/RifReaderEclipseOutput.cpp:389",
-        "[7] RimEclipseResultCase::importGridAndResultMetaData(bool) at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseResultCase.cpp:261",
-        "[8] RimEclipseCase::openReservoirCase() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseCase.cpp:1060",
-        "[9] RimEclipseView::onLoadDataAndUpdate() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseView.cpp:1188",
-        "[10] RimViewWindow::loadDataAndUpdate() at ResInsight/ApplicationLibCode/ProjectDataModel/RimViewWindow.cpp:88",
-        "[11] RimEclipseViewCollection::addView(RimEclipseCase*) at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseViewCollection.cpp:112",
-        "[12] RicNewViewFeature::createReservoirView(RimEclipseCase*, RimGeoMechCase*, RimEclipseViewCollection*) at ResInsight/ApplicationLibCode/Commands/RicNewViewFeature.cpp:134",
-        "[13] RicNewViewFeature::addReservoirView(RimEclipseCase*, RimGeoMechCase*, RimEclipseViewCollection*) at ResInsight/ApplicationLibCode/Commands/RicNewViewFeature.cpp:47",
-        "[14] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
-        "[23] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
-        "[29] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
-        "[41] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2056",
-        "[49] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
-        "[54] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
-        "[65] main at ResInsight/ApplicationExeCode/RiaMain.cpp:226",
-        "[66] __libc_start_main at :0"
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[3] ecl_grid_alloc_EGRID_all_grids at ResInsight/ThirdParty/Ert/lib/ecl/ecl_grid.cpp:3200",
+        "[4] RifReaderEclipseOutput::loadAllGrids() const at ResInsight/ApplicationLibCode/FileInterface/RifReaderEclipseOutput.cpp:1165",
+        "[5] RifReaderEclipseOutput::open(QString const&, RigEclipseCaseData*) at ResInsight/ApplicationLibCode/FileInterface/RifReaderEclipseOutput.cpp:393",
+        "[6] RimEclipseResultCase::importGridAndResultMetaData(bool) at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseResultCase.cpp:259",
+        "[7] RimEclipseCase::openReservoirCase() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseCase.cpp:1125",
+        "[8] RimEclipseView::onLoadDataAndUpdate() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseView.cpp:1248",
+        "[9] RimViewWindow::loadDataAndUpdate() at ResInsight/ApplicationLibCode/ProjectDataModel/RimViewWindow.cpp:90",
+        "[10] RiaApplication::loadProject(QString const&, RiaApplication::ProjectLoadAction, RiaProjectModifier*) at ResInsight/ApplicationLibCode/Application/RiaApplication.cpp:803",
+        "[11] RiaApplication::openFile(QString const&) at ResInsight/ApplicationLibCode/Application/RiaApplication.cpp:420",
+        "[12] RiuRecentFileActionProvider::slotOpenRecentFile() at ResInsight/ApplicationLibCode/UserInterface/RiuRecentFileActionProvider.cpp:149",
+        "[21] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[27] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[38] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[39] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RifReaderEclipseOutput::loadAllGrids",
@@ -1406,6 +1495,14 @@
           "last_seen": "2026-06-15T15:40:28.364Z",
           "versions": {
             "2026.02.2": 1
+          }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-27T08:28:47.855Z",
+          "last_seen": "2026-07-27T08:28:47.855Z",
+          "versions": {
+            "2026.06.1": 1
           }
         }
       }
@@ -1561,7 +1658,7 @@
       }
     },
     "1a992e729555": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14118,
@@ -1665,6 +1762,14 @@
           }
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-22T12:01:18.416Z",
+          "last_seen": "2026-07-22T12:01:18.416Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-22T12:01:18.416Z",
           "last_seen": "2026-07-22T12:01:18.416Z",
@@ -1966,6 +2071,57 @@
         }
       }
     },
+    "1dd841454363": {
+      "last_updated": "2026-08-01",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[5] cvf::AssertHandlerConsole::handleAssert(char const*, int, char const*, char const*) at ResInsight/Fwk/VizFwk/LibCore/cvfAssert.cpp:125",
+        "[6] RivReservoirViewPartMgr::computeNativeVisibility(cvf::Array<unsigned char>*, RigGridBase const*, RigActiveCellInfo const*, cvf::Array<unsigned char> const*, bool, bool, bool) at ResInsight/ApplicationLibCode/ModelVisualization/RivReservoirViewPartMgr.cpp:604",
+        "[7] RivReservoirViewPartMgr::computeVisibility(cvf::Array<unsigned char>*, RivCellSetEnum, RigGridBase*, unsigned long) at ResInsight/ApplicationLibCode/ModelVisualization/RivReservoirViewPartMgr.cpp:338",
+        "[8] RivReservoirViewPartMgr::createGeometry(RivCellSetEnum) at ResInsight/ApplicationLibCode/ModelVisualization/RivReservoirViewPartMgr.cpp:278",
+        "[9] RimEclipseView::onCreateDisplayModel() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseView.cpp:743",
+        "[10] Rim3dView::createDisplayModelAndRedraw() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:770",
+        "[11] RiaViewRedrawScheduler::updateAndRedrawScheduledViews() at ResInsight/ApplicationLibCode/Application/RiaViewRedrawScheduler.cpp:93",
+        "[16] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1872",
+        "[25] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:422",
+        "[26] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:203",
+        "[27] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[31] cvf::AssertHandlerConsole::handleAssert(char const*, int, char const*, char const*) at ResInsight/Fwk/VizFwk/LibCore/cvfAssert.cpp:125",
+        "[32] RivReservoirViewPartMgr::computeNativeVisibility(cvf::Array<unsigned char>*, RigGridBase const*, RigActiveCellInfo const*, cvf::Array<unsigned char> const*, bool, bool, bool) at ResInsight/ApplicationLibCode/ModelVisualization/RivReservoirViewPartMgr.cpp:604",
+        "[33] RivReservoirViewPartMgr::computeVisibility(cvf::Array<unsigned char>*, RivCellSetEnum, RigGridBase*, unsigned long) at ResInsight/ApplicationLibCode/ModelVisualization/RivReservoirViewPartMgr.cpp:338",
+        "[34] RivReservoirViewPartMgr::createGeometry(RivCellSetEnum) at ResInsight/ApplicationLibCode/ModelVisualization/RivReservoirViewPartMgr.cpp:278",
+        "[35] RimEclipseView::onCreateDisplayModel() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseView.cpp:743",
+        "[36] Rim3dView::createDisplayModelAndRedraw() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:770",
+        "[37] RiaViewRedrawScheduler::updateAndRedrawScheduledViews() at ResInsight/ApplicationLibCode/Application/RiaViewRedrawScheduler.cpp:93",
+        "[42] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1872",
+        "[52] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[53] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "RivReservoirViewPartMgr::computeNativeVisibility",
+        "RivReservoirViewPartMgr::computeVisibility",
+        "RivReservoirViewPartMgr::createGeometry",
+        "RimEclipseView::onCreateDisplayModel",
+        "Rim3dView::createDisplayModelAndRedraw"
+      ],
+      "signature_id": "1dd841454363",
+      "status": "new",
+      "top_frame": "RivReservoirViewPartMgr::computeNativeVisibility",
+      "weeks": {
+        "2026-07-31": {
+          "count": 2,
+          "first_seen": "2026-07-30T14:11:14.48Z",
+          "last_seen": "2026-07-30T14:11:14.576Z",
+          "versions": {
+            "2026.06.2-dev.01": 2
+          }
+        }
+      }
+    },
     "1ed408783b46": {
       "last_updated": "2026-06-28",
       "notes": "",
@@ -2149,7 +2305,7 @@
       }
     },
     "22ad7ead4114": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 13927,
@@ -2208,6 +2364,14 @@
           "last_seen": "2026-07-22T20:25:23.768Z",
           "versions": {
             "2026.06.1": 6
+          }
+        },
+        "2026-07-31": {
+          "count": 5,
+          "first_seen": "2026-07-14T10:47:00.123Z",
+          "last_seen": "2026-07-22T20:25:23.768Z",
+          "versions": {
+            "2026.06.1": 5
           }
         }
       }
@@ -2375,7 +2539,7 @@
       }
     },
     "287c62e9cb25": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -2402,6 +2566,14 @@
       "top_frame": "RicCreateRftPlotsFeature::onActionTriggered",
       "weeks": {
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-17T11:48:46.194Z",
+          "last_seen": "2026-07-17T12:05:32.299Z",
+          "versions": {
+            "2026.06.1": 2
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-17T11:48:46.194Z",
           "last_seen": "2026-07-17T12:05:32.299Z",
@@ -2996,7 +3168,7 @@
       }
     },
     "30e91cbb0d6b": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 13875,
@@ -3014,13 +3186,12 @@
         "[9] RimGeoMechResultDefinition::hasResult() at ResInsight/ApplicationLibCode/ProjectDataModel/GeoMech/RimGeoMechResultDefinition.cpp:722",
         "[10] RimGeoMechView::isTimeStepDependentDataVisible() const at ResInsight/ApplicationLibCode/ProjectDataModel/GeoMech/RimGeoMechView.cpp:841",
         "[11] Rim3dView::isTimeStepDependentDataVisibleInThisOrComparisonView() const at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:603",
-        "[12] RiuMainWindow::refreshAnimationActions() at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1044",
-        "[13] RiuMainWindow::selectedObjectsChanged() at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1580",
-        "[15] caf::PdmUiTreeView::slotOnSelectionChanged() at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiTreeView.cpp:154",
-        "[29] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
-        "[35] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
-        "[46] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[47] __libc_start_main at :0"
+        "[12] RimGeoMechView::onCreateDisplayModel() at ResInsight/ApplicationLibCode/ProjectDataModel/GeoMech/RimGeoMechView.cpp:278",
+        "[13] Rim3dView::createDisplayModelAndRedraw() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:718",
+        "[14] RiaViewRedrawScheduler::updateAndRedrawScheduledViews() at ResInsight/ApplicationLibCode/Application/RiaViewRedrawScheduler.cpp:93",
+        "[19] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[29] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[30] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RifElementPropertyReader::readAllElementPropertiesInFileContainingField",
@@ -3059,6 +3230,14 @@
           "last_seen": "2026-07-13T10:25:42.544Z",
           "versions": {
             "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
+          "count": 2,
+          "first_seen": "2026-07-13T10:25:42.544Z",
+          "last_seen": "2026-07-31T21:35:25.011Z",
+          "versions": {
+            "2026.06.1": 2
           }
         }
       }
@@ -3629,7 +3808,7 @@
       }
     },
     "3b148a631e23": {
-      "last_updated": "2026-07-29",
+      "last_updated": "2026-08-01",
       "notes": "Null Rim2dIntersectionView dereference in RicNewIntersectionViewFeature::onActionTriggered (RicNewIntersectionViewFeature.cpp:76 in v2026.06.1): correspondingIntersectionView() can return nullptr and setVisible(true) then crashes in PdmField<bool>::operator=. Fixed by PR 14380 (issue 14379), merged to dev 2026-07-28; pending release.",
       "opm_issue": {
         "number": 14379,
@@ -3682,6 +3861,14 @@
           }
         },
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-01T22:52:17.428Z",
+          "last_seen": "2026-07-23T09:09:54.034Z",
+          "versions": {
+            "2026.06.1": 2
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-01T22:52:17.428Z",
           "last_seen": "2026-07-23T09:09:54.034Z",
@@ -3768,7 +3955,7 @@
       }
     },
     "3c71291b162c": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -3829,6 +4016,14 @@
           }
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-03T07:05:10.187Z",
+          "last_seen": "2026-07-03T07:05:10.187Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-03T07:05:10.187Z",
           "last_seen": "2026-07-03T07:05:10.187Z",
@@ -3909,7 +4104,7 @@
       }
     },
     "402d54b717bf": {
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14372,
@@ -3995,6 +4190,62 @@
           "versions": {
             "2026.02.2": 1,
             "2026.06.0": 2
+          }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-03T06:08:32.032Z",
+          "last_seen": "2026-07-03T06:08:32.032Z",
+          "versions": {
+            "2026.06.0": 1
+          }
+        }
+      }
+    },
+    "4079489d1e3c": {
+      "last_updated": "2026-08-01",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[5] manageTerminate() at ResInsight/ApplicationExeCode/RiaMainTools.cpp:241",
+        "[11] Opm::EclIO::ESmry::dates() const at ResInsight/ThirdParty/custom-opm-common/opm-common/opm/io/eclipse/ESmry.cpp:1457",
+        "[12] RifHdf5SummaryExporter::writeGeneralSection(RifHdf5Exporter&, Opm::EclIO::ESmry&) at ResInsight/ApplicationLibCode/FileInterface/RifHdf5SummaryExporter.cpp:161",
+        "[13] RifHdf5SummaryExporter::ensureHdf5FileIsCreated(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, unsigned long&) at ResInsight/ApplicationLibCode/FileInterface/RifHdf5SummaryExporter.cpp:139",
+        "[14] RifReaderEclipseSummary::open(QString const&, RiaThreadSafeLogger*) at ResInsight/ApplicationLibCode/FileInterface/RifReaderEclipseSummary.cpp:129",
+        "[15] RimFileSummaryCase::findRelatedFilesAndCreateReader(QString const&, bool, RifEnsembleImportConfig, RiaThreadSafeLogger*) at ResInsight/ApplicationLibCode/ProjectDataModel/Summary/RimFileSummaryCase.cpp:238",
+        "[16] RimFileSummaryCase::createSummaryReaderInterfaceThreadSafe(RifEnsembleImportConfig, RiaThreadSafeLogger*) at ResInsight/ApplicationLibCode/ProjectDataModel/Summary/RimFileSummaryCase.cpp:110",
+        "[17] RimFileSummaryCase::createSummaryReaderInterface() at ResInsight/ApplicationLibCode/ProjectDataModel/Summary/RimFileSummaryCase.cpp:129",
+        "[18] RiaSummaryTools::reloadSummaryCaseAndUpdateConnectedPlots(RimSummaryCase*) at ResInsight/ApplicationLibCode/Application/Tools/Summary/RiaSummaryTools.cpp:409",
+        "[19] RicReloadSummaryCaseFeature::reloadSelectedCasesAndUpdate() at ResInsight/ApplicationLibCode/Commands/RicReloadSummaryCaseFeature.cpp:149",
+        "[20] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
+        "[29] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[35] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[47] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2092",
+        "[55] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[60] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[71] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[72] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "manageTerminate",
+        "RifHdf5SummaryExporter::writeGeneralSection",
+        "RifHdf5SummaryExporter::ensureHdf5FileIsCreated",
+        "RifReaderEclipseSummary::open",
+        "RimFileSummaryCase::findRelatedFilesAndCreateReader"
+      ],
+      "signature_id": "4079489d1e3c",
+      "status": "new",
+      "top_frame": "manageTerminate",
+      "weeks": {
+        "2026-07-31": {
+          "count": 2,
+          "first_seen": "2026-07-31T13:26:42.788Z",
+          "last_seen": "2026-07-31T13:26:43.815Z",
+          "versions": {
+            "2026.06.1": 2
           }
         }
       }
@@ -4184,7 +4435,7 @@
       }
     },
     "482d5570b385": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 13927,
@@ -4248,11 +4499,19 @@
           "versions": {
             "2026.06.1": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-02T14:48:43.113Z",
+          "last_seen": "2026-07-02T14:48:43.113Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "49d08ca2f441": {
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14368,
@@ -4317,6 +4576,58 @@
           "versions": {
             "2026.06.0": 7,
             "2026.06.2-dev.01": 1
+          }
+        },
+        "2026-07-31": {
+          "count": 6,
+          "first_seen": "2026-07-09T05:40:07.201Z",
+          "last_seen": "2026-07-10T13:40:49.913Z",
+          "versions": {
+            "2026.06.0": 5,
+            "2026.06.2-dev.01": 1
+          }
+        }
+      }
+    },
+    "49fcd1424922": {
+      "last_updated": "2026-08-01",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[5] manageTerminate() at ResInsight/ApplicationExeCode/RiaMainTools.cpp:241",
+        "[10] std::vector<cvf::Vector3<double>, std::allocator<cvf::Vector3<double> > >::_M_range_check(unsigned long) const at /opt/rh/gcc-toolset-13/root/usr/include/c++/13/bits/stl_vector.h:1158",
+        "[11] RigWellPath::interpolatedPointAlongWellPath(double, double*) const at ResInsight/ApplicationLibCode/ReservoirDataModel/Well/RigWellPath.cpp:260",
+        "[12] RimWellPathFracture::updatePositionFromMeasuredDepth() at ResInsight/ApplicationLibCode/ProjectDataModel/Completions/RimWellPathFracture.cpp:248",
+        "[13] RicNewWellPathFractureFeature::addFracture(gsl::not_null<RimWellPath*>, double) at ResInsight/ApplicationLibCode/Commands/FractureCommands/RicNewWellPathFractureFeature.cpp:79",
+        "[14] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
+        "[23] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[29] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[41] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2092",
+        "[49] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[54] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[65] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[66] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "manageTerminate",
+        "std::vector<cvf::Vector3<double>, std::allocator<cvf::Vector3<double> > >::_M_range_check",
+        "RigWellPath::interpolatedPointAlongWellPath",
+        "RimWellPathFracture::updatePositionFromMeasuredDepth",
+        "RicNewWellPathFractureFeature::addFracture"
+      ],
+      "signature_id": "49fcd1424922",
+      "status": "new",
+      "top_frame": "manageTerminate",
+      "weeks": {
+        "2026-07-31": {
+          "count": 4,
+          "first_seen": "2026-07-31T13:59:50.994Z",
+          "last_seen": "2026-07-31T14:01:23.432Z",
+          "versions": {
+            "2026.06.1": 4
           }
         }
       }
@@ -4416,7 +4727,7 @@
       }
     },
     "4b98ba7f3609": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14270,
@@ -4431,10 +4742,10 @@
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
-        "[13] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
-        "[19] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
-        "[30] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[31] __libc_start_main at :0"
+        "[6] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[12] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[23] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[24] __libc_start_main at :0"
       ],
       "signature_frames": [],
       "signature_id": "4b98ba7f3609",
@@ -4535,6 +4846,16 @@
           "versions": {
             "2026.06.0": 13,
             "2026.06.1": 11
+          }
+        },
+        "2026-07-31": {
+          "count": 20,
+          "first_seen": "2026-07-08T12:22:30.766Z",
+          "last_seen": "2026-07-31T10:58:16.98Z",
+          "versions": {
+            "2026.02.2": 1,
+            "2026.06.0": 1,
+            "2026.06.1": 18
           }
         }
       }
@@ -5055,7 +5376,7 @@
       }
     },
     "55dd071baf3f": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -5095,6 +5416,14 @@
       "top_frame": "RigEclipseCaseData::formationNames",
       "weeks": {
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-20T13:30:56.022Z",
+          "last_seen": "2026-07-21T12:02:24.817Z",
+          "versions": {
+            "2026.06.1": 2
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-20T13:30:56.022Z",
           "last_seen": "2026-07-21T12:02:24.817Z",
@@ -5184,7 +5513,7 @@
       }
     },
     "5a43e5622190": {
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14374,
@@ -5238,6 +5567,14 @@
           }
         },
         "2026-07-24": {
+          "count": 6,
+          "first_seen": "2026-07-07T15:30:02.351Z",
+          "last_seen": "2026-07-14T16:55:13.245Z",
+          "versions": {
+            "2026.06.1": 6
+          }
+        },
+        "2026-07-31": {
           "count": 6,
           "first_seen": "2026-07-07T15:30:02.351Z",
           "last_seen": "2026-07-14T16:55:13.245Z",
@@ -5399,7 +5736,7 @@
       }
     },
     "5c2d85ca0acd": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -5440,6 +5777,14 @@
           }
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-08T08:00:26.195Z",
+          "last_seen": "2026-07-08T08:00:26.195Z",
+          "versions": {
+            "2026.06.0": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-08T08:00:26.195Z",
           "last_seen": "2026-07-08T08:00:26.195Z",
@@ -5855,7 +6200,7 @@
       }
     },
     "69f8ebe0f20e": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14179,
@@ -5902,6 +6247,14 @@
           "last_seen": "2026-04-30T11:01:21.351Z"
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-13T21:27:25.661Z",
+          "last_seen": "2026-07-13T21:27:25.661Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-13T21:27:25.661Z",
           "last_seen": "2026-07-13T21:27:25.661Z",
@@ -6648,7 +7001,7 @@
       }
     },
     "75ddc6afee6f": {
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-08-01",
       "notes": "Truncated/corrupt SMSPEC: keyword present in file index but data read fails; since #14149 lazy loader returns NULL and ecl_smspec_fread_header dereferences it at ecl_smspec.cpp:1120 (INTEHEAD). Fix adds NULL guards for all header keywords with graceful false return.",
       "opm_issue": {
         "number": 14381,
@@ -6719,6 +7072,15 @@
           }
         },
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-02T22:27:52.237Z",
+          "last_seen": "2026-07-15T13:08:09.796Z",
+          "versions": {
+            "2026.06.0": 1,
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-02T22:27:52.237Z",
           "last_seen": "2026-07-15T13:08:09.796Z",
@@ -7164,7 +7526,7 @@
       }
     },
     "8f9e6bc3f40f": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -7227,11 +7589,19 @@
             "2026.06.0": 1,
             "2026.06.1": 2
           }
+        },
+        "2026-07-31": {
+          "count": 2,
+          "first_seen": "2026-07-06T11:10:21.884Z",
+          "last_seen": "2026-07-17T12:58:57.171Z",
+          "versions": {
+            "2026.06.1": 2
+          }
         }
       }
     },
     "922f510a0bb7": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 13930,
@@ -7334,11 +7704,19 @@
           "versions": {
             "2026.06.1": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-03T11:46:32.785Z",
+          "last_seen": "2026-07-03T11:46:32.785Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "95d0cb22fd70": {
-      "last_updated": "2026-07-31",
+      "last_updated": "2026-08-01",
       "notes": "Fixed by PR #14435 (merged 2026-07-31, 134befe). Null dereference in RimWellPathValve::templateUpdated: firstAncestorOrThisOfType<RimPerforationInterval>() returns nullptr for stand-alone valves, tie-in outlet valves and well path group valves. Guard added, unit test added.",
       "opm_issue": {
         "number": 14434,
@@ -7404,11 +7782,19 @@
           "versions": {
             "2026.06.1": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-03T08:31:35.607Z",
+          "last_seen": "2026-07-03T08:31:35.607Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "963953dcf22e": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 13927,
@@ -7494,6 +7880,14 @@
           "versions": {
             "2026.06.1": 6,
             "2026.06.1-dev.02": 1
+          }
+        },
+        "2026-07-31": {
+          "count": 5,
+          "first_seen": "2026-07-03T15:42:47.88Z",
+          "last_seen": "2026-07-16T08:41:39.886Z",
+          "versions": {
+            "2026.06.1": 5
           }
         }
       }
@@ -8021,7 +8415,7 @@
       }
     },
     "9f3186ce4814": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14011,
@@ -8066,6 +8460,14 @@
           }
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-09T07:36:08.242Z",
+          "last_seen": "2026-07-09T07:36:08.242Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-09T07:36:08.242Z",
           "last_seen": "2026-07-09T07:36:08.242Z",
@@ -8325,7 +8727,7 @@
       }
     },
     "a80becaafb12": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -8356,6 +8758,14 @@
       "top_frame": "caf::PdmUiEditorHandle::updateUi",
       "weeks": {
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-14T10:54:15.25Z",
+          "last_seen": "2026-07-14T10:54:15.25Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-14T10:54:15.25Z",
           "last_seen": "2026-07-14T10:54:15.25Z",
@@ -8425,7 +8835,7 @@
       }
     },
     "abb388e6c1a3": {
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-08-01",
       "notes": "Exception from ODB API escaping RifOdbReader destructor during project close -> std::terminate. Fixed by PR 14377 (try/catch around close() and odb_finalizeAPI() in destructor), merged to dev as f409fd8a4d.",
       "opm_issue": {
         "number": 14376,
@@ -8491,6 +8901,14 @@
           }
         },
         "2026-07-24": {
+          "count": 4,
+          "first_seen": "2026-07-03T13:32:17.333Z",
+          "last_seen": "2026-07-23T11:16:58.616Z",
+          "versions": {
+            "2026.06.1": 4
+          }
+        },
+        "2026-07-31": {
           "count": 4,
           "first_seen": "2026-07-03T13:32:17.333Z",
           "last_seen": "2026-07-23T11:16:58.616Z",
@@ -8637,7 +9055,7 @@
       }
     },
     "b5081518115b": {
-      "last_updated": "2026-07-30",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14409,
@@ -8692,6 +9110,14 @@
           }
         },
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-09T07:17:49.57Z",
+          "last_seen": "2026-07-09T07:17:49.888Z",
+          "versions": {
+            "2026.06.1": 2
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-09T07:17:49.57Z",
           "last_seen": "2026-07-09T07:17:49.888Z",
@@ -9378,7 +9804,7 @@
       }
     },
     "be1e31972aa4": {
-      "last_updated": "2026-07-29",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14398,
@@ -9427,6 +9853,14 @@
           }
         },
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-09T12:54:27.734Z",
+          "last_seen": "2026-07-09T12:54:27.734Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-09T12:54:27.734Z",
           "last_seen": "2026-07-09T12:54:27.734Z",
@@ -9517,7 +9951,7 @@
       }
     },
     "c04ed08279f0": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -9573,11 +10007,19 @@
           "versions": {
             "2026.06.1": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-03T12:04:47.188Z",
+          "last_seen": "2026-07-03T12:04:47.188Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "c0abe39c3ff2": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -9627,11 +10069,19 @@
           "versions": {
             "2026.06.1": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-07T10:11:07.55Z",
+          "last_seen": "2026-07-07T10:11:07.55Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "c0fae31c2301": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 13875,
@@ -9640,20 +10090,20 @@
       },
       "pr": null,
       "representative_stack": [
-        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
-        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
         "[5] cvf::AssertHandlerConsole::handleAssert(char const*, int, char const*, char const*) at ResInsight/Fwk/VizFwk/LibCore/cvfAssert.cpp:125",
-        "[6] RifElementPropertyReader::readAllElementPropertiesInFileContainingField(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) at ResInsight/ApplicationLibCode/FileInterface/RifElementPropertyReader.cpp:103",
+        "[6] RifElementPropertyReader::readAllElementPropertiesInFileContainingField(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) at ResInsight/ApplicationLibCode/FileInterface/RifElementPropertyReader.cpp:120",
         "[7] RigFemPartResultsCollection::findOrLoadScalarResult(int, RigFemResultAddress const&) at ResInsight/ApplicationLibCode/GeoMech/GeoMechDataModel/RigFemPartResultsCollection.cpp:451",
         "[8] RigFemPartResultsCollection::assertResultsLoaded(RigFemResultAddress const&) at ResInsight/ApplicationLibCode/GeoMech/GeoMechDataModel/RigFemPartResultsCollection.cpp:1014",
         "[9] RimGeoMechResultDefinition::hasResult() at ResInsight/ApplicationLibCode/ProjectDataModel/GeoMech/RimGeoMechResultDefinition.cpp:722",
         "[10] RiuSelectionChangedHandler::addResultCurveFromSelectionItem(RiuGeoMechSelectionItem const*) const at ResInsight/ApplicationLibCode/UserInterface/RiuSelectionChangedHandler.cpp:208",
         "[11] RiuSelectionChangedHandler::handleItemAppended(RiuSelectionItem const*) const at ResInsight/ApplicationLibCode/UserInterface/RiuSelectionChangedHandler.cpp:119",
         "[12] RiuCellAndNncPickEventHandler::handle3dPickEvent(Ric3dPickEvent const&) at ResInsight/ApplicationLibCode/UserInterface/RiuCellAndNncPickEventHandler.cpp:459",
-        "[13] RiuViewerCommands::handlePickAction(int, int, QFlags<Qt::KeyboardModifier>) at ResInsight/ApplicationLibCode/UserInterface/RiuViewerCommands.cpp:702",
-        "[17] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
-        "[23] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
-        "[34] main at ResInsight/ApplicationExeCode/RiaMain.cpp:226",
+        "[13] RiuViewerCommands::handlePickAction(int, int, QFlags<Qt::KeyboardModifier>) at ResInsight/ApplicationLibCode/UserInterface/RiuViewerCommands.cpp:718",
+        "[17] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[23] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[34] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
         "[35] __libc_start_main at :0"
       ],
       "signature_frames": [
@@ -9686,6 +10136,14 @@
           "count": 1,
           "first_seen": "2026-04-10T10:39:05.787Z",
           "last_seen": "2026-04-10T10:39:05.787Z"
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-30T10:44:53.382Z",
+          "last_seen": "2026-07-30T10:44:53.382Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
@@ -9868,7 +10326,7 @@
       }
     },
     "c53fe6a2830b": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -9945,6 +10403,14 @@
           }
         },
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-02T14:02:16.444Z",
+          "last_seen": "2026-07-02T14:02:16.469Z",
+          "versions": {
+            "2026.06.0": 2
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-02T14:02:16.444Z",
           "last_seen": "2026-07-02T14:02:16.469Z",
@@ -10382,7 +10848,7 @@
       }
     },
     "d0ae819f2cd6": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -10391,17 +10857,17 @@
       },
       "pr": null,
       "representative_stack": [
-        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
-        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
         "[5] caf::PdmUiEditorHandle::updateUi(QString const&) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiEditorHandle.cpp:65",
         "[6] caf::PdmUiPropertyView::showProperties(caf::PdmObjectHandle*) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiPropertyView.cpp:213",
         "[7] RiuMainWindow::selectedObjectsChanged() at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1539",
         "[9] caf::PdmUiTreeView::slotOnSelectionChanged() at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiTreeView.cpp:154",
         "[18] RiuMainWindow::selectViewInProjectTreePreservingSubItemSelection(Rim3dView const*, Rim3dView*) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1478",
         "[19] RiuMainWindow::slotSubWindowActivated(QMdiSubWindow*) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1399",
-        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1831",
-        "[38] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1831",
-        "[49] main at ResInsight/ApplicationExeCode/RiaMain.cpp:258",
+        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[38] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[49] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
         "[50] __libc_start_main at :0"
       ],
       "signature_frames": [
@@ -10438,11 +10904,19 @@
           "versions": {
             "2026.06.0": 1
           }
+        },
+        "2026-07-31": {
+          "count": 1,
+          "first_seen": "2026-07-27T07:29:24.415Z",
+          "last_seen": "2026-07-27T07:29:24.415Z",
+          "versions": {
+            "2026.06.1": 1
+          }
         }
       }
     },
     "d2161286a077": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
         "number": 14175,
@@ -10505,6 +10979,15 @@
           }
         },
         "2026-07-24": {
+          "count": 2,
+          "first_seen": "2026-07-02T14:02:16.351Z",
+          "last_seen": "2026-07-14T11:00:51.938Z",
+          "versions": {
+            "2026.06.0": 1,
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 2,
           "first_seen": "2026-07-02T14:02:16.351Z",
           "last_seen": "2026-07-14T11:00:51.938Z",
@@ -11185,7 +11668,7 @@
       }
     },
     "e7861112a971": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -11219,6 +11702,14 @@
       "top_frame": "RigEclipseCaseData::formationNames",
       "weeks": {
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-14T10:13:04.199Z",
+          "last_seen": "2026-07-14T10:13:04.199Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-14T10:13:04.199Z",
           "last_seen": "2026-07-14T10:13:04.199Z",
@@ -11482,7 +11973,7 @@
       }
     },
     "f20aa1d03f76": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -11522,6 +12013,14 @@
           "last_seen": "2026-07-21T07:16:36.919Z",
           "versions": {
             "2026.06.1": 2
+          }
+        },
+        "2026-07-31": {
+          "count": 3,
+          "first_seen": "2026-07-21T07:06:23.376Z",
+          "last_seen": "2026-07-29T08:18:02.179Z",
+          "versions": {
+            "2026.06.1": 3
           }
         }
       }
@@ -11895,7 +12394,7 @@
       }
     },
     "f58e9619efdf": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": null,
       "pr": null,
@@ -11927,6 +12426,14 @@
       "top_frame": "__gnu_cxx::__normal_iterator<caf::PdmPointer<RimFlowDiagSolution> const*, std::vector<caf::PdmPointer<RimFlowDiagSolution>, std::allocator<caf::PdmPointer<RimFlowDiagSolution> > > >::__normal_iterator",
       "weeks": {
         "2026-07-24": {
+          "count": 1,
+          "first_seen": "2026-07-16T08:26:42.723Z",
+          "last_seen": "2026-07-16T08:26:42.723Z",
+          "versions": {
+            "2026.06.1": 1
+          }
+        },
+        "2026-07-31": {
           "count": 1,
           "first_seen": "2026-07-16T08:26:42.723Z",
           "last_seen": "2026-07-16T08:26:42.723Z",
@@ -12220,6 +12727,12 @@
       "skipped_old_version": 61,
       "total_rows": 133,
       "unique_stacks": 55
+    },
+    "2026-07-31": {
+      "csv": "2026-07-31-query_data.csv",
+      "skipped_old_version": 47,
+      "total_rows": 102,
+      "unique_stacks": 44
     }
   }
 }
