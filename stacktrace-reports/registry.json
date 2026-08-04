@@ -5377,7 +5377,7 @@
     },
     "55dd071baf3f": {
       "last_updated": "2026-08-04",
-      "notes": "",
+      "notes": "Dangling RigFormationNames pointer. RigCaseCellResultsData held a raw pointer to data owned by a unique_ptr in RimFormationNames; reloading or deleting the formation names left it dangling, so the null check in RigEclipseCaseData::formationNames() passed and the dereference crashed. Regression from 601a3bbb78 (2026-02-27), which replaced the cvf::cref with a raw pointer. Fixed by storing a copy. Shares one crash site with the other two RigEclipseCaseData::formationNames signatures (f20aa1d03f76, 55dd071baf3f, e7861112a971), all covered by this issue/PR. Reached via result info text on time step change (RiuResultTextBuilder::gridResultText).",
       "opm_issue": {
         "number": 14448,
         "state": "OPEN",
@@ -11677,7 +11677,7 @@
     },
     "e7861112a971": {
       "last_updated": "2026-08-04",
-      "notes": "",
+      "notes": "Dangling RigFormationNames pointer. RigCaseCellResultsData held a raw pointer to data owned by a unique_ptr in RimFormationNames; reloading or deleting the formation names left it dangling, so the null check in RigEclipseCaseData::formationNames() passed and the dereference crashed. Regression from 601a3bbb78 (2026-02-27), which replaced the cvf::cref with a raw pointer. Fixed by storing a copy. Shares one crash site with the other two RigEclipseCaseData::formationNames signatures (f20aa1d03f76, 55dd071baf3f, e7861112a971), all covered by this issue/PR. Reached via property filter reload after a grid calculation (RimEclipsePropertyFilter::computeResultValueRange).",
       "opm_issue": {
         "number": 14448,
         "state": "OPEN",
@@ -11990,7 +11990,7 @@
     },
     "f20aa1d03f76": {
       "last_updated": "2026-08-04",
-      "notes": "",
+      "notes": "Dangling RigFormationNames pointer. RigCaseCellResultsData held a raw pointer to data owned by a unique_ptr in RimFormationNames; reloading or deleting the formation names left it dangling, so the null check in RigEclipseCaseData::formationNames() passed and the dereference crashed. Regression from 601a3bbb78 (2026-02-27), which replaced the cvf::cref with a raw pointer. Fixed by storing a copy. Shares one crash site with the other two RigEclipseCaseData::formationNames signatures (f20aa1d03f76, 55dd071baf3f, e7861112a971), all covered by this issue/PR. Reached via legend update on time step change (RimEclipseView::onUpdateLegends).",
       "opm_issue": {
         "number": 14448,
         "state": "OPEN",
