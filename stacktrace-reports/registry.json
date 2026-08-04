@@ -5376,10 +5376,18 @@
       }
     },
     "55dd071baf3f": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14448,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14448"
+      },
+      "pr": {
+        "branch": "fix-14448-formation-names-lifetime",
+        "number": 14449,
+        "url": "https://github.com/OPM/ResInsight/pull/14449"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -5412,7 +5420,7 @@
         "RiuResultTextBuilder::gridResultText"
       ],
       "signature_id": "55dd071baf3f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigEclipseCaseData::formationNames",
       "weeks": {
         "2026-07-24": {
@@ -11668,10 +11676,18 @@
       }
     },
     "e7861112a971": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14448,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14448"
+      },
+      "pr": {
+        "branch": "fix-14448-formation-names-lifetime",
+        "number": 14449,
+        "url": "https://github.com/OPM/ResInsight/pull/14449"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -11698,7 +11714,7 @@
         "RimEclipseView::onLoadDataAndUpdate"
       ],
       "signature_id": "e7861112a971",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigEclipseCaseData::formationNames",
       "weeks": {
         "2026-07-24": {
@@ -11973,10 +11989,18 @@
       }
     },
     "f20aa1d03f76": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14448,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14448"
+      },
+      "pr": {
+        "branch": "fix-14448-formation-names-lifetime",
+        "number": 14449,
+        "url": "https://github.com/OPM/ResInsight/pull/14449"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -12004,7 +12028,7 @@
         "RimEclipseView::updateLegendRangesTextAndVisibility"
       ],
       "signature_id": "f20aa1d03f76",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigEclipseCaseData::formationNames",
       "weeks": {
         "2026-07-24": {
