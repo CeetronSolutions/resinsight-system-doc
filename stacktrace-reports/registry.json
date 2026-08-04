@@ -445,10 +445,18 @@
       }
     },
     "04591db2be9e": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14453,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14453"
+      },
+      "pr": {
+        "branch": "fix-14453-table-view-invalid-index",
+        "number": 14457,
+        "url": "https://github.com/OPM/ResInsight/pull/14457"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -469,7 +477,7 @@
         "caf::PdmUiTableViewQModel::dropMimeData"
       ],
       "signature_id": "04591db2be9e",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "std::vector<caf::PdmFieldHandle*, std::allocator<caf::PdmFieldHandle*> >::size",
       "weeks": {
         "2026-07-24": {
@@ -2539,10 +2547,18 @@
       }
     },
     "287c62e9cb25": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14450,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14450"
+      },
+      "pr": {
+        "branch": "fix-14450-rft-plot-null-data-source",
+        "number": 14454,
+        "url": "https://github.com/OPM/ResInsight/pull/14454"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -2562,7 +2578,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "287c62e9cb25",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RicCreateRftPlotsFeature::onActionTriggered",
       "weeks": {
         "2026-07-24": {
@@ -4590,10 +4606,18 @@
       }
     },
     "49fcd1424922": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14451,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14451"
+      },
+      "pr": {
+        "branch": "fix-14451-wellpath-empty-geometry",
+        "number": 14455,
+        "url": "https://github.com/OPM/ResInsight/pull/14455"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -4619,7 +4643,7 @@
         "RicNewWellPathFractureFeature::addFracture"
       ],
       "signature_id": "49fcd1424922",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-31": {
@@ -10027,10 +10051,18 @@
       }
     },
     "c0abe39c3ff2": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-04",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14452,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14452"
+      },
+      "pr": {
+        "branch": "fix-14452-fracture-missing-template",
+        "number": 14456,
+        "url": "https://github.com/OPM/ResInsight/pull/14456"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -10059,7 +10091,7 @@
         "RicWellPathExportMswTableData::extractSingleWellMswData"
       ],
       "signature_id": "c0abe39c3ff2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimFractureTemplate::orientationType",
       "weeks": {
         "2026-07-10": {
