@@ -3792,10 +3792,15 @@
       }
     },
     "39fd0253d250": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-stale-cell-selection",
+        "number": 14481,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14481"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -3819,7 +3824,7 @@
         "RimGridView::onCreatePartCollectionFromSelection"
       ],
       "signature_id": "39fd0253d250",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "void cvf::Vector3<double>::set<cvf::Vector3<double> >",
       "weeks": {
         "2026-04-29": {
