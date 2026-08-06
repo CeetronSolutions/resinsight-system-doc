@@ -449,7 +449,7 @@
       }
     },
     "04591db2be9e": {
-      "last_updated": "2026-08-04",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": {
         "number": 14453,
@@ -481,7 +481,7 @@
         "caf::PdmUiTableViewQModel::dropMimeData"
       ],
       "signature_id": "04591db2be9e",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "std::vector<caf::PdmFieldHandle*, std::allocator<caf::PdmFieldHandle*> >::size",
       "weeks": {
         "2026-07-24": {
@@ -2555,7 +2555,7 @@
       }
     },
     "287c62e9cb25": {
-      "last_updated": "2026-08-04",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": {
         "number": 14450,
@@ -2586,7 +2586,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "287c62e9cb25",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RicCreateRftPlotsFeature::onActionTriggered",
       "weeks": {
         "2026-07-24": {
@@ -3369,10 +3369,14 @@
       }
     },
     "32397cd21d29": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06-batch2",
+        "number": 14474,
+        "url": "https://github.com/OPM/ResInsight/pull/14474"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -3391,7 +3395,7 @@
         "RiuPvtPlotPanel::showEvent"
       ],
       "signature_id": "32397cd21d29",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuPvtPlotUpdater::queryDataAndUpdatePlot",
       "weeks": {
         "2026-04-29": {
@@ -3558,10 +3562,14 @@
       }
     },
     "365d8f1357cb": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06-batch2",
+        "number": 14474,
+        "url": "https://github.com/OPM/ResInsight/pull/14474"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -3587,7 +3595,7 @@
         "RimFractureTemplateCollection::loadAndUpdateData"
       ],
       "signature_id": "365d8f1357cb",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigEnsembleFractureStatisticsCalculator::calculateAreaWeightedStatistics",
       "weeks": {
         "2026-04-29": {
@@ -4622,7 +4630,7 @@
       }
     },
     "49fcd1424922": {
-      "last_updated": "2026-08-04",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": {
         "number": 14451,
@@ -4659,7 +4667,7 @@
         "RicNewWellPathFractureFeature::addFracture"
       ],
       "signature_id": "49fcd1424922",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-31": {
@@ -5633,10 +5641,14 @@
       }
     },
     "5ae2e6f0153b": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06-batch2",
+        "number": 14474,
+        "url": "https://github.com/OPM/ResInsight/pull/14474"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -5662,7 +5674,7 @@
         "caf::PdmFieldUiCap<caf::PdmPtrArrayField<RimVfpTable*> >::setValueFromUiEditor"
       ],
       "signature_id": "5ae2e6f0153b",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimCustomVfpPlot::onLoadDataAndUpdate",
       "weeks": {
         "2026-04-29": {
@@ -5784,8 +5796,8 @@
       }
     },
     "5c2d85ca0acd": {
-      "last_updated": "2026-08-01",
-      "notes": "",
+      "last_updated": "2026-08-06",
+      "notes": "Crash at RimViewController::askUserToRestoreOriginalCellFilterCollection, QMessageBox parented on activeView->viewer()->layoutWidget() without null check. Already fixed on dev by 81f4628fa6 (#14302, 2026-06-23); all reports are from 2026.06.0, released before the fix.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -5813,7 +5825,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<bool> >::setValueFromUiEditor"
       ],
       "signature_id": "5c2d85ca0acd",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimViewController::askUserToRestoreOriginalCellFilterCollection",
       "weeks": {
         "2026-07-10": {
@@ -8828,10 +8840,14 @@
       }
     },
     "a92cb693a22d": {
-      "last_updated": "2026-07-25",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06-batch2",
+        "number": 14474,
+        "url": "https://github.com/OPM/ResInsight/pull/14474"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -8857,7 +8873,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<std::vector<double, std::allocator<double> > > >::setValueFromUiEditor"
       ],
       "signature_id": "a92cb693a22d",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimCustomVfpPlot::onLoadDataAndUpdate",
       "weeks": {
         "2026-06-26": {
@@ -10071,7 +10087,7 @@
       }
     },
     "c0abe39c3ff2": {
-      "last_updated": "2026-08-04",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": {
         "number": 14452,
@@ -10111,7 +10127,7 @@
         "RicWellPathExportMswTableData::extractSingleWellMswData"
       ],
       "signature_id": "c0abe39c3ff2",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimFractureTemplate::orientationType",
       "weeks": {
         "2026-07-10": {
