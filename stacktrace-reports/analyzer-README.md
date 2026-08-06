@@ -18,13 +18,29 @@ per-signature state.
 |---|---|
 | `update --csv FILE [--date D] [--signature-depth N] [--min-version VER]` | Fold a weekly CSV into `registry.json`. Idempotent per week. |
 | `render [--date D \| --all]` | Regenerate report(s) + `index.md` + `incoming-csvs.md` from the registry. Default: latest week. Use the default in the weekly workflow — older reports are frozen snapshots, so avoid `--all`. |
-| `worklist [--all] [--from-version VER]` | Print unlinked signatures, those still crashing the newest released `APPversion` first (ties broken by total count). `--from-version` overrides which version line counts as current. |
-| `set --id SID [--issue N --state S] [--pr N --branch B] [--status S] [--note "..."]` | Record an investigation outcome (used by the `crash-triage` skill). |
+| `worklist [--all] [--from-version VER]` | Print untriaged signatures — no OPM issue, no fix PR, not already in triage — those still crashing the newest released `APPversion` first (ties broken by total count). `--all` includes the already-referenced and already-handled ones, annotated with their issue/PR number. `--from-version` overrides which version line counts as current. |
+| `set --id SID [--issue N --state S] [--pr N --branch B --pr-state S] [--status S] [--note "..."]` | Record an investigation outcome (used by the `crash-triage` workflow). |
 
 Typical run is via `process_week.py`, which chains `update` → `link_issues.py`
 → `render` → `worklist`. Signatures are keyed by their top-N non-handler frame
 *symbols* (file/line and template noise stripped) so identity is stable across
 builds.
+
+### Referencing a crash: PR, not issue
+
+Crash triage no longer files GitHub issues — the call stack goes into the body
+of the batch fix PR, so recording the PR is what takes a signature off the
+worklist:
+
+```
+python registry.py set --id <sid> --pr 14473 --branch crash-triage-2026-08-06 --status pr-open
+python registry.py set --id <sid> --pr-state MERGED --status resolved   # when it merges
+```
+
+`--pr-state` is one of `OPEN` (the default when `--pr` is given), `MERGED` or
+`CLOSED`; `link_issues.py` refreshes it from GitHub on each weekly run and marks
+merged signatures `resolved`. `--issue`/`--state` remain for the older
+signatures that carry an OPM issue.
 
 ## analyze_crashes.py (library / standalone)
 

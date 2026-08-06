@@ -1,22 +1,29 @@
 """link_issues.py - Link registry signatures to existing OPM/ResInsight issues
-and refresh the open/closed state of already-linked ones.
+and refresh the state of everything already referenced.
 
 Step 2 of the weekly workflow, automated. For every signature in `registry.json`:
 
-* If it has no linked issue, search OPM/ResInsight for its top-frame symbol and
-  link the first candidate whose title or body actually contains that symbol -
-  the same "does the issue really mention this crash site" check a human makes.
-  Signatures with no confident match are left unlinked (`none found`).
+* If it has no reference at all, search OPM/ResInsight for its top-frame symbol
+  and link the first candidate whose title or body actually contains that symbol
+  - the same "does the issue really mention this crash site" check a human makes.
+  Signatures with no confident match are left unreferenced (`none found`) and go
+  on the triage worklist.
 * If it already has a linked issue, re-fetch the issue state so an issue that has
-  since been closed (or reopened) is reflected, and the stack moves to / from the
-  report's `## Closed issues` section on the next render.
+  since been closed (or reopened) is reflected.
+* If it carries a fix PR, re-fetch the PR state. Crash triage no longer files
+  issues - the crash stack lives in the PR body - so for those signatures the PR
+  is the only reference and its merge is what closes the signature out
+  (`pr-open` -> `resolved`). No issue search is run for them.
+
+Either way the stack moves to / from the report's `## Closed issues and merged
+fixes` section on the next render.
 
 Requires the GitHub CLI (`gh`) to be authenticated. Run `registry.py render`
 afterwards to regenerate the reports with the new links.
 
 Usage:
-    python link_issues.py                 # link unlinked + refresh linked
-    python link_issues.py --refresh-only  # only refresh already-linked states
+    python link_issues.py                 # link unreferenced + refresh states
+    python link_issues.py --refresh-only  # only refresh issue/PR states
     python link_issues.py --dry-run       # show what would change, write nothing
 """
 
@@ -139,15 +146,42 @@ def refresh_state(number: int) -> str | None:
     return detail.get("state") if detail else None
 
 
-def set_status_from_issue(entry: dict) -> None:
-    """Derive a status from the linked issue + any PR already recorded."""
-    iss = entry.get("opm_issue")
-    if not iss:
+def refresh_pr_state(number: int) -> str | None:
+    """PR state as OPEN / MERGED / CLOSED (`gh` reports MERGED separately)."""
+    detail = gh_json(["pr", "view", str(number), "--repo", REPO, "--json", "state"])
+    return detail.get("state") if detail else None
+
+
+def set_status_from_refs(entry: dict) -> None:
+    """Derive a status from whatever references the signature carries.
+
+    The fix PR is authoritative when there is one: a merged PR means the crash is
+    fixed, whether or not an issue was ever filed (crash triage now puts the
+    stack in the PR body instead). Without a PR the linked issue decides.
+    """
+    if entry.get("status") in ("no-fix-found", "on-hold"):
+        # Deliberate human decisions; never overwritten from GitHub state.
         return
-    if entry.get("pr"):
-        entry["status"] = "resolved" if iss["state"] == "CLOSED" else "pr-open"
-    else:
-        entry["status"] = "resolved" if iss["state"] == "CLOSED" else "linked"
+
+    pr = entry.get("pr")
+    iss = entry.get("opm_issue")
+    if pr:
+        state = pr.get("state")
+        if state == "MERGED":
+            entry["status"] = "resolved"
+        elif state == "CLOSED":
+            # PR rejected/abandoned: back to the issue's verdict, or to triage.
+            entry["status"] = "resolved" if issue_closed(iss) else "linked" if iss else "new"
+        else:
+            entry["status"] = "resolved" if issue_closed(iss) else "pr-open"
+        return
+
+    if iss:
+        entry["status"] = "resolved" if issue_closed(iss) else "linked"
+
+
+def issue_closed(iss: dict | None) -> bool:
+    return bool(iss and iss.get("state") == "CLOSED")
 
 
 def link_entry(entry: dict, number: int, state: str) -> None:
@@ -156,7 +190,7 @@ def link_entry(entry: dict, number: int, state: str) -> None:
         "state": state,
         "url": f"{OPM_ISSUES_URL}/{number}",
     }
-    set_status_from_issue(entry)
+    set_status_from_refs(entry)
 
 
 def main() -> None:
@@ -169,7 +203,7 @@ def main() -> None:
     reg = load_registry()
     sigs = reg["signatures"]
 
-    linked = refreshed = changed = 0
+    linked = refreshed = pr_refreshed = changed = 0
     search_cache: dict[str, dict | None] = {}
 
     # Sort by impact so the most frequent crashes are searched first.
@@ -180,14 +214,32 @@ def main() -> None:
 
     for entry in ordered:
         iss = entry.get("opm_issue")
+        pr = entry.get("pr")
+
+        if pr:
+            # A merged fix PR is what closes a signature out now, so its state is
+            # refreshed on every run - including for PR-only signatures, where no
+            # issue exists to carry the crash.
+            new_state = refresh_pr_state(pr["number"])
+            if new_state and new_state != pr.get("state"):
+                old = pr.get("state") or "unknown"
+                print(f"  ~ PR #{pr['number']} {old} -> {new_state}  ({entry['top_frame']})")
+                pr["state"] = new_state
+                set_status_from_refs(entry)
+                pr_refreshed += 1
+                changed += 1
+
         if iss:
             new_state = refresh_state(iss["number"])
             if new_state and new_state != iss["state"]:
                 print(f"  ~ #{iss['number']} {iss['state']} -> {new_state}  ({entry['top_frame']})")
                 iss["state"] = new_state
-                set_status_from_issue(entry)
+                set_status_from_refs(entry)
                 refreshed += 1
                 changed += 1
+
+        if iss or pr:
+            # Already referenced: nothing to search for.
             continue
 
         if args.refresh_only:
@@ -207,12 +259,13 @@ def main() -> None:
             changed += 1
 
     if args.dry_run:
-        print(f"[dry-run] would link={linked} refresh={refreshed}")
+        print(f"[dry-run] would link={linked} refresh={refreshed} pr-refresh={pr_refreshed}")
         return
 
     if changed:
         save_registry(reg)
-    print(f"linked={linked} refreshed={refreshed} (run registry.py render to update reports)")
+    print(f"linked={linked} refreshed={refreshed} pr-refreshed={pr_refreshed} "
+          "(run registry.py render to update reports)")
 
 
 if __name__ == "__main__":

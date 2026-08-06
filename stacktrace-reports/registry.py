@@ -3,9 +3,15 @@
 The registry (`registry.json`) is the single source of truth for every unique
 crash signature ever seen. Each weekly CSV is folded into it with `update`, and
 the per-week reports plus the two index pages are regenerated from it with
-`render`. Cross-week knowledge - the linked OPM issue, its open/closed state, a
-proposed fix PR, an investigation note - lives on the signature and therefore
-survives from week to week without being re-derived from prior Markdown.
+`render`. Cross-week knowledge - the reference that carries the crash (an OPM
+issue, a fix PR, or both), its open/closed state, an investigation note - lives
+on the signature and therefore survives from week to week without being
+re-derived from prior Markdown.
+
+A signature is *referenced* once it carries either an OPM issue or a fix PR.
+Crash triage no longer files issues: the call stack goes straight into the fix
+PR body, so a PR alone is a complete reference and takes a signature off the
+worklist. Older signatures still carry an issue (and sometimes both).
 
 Signature identity
 ------------------
@@ -26,7 +32,8 @@ Subcommands
 -----------
     update      Fold a weekly CSV into registry.json.
     render      Regenerate reports/<date>.md (one or all weeks) + the indexes.
-    worklist    Print unlinked signatures, latest-version crashes first.
+    worklist    Print unreferenced signatures, latest-version crashes first.
+    set         Record an investigation outcome (issue, fix PR, status, note).
 
 Usage
 -----
@@ -34,6 +41,9 @@ Usage
     python registry.py render --date 2026-06-05
     python registry.py render --all
     python registry.py worklist
+    python registry.py set --id 024f64fb61b2 --pr 14473 --branch crash-triage-2026-08-06 \
+                           --status pr-open
+    python registry.py set --id 024f64fb61b2 --pr-state MERGED --status resolved
 """
 
 import argparse
@@ -63,6 +73,12 @@ INDEX_PATH = HERE / "index.md"
 INCOMING_PATH = HERE / "incoming-csvs.md"
 
 OPM_ISSUES_URL = "https://github.com/OPM/ResInsight/issues"
+OPM_PULLS_URL = "https://github.com/OPM/ResInsight/pull"
+
+# Statuses that mean "already handled": such a signature must never come back on
+# the worklist, whether or not it carries an issue or a PR.
+HANDLED_STATUS = ("investigating", "patch-proposed", "pr-open", "resolved",
+                  "no-fix-found", "on-hold")
 
 # Frames that carry no crash-site information: dropped before taking the top-N
 # symbols that make up the signature. `main`/`__libc_start_main` are the process
@@ -313,12 +329,63 @@ def issue_is_closed(entry: dict) -> bool:
     return bool(iss and iss.get("state") == "CLOSED")
 
 
+def pr_is_merged(entry: dict) -> bool:
+    pr = entry.get("pr")
+    return bool(pr and pr.get("state") == "MERGED")
+
+
+def has_reference(entry: dict) -> bool:
+    """The crash is recorded somewhere upstream - an issue, a fix PR, or both."""
+    return bool(entry.get("opm_issue") or entry.get("pr"))
+
+
+def is_closed_out(entry: dict) -> bool:
+    """Nothing further is expected on this signature.
+
+    Either the linked issue is closed, or the PR carrying the fix (and the crash
+    stack, when no issue was filed) has merged, or triage settled it explicitly.
+    Closed-out stacks are gathered at the bottom of the weekly report.
+    """
+    return (
+        entry.get("status") in ("resolved", "no-fix-found")
+        or issue_is_closed(entry)
+        or pr_is_merged(entry)
+    )
+
+
 def opm_issue_line(entry: dict) -> str:
     iss = entry.get("opm_issue")
     if not iss:
-        return "**OPM issue:** none found"
+        return ""
     n = iss["number"]
     return f"**OPM issue:** [#{n}]({OPM_ISSUES_URL}/{n}) — {iss['state']}"
+
+
+def fix_pr_line(entry: dict) -> str:
+    """Rendered link for the fix PR, which also carries the crash stack when no
+    issue was filed for the signature."""
+    pr = entry.get("pr")
+    if not pr:
+        return ""
+    n = pr["number"]
+    url = pr.get("url") or f"{OPM_PULLS_URL}/{n}"
+    state = pr.get("state")
+    line = f"**Fix PR:** [#{n}]({url})"
+    return f"{line} — {state}" if state else line
+
+
+def reference_lines(entry: dict) -> list[str]:
+    """The issue/PR lines shown under a stack, in that order.
+
+    A signature triaged after crash reports moved into PRs has only the PR line;
+    older ones have only the issue line; both appear when both are known.
+    """
+    lines = [ln for ln in (opm_issue_line(entry), fix_pr_line(entry)) if ln]
+    if not lines:
+        return ["**Reference:** none — not triaged yet"]
+    # Trailing two spaces = Markdown hard break, so issue and PR stay on
+    # separate lines instead of being reflowed into one paragraph.
+    return [ln + "  " for ln in lines[:-1]] + [lines[-1]]
 
 
 # --------------------------------------------------------------------------- #
@@ -351,18 +418,18 @@ def render_week(reg: dict, week: str) -> str:
     out.append("")
 
     # Number every stack first (1..n by this week's count), then partition into
-    # open/unmatched (top) and closed (bottom), preserving the numbers - this
+    # open/unmatched (top) and closed-out (bottom), preserving the numbers - this
     # mirrors the old analyze + reorder_closed behaviour, gaps included.
     numbered = list(enumerate(members, 1))
     open_blocks: list[str] = []
     closed_blocks: list[str] = []
     for num, entry in numbered:
         block = _stack_block(entry, num, entry["weeks"][week])
-        (closed_blocks if issue_is_closed(entry) else open_blocks).extend(block)
+        (closed_blocks if is_closed_out(entry) else open_blocks).extend(block)
 
     out.extend(open_blocks)
     if closed_blocks:
-        out.append("## Closed issues")
+        out.append("## Closed issues and merged fixes")
         out.append("")
         out.extend(closed_blocks)
 
@@ -391,7 +458,7 @@ def _stack_block(entry: dict, num: int, wk: dict) -> list[str]:
     block.append("")
     block.append(f"**Status:** {entry.get('status', 'new')}")
     block.append("")
-    block.append(opm_issue_line(entry))
+    block.extend(reference_lines(entry))
     notes = (entry.get("notes") or "").strip()
     if notes:
         block.append("")
@@ -416,7 +483,8 @@ def render_indexes(reg: dict) -> None:
         "",
         "Per-week deduplicated stacktrace analyses, newest first. Each report lists "
         "unique ResInsight call stacks with occurrence counts and a link to the "
-        f"matching issue on [OPM/ResInsight]({OPM_ISSUES_URL}) when one is known.",
+        f"work covering them on [OPM/ResInsight]({OPM_ISSUES_URL}) when it is known "
+        "— the fix PR carrying the crash stack, or an older linked issue.",
         "",
         "| Week       | Report                                | Total rows | Unique stacks |",
         "|------------|---------------------------------------|-----------:|--------------:|",
@@ -486,12 +554,19 @@ def cmd_worklist(args: argparse.Namespace) -> None:
     reg = load_registry()
     rows = []
     for e in reg["signatures"].values():
-        if e.get("opm_issue"):
-            continue
         if e["top_frame"] == UNSYMBOLIZED:
             # No ResInsight symbol at the fault: not individually actionable.
             continue
-        if e["status"] in ("no-fix-found",) and not args.all:
+        if args.all:
+            rows.append(e)
+            continue
+        # Already referenced upstream - by an issue, or (since crash stacks moved
+        # into PR bodies) by a fix PR on its own. Either way it is accounted for.
+        if has_reference(e):
+            continue
+        # A signature can be in flight before it has a PR number; status alone
+        # keeps it off the list so a batch under investigation is not re-picked.
+        if e["status"] in HANDLED_STATUS:
             continue
         rows.append(e)
 
@@ -513,12 +588,22 @@ def cmd_worklist(args: argparse.Namespace) -> None:
 
     rows.sort(key=lambda e: (-count_from_version(e, min_base), -total_count(e)))
     for e in rows:
+        ref = ""
+        if args.all:
+            iss = e.get("opm_issue")
+            pr = e.get("pr")
+            parts = []
+            if iss:
+                parts.append(f"issue #{iss['number']}")
+            if pr:
+                parts.append(f"PR #{pr['number']}")
+            ref = f"  ({', '.join(parts)})" if parts else ""
         print(
             f"{count_from_version(e, min_base):4d}  {total_count(e):4d}  "
-            f"{e['signature_id']}  [{e['status']}]  {e['top_frame']}"
+            f"{e['signature_id']}  [{e['status']}]  {e['top_frame']}{ref}"
         )
     if not rows:
-        print("(no unlinked signatures)")
+        print("(no untriaged signatures)")
 
 
 # --------------------------------------------------------------------------- #
@@ -544,11 +629,17 @@ def cmd_set(args: argparse.Namespace) -> None:
             "url": f"{OPM_ISSUES_URL}/{args.issue}",
         }
     if args.pr is not None:
+        prev = entry.get("pr") or {}
         entry["pr"] = {
             "number": args.pr,
-            "branch": args.branch or "",
+            "branch": args.branch or (prev.get("branch", "") if prev.get("number") == args.pr else ""),
             "url": f"https://github.com/{args.pr_repo}/pull/{args.pr}",
+            "state": args.pr_state or (prev.get("state") if prev.get("number") == args.pr else None) or "OPEN",
         }
+    elif args.pr_state:
+        if not entry.get("pr"):
+            raise SystemExit(f"Error: {args.id} has no PR to set --pr-state on")
+        entry["pr"]["state"] = args.pr_state
     if args.status:
         if args.status not in VALID_STATUS:
             raise SystemExit(f"Error: status must be one of {VALID_STATUS}")
@@ -581,8 +672,10 @@ def main() -> None:
     g.add_argument("--all", action="store_true", help="render every week")
     rd.set_defaults(func=cmd_render)
 
-    wl = sub.add_parser("worklist", help="unlinked signatures, latest version first")
-    wl.add_argument("--all", action="store_true", help="include no-fix-found signatures")
+    wl = sub.add_parser("worklist", help="untriaged signatures, latest version first")
+    wl.add_argument("--all", action="store_true",
+                    help="include signatures already referenced by an issue or a "
+                         "fix PR, and those already handled")
     wl.add_argument("--from-version", metavar="VER",
                     help="count VER and newer as current "
                          "(default: newest released APPversion in the registry)")
@@ -592,7 +685,9 @@ def main() -> None:
     st.add_argument("--id", required=True, help="signature_id")
     st.add_argument("--issue", type=int, help="linked OPM issue number")
     st.add_argument("--state", choices=("OPEN", "CLOSED"), help="issue state")
-    st.add_argument("--pr", type=int, help="fix PR number")
+    st.add_argument("--pr", type=int, help="fix PR number (carries the crash stack)")
+    st.add_argument("--pr-state", choices=("OPEN", "MERGED", "CLOSED"),
+                    help="fix PR state (default OPEN when --pr is given)")
     st.add_argument("--branch", help="fix PR branch name")
     st.add_argument("--pr-repo", default="OPM/ResInsight", help="repo the PR targets")
     st.add_argument("--status", help=f"one of {VALID_STATUS}")

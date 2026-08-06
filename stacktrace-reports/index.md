@@ -6,7 +6,7 @@ layout: wide
 
 # Weekly Stacktrace Reports
 
-Per-week deduplicated stacktrace analyses, newest first. Each report lists unique ResInsight call stacks with occurrence counts and a link to the matching issue on [OPM/ResInsight](https://github.com/OPM/ResInsight/issues) when one is known.
+Per-week deduplicated stacktrace analyses, newest first. Each report lists unique ResInsight call stacks with occurrence counts and a link to the work covering them on [OPM/ResInsight](https://github.com/OPM/ResInsight/issues) when it is known — the fix PR carrying the crash stack, or an older linked issue.
 
 | Week       | Report                                | Total rows | Unique stacks |
 |------------|---------------------------------------|-----------:|--------------:|
