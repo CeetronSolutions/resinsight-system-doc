@@ -170,10 +170,14 @@
       }
     },
     "024f64fb61b2": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06",
+        "number": 14473,
+        "url": "https://github.com/OPM/ResInsight/pull/14473"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -202,7 +206,7 @@
         "caf::CmdFieldChangeExec::redo"
       ],
       "signature_id": "024f64fb61b2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuGuiTheme::applyStyleSheet",
       "weeks": {
         "2026-07-31": {
@@ -2080,10 +2084,14 @@
       }
     },
     "1dd841454363": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06",
+        "number": 14473,
+        "url": "https://github.com/OPM/ResInsight/pull/14473"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -2117,7 +2125,7 @@
         "Rim3dView::createDisplayModelAndRedraw"
       ],
       "signature_id": "1dd841454363",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RivReservoirViewPartMgr::computeNativeVisibility",
       "weeks": {
         "2026-07-31": {
@@ -4219,10 +4227,18 @@
       }
     },
     "4079489d1e3c": {
-      "last_updated": "2026-08-01",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-08-06",
+      "notes": "Fixed on dev by 272f7fa56b (PR 14410) before this batch. ESmry::dates() threw out of an OpenMP block, terminating the application.",
+      "opm_issue": {
+        "number": 14409,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14409"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14410,
+        "url": "https://github.com/OPM/ResInsight/pull/14410"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -4253,7 +4269,7 @@
         "RimFileSummaryCase::findRelatedFilesAndCreateReader"
       ],
       "signature_id": "4079489d1e3c",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-07-31": {
@@ -6748,10 +6764,14 @@
       }
     },
     "72e4129e054b": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06",
+        "number": 14473,
+        "url": "https://github.com/OPM/ResInsight/pull/14473"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -6775,7 +6795,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "72e4129e054b",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimFlowCharacteristicsPlot::onLoadDataAndUpdate",
       "weeks": {
         "2026-04-29": {
@@ -12450,10 +12470,14 @@
       }
     },
     "f58e9619efdf": {
-      "last_updated": "2026-08-01",
+      "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-06",
+        "number": 14473,
+        "url": "https://github.com/OPM/ResInsight/pull/14473"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -12478,7 +12502,7 @@
         "caf::CmdFieldChangeExec::redo"
       ],
       "signature_id": "f58e9619efdf",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "__gnu_cxx::__normal_iterator<caf::PdmPointer<RimFlowDiagSolution> const*, std::vector<caf::PdmPointer<RimFlowDiagSolution>, std::allocator<caf::PdmPointer<RimFlowDiagSolution> > > >::__normal_iterator",
       "weeks": {
         "2026-07-24": {
