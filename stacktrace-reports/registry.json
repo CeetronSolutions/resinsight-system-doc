@@ -5166,10 +5166,15 @@
       }
     },
     "5070fc941337": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-null-guards",
+        "number": 14482,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14482"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -5194,7 +5199,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "5070fc941337",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmField<QString>::operator=",
       "weeks": {
         "2026-04-29": {
@@ -7257,8 +7262,8 @@
       }
     },
     "7d0e00a1c0c9": {
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-08-07",
+      "notes": "Data race, not a null deref. AsyncPdmObjectVectorDeleter deletes PDM objects on a background thread; ~RimSummaryEnsemble copies PdmPointer<RimSummaryCase>, and PdmPointerImpl::addReference() mutates the unsynchronised std::set<PdmObjectHandle**> m_pointersReferencingMe. Concurrent mutation with the main thread (or with PdmObjectHandle::prepareForDelete() clearing the same set) corrupts the tree, crashing in _M_insert_. Ruled out: null pointer, out-of-range index. No minimal fix - options are locking m_pointersReferencingMe on every PdmPointer construct/destruct (very hot path) or not deleting PDM objects off-thread; both are design changes.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -7279,7 +7284,7 @@
         "RimSummaryFileSetEnsemble::~RimSummaryFileSetEnsemble"
       ],
       "signature_id": "7d0e00a1c0c9",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "std::_Rb_tree_iterator<caf::PdmObjectHandle**> std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_M_insert_<caf::PdmObjectHandle** const&, std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_Alloc_node>",
       "weeks": {
         "2026-06-26": {
@@ -8992,10 +8997,15 @@
       }
     },
     "ac28fab768b4": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-null-guards",
+        "number": 14482,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14482"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -9019,7 +9029,7 @@
         "RiuViewerCommands::displayContextMenu"
       ],
       "signature_id": "ac28fab768b4",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuViewer::viewerCommands",
       "weeks": {
         "2026-04-29": {
@@ -9040,10 +9050,15 @@
       }
     },
     "af4f93095db7": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-null-guards",
+        "number": 14482,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14482"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -9059,7 +9074,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "af4f93095db7",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuViewer::paintOverlayItems",
       "weeks": {
         "2026-04-29": {
@@ -9776,10 +9791,15 @@
       }
     },
     "bba5f7476970": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-null-guards",
+        "number": 14482,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14482"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -9800,7 +9820,7 @@
         "RiaViewRedrawScheduler::updateAndRedrawScheduledViews"
       ],
       "signature_id": "bba5f7476970",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::Viewer::mainCamera",
       "weeks": {
         "2026-04-29": {
