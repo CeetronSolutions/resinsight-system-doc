@@ -577,10 +577,15 @@
       }
     },
     "06099b707ff2": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-07",
+        "number": 14485,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14485"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -602,7 +607,7 @@
         "RiuPlotMainWindow::customMenuRequested"
       ],
       "signature_id": "06099b707ff2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RicWellLogTools::addRftCurve",
       "weeks": {
         "2026-05-01": {
@@ -3062,8 +3067,8 @@
       }
     },
     "301aefc06fb9": {
-      "last_updated": "2026-06-11",
-      "notes": "",
+      "last_updated": "2026-08-07",
+      "notes": "Crash in RigFemPartResultCalculatorSurfaceAlignedStress::calculate. Reported line 147 is one of ten identical frameData() calls and calculateDerivedResult is inlined out of the stack, so the line attribution is unreliable. Ruled out: findOrLoadScalarResult never returns nullptr (creates a dummy result), and all result frames share m_stepNames.size() so no index mismatch was provable. Uncertain because no single unguarded dereference could be identified; several asserts in the path are no-ops in release.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -3089,7 +3094,7 @@
         "RimGeoMechView::isTimeStepDependentDataVisible"
       ],
       "signature_id": "301aefc06fb9",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RigFemPartResultCalculatorSurfaceAlignedStress::calculate",
       "weeks": {
         "2026-05-08": {
@@ -6595,10 +6600,15 @@
       }
     },
     "6efc152a9abd": {
-      "last_updated": "2026-06-11",
+      "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-07",
+        "number": 14485,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14485"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -6624,7 +6634,7 @@
         "RimEclipseView::onLoadDataAndUpdate"
       ],
       "signature_id": "6efc152a9abd",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifReaderEclipseOutput::transferStaticNNCData",
       "weeks": {
         "2026-05-08": {
@@ -7263,8 +7273,12 @@
     },
     "7d0e00a1c0c9": {
       "last_updated": "2026-08-07",
-      "notes": "Data race, not a null deref. AsyncPdmObjectVectorDeleter deletes PDM objects on a background thread; ~RimSummaryEnsemble copies PdmPointer<RimSummaryCase>, and PdmPointerImpl::addReference() mutates the unsynchronised std::set<PdmObjectHandle**> m_pointersReferencingMe. Concurrent mutation with the main thread (or with PdmObjectHandle::prepareForDelete() clearing the same set) corrupts the tree, crashing in _M_insert_. Ruled out: null pointer, out-of-range index. No minimal fix - options are locking m_pointersReferencingMe on every PdmPointer construct/destruct (very hot path) or not deleting PDM objects off-thread; both are design changes.",
-      "opm_issue": null,
+      "notes": "Same race as #13883, at the call sites that fix did not reach: ~RimSummaryCaseMainCollection and ~RimSummaryEnsemble still call deleteChildrenAsync(). Victim is PdmObjectHandle::m_pointersReferencingMe, an unsynchronised std::set mutated by every PdmPointer construction. Filed as #14483. Fix prepared on branch crash-triage-async-delete using the clearWithoutDelete() + synchronous delete pattern from d8774dabcc.",
+      "opm_issue": {
+        "number": 14483,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14483"
+      },
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
@@ -7284,7 +7298,7 @@
         "RimSummaryFileSetEnsemble::~RimSummaryFileSetEnsemble"
       ],
       "signature_id": "7d0e00a1c0c9",
-      "status": "no-fix-found",
+      "status": "investigating",
       "top_frame": "std::_Rb_tree_iterator<caf::PdmObjectHandle**> std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_M_insert_<caf::PdmObjectHandle** const&, std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_Alloc_node>",
       "weeks": {
         "2026-06-26": {
@@ -9676,8 +9690,8 @@
       }
     },
     "bb02459d6dfe": {
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-08-07",
+      "notes": "Crash below RimFileSummaryCase::createSummaryReaderInterfaceThreadSafe, called from the OpenMP loop in RimSummaryCaseMainCollection::loadFileSummaryCaseData. Ruled out: progress updates (now thread-index guarded), RiaLogging statics and increaseSerialNumber (both inside omp critical), and the 137-byte strcat buffer in getRestartRelativeFilePathResdata (above the 9-element SMSPEC RESTART limit). Uncertain because the stack has 10 unsymbolized frames below the top ResInsight frame, so the fault is inside opm-common/resdata/libc. Untested lead: getRestartRelativeFilePathResdata calls non-thread-safe resdata from the parallel loop.",
       "opm_issue": {
         "number": 11342,
         "state": "OPEN",
@@ -9695,7 +9709,7 @@
         "RimSummaryCaseMainCollection::loadFileSummaryCaseData"
       ],
       "signature_id": "bb02459d6dfe",
-      "status": "linked",
+      "status": "no-fix-found",
       "top_frame": "RimFileSummaryCase::createSummaryReaderInterfaceThreadSafe",
       "weeks": {
         "2026-04-14": {
@@ -11311,8 +11325,8 @@
       }
     },
     "dc342505e2ac": {
-      "last_updated": "2026-06-11",
-      "notes": "",
+      "last_updated": "2026-08-07",
+      "notes": "Crash at RimWellPathTieIn::defineEditorAttribute, measuredDepths().front() on an empty vector. Already fixed on dev by commit 24be78f105 (2026-03-06), which added a size() > 0 guard. All reports come from builds predating that commit.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -11344,7 +11358,7 @@
         "caf::PdmUiFormLayoutObjectEditor::recursivelyConfigureAndUpdateUiOrderingInGridLayout"
       ],
       "signature_id": "dc342505e2ac",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimWellPathTieIn::defineEditorAttribute",
       "weeks": {
         "2026-04-29": {
