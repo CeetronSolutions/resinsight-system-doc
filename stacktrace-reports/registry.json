@@ -2862,8 +2862,8 @@
       }
     },
     "29e769992730": {
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-08-08",
+      "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
         "number": 14185,
         "state": "OPEN",
@@ -2901,7 +2901,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "29e769992730",
-      "status": "linked",
+      "status": "resolved",
       "top_frame": "RicWellPathExportMswTableData::generateCellSegments",
       "weeks": {
         "2026-06-05": {
@@ -3479,7 +3479,12 @@
       "last_updated": "2026-08-08",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-08",
+        "number": 14489,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14489"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -3502,7 +3507,7 @@
         "RicOpenProjectFeature::onActionTriggered"
       ],
       "signature_id": "31aef0833d3f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::ref<RigActiveCellInfo>::p",
       "weeks": {
         "2026-08-07": {
@@ -3872,7 +3877,12 @@
       "last_updated": "2026-08-08",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-08-08",
+        "number": 14489,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14489"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
@@ -3896,7 +3906,7 @@
         "RiaApplication::openFile"
       ],
       "signature_id": "36a46843df47",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::ref<RigActiveCellInfo>::p",
       "weeks": {
         "2026-08-07": {
@@ -5446,8 +5456,8 @@
       }
     },
     "4bd3f3b19531": {
-      "last_updated": "2026-06-11",
-      "notes": "",
+      "last_updated": "2026-08-08",
+      "notes": "Crash below RiaGrpcApplicationInterface::processRequests:109, which is 'if ( m_grpcServer ) m_grpcServer->quit();' and already null guarded in the April and May builds the reports come from. Uncertain because the 9 unsymbolized frames below it place the fault inside the gRPC server shutdown path, not in ResInsight code. No reports since 2026-05-08.",
       "opm_issue": {
         "number": 14185,
         "state": "OPEN",
@@ -5467,7 +5477,7 @@
         "RiaGrpcConsoleApplication::doIdleProcessing"
       ],
       "signature_id": "4bd3f3b19531",
-      "status": "linked",
+      "status": "no-fix-found",
       "top_frame": "RiaGrpcApplicationInterface::processRequests",
       "weeks": {
         "2026-04-14": {
@@ -7469,8 +7479,8 @@
       }
     },
     "756f5de23e61": {
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-08-08",
+      "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
         "number": 14185,
         "state": "OPEN",
@@ -7497,7 +7507,7 @@
         "RimWellPathCollection::updateMswSegments"
       ],
       "signature_id": "756f5de23e61",
-      "status": "linked",
+      "status": "resolved",
       "top_frame": "RicWellPathExportMswTableData::generateCellSegments",
       "weeks": {
         "2026-06-05": {
@@ -12601,8 +12611,8 @@
       }
     },
     "e934af263f7e": {
-      "last_updated": "2026-06-28",
-      "notes": "",
+      "last_updated": "2026-08-08",
+      "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
         "number": 14185,
         "state": "OPEN",
@@ -12636,7 +12646,7 @@
         "RicWellPathExportCompletionDataFeature::prepareExportSettingsAndExportCompletions"
       ],
       "signature_id": "e934af263f7e",
-      "status": "linked",
+      "status": "resolved",
       "top_frame": "RicWellPathExportMswTableData::generateCellSegments",
       "weeks": {
         "2026-06-05": {
