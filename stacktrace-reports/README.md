@@ -52,7 +52,9 @@ That performs, in order:
    `reports/YYYY-MM-DD.md` plus `index.md` and `incoming-csvs.md` from the
    registry. Each stack shows its issue and/or fix PR; stacks whose issue is
    `CLOSED`, whose fix PR is `MERGED`, or that triage settled are gathered under
-   a `## Closed issues and merged fixes` section automatically. Only the latest
+   a `## Closed issues and merged fixes` section automatically, and the report
+   header carries a **Closed out** count of how many of the week's stacks — and
+   how many of its crash reports — landed there. Only the latest
    report is ever re-rendered: previous weeks' pages are frozen snapshots of
    what was known at the time, so do **not** use `render --all` (it rewrites
    their stack listings and issue states with today's registry contents).

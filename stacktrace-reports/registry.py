@@ -410,9 +410,16 @@ def render_week(reg: dict, week: str) -> str:
     out.append("")
     out.append(f"# Stacktrace report {week}")
     out.append("")
+    closed = [e for e in members if is_closed_out(e)]
+    closed_reports = sum(e["weeks"][week]["count"] for e in closed)
+
     out.append(f"- **Source CSV:** [{csv_name}](../csv/{csv_name})")
     out.append(f"- **Total crash reports:** {total}")
     out.append(f"- **Unique call stacks:** {len(members)}")
+    out.append(
+        f"- **Closed out:** {len(closed)} of {len(members)} stacks "
+        f"({closed_reports} crash reports) — issue closed, fix PR merged, or triage settled"
+    )
     if skipped:
         out.append(f"- **Rows skipped (old version):** {skipped}")
     out.append("")
