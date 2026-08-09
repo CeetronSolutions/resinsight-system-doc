@@ -12,6 +12,7 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 
 - [Incoming CSVs](./incoming-csvs.md) — every raw CSV received, with row counts and a link to its weekly report.
 - [Weekly reports](./index.md) — list of per-week analyses, newest first.
+- [Open crash signatures](./open-signatures.md) — point-in-time analysis (2026-08-09) of what has been seen but not fixed or started, and where the remaining crash volume actually sits.
 - `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week (broken down by reporting `APPversion`), any linked OPM issue with its open/closed state, any fix PR with its `OPEN`/`MERGED`/`CLOSED` state, an investigation status, and notes. A signature counts as *referenced* once it has an issue **or** a fix PR — new triage produces only the PR. State persists across weeks here, not in the Markdown.
 - [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the latest report and the index pages from it (`render`), lists untriaged signatures — no issue, no PR — latest-version-first (`worklist`), and records an investigation outcome (`set`).
 - [link_issues.py](./link_issues.py) — searches OPM/ResInsight for each unreferenced signature's top frame and links the issue when it confidently matches; refreshes the state of already-linked issues and of recorded fix PRs, so a merged PR flips its signatures to `resolved`.
