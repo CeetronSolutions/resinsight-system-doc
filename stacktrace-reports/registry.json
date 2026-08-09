@@ -4621,10 +4621,15 @@
       }
     },
     "428b30ffcbe2": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-08-09",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "remove-async-pdm-object-deleter",
+        "number": 14492,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14492"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -4644,7 +4649,7 @@
         "RimSummaryEnsemble::~RimSummaryEnsemble"
       ],
       "signature_id": "428b30ffcbe2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "std::__new_allocator<std::_Rb_tree_node<caf::PdmObjectHandle**> >::deallocate",
       "weeks": {
         "2026-08-07": {
@@ -7746,14 +7751,19 @@
       }
     },
     "7d0e00a1c0c9": {
-      "last_updated": "2026-08-07",
+      "last_updated": "2026-08-09",
       "notes": "Same race as #13883, at the call sites that fix did not reach: ~RimSummaryCaseMainCollection and ~RimSummaryEnsemble still call deleteChildrenAsync(). Victim is PdmObjectHandle::m_pointersReferencingMe, an unsynchronised std::set mutated by every PdmPointer construction. Filed as #14483. Fix prepared on branch crash-triage-async-delete using the clearWithoutDelete() + synchronous delete pattern from d8774dabcc.",
       "opm_issue": {
         "number": 14483,
         "state": "OPEN",
         "url": "https://github.com/OPM/ResInsight/issues/14483"
       },
-      "pr": null,
+      "pr": {
+        "branch": "remove-async-pdm-object-deleter",
+        "number": 14492,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14492"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -7772,7 +7782,7 @@
         "RimSummaryFileSetEnsemble::~RimSummaryFileSetEnsemble"
       ],
       "signature_id": "7d0e00a1c0c9",
-      "status": "investigating",
+      "status": "pr-open",
       "top_frame": "std::_Rb_tree_iterator<caf::PdmObjectHandle**> std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_M_insert_<caf::PdmObjectHandle** const&, std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_Alloc_node>",
       "weeks": {
         "2026-06-26": {
@@ -7802,8 +7812,8 @@
       }
     },
     "7ee60e04022b": {
-      "last_updated": "2026-08-08",
-      "notes": "",
+      "last_updated": "2026-08-09",
+      "notes": "Crash is the assert CVF_ASSERT( quadTextureCoords && quadMapper && resultAccessor && texMapper ) at RivTernaryTextureCoordsCreator.cpp:160 in v2026.06.1. Ruled out: quadTextureCoords is allocated in the RivGridPartMgr constructor and never reset; quadMapper is asserted non-null in the creator constructor; resultAccessor and texMapper are unconditionally new-allocated. No normal control flow reaches this assert, which points at a lifetime problem on the shared view-linking path (RimViewLinker::updateTimeStep) rather than a missing guard. Uncertain because the null pointer cannot be identified from the stack alone.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -7839,7 +7849,7 @@
         "RimEclipseView::onUpdateDisplayModelForCurrentTimeStep"
       ],
       "signature_id": "7ee60e04022b",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RivTernaryTextureCoordsCreator::createTextureCoords",
       "weeks": {
         "2026-08-07": {
@@ -8347,8 +8357,8 @@
       }
     },
     "94ae601b2092": {
-      "last_updated": "2026-08-08",
-      "notes": "",
+      "last_updated": "2026-08-09",
+      "notes": "Crash is the assert CVF_ASSERT( quadTextureCoords && quadMapper && resultAccessor && texMapper ) at RivTextureCoordsCreator.cpp:102 in v2026.06.1. Same root pattern as 7ee60e04022b. RivGridPartMgr::updateCellResultColor checks texturer.isValid() before the call, which covers quadMapper, resultAccessor and texMapper, and quadTextureCoords is allocated in the RivGridPartMgr constructor and never reset. Uncertain because no normal control flow reaches this assert; suspect a lifetime problem on the view-linking path.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -8383,7 +8393,7 @@
         "RimEclipseView::onUpdateDisplayModelForCurrentTimeStep"
       ],
       "signature_id": "94ae601b2092",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RivTextureCoordsCreator::createTextureCoords",
       "weeks": {
         "2026-08-07": {
@@ -8851,10 +8861,15 @@
       }
     },
     "984e0eeed6cd": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-08-09",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-combined",
+        "number": 14495,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14495"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -8885,7 +8900,7 @@
         "RigCaseCellResultsData::ensureKnownResultLoaded"
       ],
       "signature_id": "984e0eeed6cd",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigCaseCellResultsData::computeRiTransComponent",
       "weeks": {
         "2026-08-07": {
@@ -12371,10 +12386,15 @@
       }
     },
     "e1eb930dfa0f": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-08-09",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-combined",
+        "number": 14495,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14495"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -12386,7 +12406,7 @@
         "RimGridCalculation::getActiveCellValues"
       ],
       "signature_id": "e1eb930dfa0f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-07": {
