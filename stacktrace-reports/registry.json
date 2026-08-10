@@ -648,14 +648,14 @@
       }
     },
     "06099b707ff2": {
-      "last_updated": "2026-08-07",
-      "notes": "",
+      "last_updated": "2026-08-10",
+      "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-2026-08-07",
-        "number": 14485,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14485"
+        "branch": "crash-triage-combined",
+        "number": 14495,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14495"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -678,7 +678,7 @@
         "RiuPlotMainWindow::customMenuRequested"
       ],
       "signature_id": "06099b707ff2",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RicWellLogTools::addRftCurve",
       "weeks": {
         "2026-05-01": {
@@ -2862,12 +2862,12 @@
       }
     },
     "29e769992730": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-08-10",
       "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
-        "number": 14185,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/14185"
+        "number": 14121,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14121"
       },
       "pr": null,
       "representative_stack": [
@@ -3476,14 +3476,14 @@
       }
     },
     "31aef0833d3f": {
-      "last_updated": "2026-08-08",
-      "notes": "",
+      "last_updated": "2026-08-10",
+      "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-2026-08-08",
-        "number": 14489,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14489"
+        "branch": "crash-triage-combined",
+        "number": 14495,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14495"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
@@ -3507,7 +3507,7 @@
         "RicOpenProjectFeature::onActionTriggered"
       ],
       "signature_id": "31aef0833d3f",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::ref<RigActiveCellInfo>::p",
       "weeks": {
         "2026-08-07": {
@@ -3874,14 +3874,14 @@
       }
     },
     "36a46843df47": {
-      "last_updated": "2026-08-08",
-      "notes": "",
+      "last_updated": "2026-08-10",
+      "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-2026-08-08",
-        "number": 14489,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14489"
+        "branch": "crash-triage-combined",
+        "number": 14495,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14495"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -3906,7 +3906,7 @@
         "RiaApplication::openFile"
       ],
       "signature_id": "36a46843df47",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::ref<RigActiveCellInfo>::p",
       "weeks": {
         "2026-08-07": {
@@ -4627,7 +4627,7 @@
       "pr": {
         "branch": "remove-async-pdm-object-deleter",
         "number": 14492,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14492"
       },
       "representative_stack": [
@@ -4649,7 +4649,7 @@
         "RimSummaryEnsemble::~RimSummaryEnsemble"
       ],
       "signature_id": "428b30ffcbe2",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "std::__new_allocator<std::_Rb_tree_node<caf::PdmObjectHandle**> >::deallocate",
       "weeks": {
         "2026-08-07": {
@@ -5461,13 +5461,9 @@
       }
     },
     "4bd3f3b19531": {
-      "last_updated": "2026-08-08",
-      "notes": "Crash below RiaGrpcApplicationInterface::processRequests:109, which is 'if ( m_grpcServer ) m_grpcServer->quit();' and already null guarded in the April and May builds the reports come from. Uncertain because the 9 unsymbolized frames below it place the fault inside the gRPC server shutdown path, not in ResInsight code. No reports since 2026-05-08.",
-      "opm_issue": {
-        "number": 14185,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/14185"
-      },
+      "last_updated": "2026-08-10",
+      "notes": "Crash below RiaGrpcApplicationInterface::processRequests:109, which is 'if ( m_grpcServer ) m_grpcServer->quit();' and already null guarded in the April and May builds the reports come from. Uncertain because the 9 unsymbolized frames below it place the fault inside the gRPC server shutdown path, not in ResInsight code. No reports since 2026-05-08. Previously auto-linked to #14185, but that issue is the RigEclipseWellLogExtractor AABB crash; the link came only from link_issues.py matching frame [16] RiaGrpcApplicationInterface::processRequests inside #14185s pasted stack. Unlinked - this signature has no reference.",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -7068,14 +7064,14 @@
       }
     },
     "6efc152a9abd": {
-      "last_updated": "2026-08-07",
-      "notes": "",
+      "last_updated": "2026-08-10",
+      "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-2026-08-07",
-        "number": 14485,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14485"
+        "branch": "crash-triage-combined",
+        "number": 14495,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14495"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
@@ -7102,7 +7098,7 @@
         "RimEclipseView::onLoadDataAndUpdate"
       ],
       "signature_id": "6efc152a9abd",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RifReaderEclipseOutput::transferStaticNNCData",
       "weeks": {
         "2026-05-08": {
@@ -7484,12 +7480,12 @@
       }
     },
     "756f5de23e61": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-08-10",
       "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
-        "number": 14185,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/14185"
+        "number": 14121,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14121"
       },
       "pr": null,
       "representative_stack": [
@@ -7751,17 +7747,13 @@
       }
     },
     "7d0e00a1c0c9": {
-      "last_updated": "2026-08-09",
-      "notes": "Same race as #13883, at the call sites that fix did not reach: ~RimSummaryCaseMainCollection and ~RimSummaryEnsemble still call deleteChildrenAsync(). Victim is PdmObjectHandle::m_pointersReferencingMe, an unsynchronised std::set mutated by every PdmPointer construction. Filed as #14483. Fix prepared on branch crash-triage-async-delete using the clearWithoutDelete() + synchronous delete pattern from d8774dabcc.",
-      "opm_issue": {
-        "number": 14483,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/14483"
-      },
+      "last_updated": "2026-08-10",
+      "notes": "Fixed by #14492 (AsyncPdmObjectVectorDeleter removed). A previously recorded issue link (#14483) did not resolve on GitHub and was dropped.",
+      "opm_issue": null,
       "pr": {
         "branch": "remove-async-pdm-object-deleter",
         "number": 14492,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14492"
       },
       "representative_stack": [
@@ -7782,7 +7774,7 @@
         "RimSummaryFileSetEnsemble::~RimSummaryFileSetEnsemble"
       ],
       "signature_id": "7d0e00a1c0c9",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "std::_Rb_tree_iterator<caf::PdmObjectHandle**> std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_M_insert_<caf::PdmObjectHandle** const&, std::_Rb_tree<caf::PdmObjectHandle**, caf::PdmObjectHandle**, std::_Identity<caf::PdmObjectHandle**>, std::less<caf::PdmObjectHandle**>, std::allocator<caf::PdmObjectHandle**> >::_Alloc_node>",
       "weeks": {
         "2026-06-26": {
@@ -8867,7 +8859,7 @@
       "pr": {
         "branch": "crash-triage-combined",
         "number": 14495,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14495"
       },
       "representative_stack": [
@@ -8900,7 +8892,7 @@
         "RigCaseCellResultsData::ensureKnownResultLoaded"
       ],
       "signature_id": "984e0eeed6cd",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RigCaseCellResultsData::computeRiTransComponent",
       "weeks": {
         "2026-08-07": {
@@ -10172,8 +10164,8 @@
       }
     },
     "b80de5fc87c2": {
-      "last_updated": "2026-06-28",
-      "notes": "",
+      "last_updated": "2026-08-10",
+      "notes": "Crash site is RigEclipseWellLogExtractor.cpp:82 in v2026.02.2, 'if ( cell.isInvalid() || cell.subGrid() != nullptr )', reading a RigCell at a globalCellIndex returned by findCloseCellIndices -> RigMainGrid::findIntersectingCells. Not the null-well-path-geometry bug of #14121: findCellIntersectionInfosAlongPath builds a dummy RigWellPath from the coords, and the v2026.02.2 ctor takes gsl::not_null, so m_wellPathGeometry cannot be null here. The bad index comes from the AABB cell search tree: in v2026.02.2 findIntersectingCells lazily built the mutable m_cellSearchTree with no synchronisation, so a concurrent build/rebuild could be queried while half-built or being destroyed. Fixed on dev by f1218e527f (#14183, 2026-06-10), which serialises the build with m_cellSearchTreeMutex and keeps a local ref to the tree for the duration of the query. That commit is in v2026.06.0/v2026.06.1. All 4 reports are from 2026.02.2 and none after the week of 2026-06-26; the flat count of 1 per week across 4 overlapping CSVs is most likely a single crash event. #14185 can be closed as fixed by #14183.",
       "opm_issue": {
         "number": 14185,
         "state": "OPEN",
@@ -10209,7 +10201,7 @@
         "RicWellPathExportMswTableData::generateFishbonesMswExportInfoForWell"
       ],
       "signature_id": "b80de5fc87c2",
-      "status": "investigating",
+      "status": "resolved",
       "top_frame": "RigEclipseWellLogExtractor::calculateIntersection",
       "weeks": {
         "2026-06-05": {
@@ -12392,7 +12384,7 @@
       "pr": {
         "branch": "crash-triage-combined",
         "number": 14495,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14495"
       },
       "representative_stack": [
@@ -12406,7 +12398,7 @@
         "RimGridCalculation::getActiveCellValues"
       ],
       "signature_id": "e1eb930dfa0f",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-07": {
@@ -12631,12 +12623,12 @@
       }
     },
     "e934af263f7e": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-08-10",
       "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
-        "number": 14185,
-        "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/14185"
+        "number": 14121,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14121"
       },
       "pr": null,
       "representative_stack": [
