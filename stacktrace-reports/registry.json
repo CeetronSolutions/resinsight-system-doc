@@ -6815,7 +6815,7 @@
       "notes": "",
       "opm_issue": {
         "number": 14531,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14531"
       },
       "pr": null,
@@ -6844,7 +6844,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<bool> >::setValueFromUiEditor"
       ],
       "signature_id": "63524386b098",
-      "status": "linked",
+      "status": "resolved",
       "top_frame": "std::vector<cvf::Vector3<double>, std::allocator<cvf::Vector3<double> > >::size",
       "weeks": {
         "2026-08-14": {
