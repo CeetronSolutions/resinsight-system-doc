@@ -726,13 +726,13 @@
       }
     },
     "07f8bc6f0333": {
-      "last_updated": "2026-08-18",
+      "last_updated": "2026-08-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-assert-crashes",
         "number": 14548,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14548"
       },
       "representative_stack": [
@@ -759,7 +759,7 @@
         "cvf::Rendering::render"
       ],
       "signature_id": "07f8bc6f0333",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::Texture::bind",
       "weeks": {
         "2026-08-14": {
@@ -6045,13 +6045,13 @@
       }
     },
     "51372f8b35e8": {
-      "last_updated": "2026-08-18",
+      "last_updated": "2026-08-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-assert-crashes",
         "number": 14548,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14548"
       },
       "representative_stack": [
@@ -6074,7 +6074,7 @@
         "RimEclipseStatisticsCase::computeStatisticsAndUpdateViews"
       ],
       "signature_id": "51372f8b35e8",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RigCaseCellResultsData::findOrLoadKnownScalarResultForTimeStep",
       "weeks": {
         "2026-08-14": {
