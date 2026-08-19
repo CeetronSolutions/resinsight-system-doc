@@ -726,10 +726,15 @@
       }
     },
     "07f8bc6f0333": {
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-08-18",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-assert-crashes",
+        "number": 14548,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14548"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -754,7 +759,7 @@
         "cvf::Rendering::render"
       ],
       "signature_id": "07f8bc6f0333",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::Texture::bind",
       "weeks": {
         "2026-08-14": {
@@ -5819,10 +5824,19 @@
       }
     },
     "4bffa6efd4ff": {
-      "last_updated": "2026-08-16",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "last_updated": "2026-08-18",
+      "notes": "Empty RigWellPath geometry made interpolatedVectorValuesAlongWellPath index vectorValuesAlongWellPath.at(vxIdx - 1) with vxIdx = 0, throwing std::out_of_range and terminating. Fixed on dev by PR #14455 (empty-geometry guard). The crashing caller extractSingleWellMsw_Legacy was also removed in PR #14242.",
+      "opm_issue": {
+        "number": 14451,
+        "state": "CLOSED",
+        "url": "https://github.com/OPM/ResInsight/issues/14451"
+      },
+      "pr": {
+        "branch": "",
+        "number": 14455,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14455"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -5854,7 +5868,7 @@
         "RicWellPathExportMswTableData::extractSingleWellMsw_Legacy"
       ],
       "signature_id": "4bffa6efd4ff",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-14": {
@@ -6031,10 +6045,15 @@
       }
     },
     "51372f8b35e8": {
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-08-18",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-assert-crashes",
+        "number": 14548,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14548"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -6055,7 +6074,7 @@
         "RimEclipseStatisticsCase::computeStatisticsAndUpdateViews"
       ],
       "signature_id": "51372f8b35e8",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigCaseCellResultsData::findOrLoadKnownScalarResultForTimeStep",
       "weeks": {
         "2026-08-14": {
@@ -10249,10 +10268,15 @@
       }
     },
     "b0449a98923e": {
-      "last_updated": "2026-08-16",
-      "notes": "",
+      "last_updated": "2026-08-18",
+      "notes": "RiuPlotUpdater::m_eclipseResultDef was a raw pointer, dangling when the delayed update ran after the result definition was deleted during shutdown. Fixed on dev by PR #14474, which made it a caf::PdmPointer.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14474,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14474"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -10276,7 +10300,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "b0449a98923e",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiuRelativePermeabilityPlotUpdater::queryDataAndUpdatePlot",
       "weeks": {
         "2026-08-14": {
