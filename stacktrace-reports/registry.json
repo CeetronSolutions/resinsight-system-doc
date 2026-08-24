@@ -949,13 +949,13 @@
       }
     },
     "0a14e5d85c8b": {
-      "last_updated": "2026-08-23",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-fixes-2026-08-21",
         "number": 14591,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14591"
       },
       "representative_stack": [
@@ -983,7 +983,7 @@
         "RimIntersectionCollection::appendDynamicPartsToModel"
       ],
       "signature_id": "0a14e5d85c8b",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RivFemIntersectionGrid::cellCornerVertices",
       "weeks": {
         "2026-08-21": {
@@ -6975,13 +6975,13 @@
       }
     },
     "5e6806a0322a": {
-      "last_updated": "2026-08-23",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-fixes-2026-08-21",
         "number": 14591,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14591"
       },
       "representative_stack": [
@@ -7005,7 +7005,7 @@
         "RiuMainWindow::~RiuMainWindow"
       ],
       "signature_id": "5e6806a0322a",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RiuMainWindow::cleanupGuiBeforeProjectClose",
       "weeks": {
         "2026-08-21": {
@@ -7350,13 +7350,13 @@
       }
     },
     "66dc3d7e252b": {
-      "last_updated": "2026-08-23",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-fixes-2026-08-21",
         "number": 14591,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14591"
       },
       "representative_stack": [
@@ -7385,7 +7385,7 @@
         "RigFemPartResultsCollection::assertResultsLoaded"
       ],
       "signature_id": "66dc3d7e252b",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-21": {
@@ -10194,13 +10194,13 @@
       }
     },
     "a4e3b4e08de3": {
-      "last_updated": "2026-08-23",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-fixes-2026-08-21",
         "number": 14591,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14591"
       },
       "representative_stack": [
@@ -10226,7 +10226,7 @@
         "doImport"
       ],
       "signature_id": "a4e3b4e08de3",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::ref<RigMainGrid>::swap",
       "weeks": {
         "2026-08-21": {
