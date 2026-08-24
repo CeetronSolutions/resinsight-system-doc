@@ -949,10 +949,15 @@
       }
     },
     "0a14e5d85c8b": {
-      "last_updated": "2026-08-22",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-fixes-2026-08-21",
+        "number": 14591,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14591"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -978,7 +983,7 @@
         "RimIntersectionCollection::appendDynamicPartsToModel"
       ],
       "signature_id": "0a14e5d85c8b",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RivFemIntersectionGrid::cellCornerVertices",
       "weeks": {
         "2026-08-21": {
@@ -6970,10 +6975,15 @@
       }
     },
     "5e6806a0322a": {
-      "last_updated": "2026-08-22",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-fixes-2026-08-21",
+        "number": 14591,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14591"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -6995,7 +7005,7 @@
         "RiuMainWindow::~RiuMainWindow"
       ],
       "signature_id": "5e6806a0322a",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiuMainWindow::cleanupGuiBeforeProjectClose",
       "weeks": {
         "2026-08-21": {
@@ -7340,10 +7350,15 @@
       }
     },
     "66dc3d7e252b": {
-      "last_updated": "2026-08-22",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-fixes-2026-08-21",
+        "number": 14591,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14591"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -7370,7 +7385,7 @@
         "RigFemPartResultsCollection::assertResultsLoaded"
       ],
       "signature_id": "66dc3d7e252b",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-21": {
@@ -10179,10 +10194,15 @@
       }
     },
     "a4e3b4e08de3": {
-      "last_updated": "2026-08-22",
+      "last_updated": "2026-08-24",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-fixes-2026-08-21",
+        "number": 14591,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14591"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -10206,7 +10226,7 @@
         "doImport"
       ],
       "signature_id": "a4e3b4e08de3",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "cvf::ref<RigMainGrid>::swap",
       "weeks": {
         "2026-08-21": {
@@ -12401,8 +12421,8 @@
       }
     },
     "c7d85e2fb8b8": {
-      "last_updated": "2026-08-22",
-      "notes": "",
+      "last_updated": "2026-08-23",
+      "notes": "Crash inside Qt6Widgets (QWidgetTextControl::setAcceptRichText+0x697). The stack contains no ResInsight frames at all, so there is no crash site to map to source. Seen once, on 2026.02.2 only, and not at all on 2026.06.1. Not actionable without a symbolized ResInsight frame or a repro.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -12412,7 +12432,7 @@
         "Qt6Widgets!QWidgetTextControl::setAcceptRichText+0x697"
       ],
       "signature_id": "c7d85e2fb8b8",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "Qt6Widgets!QWidgetTextControl::setAcceptRichText+0x697",
       "weeks": {
         "2026-08-21": {
