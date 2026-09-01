@@ -7503,7 +7503,7 @@
     },
     "6488ccc2a16e": {
       "last_updated": "2026-09-01",
-      "notes": "",
+      "notes": "Crash at Rim3dView::timeStepName() -> ownerCase()->timeStepName(), called from RiuViewer::paintOverlayItems during a repaint that races with case/view teardown. Existing null-guards on ownerCase() already cover the obvious case. Deeper stack frames (RimMdiWindowController::removeWindowFromMDI, RiuMainWindowBase::removeViewerFromMdiArea) no longer exist in current dev (MDI subsystem replaced), so the exact re-entrant teardown path from the 2026.06.1 build can't be reconstructed or tested against current source. Uncertain because root cause and repro path can't be verified on current code.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -7554,7 +7554,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "6488ccc2a16e",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-28": {
