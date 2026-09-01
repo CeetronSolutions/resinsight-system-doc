@@ -15309,7 +15309,7 @@
     },
     "fcd0684171d7": {
       "last_updated": "2026-09-01",
-      "notes": "",
+      "notes": "Crash at Rim3dView::timeStepName called from RiuViewer::paintOverlayItems during paintGL, triggered synchronously via RiuMainWindowBase::removeViewerFromMdiArea while the owning Rim3dView is mid-destruction (RicCloseCaseFeature::deleteEclipseCase teardown chain). MDI removal path (RiuMainWindow::removeViewer/removeViewerFromMdiArea) is in the call stack; per policy, MDI-related stacks are marked no-fix without further investigation.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -15351,7 +15351,7 @@
         "RiuMainWindowBase::removeViewerFromMdiArea"
       ],
       "signature_id": "fcd0684171d7",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-28": {
