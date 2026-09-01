@@ -3389,7 +3389,7 @@
     },
     "2afc067a0aae": {
       "last_updated": "2026-09-01",
-      "notes": "",
+      "notes": "No action: this teardown path will be obsolete when the MDI system is removed.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -3425,7 +3425,7 @@
         "RimEclipseView::~RimEclipseView"
       ],
       "signature_id": "2afc067a0aae",
-      "status": "new",
+      "status": "on-hold",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-28": {
