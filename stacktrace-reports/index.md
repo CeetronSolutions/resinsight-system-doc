@@ -10,6 +10,7 @@ Per-week deduplicated stacktrace analyses, newest first. Each report lists uniqu
 
 | Week       | Report                                | Total rows | Unique stacks |
 |------------|---------------------------------------|-----------:|--------------:|
+| 2026-08-28 | [2026-08-28](./reports/2026-08-28.md) |        126 |            50 |
 | 2026-08-21 | [2026-08-21](./reports/2026-08-21.md) |        106 |            45 |
 | 2026-08-14 | [2026-08-14](./reports/2026-08-14.md) |         99 |            41 |
 | 2026-08-07 | [2026-08-07](./reports/2026-08-07.md) |        108 |            44 |
