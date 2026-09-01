@@ -10925,7 +10925,12 @@
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-well-ia-interpolated-result-value",
+        "number": 14663,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14663"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -10951,7 +10956,7 @@
         "RicRunWellIntegrityAnalysisFeature::onActionTriggered"
       ],
       "signature_id": "a91d5c7fff45",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::Vector3<double>::Vector3<cvf::Vector3<float> >",
       "weeks": {
         "2026-08-28": {
