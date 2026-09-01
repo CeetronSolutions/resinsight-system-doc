@@ -12515,7 +12515,7 @@
     },
     "c23b7fd3c7c3": {
       "last_updated": "2026-09-01",
-      "notes": "",
+      "notes": "Uncaught C++ exception (std::terminate via manageTerminate), not a raw SIGSEGV. Chain: cell pick -> RiuSelectionChangedHandler::updateResultInfo -> gridResultText -> cellResultText -> RiuResultTextBuilder::cellResultTextAndValueText (RiuResultTextBuilder.cpp:1106/1110). Checked RigActiveCellsResultAccessor::cellFaceScalar, RigAllGridCellsResultAccessor::cellFaceScalar, RigActiveCellInfo::cellResultIndex, hasCategoryResult(), resultVariableUiName(), categoryNameFromCategoryValue(): all bounds-checked with operator[] or already guarded by CAF_ASSERT (compiled out in Release, would be UB/SIGSEGV not throw). No throwing call (.at()/.value() on empty optional) found in the reachable path. Likely the real throw site is several frames deeper (frames 6-10, unsymbolized/omitted from signature) and the reported line 1106/1110 is an imprecise optimizer line marker in RelWithDebInfo. Uncertain because no sound single root cause identified; declining to patch speculatively.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -12545,7 +12545,7 @@
         "RiuResultTextBuilder::resultTextFromLinkedViews"
       ],
       "signature_id": "c23b7fd3c7c3",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-28": {
