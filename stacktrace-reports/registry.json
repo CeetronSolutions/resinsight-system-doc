@@ -8829,9 +8829,18 @@
     },
     "70bce3e95a7f": {
       "last_updated": "2026-09-07",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "notes": "Related but distinct fault from f4394a37498f/12f26117f677 in the same dock-teardown area; fixed in the same PR.",
+      "opm_issue": {
+        "number": 14699,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14699"
+      },
+      "pr": {
+        "branch": "fix-14699-name-config-null-holder",
+        "number": 14700,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14700"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -8852,7 +8861,7 @@
         "RiuMainWindowBase::tileViewWindows"
       ],
       "signature_id": "70bce3e95a7f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmUiTreeViewEditor::selectAsCurrentItem",
       "weeks": {
         "2026-09-04": {
