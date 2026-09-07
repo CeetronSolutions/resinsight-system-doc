@@ -1581,9 +1581,18 @@
     },
     "12f26117f677": {
       "last_updated": "2026-09-07",
-      "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "notes": "Same root cause and fix as f4394a37498f (RimNameConfig::autoName null holder deref).",
+      "opm_issue": {
+        "number": 14699,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14699"
+      },
+      "pr": {
+        "branch": "fix-14699-name-config-null-holder",
+        "number": 14700,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14700"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageTerminate() at ResInsight/ApplicationExeCode/RiaMainTools.cpp:247",
@@ -1633,7 +1642,7 @@
         "RiaOptionItemFactory::appendOptionItemFromViewNameAndCaseName"
       ],
       "signature_id": "12f26117f677",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-09-04": {
@@ -15981,8 +15990,17 @@
     "f4394a37498f": {
       "last_updated": "2026-09-07",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14699,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14699"
+      },
+      "pr": {
+        "branch": "fix-14699-name-config-null-holder",
+        "number": 14700,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14700"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -16044,7 +16062,7 @@
         "caf::PdmFieldUiCap<caf::PdmProxyValueField<QString> >::uiValue"
       ],
       "signature_id": "f4394a37498f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-09-04": {
