@@ -14398,16 +14398,16 @@
     },
     "d702ebefb39c": {
       "last_updated": "2026-09-08",
-      "notes": "Root cause found: findOrLoadKnownScalarResultForTimeStep (RigCaseCellResultsData.cpp) only bounds-checks timeStepIndex when timeStepCount>0, so a DYNAMIC_NATIVE result with 0 known time steps falls through and returns a 'valid' scalarResultIndex whose m_cellScalarResults vector was never resized. Caller (RigSoilResultCalculator::calculate) then indexes it OOB via CAF_ASSERT-only bounds check (no-op in Release) -> SIGSEGV. Candidate fix drafted locally (build-verified) but NOT pushed: remove '&& timeStepCount > 0' from the guard. Existing link to issue #7267 appears to be a false-positive text match (unrelated 2021 enhancement issue) rather than a real crash report. Awaiting human approval before filing a new issue/PR per hard rule (no GitHub posts without explicit approval).",
+      "notes": "findOrLoadKnownScalarResultForTimeStep (RigCaseCellResultsData.cpp) only bounds-checked timeStepIndex when timeStepCount>0, so a DYNAMIC_NATIVE result with 0 known time steps returned a scalarResultIndex whose m_cellScalarResults vector was never resized; RigSoilResultCalculator::calculate then indexed it out of bounds (CAF_ASSERT is a no-op in Release) -> SIGSEGV. Fixed by dropping the timeStepCount>0 condition from the guard: PR #14705, merged to dev 2026-09-08. The earlier link to issue #7267 was a false-positive text match on an unrelated 2021 enhancement issue.",
       "opm_issue": {
         "number": 14704,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14704"
       },
       "pr": {
         "branch": "fix-14704-soil-timestep-bounds",
         "number": 14705,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14705"
       },
       "representative_stack": [
@@ -14438,7 +14438,7 @@
         "RimGridCalculation::calculateForCases"
       ],
       "signature_id": "d702ebefb39c",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RigCaseCellResultsData::computeSOILForTimeStep",
       "weeks": {
         "2026-09-04": {
