@@ -418,10 +418,15 @@
       }
     },
     "034d6b7788d8": {
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-09-08",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-08",
+        "number": 14702,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14702"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -445,7 +450,7 @@
         "RiaGrpcServerImpl::processAllQueuedRequests"
       ],
       "signature_id": "034d6b7788d8",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RicfExportSnapshots::execute",
       "weeks": {
         "2026-09-04": {
@@ -5569,10 +5574,15 @@
       }
     },
     "42c22a6d17c5": {
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-09-08",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-08",
+        "number": 14702,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14702"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -5596,7 +5606,7 @@
         "RiaApplication::closeProject"
       ],
       "signature_id": "42c22a6d17c5",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuPlotUpdater::updateOnSelectionChanged",
       "weeks": {
         "2026-09-04": {
@@ -9266,8 +9276,8 @@
       }
     },
     "76a4c9bb99c1": {
-      "last_updated": "2026-09-07",
-      "notes": "",
+      "last_updated": "2026-09-08",
+      "notes": "Already fixed in v2026.09.0 (commit 7c10106545 / #14374); crash report is from older build v2026.06.1. No action needed.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -9300,7 +9310,7 @@
         "RimEclipseCase::openReservoirCase"
       ],
       "signature_id": "76a4c9bb99c1",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-09-04": {
@@ -14432,10 +14442,15 @@
       }
     },
     "d8c1122aca00": {
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-09-08",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-08",
+        "number": 14702,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14702"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -14466,7 +14481,7 @@
         "RimEclipseResultCase::importGridAndResultMetaData"
       ],
       "signature_id": "d8c1122aca00",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RifEclipseOutputFileTools::createReportStepsMetaData",
       "weeks": {
         "2026-09-04": {
@@ -14998,10 +15013,15 @@
       }
     },
     "e2d49fed306f": {
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-09-08",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-08",
+        "number": 14702,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14702"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -15026,7 +15046,7 @@
         "caf::CmdFieldChangeExec::redo"
       ],
       "signature_id": "e2d49fed306f",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigFlowDiagResults::flowCharacteristicsResults",
       "weeks": {
         "2026-09-04": {
