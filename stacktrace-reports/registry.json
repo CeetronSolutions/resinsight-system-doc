@@ -14397,14 +14397,19 @@
       }
     },
     "d702ebefb39c": {
-      "last_updated": "2026-09-07",
-      "notes": "",
+      "last_updated": "2026-09-08",
+      "notes": "Root cause found: findOrLoadKnownScalarResultForTimeStep (RigCaseCellResultsData.cpp) only bounds-checks timeStepIndex when timeStepCount>0, so a DYNAMIC_NATIVE result with 0 known time steps falls through and returns a 'valid' scalarResultIndex whose m_cellScalarResults vector was never resized. Caller (RigSoilResultCalculator::calculate) then indexes it OOB via CAF_ASSERT-only bounds check (no-op in Release) -> SIGSEGV. Candidate fix drafted locally (build-verified) but NOT pushed: remove '&& timeStepCount > 0' from the guard. Existing link to issue #7267 appears to be a false-positive text match (unrelated 2021 enhancement issue) rather than a real crash report. Awaiting human approval before filing a new issue/PR per hard rule (no GitHub posts without explicit approval).",
       "opm_issue": {
-        "number": 7267,
+        "number": 14704,
         "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/issues/7267"
+        "url": "https://github.com/OPM/ResInsight/issues/14704"
       },
-      "pr": null,
+      "pr": {
+        "branch": "fix-14704-soil-timestep-bounds",
+        "number": 14705,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14705"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -14433,7 +14438,7 @@
         "RimGridCalculation::calculateForCases"
       ],
       "signature_id": "d702ebefb39c",
-      "status": "linked",
+      "status": "pr-open",
       "top_frame": "RigCaseCellResultsData::computeSOILForTimeStep",
       "weeks": {
         "2026-09-04": {
