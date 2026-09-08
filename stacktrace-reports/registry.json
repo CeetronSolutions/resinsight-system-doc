@@ -3639,10 +3639,15 @@
       }
     },
     "2afc067a0aae": {
-      "last_updated": "2026-09-07",
-      "notes": "No action: this teardown path will be obsolete when the MDI system is removed.",
+      "last_updated": "2026-09-08",
+      "notes": "Crash path removed with the MDI window system: RimMdiWindowController::removeWindowFromMDI, frame [13] of this stack, was deleted in commit a28340063f (PR #14095, merged to dev 2026-06-17). Both reports are from v2026.06.1, which predates the removal.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14095,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14095"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -3676,7 +3681,7 @@
         "RimEclipseView::~RimEclipseView"
       ],
       "signature_id": "2afc067a0aae",
-      "status": "on-hold",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-08-28": {
