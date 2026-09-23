@@ -1689,10 +1689,15 @@
       }
     },
     "10a3f8949445": {
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "last_updated": "2026-09-23",
+      "notes": "detectCyclicCalculation crashed when a calculation referenced by getVariables() had already been removed. Fixed in PR #14779 (merged 2026-09-22): handle a removed calculation.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-09",
+        "number": 14779,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14779"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:313",
@@ -1718,7 +1723,7 @@
         "RifMultipleSummaryReaders::createAndSetAddresses"
       ],
       "signature_id": "10a3f8949445",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimSummaryCalculation::detectCyclicCalculation",
       "weeks": {
         "2026-09-18": {
@@ -1830,10 +1835,15 @@
       }
     },
     "146a90f63c16": {
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "last_updated": "2026-09-23",
+      "notes": "calculateElmNeighbors crashed on an out-of-range node index during GeoMech case load. Fixed in PR #14779 (merged 2026-09-22): bounds check node index lookups.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-09",
+        "number": 14779,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14779"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -1859,7 +1869,7 @@
         "RimViewWindow::loadDataAndUpdate"
       ],
       "signature_id": "146a90f63c16",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigFemPart::calculateElmNeighbors",
       "weeks": {
         "2026-09-18": {
@@ -9765,10 +9775,15 @@
       }
     },
     "7577ac683bdd": {
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "last_updated": "2026-09-23",
+      "notes": "wellPathGeometry crashed when RimWellLogExtractionCurve::extractGeomData ran against a missing well path. Fixed in PR #14779 (merged 2026-09-22): handle missing well path.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-09",
+        "number": 14779,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14779"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -9797,7 +9812,7 @@
         "RimWellLogExtractionCurve::onLoadDataAndUpdate"
       ],
       "signature_id": "7577ac683bdd",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimWellPath::wellPathGeometry",
       "weeks": {
         "2026-09-18": {
@@ -12197,10 +12212,15 @@
       }
     },
     "a5bad9babaf6": {
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "last_updated": "2026-09-23",
+      "notes": "createLateralAtMeasuredDepth crashed on an empty well path subset when appending a lateral via gRPC. Fixed in PR #14779 (merged 2026-09-22): handle an empty well path subset.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-09",
+        "number": 14779,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14779"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -12223,7 +12243,7 @@
         "std::function<grpc::Status"
       ],
       "signature_id": "a5bad9babaf6",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RicNewWellPathLateralAtDepthFeature::createLateralAtMeasuredDepth",
       "weeks": {
         "2026-09-18": {
@@ -14343,10 +14363,15 @@
       }
     },
     "c4689aafb7bc": {
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "last_updated": "2026-09-23",
+      "notes": "caf::PdmPointer<RimPlot> dereferenced a stale pointer in RiuMultiPlotBook::visiblePlotWidgets during a scheduled plot redraw. Fixed in PR #14779 (merged 2026-09-22): skip null widget pointers.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-09",
+        "number": 14779,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14779"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -14367,7 +14392,7 @@
         "RiaPlotWindowRedrawScheduler::performScheduledUpdates"
       ],
       "signature_id": "c4689aafb7bc",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "caf::PdmPointer<RimPlot>::operator RimPlot*",
       "weeks": {
         "2026-09-18": {
@@ -14732,7 +14757,7 @@
     },
     "c815a64fad71": {
       "last_updated": "2026-09-21",
-      "notes": "",
+      "notes": "Crash at dynamic_cast in objectsWithReferringPtrFieldsOfType<RimEnsembleCurveSet> from ~RimSummaryEnsemble::clearReferringCurveSets during RimProject::close. A referrer of the ensemble was already destroyed while still registered. Ruled out: #14493 (old code walked the same referrers), curve sets (plot collections deleted first), delta ensemble ordering. Uncertain because the dangling referrer type is unidentified without the crashing project.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -14763,7 +14788,7 @@
         "caf::PdmChildArrayField<RimSummaryEnsemble*>::deleteChildren"
       ],
       "signature_id": "c815a64fad71",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "std::vector<RimEnsembleCurveSet*, std::allocator<RimEnsembleCurveSet*> > caf::PdmObjectHandle::objectsWithReferringPtrFieldsOfType<RimEnsembleCurveSet>",
       "weeks": {
         "2026-09-18": {
@@ -15374,10 +15399,15 @@
       }
     },
     "d39abff910b8": {
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "last_updated": "2026-09-23",
+      "notes": "clearScalarResult crashed in RimGridCalculation::removeDependentObjects when the owning case was not open. Fixed in PR #14779 (merged 2026-09-22): handle a case that is not opened.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-09",
+        "number": 14779,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14779"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -15397,7 +15427,7 @@
         "RicUserDefinedCalculatorUi::onDeleteCalculationClicked"
       ],
       "signature_id": "d39abff910b8",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigCaseCellResultsData::clearScalarResult",
       "weeks": {
         "2026-09-18": {
