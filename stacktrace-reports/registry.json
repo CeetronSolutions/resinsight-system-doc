@@ -5252,7 +5252,12 @@
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-26",
+        "number": 14799,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14799"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -5280,7 +5285,7 @@
         "RicDeleteItemExec::redo"
       ],
       "signature_id": "3739018a7d0e",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuQwtPlotWidget::enableAxisNumberLabels",
       "weeks": {
         "2026-09-25": {
@@ -13620,7 +13625,7 @@
     },
     "b6ede2e680df": {
       "last_updated": "2026-09-26",
-      "notes": "",
+      "notes": "Crash at RifOdbReader::frameTimes, uncaught exception from inside the ODB API. Findings: step index mapping and frame loop bounds are consistent; the throw is inside ODB (frames 6-29 unsymbolized). Uncertain because the root cause is likely a truncated or in-progress ODB file that can't be reproduced; a catch-all in frameTimes would hide it rather than fix it.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -13648,7 +13653,7 @@
         "RiuFemTimeHistoryResultAccessor::RiuFemTimeHistoryResultAccessor"
       ],
       "signature_id": "b6ede2e680df",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-09-25": {
@@ -15456,7 +15461,12 @@
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-26",
+        "number": 14799,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14799"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:313",
@@ -15480,7 +15490,7 @@
         "RicImportGeneralDataFeature::openEclipseFilesFromFileNames"
       ],
       "signature_id": "cbf6088f92c2",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-09-25": {
@@ -18125,7 +18135,12 @@
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-09-26",
+        "number": 14799,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14799"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -18148,7 +18163,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "f567e0f2c3c6",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RigCaseCellResultsData::copyResultsMetaDataFromMainCase",
       "weeks": {
         "2026-09-25": {
