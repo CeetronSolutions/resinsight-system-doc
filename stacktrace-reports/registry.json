@@ -11316,7 +11316,12 @@
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-histogram-null-plotwindow",
+        "number": 14844,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14844"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -11343,7 +11348,7 @@
         "Rim3dView::createDisplayModelAndRedraw"
       ],
       "signature_id": "8b189a4102f4",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmPointer<RimViewWindow>::p",
       "weeks": {
         "2026-10-02": {
@@ -17084,9 +17089,14 @@
     },
     "d79da4c9b4dc": {
       "last_updated": "2026-10-03",
-      "notes": "",
+      "notes": "Same root cause as 8b189a4102f4, fixed by the same PR.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-histogram-null-plotwindow",
+        "number": 14844,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14844"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -17111,7 +17121,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "d79da4c9b4dc",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmPointer<RimViewWindow>::p",
       "weeks": {
         "2026-10-02": {
