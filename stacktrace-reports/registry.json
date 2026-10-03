@@ -18956,7 +18956,12 @@
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-qwt-axis-mapping",
+        "number": 14839,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14839"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:313",
@@ -18978,7 +18983,7 @@
         "RiuMultiPlotPage::performUpdate"
       ],
       "signature_id": "f4fdced52053",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuQwtPlotWidget::setAxisLabelsAndTicksEnabled",
       "weeks": {
         "2026-10-02": {
