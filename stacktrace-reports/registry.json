@@ -9166,7 +9166,12 @@
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-ensemble-fracture-width",
+        "number": 14840,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14840"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -9195,7 +9200,7 @@
         "RicMeshFractureTemplateHelper<RimStimPlanFractureTemplate>::createNewTemplatesFromFiles"
       ],
       "signature_id": "642357244e71",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::cref<RigFractureGrid>::cref",
       "weeks": {
         "2026-10-02": {
