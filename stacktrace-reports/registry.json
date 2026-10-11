@@ -695,9 +695,9 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-09-26",
-      "notes": "",
+      "fixed_in": "2026.06.2-dev.03",
+      "last_updated": "2026-10-11",
+      "notes": "Re-attributed to #14505 (c8b1ebc, deferred group box deletion). No occurrences on 2026.09.0.",
       "opm_issue": {
         "number": 14175,
         "state": "CLOSED",
@@ -912,7 +912,7 @@
     },
     "05e7d10575c5": {
       "last_updated": "2026-10-11",
-      "notes": "",
+      "notes": "Crash in ~RiuPlotMainWindow (member destruction) during processEvents() in RicRecursiveFileSearchDialog::findMatchingFiles. The dialog is a stack object parented to the plot window (WA_DeleteOnClose), so destroying the window would delete it as a child. Uncertain because Qt blocks close of modal-blocked windows; the trigger for the window deletion is unknown.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -947,7 +947,7 @@
         "RiaFileSearchTools::findMatchingFoldersRecursively"
       ],
       "signature_id": "05e7d10575c5",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuPlotMainWindow::~RiuPlotMainWindow",
       "weeks": {
         "2026-10-09": {
@@ -1221,7 +1221,7 @@
     },
     "0991fb772b4b": {
       "last_updated": "2026-10-11",
-      "notes": "",
+      "notes": "Crash in PdmPointer<RimWellPath> assignment in RimWellLogExtractionCurve::setWellPath from RicCreateEnsembleWellLogFeature. No path deleting the well path during the command was found. Uncertain because it looks like heap corruption with no reproducible trigger.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -1250,7 +1250,7 @@
         "RicCreateEnsembleWellLogFeature::executeCommand"
       ],
       "signature_id": "0991fb772b4b",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "std::_Rb_tree_iterator<caf::PdmObjectHandle**>::operator--",
       "weeks": {
         "2026-10-09": {
@@ -2336,7 +2336,6 @@
         "2026.06.1": false,
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
@@ -2345,10 +2344,10 @@
         "url": "https://github.com/OPM/ResInsight/issues/14287"
       },
       "pr": {
-        "branch": "fix-14287-maxfraction-out-of-range",
-        "number": 14288,
-        "state": "MERGED",
-        "url": "https://github.com/OPM/ResInsight/pull/14288"
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -2376,7 +2375,7 @@
         "RimEclipseResultDefinitionTools::updateLegendForFlowDiagnostics"
       ],
       "signature_id": "167ae9f4735f",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RigFlowDiagResults::calculateDerivedResult",
       "weeks": {
         "2026-06-12": {
@@ -2647,15 +2646,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
         "number": 14179,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14179"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -2688,7 +2691,7 @@
         "Rim3dView::updateDisplayModelForCurrentTimeStepAndRedraw"
       ],
       "signature_id": "183b12606734",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "cvf::Vector3<double>::operator=",
       "weeks": {
         "2026-08-07": {
@@ -4345,8 +4348,8 @@
         "2026.06.0": true
       },
       "fixed_in": "2026.06.0-RC_1",
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-10-11",
+      "notes": "Only ResInsight frame is RiuMainWindow::customMenuRequested with a mismatched line (RiuPlotMainWindow.cpp:107 ctor). Linked fix #14155 unrelated. Not seen on 2026.06.1 or 2026.09.0. Uncertain because the stack is effectively unsymbolized.",
       "opm_issue": {
         "number": 14155,
         "state": "CLOSED",
@@ -4366,7 +4369,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "2a00a6e3aa2e",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "RiuMainWindow::customMenuRequested",
       "weeks": {
         "2026-04-29": {
@@ -4897,9 +4900,9 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
-      "last_updated": "2026-09-21",
-      "notes": "",
+      "fixed_in": "2026.06.2-dev.02",
+      "last_updated": "2026-10-11",
+      "notes": "CVF_ASSERT at RifElementPropertyReader.cpp:120 fired when the element property file could not be read (empty table). Re-attributed to #14476 (56e98ba1c4, CAF_ASSERT is compiled out in release). No occurrences on 2026.09.0.",
       "opm_issue": {
         "number": 13875,
         "state": "CLOSED",
@@ -6147,7 +6150,6 @@
         "2026.06.1": true,
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
@@ -6155,7 +6157,12 @@
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14161"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -6184,7 +6191,7 @@
         "Rim3dView::updateDisplayModelForCurrentTimeStepAndRedraw"
       ],
       "signature_id": "3c71291b162c",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-05-08": {
@@ -6399,7 +6406,12 @@
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -6425,7 +6437,7 @@
         "RiuPvtPlotUpdater::queryDataAndUpdatePlot"
       ],
       "signature_id": "3caed0e57dcc",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-09": {
@@ -6638,7 +6650,7 @@
       },
       "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-10-11",
-      "notes": "",
+      "notes": "Crash at cvfRenderEngine.cpp:284 (drawable->render). Frames 2-7 are unsymbolized GL driver frames; no ResInsight fault visible. Linked #14009/c8b1ebc (group box deletion) is unrelated to this path. Uncertain because the faulting drawable/GL state cannot be identified from the stack.",
       "opm_issue": {
         "number": 14009,
         "state": "CLOSED",
@@ -6664,7 +6676,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "41a32d4ba74a",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "cvf::RenderEngine::render",
       "weeks": {
         "2026-08-14": {
@@ -7657,15 +7669,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-10-03",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
         "number": 14161,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14161"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -7692,7 +7708,7 @@
         "RiuResultTextBuilder::gridResultDetails"
       ],
       "signature_id": "4b3ceedc10a8",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-08-21": {
@@ -10707,8 +10723,8 @@
     "6f0ecfbd6a96": {
       "fix_commit": "7b05b18d8c5ad8612f2dc6f58f8184ef33fcdd5c",
       "fixed_in": "2025.09.3-dev.05",
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-10-11",
+      "notes": "Crash inside Qt from caf::ProgressInfo ctor during grid import from summary case context menu. Only seen on dev build 2026.06.1-dev.02; linked fix 7b05b18 is unrelated. Uncertain because the faulting frames are in Qt.",
       "opm_issue": {
         "number": 13139,
         "state": "CLOSED",
@@ -10741,7 +10757,7 @@
         "RiaImportEclipseCaseTools::openEclipseCaseShowTimeStepFilterImpl"
       ],
       "signature_id": "6f0ecfbd6a96",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "caf::ProgressInfo::ProgressInfo",
       "weeks": {
         "2026-06-26": {
@@ -11658,7 +11674,7 @@
     },
     "797b5cc9b747": {
       "last_updated": "2026-10-11",
-      "notes": "",
+      "notes": "Crash in caf::Viewer::updateCachedValuesInScene via Rim3dView::createHighlightAndGridBoxDisplayModel; a dangling/null part in another scene model. Uncertain because the offending model cannot be identified from the stack.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -11690,7 +11706,7 @@
         "RiuSelectionChangedHandler::scheduleUpdateForAllVisibleViews"
       ],
       "signature_id": "797b5cc9b747",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "cvf::ref<cvf::Part>::p",
       "weeks": {
         "2026-10-09": {
@@ -12329,15 +12345,19 @@
         "2026.06.0": true,
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
         "number": 14161,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14161"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -12365,7 +12385,7 @@
         "RivReservoirSimWellsPartMgr::appendDynamicGeometryPartsToModel"
       ],
       "signature_id": "8f9e6bc3f40f",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-07-03": {
@@ -13432,15 +13452,20 @@
         "2026.02.2": false,
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
-      "last_updated": "2026-10-03",
-      "notes": "",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-11",
+      "notes": "Null masterView() in RimViewController::updateCameraLink. Linked #13878 fix was unrelated; guarded in #14849 (b22a2e3106).",
       "opm_issue": {
         "number": 13878,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/13878"
       },
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -16726,9 +16751,9 @@
       "fix_shipped": {
         "2026.06.0": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-08-01",
-      "notes": "",
+      "fixed_in": "2026.06.2-dev.03",
+      "last_updated": "2026-10-11",
+      "notes": "Re-attributed to #14505 (c8b1ebc, deferred group box deletion). No occurrences on 2026.09.0.",
       "opm_issue": {
         "number": 14175,
         "state": "CLOSED",
@@ -17689,9 +17714,9 @@
         "2026.06.0": true,
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-09-26",
-      "notes": "",
+      "fixed_in": "2026.06.2-dev.03",
+      "last_updated": "2026-10-11",
+      "notes": "Re-attributed to #14505 (c8b1ebc, deferred group box deletion). No occurrences on 2026.09.0.",
       "opm_issue": {
         "number": 14175,
         "state": "CLOSED",
@@ -17827,9 +17852,9 @@
         "2026.06.0": true,
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-09-12",
-      "notes": "",
+      "fixed_in": "2026.06.2-dev.03",
+      "last_updated": "2026-10-11",
+      "notes": "Re-attributed to #14505 (c8b1ebc, deferred group box deletion). No occurrences on 2026.09.0.",
       "opm_issue": {
         "number": 14175,
         "state": "CLOSED",
@@ -18480,15 +18505,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-10-03",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
         "number": 14161,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14161"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-oct-2026-batch",
+        "number": 14905,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14905"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -18513,7 +18542,7 @@
         "RimReloadCaseTools::updateAll3dViews"
       ],
       "signature_id": "da71960994c9",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-08-21": {
@@ -20016,8 +20045,8 @@
         "2026.06.1": true
       },
       "fixed_in": "2026.06.0-RC_1",
-      "last_updated": "2026-09-21",
-      "notes": "Auto-link to #12756 was a false positive: that issue is an MSW import/visualization enhancement that only mentions RifReaderEclipseWell::readWellCells in prose, not a crash report. Unlinked.",
+      "last_updated": "2026-10-11",
+      "notes": "Segfault in ecl_kw_iget_int on a NULL keyword during ERT well reading (readWellData). ecl_file_view_iget_named_kw returns NULL when a keyword fails to load (corrupt/truncated restart). Uncertain because the ERT caller frames are missing and ~20 call sites are unguarded.",
       "opm_issue": {
         "number": 14144,
         "state": "CLOSED",
@@ -20052,7 +20081,7 @@
         "RiaImportEclipseCaseTools::openEclipseCasesFromFile"
       ],
       "signature_id": "f3d2f3e86a63",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "RifReaderEclipseWell::readWellCells",
       "weeks": {
         "2026-06-05": {
