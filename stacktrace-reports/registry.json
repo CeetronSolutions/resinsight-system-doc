@@ -1,6 +1,8 @@
 {
   "signatures": {
     "0014df24edd7": {
+      "fix_commit": "22f9053401102f9e36345e468052d01eaff59e32",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -59,6 +61,8 @@
       }
     },
     "0059448babee": {
+      "fix_commit": "14a4b5ef539c6791525419ab160ccc3aa1f65211",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -103,6 +107,8 @@
       }
     },
     "0138c261c5c0": {
+      "fix_commit": "01ce94d5391c58e12774dce0e4f1ef0df1f79a41",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -170,6 +176,8 @@
       }
     },
     "024f64fb61b2": {
+      "fix_commit": "318659e1303491584640012bfa3f0eb3992536dd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-22",
       "notes": "",
       "opm_issue": null,
@@ -245,6 +253,8 @@
       }
     },
     "03196eb40521": {
+      "fix_commit": "2515a4daea7923d8024e3b0ad8a9adc90d803700",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-09-07",
       "notes": "Opm::FileDeck::dump performs fs::create_directories/fs::canonical/touch_file which throw fs::filesystem_error on unwritable or invalid export paths; uncaught -> terminate. Patch: try/catch in RifOpmFlowDeckFile::saveDeck/saveDeckInline returning false; caller already reports failure gracefully. Build-verified.",
       "opm_issue": {
@@ -354,6 +364,8 @@
       }
     },
     "031a1def2ad9": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -418,6 +430,8 @@
       }
     },
     "034d6b7788d8": {
+      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
@@ -496,6 +510,8 @@
       }
     },
     "041e8de8fa69": {
+      "fix_commit": "9a901d1cac2ce6ce81b3596865190a2e0d5641d1",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "Already fixed on dev. setValidTimeStepRangeForCase's isTimeStepInCase lambda called std::find( m_case->timeStepDates().cbegin(), m_case->timeStepDates().cend(), ... ). RimCase::timeStepDates() returns std::vector<QDateTime> by value, so cbegin()/cend() in separate invocations produced iterators into two different temporaries; passing the mismatched iterators to std::find is UB and walked off freed memory, crashing in the lambda (operator()). PR #14156 (merged 2026-06-08, issue #14155) snapshots timeStepDates() into a single local vector. All field hits (2026-05-18..2026-06-01) predate the fix.",
       "opm_issue": {
@@ -594,6 +610,8 @@
       }
     },
     "04591db2be9e": {
+      "fix_commit": "656944c6fc54c3262c70988c0c1bfe176bcf6256",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-22",
       "notes": "",
       "opm_issue": {
@@ -673,6 +691,11 @@
       }
     },
     "0463e53172af": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -771,6 +794,8 @@
       }
     },
     "058897b720ea": {
+      "fix_commit": "189bf3e35c8c3cea48100ba090d8570db718126f",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-09-26",
       "notes": "Fixed on dev by 189bf3e35c (#14324 / PR #14325, merged 2026-06-26): SWCR/MULTPV are now dropped when their size differs from PORV. Crash event is from 2026-06-23 on 2026.06.0, predating the fix. Not present in v2026.06.0 or v2026.06.1.",
       "opm_issue": {
@@ -886,6 +911,8 @@
       }
     },
     "06099b707ff2": {
+      "fix_commit": "ff7bf6c7c9e8f73de7f3de6fd00dd9ec3c520771",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-10",
       "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
@@ -932,6 +959,8 @@
       }
     },
     "07f8bc6f0333": {
+      "fix_commit": "5b62a84a1231030d17ffdb2f47b6dcebae934bbd",
+      "fixed_in": "2026.06.2-dev.04",
       "last_updated": "2026-09-07",
       "notes": "",
       "opm_issue": null,
@@ -1074,6 +1103,8 @@
       }
     },
     "09147e368b60": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -1139,6 +1170,8 @@
       }
     },
     "0a14e5d85c8b": {
+      "fix_commit": "c9750f46982f59d206fd7bc9e43f77dc688659c4",
+      "fixed_in": "2026.06.2-dev.05",
       "last_updated": "2026-09-12",
       "notes": "",
       "opm_issue": null,
@@ -1211,6 +1244,8 @@
       }
     },
     "0a4d1ff3c6e9": {
+      "fix_commit": "69faf4ac1384f676b30c90184a07eb42bfdb5269",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
@@ -1343,6 +1378,8 @@
       }
     },
     "0aef424f6e69": {
+      "fix_commit": "06cafed9bcdebc51b62f518853146eb6c50b2134",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -1446,6 +1483,8 @@
       }
     },
     "0babe89e0b6b": {
+      "fix_commit": "d339a34910f8fcb14244d17eaba189085572c327",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-07-28",
       "notes": "Pre-#14149 form of the same fault: ecl_kw_fread_alloc returns NULL for truncated SMSPEC and ecl_file_kw_assert_kw dereferences it. Fixed by PR 14202 (shipped 2026.06.0); stopped appearing after rollout. Follow-up completing the fix downstream is issue 14381 / PR 14382 (signature 75ddc6afee6f).",
       "opm_issue": {
@@ -1537,6 +1576,8 @@
       }
     },
     "0bd944876d15": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -1580,6 +1621,11 @@
       }
     },
     "0c6029d9853b": {
+      "fix_commit": "f50cd02bb3ecef445ac8f8703b0985b3fff1d285",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -1644,6 +1690,11 @@
       }
     },
     "0f6ddddd87ad": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-07",
       "notes": "",
       "opm_issue": {
@@ -1737,6 +1788,8 @@
       }
     },
     "10a3f8949445": {
+      "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "detectCyclicCalculation crashed when a calculation referenced by getVariables() had already been removed. Fixed in PR #14779 (merged 2026-09-22): handle a removed calculation.",
       "opm_issue": null,
@@ -1801,6 +1854,8 @@
       }
     },
     "12f26117f677": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "Same root cause and fix as f4394a37498f (RimNameConfig::autoName null holder deref).",
       "opm_issue": {
@@ -1909,6 +1964,8 @@
       }
     },
     "146a90f63c16": {
+      "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "calculateElmNeighbors crashed on an out-of-range node index during GeoMech case load. Fixed in PR #14779 (merged 2026-09-22): bounds check node index lookups.",
       "opm_issue": null,
@@ -1972,6 +2029,8 @@
       }
     },
     "14b589b099a7": {
+      "fix_commit": "3ba47253adca4c3ff6cfd68f721da877caf80aa2",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-28",
       "notes": "ESmry::getListOfArrays (opm-common submodule) missing fopen NULL check -> segfault on locked/deleted UNSMRY. Fix in CeetronSolutions/opm-common#13 (branch fix-esmry-getlistofarrays-fopen, targets development-01); ResInsight PR 14390 bumps the submodule and depends on that merge.",
       "opm_issue": {
@@ -2055,6 +2114,8 @@
       }
     },
     "1642fce4aefc": {
+      "fix_commit": "af2c5d429c5c04984a4adb0b416cfc8f349be2bd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-16",
       "notes": "Fixed by PR #14432 (merged 2026-07-31, af2c5d4). Integer division by zero: valueCount % matrixActiveCellCount in validKeywordsForPorosityModel when the matrix porosity model has no active cells. Early return added for the matrix model plus guards on the remaining matrix divisors; unit tests added.",
       "opm_issue": {
@@ -2134,6 +2195,12 @@
       }
     },
     "167ae9f4735f": {
+      "fix_commit": "a4b8570b3a7ba5579621bf7feb2a185b334f8fd4",
+      "fix_shipped": {
+        "2026.06.1": false,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -2244,6 +2311,12 @@
       }
     },
     "17047ab66779": {
+      "fix_commit": "af1cdbd546129b48e9fda3a4fec0a24a76228afd",
+      "fix_shipped": {
+        "2026.06.1": true,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -2414,6 +2487,11 @@
       }
     },
     "183b12606734": {
+      "fix_commit": "0410635815f9d4c43800d52e208d7ee2b13bcb1b",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-07",
       "notes": "",
       "opm_issue": {
@@ -2500,6 +2578,8 @@
       }
     },
     "190c5891360c": {
+      "fix_commit": "cfc620b5018141d23d0b9a168d9bd666357b2cde",
+      "fixed_in": "2025.09.3-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -2558,6 +2638,8 @@
       }
     },
     "19c925331f59": {
+      "fix_commit": "5b7bdf7bb091361f79ff78abfb6fbd2a9c88f10f",
+      "fixed_in": "2026.06.1-dev.01",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -2650,6 +2732,11 @@
       }
     },
     "1a259402c999": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -2723,6 +2810,12 @@
       }
     },
     "1a992e729555": {
+      "fix_commit": "af1cdbd546129b48e9fda3a4fec0a24a76228afd",
+      "fix_shipped": {
+        "2026.06.1": true,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -2909,6 +3002,8 @@
       }
     },
     "1ad40aff8af6": {
+      "fix_commit": "de10dcf0de7619a76dc96f22753bc353c425f6e2",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
@@ -2978,6 +3073,8 @@
       }
     },
     "1b9375c78288": {
+      "fix_commit": "605662062c9279a10079f82ecfffd6f05f2b1a74",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-12",
       "notes": "Already fixed on dev. Original code in RimEclipseContourMapView append-to-model methods called legendConfig()->scalarMapper() unchecked; a null cvf::ref<cvf::ScalarMapper> deref via .p() produced the top frame. PR #13925 (merged 2026-04-29) added mapGrid/legendConfig/scalarMapper null guards. Field crash reports (last_seen 2026-05-06) come from released builds predating the fix.",
       "opm_issue": {
@@ -3123,6 +3220,8 @@
       }
     },
     "1dc7071e0402": {
+      "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
@@ -3203,6 +3302,8 @@
       }
     },
     "1dd841454363": {
+      "fix_commit": "318659e1303491584640012bfa3f0eb3992536dd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": null,
@@ -3291,6 +3392,8 @@
       }
     },
     "1ed408783b46": {
+      "fix_commit": "a1c4b06237500541eac2ac61d855815c2e2a6a0e",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -3356,6 +3459,8 @@
       }
     },
     "20dc100c5afe": {
+      "fix_commit": "800ab273704a2512ea855b8110464cfe3e065130",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-31",
       "notes": "Fixed by PR #14430 (merged 2026-07-31): cell visibility array is ignored when its size does not match the reservoir cell count.",
       "opm_issue": {
@@ -3417,6 +3522,8 @@
       }
     },
     "227aa9061b4c": {
+      "fix_commit": "6baee431a7b6487de41709745df4538a50808e53",
+      "fixed_in": "2026.06.0-RC_4",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -3474,6 +3581,12 @@
       }
     },
     "22ad7ead4114": {
+      "fix_commit": "605662062c9279a10079f82ecfffd6f05f2b1a74",
+      "fix_shipped": {
+        "2026.06.1": true,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -3607,6 +3720,8 @@
       }
     },
     "232f8faaea5f": {
+      "fix_commit": "0410635815f9d4c43800d52e208d7ee2b13bcb1b",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -3682,6 +3797,8 @@
       }
     },
     "24d4fcf84157": {
+      "fix_commit": "e35f9aa85e8e55a75ad514b274926438101750c1",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-28",
       "notes": "",
       "opm_issue": {
@@ -3770,6 +3887,8 @@
       }
     },
     "287c62e9cb25": {
+      "fix_commit": "3023e6e335f42e274d238e7928f6c0d13e87ee26",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": {
@@ -3856,6 +3975,8 @@
       }
     },
     "29c742313dc2": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-07-31",
       "notes": "Fixed in dev by 791a58c9a7 (#13874). Out-of-range read of parameter.values[caseIdx] in RimParameterResultCrossPlot::createCaseData; caseIdx iterates allSummaryCases() while values is sized by the ensemble parameter. Bounds check added 2026-04-16. Crash build predates the fix (h:48/cpp:518 match commit 4798a879d0). All sibling parameter.values[] sites in CorrelationPlots are guarded.",
       "opm_issue": {
@@ -3911,6 +4032,8 @@
       }
     },
     "29e769992730": {
+      "fix_commit": "2a158dce5816a09ef4191141b9d618687de66919",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-08-10",
       "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
@@ -3993,6 +4116,11 @@
       }
     },
     "2a00a6e3aa2e": {
+      "fix_commit": "9a901d1cac2ce6ce81b3596865190a2e0d5641d1",
+      "fix_shipped": {
+        "2026.06.0": true
+      },
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -4081,6 +4209,11 @@
       }
     },
     "2afc067a0aae": {
+      "fix_commit": "576fb32a6e79bab1df1e3ea7b51c1a60598776a8",
+      "fix_shipped": {
+        "2026.06.1": false
+      },
+      "fixed_in": "2026.06.1-dev.01",
       "last_updated": "2026-09-21",
       "notes": "Crash path removed with the MDI window system: RimMdiWindowController::removeWindowFromMDI, frame [13] of this stack, was deleted in commit a28340063f (PR #14095, merged to dev 2026-06-17). Both reports are from v2026.06.1, which predates the removal.",
       "opm_issue": null,
@@ -4161,6 +4294,8 @@
       }
     },
     "2b80f5a0a843": {
+      "fix_commit": "01ce94d5391c58e12774dce0e4f1ef0df1f79a41",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -4222,6 +4357,8 @@
       }
     },
     "2c12a4cbd830": {
+      "fix_commit": "6baee431a7b6487de41709745df4538a50808e53",
+      "fixed_in": "2026.06.0-RC_4",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -4267,6 +4404,8 @@
       }
     },
     "2fee534b1f8c": {
+      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-06-12",
       "notes": "SIGSEGV in createReportStepsMetaData via keywordValueCounts/buildMetaData/open. Fault is a wild-pointer deref deep in ERT: ecl_file_iget_named_data_type/size -> ecl_file_view_get_global_index (unchecked index_vector[ith]) -> ecl_file_view_iget_file_kw (unchecked kw_list[global_index]) -> deref garbage file_kw. However, the ResInsight loop is provably self-consistent single-threaded: numKeywords, kw and namedKeywordCount are all queried from the same active_view, and iOcc is bounded by namedKeywordCount = kw_index.at(kw).size(), so index_vector[iOcc] and kw_list[global_index] are in range whether ecl_file_select_block succeeds (block view) or fails (active_view unchanged); push_block/pop_block save/restore correctly. A simple ResInsight bounds guard cannot be proven to prevent it. Most likely triggers: (1) concurrent mutation of the shared ecl_file->active_view (sibling keywordData() wraps ERT access in omp critical, indicating multi-threaded ecl_file use) dangling kw / reshaping kw_index/kw_list mid-loop; (2) malformed/corrupt UNRST with inconsistent on-disk index. Neither has a minimal verifiable fix. Related prior work: PR #14210/#14140 hardened sibling functions keywordData() and results() with occurrence bounds + select_block return check, but those paths could genuinely exceed the bound; this path cannot single-threaded. No issue/PR filed.",
       "opm_issue": {
@@ -4324,6 +4463,8 @@
       }
     },
     "2ffbf9034d82": {
+      "fix_commit": "81f1aca0bafe5c652bc7b026f64ab445f537c1fa",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -4434,6 +4575,8 @@
       }
     },
     "309928562adc": {
+      "fix_commit": "92107da9ed72edc0b11c90c81ce96fe57d8ca346",
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -4526,6 +4669,11 @@
       }
     },
     "30e91cbb0d6b": {
+      "fix_commit": "7d2d1b831a630ef9e36b8a9247b8d12cffc2bf2a",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-09-21",
       "notes": "",
       "opm_issue": {
@@ -4657,6 +4805,8 @@
       }
     },
     "31aef0833d3f": {
+      "fix_commit": "ff7bf6c7c9e8f73de7f3de6fd00dd9ec3c520771",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-07",
       "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
@@ -4734,6 +4884,8 @@
       }
     },
     "31e94d3f19d7": {
+      "fix_commit": "cc574e7a7ba71d665f6737829a90e9458f899ee0",
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -4792,6 +4944,8 @@
       }
     },
     "3201b263a461": {
+      "fix_commit": "08b998ac4c75a1014d76eeeedb18dc23f00e896e",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-12",
       "notes": "Already fixed on dev. updateCellsKIndexEclipse received a K layer computed against the main grid and forwarded it to LGR grids with smaller cellCountK; the unguarded cellIndexFromIJKUnguarded + bounds-unchecked cell() produced an out-of-range cell whose corner-vertex access crashed in cvf::Vec3d::set inside the OpenMP parallel-for. PR #13923 (merged 2026-04-29) added a per-grid K-range guard. All 14 field hits occurred 2026-04-14, predating the fix.",
       "opm_issue": {
@@ -4837,6 +4991,8 @@
       }
     },
     "32397cd21d29": {
+      "fix_commit": "d30d5e7817c8a2dd0894f28bc65cf044af5df5d4",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
@@ -4885,6 +5041,8 @@
       }
     },
     "342276363510": {
+      "fix_commit": "3cc4b00903a57bcb571742a1749bcc07563ce492",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -4982,6 +5140,11 @@
       }
     },
     "349d00d3f661": {
+      "fix_commit": "0df1df119ea09de1d3187fe1cd1ed9855fd58867",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -5122,6 +5285,8 @@
       }
     },
     "365d8f1357cb": {
+      "fix_commit": "d30d5e7817c8a2dd0894f28bc65cf044af5df5d4",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
@@ -5177,6 +5342,8 @@
       }
     },
     "36a46843df47": {
+      "fix_commit": "ff7bf6c7c9e8f73de7f3de6fd00dd9ec3c520771",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-07",
       "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
@@ -5260,6 +5427,8 @@
       }
     },
     "36fe75d940bb": {
+      "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -5339,6 +5508,8 @@
       }
     },
     "3739018a7d0e": {
+      "fix_commit": "cdfc10b833aad8411d50ed3d45d0e3e33d95b541",
+      "fixed_in": "2026.09.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
@@ -5397,6 +5568,8 @@
       }
     },
     "388aa68f79e0": {
+      "fix_commit": "98ea83146afa31075a605d0087a48d606bc29f4c",
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -5494,6 +5667,8 @@
       }
     },
     "39fd0253d250": {
+      "fix_commit": "842520c5e95abe9fe84568ce7e98344a9e0348c0",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
@@ -5547,6 +5722,8 @@
       }
     },
     "3b148a631e23": {
+      "fix_commit": "febea598dc777bb2ffdcdea5c7632905499d3c13",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-22",
       "notes": "Null Rim2dIntersectionView dereference in RicNewIntersectionViewFeature::onActionTriggered (RicNewIntersectionViewFeature.cpp:76 in v2026.06.1): correspondingIntersectionView() can return nullptr and setVisible(true) then crashes in PdmField<bool>::operator=. Fixed by PR 14380 (issue 14379), merged to dev 2026-07-28; pending release.",
       "opm_issue": {
@@ -5643,6 +5820,8 @@
       }
     },
     "3b96a7b3aace": {
+      "fix_commit": "0410635815f9d4c43800d52e208d7ee2b13bcb1b",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -5719,6 +5898,11 @@
       }
     },
     "3c71291b162c": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-21",
       "notes": "",
       "opm_issue": {
@@ -5836,7 +6020,7 @@
       "pr": {
         "branch": "crash-triage-intersection-null-ownercase",
         "number": 14841,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14841"
       },
       "representative_stack": [
@@ -5864,7 +6048,7 @@
         "RicAppendIntersectionFeature::onActionTriggered"
       ],
       "signature_id": "3ca398cbb2ac",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RimCase::intersectionViewCollection",
       "weeks": {
         "2026-10-02": {
@@ -5878,6 +6062,8 @@
       }
     },
     "3ca67b66b036": {
+      "fix_commit": "9a901d1cac2ce6ce81b3596865190a2e0d5641d1",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-06-23",
       "notes": "Already fixed on dev. Crash at RimWellConnectivityTable::isTimeStepInCase: in v2026.02.2 the body was std::find(m_case->timeStepDates().cbegin(), m_case->timeStepDates().cend(), ts) != m_case->timeStepDates().cend(). timeStepDates() returns std::vector<QDateTime> by value, so cbegin()/cend() came from different temporaries -> std::find walks mismatched iterators -> out-of-bounds read -> SIGSEGV (not a null deref; the !m_case guard always existed). Fixed by commit 9a901d1cac (PR #14156, issue #14155, merged 2026-06-08) which copies into a local vector before iterating. Verified: fix is ancestor of dev, NOT in tag v2026.02.2 (crash predates fix); crash last seen 2026-05-26, fix merged 2026-06-08. PR #14156 swept the same by-value-iterator pattern across files including this one; linking missed it because issue #14155 title names RimWellAllocationOverTimePlot.",
       "opm_issue": {
@@ -5949,6 +6135,8 @@
       }
     },
     "402d54b717bf": {
+      "fix_commit": "4a06edea28ab5b6252accfb4d2ac209155717c96",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
@@ -6049,6 +6237,8 @@
       }
     },
     "4079489d1e3c": {
+      "fix_commit": "272f7fa56bcfb285949cc4d1fbf53cec1f0463b2",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-09-01",
       "notes": "Fixed on dev by 272f7fa56b (PR 14410) before this batch. ESmry::dates() threw out of an OpenMP block, terminating the application.",
       "opm_issue": {
@@ -6138,6 +6328,11 @@
       }
     },
     "41a32d4ba74a": {
+      "fix_commit": "c8b1ebc2663fd332362c060898234fbdbb53320b",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -6211,6 +6406,8 @@
       }
     },
     "428b30ffcbe2": {
+      "fix_commit": "94da54c4f5983be0e74e2502ed2a36042dde8bb9",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": null,
@@ -6277,6 +6474,8 @@
       }
     },
     "42c22a6d17c5": {
+      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
@@ -6355,6 +6554,11 @@
       }
     },
     "43cb673b7481": {
+      "fix_commit": "08b998ac4c75a1014d76eeeedb18dc23f00e896e",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-09-07",
       "notes": "",
       "opm_issue": {
@@ -6433,6 +6637,8 @@
       }
     },
     "44b82d1da85c": {
+      "fix_commit": "7d977ac522b39811f583614415d4c8f184e6b385",
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
@@ -6496,6 +6702,11 @@
       }
     },
     "46812e746c40": {
+      "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
+      "fix_shipped": {
+        "2026.06.0": true
+      },
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -6574,6 +6785,8 @@
       }
     },
     "4687f7ac06d2": {
+      "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -6617,6 +6830,11 @@
       }
     },
     "482d5570b385": {
+      "fix_commit": "605662062c9279a10079f82ecfffd6f05f2b1a74",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -6725,6 +6943,11 @@
       }
     },
     "49a49b325d1f": {
+      "fix_commit": "8858d185bd356881614b5ee5730eac0723a0b5ea",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -6788,6 +7011,8 @@
       }
     },
     "49d08ca2f441": {
+      "fix_commit": "442d62cf6de841d845810daed56b6d921cfc590e",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -6901,6 +7126,8 @@
       }
     },
     "49fcd1424922": {
+      "fix_commit": "8b07cee36d55de8ef943a49f3e8d03d3f9ebdf1c",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": {
@@ -6985,6 +7212,8 @@
       }
     },
     "4b301f2f6aca": {
+      "fix_commit": "5b7bdf7bb091361f79ff78abfb6fbd2a9c88f10f",
+      "fixed_in": "2026.06.1-dev.01",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -7079,6 +7308,11 @@
       }
     },
     "4b3ceedc10a8": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -7175,6 +7409,12 @@
       }
     },
     "4b98ba7f3609": {
+      "fix_commit": "42d8a4b14a741f7043599c583155e651a02947a4",
+      "fix_shipped": {
+        "2026.06.1": false,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -7399,6 +7639,8 @@
       }
     },
     "4bcea50aa6e1": {
+      "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -7505,6 +7747,8 @@
       }
     },
     "4bd3f3b19531": {
+      "fix_commit": "3ba47253adca4c3ff6cfd68f721da877caf80aa2",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-10",
       "notes": "Crash below RiaGrpcApplicationInterface::processRequests:109, which is 'if ( m_grpcServer ) m_grpcServer->quit();' and already null guarded in the April and May builds the reports come from. Uncertain because the 9 unsymbolized frames below it place the fault inside the gRPC server shutdown path, not in ResInsight code. No reports since 2026-05-08. Previously auto-linked to #14185, but that issue is the RigEclipseWellLogExtractor AABB crash; the link came only from link_issues.py matching frame [16] RiaGrpcApplicationInterface::processRequests inside #14185s pasted stack. Unlinked - this signature has no reference.",
       "opm_issue": {
@@ -7552,6 +7796,8 @@
       }
     },
     "4bf68ea609c1": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -7612,6 +7858,8 @@
       }
     },
     "4bffa6efd4ff": {
+      "fix_commit": "8b07cee36d55de8ef943a49f3e8d03d3f9ebdf1c",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-21",
       "notes": "Empty RigWellPath geometry made interpolatedVectorValuesAlongWellPath index vectorValuesAlongWellPath.at(vxIdx - 1) with vxIdx = 0, throwing std::out_of_range and terminating. Fixed on dev by PR #14455 (empty-geometry guard). The crashing caller extractSingleWellMsw_Legacy was also removed in PR #14242.",
       "opm_issue": {
@@ -7709,6 +7957,8 @@
       }
     },
     "4c145a0871bc": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -7748,6 +7998,8 @@
       }
     },
     "5070fc941337": {
+      "fix_commit": "593f27dcf4ea3481be0b9f91fe6e344f9913e4cd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
@@ -7802,6 +8054,8 @@
       }
     },
     "5122693d4f53": {
+      "fix_commit": "0726f206947c230d06b428b5e158464bd196492f",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -7872,6 +8126,8 @@
       }
     },
     "51372f8b35e8": {
+      "fix_commit": "5b62a84a1231030d17ffdb2f47b6dcebae934bbd",
+      "fixed_in": "2026.06.2-dev.04",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
@@ -7970,6 +8226,8 @@
       }
     },
     "513ad4d820c5": {
+      "fix_commit": "96eaa2cff3bb4ef6a3c8ba902eb05571813d63b9",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -8049,6 +8307,8 @@
       }
     },
     "532ae6ef21f2": {
+      "fix_commit": "1858529f7ddca469d01f5fe06d6dcc00f99df50b",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-06-23",
       "notes": "Covered by existing upstream PR #14265 (Fixes #14266), currently OPEN. Root cause: setValueFromUiEditor (cafInternalPdmUiFieldCapability.inl:30) hits CAF_ASSERT(optionIndex < m_optionEntryCache.size()) when an activated combo-box index is stale relative to the option cache (cache rebuilt on every valueOptions() call; combo holds an older, now-out-of-range index). CAF_ASSERT is not compiled out (cafAssert.h) and calls std::abort() -> SIGABRT, which manageSegFailureSA also handles (RiaMain.cpp:191), so it surfaces as a crash report. Confirmed line 30 is the assert in tag v2026.02.2. PR #14265 guards the single-value branch against an out-of-range index, mirroring the existing bounds-check in the multi-value branch - the same minimal fix derived independently here. No new issue/PR filed.",
       "opm_issue": {
@@ -8121,7 +8381,7 @@
       "pr": {
         "branch": "crash-triage-dock-window-null-widget",
         "number": 14842,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14842"
       },
       "representative_stack": [
@@ -8148,7 +8408,7 @@
         "RimMainPlotCollection::loadDataAndUpdatePlotCollectionsWithProgressInfo"
       ],
       "signature_id": "54d87afa4a79",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RimDockWindowController::updateViewerWidget",
       "weeks": {
         "2026-10-02": {
@@ -8162,6 +8422,8 @@
       }
     },
     "55dd071baf3f": {
+      "fix_commit": "fe0e691e6c4b7419998ea64ce1d9611a76171ecb",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-10-03",
       "notes": "Dangling RigFormationNames pointer. RigCaseCellResultsData held a raw pointer to data owned by a unique_ptr in RimFormationNames; reloading or deleting the formation names left it dangling, so the null check in RigEclipseCaseData::formationNames() passed and the dereference crashed. Regression from 601a3bbb78 (2026-02-27), which replaced the cvf::cref with a raw pointer. Fixed by storing a copy. Shares one crash site with the other two RigEclipseCaseData::formationNames signatures (f20aa1d03f76, 55dd071baf3f, e7861112a971), all covered by this issue/PR. Reached via result info text on time step change (RiuResultTextBuilder::gridResultText).",
       "opm_issue": {
@@ -8289,6 +8551,8 @@
       }
     },
     "57c0db0ee19b": {
+      "fix_commit": "278621e97ac31a72198e0ffcf7362cf293c001d7",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-29",
       "notes": "",
       "opm_issue": {
@@ -8375,7 +8639,7 @@
       "pr": {
         "branch": "crash-triage-stimplan-minmax-y",
         "number": 14838,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14838"
       },
       "representative_stack": [
@@ -8406,7 +8670,7 @@
         "RicMeshFractureTemplateHelper<RimStimPlanFractureTemplate>::createNewTemplatesFromFiles"
       ],
       "signature_id": "594889920163",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RigStimPlanFractureDefinition::minY",
       "weeks": {
         "2026-10-02": {
@@ -8420,6 +8684,8 @@
       }
     },
     "599febc5faf6": {
+      "fix_commit": "7b05b18d8c5ad8612f2dc6f58f8184ef33fcdd5c",
+      "fixed_in": "2025.09.3-dev.05",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -8479,6 +8745,8 @@
       }
     },
     "5a43e5622190": {
+      "fix_commit": "7c10106545d21ef0c51cc4ae00b319d349e1e460",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -8593,6 +8861,8 @@
       }
     },
     "5ae2e6f0153b": {
+      "fix_commit": "d30d5e7817c8a2dd0894f28bc65cf044af5df5d4",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
@@ -8648,6 +8918,8 @@
       }
     },
     "5bb150db338d": {
+      "fix_commit": "8858d185bd356881614b5ee5730eac0723a0b5ea",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -8808,6 +9080,8 @@
       }
     },
     "5e6806a0322a": {
+      "fix_commit": "c9750f46982f59d206fd7bc9e43f77dc688659c4",
+      "fixed_in": "2026.06.2-dev.05",
       "last_updated": "2026-09-21",
       "notes": "",
       "opm_issue": null,
@@ -8884,6 +9158,8 @@
       }
     },
     "5fc69d14a203": {
+      "fix_commit": "08b998ac4c75a1014d76eeeedb18dc23f00e896e",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -8942,6 +9218,8 @@
       }
     },
     "60594c81605e": {
+      "fix_commit": "0410635815f9d4c43800d52e208d7ee2b13bcb1b",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-15",
       "notes": "",
       "opm_issue": {
@@ -9003,6 +9281,8 @@
       }
     },
     "62961cef7c28": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -9040,6 +9320,8 @@
       }
     },
     "63524386b098": {
+      "fix_commit": "d25dad35efd114c77eb626c34fa8e24d3fadc9cb",
+      "fixed_in": "2026.06.2-dev.04",
       "last_updated": "2026-09-12",
       "notes": "",
       "opm_issue": {
@@ -9119,6 +9401,8 @@
       }
     },
     "6369966eada6": {
+      "fix_commit": "92107da9ed72edc0b11c90c81ce96fe57d8ca346",
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -9179,7 +9463,7 @@
       "pr": {
         "branch": "crash-triage-ensemble-fracture-width",
         "number": 14840,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14840"
       },
       "representative_stack": [
@@ -9210,7 +9494,7 @@
         "RicMeshFractureTemplateHelper<RimStimPlanFractureTemplate>::createNewTemplatesFromFiles"
       ],
       "signature_id": "642357244e71",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "cvf::cref<RigFractureGrid>::cref",
       "weeks": {
         "2026-10-02": {
@@ -9314,6 +9598,8 @@
       }
     },
     "64f0d600d3f1": {
+      "fix_commit": "d7d39389869fc8057eb94556a4fe6d8ab0ecff93",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -9417,6 +9703,8 @@
       }
     },
     "66dc3d7e252b": {
+      "fix_commit": "c9750f46982f59d206fd7bc9e43f77dc688659c4",
+      "fixed_in": "2026.06.2-dev.05",
       "last_updated": "2026-09-12",
       "notes": "",
       "opm_issue": null,
@@ -9490,6 +9778,8 @@
       }
     },
     "682960238ff0": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -9542,6 +9832,8 @@
       }
     },
     "694afb4bae44": {
+      "fix_commit": "dc7dc2f7db1ffbdb345ba00797477ffa5931b11e",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -9621,6 +9913,11 @@
       }
     },
     "69f8ebe0f20e": {
+      "fix_commit": "0410635815f9d4c43800d52e208d7ee2b13bcb1b",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-08-08",
       "notes": "",
       "opm_issue": {
@@ -9773,6 +10070,8 @@
       }
     },
     "6be96e7bb8e8": {
+      "fix_commit": "5fcca6bf0926668d6dc83da8cf64e8c2b1228673",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -9812,6 +10111,8 @@
       }
     },
     "6cb07aef59cb": {
+      "fix_commit": "abe823c0ae63760018e3899d17b1165b884b99e0",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -9955,6 +10256,8 @@
       }
     },
     "6efc152a9abd": {
+      "fix_commit": "ff7bf6c7c9e8f73de7f3de6fd00dd9ec3c520771",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-10",
       "notes": "Original PR superseded by the combined crash-fix branch; fix landed in #14495.",
       "opm_issue": null,
@@ -10000,6 +10303,8 @@
       }
     },
     "6f0ecfbd6a96": {
+      "fix_commit": "7b05b18d8c5ad8612f2dc6f58f8184ef33fcdd5c",
+      "fixed_in": "2025.09.3-dev.05",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -10072,6 +10377,8 @@
       }
     },
     "6ff11cb88796": {
+      "fix_commit": "eb3b5f14b547f9f158cd42d54848ce62d7986c4f",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -10151,6 +10458,8 @@
       }
     },
     "70bce3e95a7f": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "Related but distinct fault from f4394a37498f/12f26117f677 in the same dock-teardown area; fixed in the same PR.",
       "opm_issue": {
@@ -10230,6 +10539,8 @@
       }
     },
     "72e4129e054b": {
+      "fix_commit": "318659e1303491584640012bfa3f0eb3992536dd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
@@ -10368,6 +10679,8 @@
       }
     },
     "748db0cbcda2": {
+      "fix_commit": "592fe88d5bf177901cb2e4e9462101977169e4fd",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
@@ -10450,6 +10763,8 @@
       }
     },
     "756f5de23e61": {
+      "fix_commit": "2a158dce5816a09ef4191141b9d618687de66919",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-08-10",
       "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
@@ -10521,6 +10836,8 @@
       }
     },
     "7577ac683bdd": {
+      "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "wellPathGeometry crashed when RimWellLogExtractionCurve::extractGeomData ran against a missing well path. Fixed in PR #14779 (merged 2026-09-22): handle missing well path.",
       "opm_issue": null,
@@ -10588,6 +10905,8 @@
       }
     },
     "75ddc6afee6f": {
+      "fix_commit": "14a4b5ef539c6791525419ab160ccc3aa1f65211",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-08",
       "notes": "Truncated/corrupt SMSPEC: keyword present in file index but data read fails; since #14149 lazy loader returns NULL and ecl_smspec_fread_header dereferences it at ecl_smspec.cpp:1120 (INTEHEAD). Fix adds NULL guards for all header keywords with graceful false return.",
       "opm_issue": {
@@ -10760,6 +11079,8 @@
       }
     },
     "76e7e40b4edc": {
+      "fix_commit": "96aceb23a7e1bf6acd53183d484ab6ae2f8f9ab8",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -10856,6 +11177,11 @@
       }
     },
     "77d8eac5b954": {
+      "fix_commit": "4f941c3ef22b155f962cdd6e49ae54d0802bcf6f",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -10921,6 +11247,8 @@
       }
     },
     "7d0e00a1c0c9": {
+      "fix_commit": "94da54c4f5983be0e74e2502ed2a36042dde8bb9",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-10",
       "notes": "Fixed by #14492 (AsyncPdmObjectVectorDeleter removed). A previously recorded issue link (#14483) did not resolve on GitHub and was dropped.",
       "opm_issue": null,
@@ -11061,6 +11389,8 @@
       }
     },
     "809c2bf3e228": {
+      "fix_commit": "08b998ac4c75a1014d76eeeedb18dc23f00e896e",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -11101,6 +11431,11 @@
       }
     },
     "8414fa42bb7b": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fix_shipped": {
+        "2026.02.2": false
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
@@ -11172,6 +11507,8 @@
       }
     },
     "87e3ad865e02": {
+      "fix_commit": "b1e741d5c3efd3543831e55fdf06d5e575f8b96c",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-29",
       "notes": "",
       "opm_issue": {
@@ -11258,7 +11595,7 @@
       "pr": {
         "branch": "crash-triage-view-controller-master-view",
         "number": 14843,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14843"
       },
       "representative_stack": [
@@ -11299,7 +11636,7 @@
         "caf::PdmUiObjectHandle::expandUiTree"
       ],
       "signature_id": "89ab5c3ba8b5",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RimViewLinker::masterView",
       "weeks": {
         "2026-10-02": {
@@ -11319,7 +11656,7 @@
       "pr": {
         "branch": "crash-triage-histogram-null-plotwindow",
         "number": 14844,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14844"
       },
       "representative_stack": [
@@ -11348,7 +11685,7 @@
         "Rim3dView::createDisplayModelAndRedraw"
       ],
       "signature_id": "8b189a4102f4",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "caf::PdmPointer<RimViewWindow>::p",
       "weeks": {
         "2026-10-02": {
@@ -11362,6 +11699,8 @@
       }
     },
     "8d28fa20f37a": {
+      "fix_commit": "0df1df119ea09de1d3187fe1cd1ed9855fd58867",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -11459,6 +11798,12 @@
       }
     },
     "8f9e6bc3f40f": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fix_shipped": {
+        "2026.06.0": true,
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-08-16",
       "notes": "",
       "opm_issue": {
@@ -11556,7 +11901,7 @@
       "pr": {
         "branch": "crash-triage-stimplan-formation-oob",
         "number": 14846,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14846"
       },
       "representative_stack": [
@@ -11583,7 +11928,7 @@
         "RiaGrpcPdmObjectService::CallPdmObjectMethod"
       ],
       "signature_id": "911b6833946a",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RimStimPlanModelCalculator::calculateFormation",
       "weeks": {
         "2026-10-02": {
@@ -11597,6 +11942,13 @@
       }
     },
     "922f510a0bb7": {
+      "fix_commit": "5239a4d378d66dc13bfce6a552647468935ef3c3",
+      "fix_shipped": {
+        "2026.02.2": false,
+        "2026.06.1": true,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -11869,6 +12221,8 @@
       }
     },
     "95d0cb22fd70": {
+      "fix_commit": "134befead42d866aa19621ef112bccf79fc92ee2",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-26",
       "notes": "Fixed by PR #14435 (merged 2026-07-31, 134befe). Null dereference in RimWellPathValve::templateUpdated: firstAncestorOrThisOfType<RimPerforationInterval>() returns nullptr for stand-alone valves, tie-in outlet valves and well path group valves. Guard added, unit test added.",
       "opm_issue": {
@@ -11980,6 +12334,12 @@
       }
     },
     "963953dcf22e": {
+      "fix_commit": "605662062c9279a10079f82ecfffd6f05f2b1a74",
+      "fix_shipped": {
+        "2026.06.1": true,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -12154,6 +12514,8 @@
       }
     },
     "978f30de6d99": {
+      "fix_commit": "5239a4d378d66dc13bfce6a552647468935ef3c3",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -12214,6 +12576,8 @@
       }
     },
     "979714160b5d": {
+      "fix_commit": "81f1aca0bafe5c652bc7b026f64ab445f537c1fa",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -12287,6 +12651,8 @@
       }
     },
     "97c5e7cd9241": {
+      "fix_commit": "08b998ac4c75a1014d76eeeedb18dc23f00e896e",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-12",
       "notes": "Already fixed on dev. Same root cause as signature 3201b263a461 (out-of-range K forwarded to LGR grids in updateCellsKIndexEclipse, crashing in cvf::Vec3d::set inside the OpenMP parallel-for), reached here via RivReservoirViewPartMgr::computeFilterVisibility during display-model creation. PR #13923 (merged 2026-04-29, issue #13922) added the per-grid K-range guard at function entry, which covers this call path too. Both field hits occurred 2026-04-14, predating the fix.",
       "opm_issue": {
@@ -12350,6 +12716,8 @@
       }
     },
     "982829e66bcb": {
+      "fix_commit": "f50cd02bb3ecef445ac8f8703b0985b3fff1d285",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-28",
       "notes": "Uncaught std::out_of_range from ecl_file_view_get_global_index (kw_index.at) when a keyword is missing in a truncated/malformed restart file, escaping through readWellData -> std::terminate. Patch: try/catch around restartDataAccess->readWellData in RifReaderEclipseWell::readWellCells, log error and skip well import. Build-verified.",
       "opm_issue": {
@@ -12422,6 +12790,8 @@
       }
     },
     "984e0eeed6cd": {
+      "fix_commit": "ff7bf6c7c9e8f73de7f3de6fd00dd9ec3c520771",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": null,
@@ -12499,6 +12869,12 @@
       }
     },
     "98adc191d3cf": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fix_shipped": {
+        "2026.02.2": false,
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -12611,6 +12987,8 @@
       }
     },
     "9bdeb9f26d46": {
+      "fix_commit": "5239a4d378d66dc13bfce6a552647468935ef3c3",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -12660,6 +13038,8 @@
       }
     },
     "9c3f43c7d5a2": {
+      "fix_commit": "0726f206947c230d06b428b5e158464bd196492f",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -12718,6 +13098,8 @@
       }
     },
     "9e4139178b72": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-23",
       "notes": "",
       "opm_issue": {
@@ -12787,6 +13169,11 @@
       }
     },
     "9f3186ce4814": {
+      "fix_commit": "92107da9ed72edc0b11c90c81ce96fe57d8ca346",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-09-21",
       "notes": "",
       "opm_issue": {
@@ -12898,6 +13285,8 @@
       }
     },
     "a192e05fdccc": {
+      "fix_commit": "5fcca6bf0926668d6dc83da8cf64e8c2b1228673",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -12959,6 +13348,8 @@
       }
     },
     "a3657e02a02b": {
+      "fix_commit": "fe0e691e6c4b7419998ea64ce1d9611a76171ecb",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -13041,6 +13432,8 @@
       }
     },
     "a4e3b4e08de3": {
+      "fix_commit": "c9750f46982f59d206fd7bc9e43f77dc688659c4",
+      "fixed_in": "2026.06.2-dev.05",
       "last_updated": "2026-09-21",
       "notes": "",
       "opm_issue": null,
@@ -13119,6 +13512,8 @@
       }
     },
     "a52535d78adc": {
+      "fix_commit": "1858529f7ddca469d01f5fe06d6dcc00f99df50b",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -13213,6 +13608,8 @@
       }
     },
     "a5bad9babaf6": {
+      "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "createLateralAtMeasuredDepth crashed on an empty well path subset when appending a lateral via gRPC. Fixed in PR #14779 (merged 2026-09-22): handle an empty well path subset.",
       "opm_issue": null,
@@ -13274,6 +13671,8 @@
       }
     },
     "a6749f9506ab": {
+      "fix_commit": "068d2b98bc1f6875c1d10a3ef60a25e104b24caa",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-30",
       "notes": "",
       "opm_issue": {
@@ -13370,6 +13769,11 @@
       }
     },
     "a80becaafb12": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-08-08",
       "notes": "",
       "opm_issue": {
@@ -13427,6 +13831,8 @@
       }
     },
     "a91d5c7fff45": {
+      "fix_commit": "052c1eb5502015f1d3670efdcc0f822d4afb687e",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": null,
@@ -13507,6 +13913,8 @@
       }
     },
     "a92cb693a22d": {
+      "fix_commit": "d30d5e7817c8a2dd0894f28bc65cf044af5df5d4",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-06",
       "notes": "",
       "opm_issue": null,
@@ -13571,6 +13979,8 @@
       }
     },
     "abb388e6c1a3": {
+      "fix_commit": "f409fd8a4d76263e684a29e67d07a35313554201",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-22",
       "notes": "Exception from ODB API escaping RifOdbReader destructor during project close -> std::terminate. Fixed by PR 14377 (try/catch around close() and odb_finalizeAPI() in destructor), merged to dev as f409fd8a4d.",
       "opm_issue": {
@@ -13680,6 +14090,8 @@
       }
     },
     "ac28fab768b4": {
+      "fix_commit": "593f27dcf4ea3481be0b9f91fe6e344f9913e4cd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
@@ -13733,6 +14145,8 @@
       }
     },
     "af4f93095db7": {
+      "fix_commit": "593f27dcf4ea3481be0b9f91fe6e344f9913e4cd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
@@ -13778,6 +14192,8 @@
       }
     },
     "b0449a98923e": {
+      "fix_commit": "d30d5e7817c8a2dd0894f28bc65cf044af5df5d4",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-07",
       "notes": "RiuPlotUpdater::m_eclipseResultDef was a raw pointer, dangling when the delayed update ran after the result definition was deleted during shutdown. Fixed on dev by PR #14474, which made it a caf::PdmPointer.",
       "opm_issue": null,
@@ -13848,6 +14264,8 @@
       }
     },
     "b2173a9f9896": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -13896,6 +14314,11 @@
       }
     },
     "b4a2d2b3be54": {
+      "fix_commit": "af2c5d429c5c04984a4adb0b416cfc8f349be2bd",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -13956,6 +14379,8 @@
       }
     },
     "b5081518115b": {
+      "fix_commit": "272f7fa56bcfb285949cc4d1fbf53cec1f0463b2",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-08",
       "notes": "",
       "opm_issue": {
@@ -14038,6 +14463,8 @@
       }
     },
     "b54681a6057b": {
+      "fix_commit": "ccbb432b5c293ccbf3689fe519170b704ad526e6",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-31",
       "notes": "",
       "opm_issue": {
@@ -14109,6 +14536,11 @@
       }
     },
     "b5549d432816": {
+      "fix_commit": "af1cdbd546129b48e9fda3a4fec0a24a76228afd",
+      "fix_shipped": {
+        "2026.06.0": true
+      },
+      "fixed_in": "2026.02.3-dev.01",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -14294,6 +14726,8 @@
       }
     },
     "b7412a93e0d3": {
+      "fix_commit": "09bbaa58bfe402af8909c94732ecd3aa51d2689b",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -14327,6 +14761,8 @@
       }
     },
     "b80de5fc87c2": {
+      "fix_commit": "c9d118f2defbfde508c3a0b2359f46a19fd1c34c",
+      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-08-10",
       "notes": "Crash site is RigEclipseWellLogExtractor.cpp:82 in v2026.02.2, 'if ( cell.isInvalid() || cell.subGrid() != nullptr )', reading a RigCell at a globalCellIndex returned by findCloseCellIndices -> RigMainGrid::findIntersectingCells. Not the null-well-path-geometry bug of #14121: findCellIntersectionInfosAlongPath builds a dummy RigWellPath from the coords, and the v2026.02.2 ctor takes gsl::not_null, so m_wellPathGeometry cannot be null here. The bad index comes from the AABB cell search tree: in v2026.02.2 findIntersectingCells lazily built the mutable m_cellSearchTree with no synchronisation, so a concurrent build/rebuild could be queried while half-built or being destroyed. Fixed on dev by f1218e527f (#14183, 2026-06-10), which serialises the build with m_cellSearchTreeMutex and keeps a local ref to the tree for the duration of the query. That commit is in v2026.06.0/v2026.06.1. All 4 reports are from 2026.02.2 and none after the week of 2026-06-26; the flat count of 1 per week across 4 overlapping CSVs is most likely a single crash event. #14185 can be closed as fixed by #14183.",
       "opm_issue": {
@@ -14399,6 +14835,8 @@
       }
     },
     "b810a4050ae2": {
+      "fix_commit": "a9f420bfde0022843c06966225aed1345835909d",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-07-28",
       "notes": "cellScalarResults(SOWCR/SOGCR, 0) called without ensureKnownResultLoaded in RigHydrocarbonFlowTools::residualOilData; missing static result gives UNDEFINED_SIZE_T index -> OOB deref in release. Patch guards oil+gas variants with ensureKnownResultLoaded, falling back to default fill. Build-verified.",
       "opm_issue": {
@@ -14464,6 +14902,8 @@
       }
     },
     "b8bc3e3c7278": {
+      "fix_commit": "c8b1ebc2663fd332362c060898234fbdbb53320b",
+      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-07-25",
       "notes": "Crash inside the OpenGL driver at glDrawRangeElements (cvfPrimitiveSetIndexedUInt.cpp:125) during paintGL; frames above the call are unsymbolized driver code. The ResInsight call site is already guarded (null indices and numIndices<=0 both early-return), so there is no ResInsight-side null-deref or OOB access on this path. Most plausible cause is the driver reading vertices out of bounds (m_maxIndex >= vertexCount) or a lost/invalid GL context, but neither is confirmable from the stack and there is no reproduction. A bounds guard is not minimal: base cvf::PrimitiveSet exposes only indexCount()/index(), not minIndex()/maxIndex(), and vertexCount lives in DrawableGeo, so it would require cross-class changes to vendored VizFwk and would only address one unconfirmed hypothesis. Low frequency (~2-3 distinct events, all v2026.02.2). No confident fix; #14009 stays open.",
       "opm_issue": {
@@ -14667,6 +15107,8 @@
       }
     },
     "bba5f7476970": {
+      "fix_commit": "593f27dcf4ea3481be0b9f91fe6e344f9913e4cd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-07",
       "notes": "",
       "opm_issue": null,
@@ -14717,6 +15159,8 @@
       }
     },
     "bc1a10fbac4b": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -14773,6 +15217,8 @@
       }
     },
     "be1e31972aa4": {
+      "fix_commit": "b1e741d5c3efd3543831e55fdf06d5e575f8b96c",
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-08",
       "notes": "",
       "opm_issue": {
@@ -14849,6 +15295,8 @@
       }
     },
     "be4f77a32910": {
+      "fix_commit": "f7ccfcfff69ce1789132874c8669e3bdda815ae3",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -14929,6 +15377,12 @@
       }
     },
     "c04ed08279f0": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fix_shipped": {
+        "2026.06.1": true,
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -15021,6 +15475,8 @@
       }
     },
     "c0abe39c3ff2": {
+      "fix_commit": "dd16739a37cb54825e86c0d0000c0e669614d736",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -15132,6 +15588,11 @@
       }
     },
     "c0fae31c2301": {
+      "fix_commit": "7d2d1b831a630ef9e36b8a9247b8d12cffc2bf2a",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": {
@@ -15308,6 +15769,8 @@
       }
     },
     "c250d46477d4": {
+      "fix_commit": "5b7bdf7bb091361f79ff78abfb6fbd2a9c88f10f",
+      "fixed_in": "2026.06.1-dev.01",
       "last_updated": "2026-07-25",
       "notes": "Null deref of m_hdfFile in RifHdf5Exporter::createGroup. Constructor swallows a throwing 'new H5::H5File' (#13883 made m_hdfFile reliably null on failure but did not guard the use); createGroup(nullptr, ...) then dereferences the null m_hdfFile, and the surrounding try/catch(...) cannot catch the SIGSEGV. Fix guards the else branch with 'else if ( m_hdfFile )'. Build-verified (ApplicationLibCode target, clean).",
       "opm_issue": {
@@ -15402,6 +15865,8 @@
       }
     },
     "c44fc451a611": {
+      "fix_commit": "cd59e2a18172227f349c498356c0ab03859e7a72",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -15487,6 +15952,8 @@
       }
     },
     "c4689aafb7bc": {
+      "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "caf::PdmPointer<RimPlot> dereferenced a stale pointer in RiuMultiPlotBook::visiblePlotWidgets during a scheduled plot redraw. Fixed in PR #14779 (merged 2026-09-22): skip null widget pointers.",
       "opm_issue": null,
@@ -15552,7 +16019,7 @@
       "pr": {
         "branch": "crash-triage-camera-parallel-dir-up",
         "number": 14845,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14845"
       },
       "representative_stack": [
@@ -15575,7 +16042,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "c5301dc57661",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "cvf::Plane::distanceToOrigin",
       "weeks": {
         "2026-10-02": {
@@ -15589,6 +16056,11 @@
       }
     },
     "c53fe6a2830b": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fix_shipped": {
+        "2026.06.0": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-08-01",
       "notes": "",
       "opm_issue": {
@@ -15684,6 +16156,8 @@
       }
     },
     "c67a5ee4782b": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -15748,6 +16222,8 @@
       }
     },
     "c6d682d471e2": {
+      "fix_commit": "7cdeff00615ce25a3eac6b00b18820f87138c342",
+      "fixed_in": "2026.06.0",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -15819,6 +16295,8 @@
       }
     },
     "c7b4bbe275e4": {
+      "fix_commit": "43c6e0b5187610aada40c6b86b62844934f1eda4",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -15961,7 +16439,7 @@
       "pr": {
         "branch": "crash-triage-view-controller-master-view",
         "number": 14843,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14843"
       },
       "representative_stack": [
@@ -15993,7 +16471,7 @@
         "RimEclipseView::updateIconStateForFilterCollections"
       ],
       "signature_id": "c7e519c159b8",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RimViewLinker::masterView",
       "weeks": {
         "2026-10-02": {
@@ -16069,6 +16547,8 @@
       }
     },
     "c93afe9d5b9f": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -16155,6 +16635,11 @@
       }
     },
     "ca87fa6476a3": {
+      "fix_commit": "7c10106545d21ef0c51cc4ae00b319d349e1e460",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -16220,6 +16705,8 @@
       }
     },
     "cbf6088f92c2": {
+      "fix_commit": "cdfc10b833aad8411d50ed3d45d0e3e33d95b541",
+      "fixed_in": "2026.09.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
@@ -16274,6 +16761,8 @@
       }
     },
     "cd0b3b9fb17a": {
+      "fix_commit": "44e32b840ba72af324d08e2df536185de5932b8a",
+      "fixed_in": "2026.06.0-RC_4",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -16365,6 +16854,8 @@
       }
     },
     "cd0b9c015ffb": {
+      "fix_commit": "6a5f19d5a0c41276bb99c6893ef508fd24a19795",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -16439,6 +16930,8 @@
       }
     },
     "cd61b941e392": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -16481,6 +16974,12 @@
       }
     },
     "d0ae819f2cd6": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fix_shipped": {
+        "2026.06.0": true,
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": {
@@ -16613,6 +17112,12 @@
       }
     },
     "d2161286a077": {
+      "fix_commit": "63a1dc2b355e84cf0684c63126e482eea5ef9854",
+      "fix_shipped": {
+        "2026.06.0": true,
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-09-12",
       "notes": "",
       "opm_issue": {
@@ -16744,6 +17249,8 @@
       }
     },
     "d39abff910b8": {
+      "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
+      "fixed_in": "2026.09.1-dev.02",
       "last_updated": "2026-10-03",
       "notes": "clearScalarResult crashed in RimGridCalculation::removeDependentObjects when the owning case was not open. Fixed in PR #14779 (merged 2026-09-22): handle a case that is not opened.",
       "opm_issue": null,
@@ -16802,6 +17309,8 @@
       }
     },
     "d444cdd6ad0d": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -16856,6 +17365,11 @@
       }
     },
     "d4f4cc3cc44c": {
+      "fix_commit": "af2c5d429c5c04984a4adb0b416cfc8f349be2bd",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -16931,6 +17445,8 @@
       }
     },
     "d6cae2bbf683": {
+      "fix_commit": "f1218e527f18b40c8ce0df2ef786201bf4f3358a",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -17011,6 +17527,8 @@
       }
     },
     "d702ebefb39c": {
+      "fix_commit": "561bb35bd5577e5871babfd052c810d95a8af8f1",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "findOrLoadKnownScalarResultForTimeStep (RigCaseCellResultsData.cpp) only bounds-checked timeStepIndex when timeStepCount>0, so a DYNAMIC_NATIVE result with 0 known time steps returned a scalarResultIndex whose m_cellScalarResults vector was never resized; RigSoilResultCalculator::calculate then indexed it out of bounds (CAF_ASSERT is a no-op in Release) -> SIGSEGV. Fixed by dropping the timeStepCount>0 condition from the guard: PR #14705, merged to dev 2026-09-08. The earlier link to issue #7267 was a false-positive text match on an unrelated 2021 enhancement issue.",
       "opm_issue": {
@@ -17104,7 +17622,7 @@
       "pr": {
         "branch": "crash-triage-histogram-null-plotwindow",
         "number": 14844,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14844"
       },
       "representative_stack": [
@@ -17131,7 +17649,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "d79da4c9b4dc",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "caf::PdmPointer<RimViewWindow>::p",
       "weeks": {
         "2026-10-02": {
@@ -17145,6 +17663,8 @@
       }
     },
     "d8c1122aca00": {
+      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": null,
@@ -17222,6 +17742,11 @@
       }
     },
     "da71960994c9": {
+      "fix_commit": "25921d1169fa783dc9d2ddd4e5ed9c5506d64323",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -17316,6 +17841,8 @@
       }
     },
     "db447db3614d": {
+      "fix_commit": "203cf83334b6dc0d77350fd05f2f03db8633f286",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -17448,6 +17975,8 @@
       }
     },
     "dde121c349b6": {
+      "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -17581,6 +18110,8 @@
       }
     },
     "e09a5f675d73": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -17627,6 +18158,8 @@
       }
     },
     "e16a04b3461e": {
+      "fix_commit": "74c9be7aaa9bf8a9c4c5824439f527cc86e2336a",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -17711,6 +18244,8 @@
       }
     },
     "e1eb930dfa0f": {
+      "fix_commit": "ff7bf6c7c9e8f73de7f3de6fd00dd9ec3c520771",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-09-01",
       "notes": "",
       "opm_issue": null,
@@ -17769,6 +18304,8 @@
       }
     },
     "e2d49fed306f": {
+      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-09-26",
       "notes": "",
       "opm_issue": null,
@@ -17840,6 +18377,8 @@
       }
     },
     "e3810bc2a745": {
+      "fix_commit": "394bc6c3dffb3c2dcbb76828ccde09ab08adee0a",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -17889,6 +18428,8 @@
       }
     },
     "e4a6d29f4a88": {
+      "fix_commit": "5b7bdf7bb091361f79ff78abfb6fbd2a9c88f10f",
+      "fixed_in": "2026.06.1-dev.01",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -17982,6 +18523,8 @@
       }
     },
     "e7861112a971": {
+      "fix_commit": "fe0e691e6c4b7419998ea64ce1d9611a76171ecb",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-08",
       "notes": "Dangling RigFormationNames pointer. RigCaseCellResultsData held a raw pointer to data owned by a unique_ptr in RimFormationNames; reloading or deleting the formation names left it dangling, so the null check in RigEclipseCaseData::formationNames() passed and the dereference crashed. Regression from 601a3bbb78 (2026-02-27), which replaced the cvf::cref with a raw pointer. Fixed by storing a copy. Shares one crash site with the other two RigEclipseCaseData::formationNames signatures (f20aa1d03f76, 55dd071baf3f, e7861112a971), all covered by this issue/PR. Reached via property filter reload after a grid calculation (RimEclipsePropertyFilter::computeResultValueRange).",
       "opm_issue": {
@@ -18051,6 +18594,8 @@
       }
     },
     "e934af263f7e": {
+      "fix_commit": "2a158dce5816a09ef4191141b9d618687de66919",
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-08-10",
       "notes": "CVF_ASSERT( wellPathGeometry ) in RicWellPathExportMswTableData::generateCellSegments. Reported line numbers differ only because the file was refactored between builds. Already fixed on dev by commit 253d57f1a5 (#14121, 2026-06-05), which replaced the assert with an early return and added a well path geometry guard in the extractSingleWellMswData dispatcher.",
       "opm_issue": {
@@ -18121,6 +18666,8 @@
       }
     },
     "ecc32871d757": {
+      "fix_commit": "81f4628fa65252d1c265fc23a9eec9ed9fbfc064",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-28",
       "notes": "Crash was inlined askUserToRestoreOriginalCellFilterCollection: activeView->viewer() null deref. Fixed by #14302 / PR #14303 (merged 2026-06-23), not yet in a shipped release; crash events are from 2026.06.0 and earlier.",
       "opm_issue": {
@@ -18210,6 +18757,8 @@
       }
     },
     "ecd27040c8c7": {
+      "fix_commit": "86500efbdcc700c76aba2bcd6a2fae4dd3a8e6a3",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -18338,6 +18887,8 @@
       }
     },
     "f20aa1d03f76": {
+      "fix_commit": "fe0e691e6c4b7419998ea64ce1d9611a76171ecb",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-22",
       "notes": "Dangling RigFormationNames pointer. RigCaseCellResultsData held a raw pointer to data owned by a unique_ptr in RimFormationNames; reloading or deleting the formation names left it dangling, so the null check in RigEclipseCaseData::formationNames() passed and the dereference crashed. Regression from 601a3bbb78 (2026-02-27), which replaced the cvf::cref with a raw pointer. Fixed by storing a copy. Shares one crash site with the other two RigEclipseCaseData::formationNames signatures (f20aa1d03f76, 55dd071baf3f, e7861112a971), all covered by this issue/PR. Reached via legend update on time step change (RimEclipseView::onUpdateLegends).",
       "opm_issue": {
@@ -18424,6 +18975,8 @@
       }
     },
     "f2d85b98e911": {
+      "fix_commit": "4f941c3ef22b155f962cdd6e49ae54d0802bcf6f",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -18477,6 +19030,8 @@
       }
     },
     "f300a0ccc921": {
+      "fix_commit": "ac97f76e97aafa59c2dd6c72f5e4987b4b0964d4",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-07-25",
       "notes": "",
       "opm_issue": {
@@ -18539,6 +19094,8 @@
       }
     },
     "f326099e1239": {
+      "fix_commit": "81f4628fa65252d1c265fc23a9eec9ed9fbfc064",
+      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -18614,6 +19171,8 @@
       }
     },
     "f37897ff8ca4": {
+      "fix_commit": "f7ccfcfff69ce1789132874c8669e3bdda815ae3",
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-06-28",
       "notes": "",
       "opm_issue": {
@@ -18718,6 +19277,11 @@
       }
     },
     "f3d2f3e86a63": {
+      "fix_commit": "668b844051212d50d59cc149c97babdd95cdf7e6",
+      "fix_shipped": {
+        "2026.06.1": true
+      },
+      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-09-21",
       "notes": "Auto-link to #12756 was a false positive: that issue is an MSW import/visualization enhancement that only mentions RifReaderEclipseWell::readWellCells in prose, not a crash report. Unlinked.",
       "opm_issue": {
@@ -18821,6 +19385,8 @@
       }
     },
     "f4394a37498f": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -18941,6 +19507,8 @@
       }
     },
     "f48a3d0412b9": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": {
@@ -19004,7 +19572,7 @@
       "pr": {
         "branch": "crash-triage-qwt-axis-mapping",
         "number": 14839,
-        "state": "OPEN",
+        "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/pull/14839"
       },
       "representative_stack": [
@@ -19028,7 +19596,7 @@
         "RiuMultiPlotPage::performUpdate"
       ],
       "signature_id": "f4fdced52053",
-      "status": "pr-open",
+      "status": "new",
       "top_frame": "RiuQwtPlotWidget::setAxisLabelsAndTicksEnabled",
       "weeks": {
         "2026-10-02": {
@@ -19043,6 +19611,8 @@
       }
     },
     "f567e0f2c3c6": {
+      "fix_commit": "cdfc10b833aad8411d50ed3d45d0e3e33d95b541",
+      "fixed_in": "2026.09.2-dev.01",
       "last_updated": "2026-10-03",
       "notes": "",
       "opm_issue": null,
@@ -19096,6 +19666,8 @@
       }
     },
     "f58e9619efdf": {
+      "fix_commit": "318659e1303491584640012bfa3f0eb3992536dd",
+      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-08-16",
       "notes": "",
       "opm_issue": null,
@@ -19167,6 +19739,8 @@
       }
     },
     "f5cc7bac4742": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
@@ -19386,6 +19960,8 @@
       }
     },
     "fe26ca581590": {
+      "fix_commit": "6d8092cd94de083ac3c8c66e66da30ebac5c75ba",
+      "fixed_in": "2026.02.2-dev.01",
       "last_updated": "2026-06-11",
       "notes": "",
       "opm_issue": {
