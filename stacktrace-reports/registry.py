@@ -44,6 +44,14 @@ Usage
     python registry.py set --id 024f64fb61b2 --pr 14473 --branch crash-triage-2026-08-06 \
                            --status pr-open
     python registry.py set --id 024f64fb61b2 --pr-state MERGED --status resolved
+    python registry.py set --id 024f64fb61b2 --fixed-in 2026.06.2-dev.02
+
+Regressions
+-----------
+`fixed_in` is the ResInsight version the fix first shipped in (filled by
+`link_issues.py` from the merge commit). A closed-out signature that crashes on
+a strictly newer version is labelled `regressed`: it moves back to the open part
+of the report and onto the worklist.
 """
 
 import argparse
@@ -324,6 +332,50 @@ def count_from_version(entry: dict, min_base: tuple[int, ...] | None) -> int:
     return total
 
 
+# Pre-release ordering within one base: dev builds precede release candidates,
+# which precede the release itself.
+_SUFFIX_RE = re.compile(r"^(?:-dev\.(\d+)|-RC_(\d+))?$")
+
+
+def version_key(v: str) -> tuple | None:
+    """Total order over APPversions, or None when `v` cannot be placed.
+
+    `2026.06.2-dev.02` < `2026.06.2-RC_1` < `2026.06.2` < `2026.09.0-dev.01`.
+    """
+    base, _ = parse_version(v)
+    if base is None:
+        return None
+    m = _SUFFIX_RE.match(v[len(v.partition("-")[0]):])
+    if not m:
+        return None
+    if m.group(1) is not None:
+        return (base, 0, int(m.group(1)))
+    if m.group(2) is not None:
+        return (base, 1, int(m.group(2)))
+    return (base, 2, 0)
+
+
+def regressed_versions(entry: dict) -> dict[str, int]:
+    """Occurrences on versions strictly newer than the one the fix shipped in.
+
+    Equal is not a regression: builds from before the merge can carry the same
+    dev version string as the fix commit. A newer release whose tag is known not
+    to contain the fix (`fix_shipped`, from link_issues.py) is not one either.
+    """
+    fixed = version_key(entry.get("fixed_in") or "")
+    if fixed is None or not is_closed_out(entry, ignore_regression=True):
+        return {}
+    shipped = entry.get("fix_shipped") or {}
+    return {
+        v: c for v, c in entry_versions(entry).items()
+        if (k := version_key(v)) is not None and k > fixed and shipped.get(v) is not False
+    }
+
+
+def is_regressed(entry: dict) -> bool:
+    return bool(regressed_versions(entry))
+
+
 def issue_is_closed(entry: dict) -> bool:
     iss = entry.get("opm_issue")
     return bool(iss and iss.get("state") == "CLOSED")
@@ -339,18 +391,22 @@ def has_reference(entry: dict) -> bool:
     return bool(entry.get("opm_issue") or entry.get("pr"))
 
 
-def is_closed_out(entry: dict) -> bool:
+def is_closed_out(entry: dict, ignore_regression: bool = False) -> bool:
     """Nothing further is expected on this signature.
 
     Either the linked issue is closed, or the PR carrying the fix (and the crash
     stack, when no issue was filed) has merged, or triage settled it explicitly.
-    Closed-out stacks are gathered at the bottom of the weekly report.
+    Closed-out stacks are gathered at the bottom of the weekly report - unless
+    they regressed, which reopens them.
     """
-    return (
+    closed = (
         entry.get("status") in ("resolved", "no-fix-found")
         or issue_is_closed(entry)
         or pr_is_merged(entry)
     )
+    if not closed or ignore_regression:
+        return closed
+    return not is_regressed(entry)
 
 
 def opm_issue_line(entry: dict) -> str:
@@ -463,9 +519,20 @@ def _stack_block(entry: dict, num: int, wk: dict) -> list[str]:
     block.extend(entry["representative_stack"])
     block.append("```")
     block.append("")
-    block.append(f"**Status:** {entry.get('status', 'new')}")
+    status = f"**Status:** {entry.get('status', 'new')}"
+    regressed = regressed_versions(entry)
+    if regressed:
+        status += " · **regressed**"
+    block.append(status)
     block.append("")
     block.extend(reference_lines(entry))
+    if regressed:
+        parts = ", ".join(
+            f"`{v}` ({c})"
+            for v, c in sorted(regressed.items(), key=lambda kv: version_key(kv[0]))
+        )
+        block[-1] += "  "
+        block.append(f"**Regressed:** fixed in `{entry['fixed_in']}`, crashed since on {parts}")
     notes = (entry.get("notes") or "").strip()
     if notes:
         block.append("")
@@ -567,6 +634,11 @@ def cmd_worklist(args: argparse.Namespace) -> None:
         if args.all:
             rows.append(e)
             continue
+        # Crashing again after its fix shipped: back to triage, until a new
+        # batch picks it up (status moves off `resolved`).
+        if is_regressed(e) and e["status"] in ("resolved", "linked", "new"):
+            rows.append(e)
+            continue
         # Already referenced upstream - by an issue, or (since crash stacks moved
         # into PR bodies) by a fix PR on its own. Either way it is accounted for.
         if has_reference(e):
@@ -605,9 +677,10 @@ def cmd_worklist(args: argparse.Namespace) -> None:
             if pr:
                 parts.append(f"PR #{pr['number']}")
             ref = f"  ({', '.join(parts)})" if parts else ""
+        label = f"[{e['status']}, regressed]" if is_regressed(e) else f"[{e['status']}]"
         print(
             f"{count_from_version(e, min_base):4d}  {total_count(e):4d}  "
-            f"{e['signature_id']}  [{e['status']}]  {e['top_frame']}{ref}"
+            f"{e['signature_id']}  {label}  {e['top_frame']}{ref}"
         )
     if not rows:
         print("(no untriaged signatures)")
@@ -637,6 +710,9 @@ def cmd_set(args: argparse.Namespace) -> None:
         }
     if args.pr is not None:
         prev = entry.get("pr") or {}
+        if prev.get("number") != args.pr:
+            # A new fix supersedes the old one; its own merge sets fixed_in.
+            entry.pop("fixed_in", None)
         entry["pr"] = {
             "number": args.pr,
             "branch": args.branch or (prev.get("branch", "") if prev.get("number") == args.pr else ""),
@@ -653,11 +729,19 @@ def cmd_set(args: argparse.Namespace) -> None:
         entry["status"] = args.status
     if args.note is not None:
         entry["notes"] = args.note
+    if args.fixed_in is not None:
+        if args.fixed_in and version_key(args.fixed_in) is None:
+            raise SystemExit(f"Error: cannot parse --fixed-in: {args.fixed_in}")
+        if args.fixed_in:
+            entry["fixed_in"] = args.fixed_in
+        else:
+            entry.pop("fixed_in", None)
     entry["last_updated"] = _today()
 
     save_registry(reg)
     print(f"updated {args.id}: status={entry['status']} "
-          f"issue={entry.get('opm_issue')} pr={entry.get('pr')}")
+          f"issue={entry.get('opm_issue')} pr={entry.get('pr')} "
+          f"fixed_in={entry.get('fixed_in')}")
 
 
 # --------------------------------------------------------------------------- #
@@ -699,6 +783,8 @@ def main() -> None:
     st.add_argument("--pr-repo", default="OPM/ResInsight", help="repo the PR targets")
     st.add_argument("--status", help=f"one of {VALID_STATUS}")
     st.add_argument("--note", help="investigation note (for uncertain/no-fix cases)")
+    st.add_argument("--fixed-in", metavar="VER",
+                    help="version the fix first shipped in (empty string clears)")
     st.set_defaults(func=cmd_set)
 
     args = ap.parse_args()

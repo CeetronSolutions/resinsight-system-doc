@@ -18,8 +18,8 @@ per-signature state.
 |---|---|
 | `update --csv FILE [--date D] [--signature-depth N] [--min-version VER]` | Fold a weekly CSV into `registry.json`. Idempotent per week. |
 | `render [--date D \| --all]` | Regenerate report(s) + `index.md` + `incoming-csvs.md` from the registry. Default: latest week. Use the default in the weekly workflow — older reports are frozen snapshots, so avoid `--all`. |
-| `worklist [--all] [--from-version VER]` | Print untriaged signatures — no OPM issue, no fix PR, not already in triage — those still crashing the newest released `APPversion` first (ties broken by total count). `--all` includes the already-referenced and already-handled ones, annotated with their issue/PR number. `--from-version` overrides which version line counts as current. |
-| `set --id SID [--issue N --state S] [--pr N --branch B --pr-state S] [--status S] [--note "..."]` | Record an investigation outcome (used by the `crash-triage` workflow). |
+| `worklist [--all] [--from-version VER]` | Print untriaged signatures — no OPM issue, no fix PR, not already in triage — those still crashing the newest released `APPversion` first (ties broken by total count). `--all` includes the already-referenced and already-handled ones, annotated with their issue/PR number. `--from-version` overrides which version line counts as current. Fixed signatures that crash on a version newer than their fix come back as `[resolved, regressed]`. |
+| `set --id SID [--issue N --state S] [--pr N --branch B --pr-state S] [--status S] [--note "..."] [--fixed-in VER]` | Record an investigation outcome (used by the `crash-triage` workflow). `--fixed-in` overrides the version the fix shipped in, used for the `regressed` label. |
 
 Typical run is via `process_week.py`, which chains `update` → `link_issues.py`
 → `render` → `worklist`. Signatures are keyed by their top-N non-handler frame

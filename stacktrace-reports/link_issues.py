@@ -18,6 +18,11 @@ Step 2 of the weekly workflow, automated. For every signature in `registry.json`
 Either way the stack moves to / from the report's `## Closed issues and merged
 fixes` section on the next render.
 
+Once a signature is fixed - PR merged, or (without a PR) issue closed as
+completed - `fixed_in` is set to the version in `ResInsightVersion.cmake` at the
+merge commit (for an issue: its closing PR, else the last `dev` commit before
+it closed). Crashes on a newer version then label the signature `regressed`.
+
 Requires the GitHub CLI (`gh`) to be authenticated. Run `registry.py render`
 afterwards to regenerate the reports with the new links.
 
@@ -28,7 +33,9 @@ Usage:
 """
 
 import argparse
+import base64
 import json
+import re
 import subprocess
 import sys
 import time
@@ -36,9 +43,11 @@ import time
 from registry import (
     OPM_ISSUES_URL,
     UNSYMBOLIZED,
+    entry_versions,
     frame_symbol,
     load_registry,
     save_registry,
+    version_key,
 )
 
 REPO = "OPM/ResInsight"
@@ -152,6 +161,111 @@ def refresh_pr_state(number: int) -> str | None:
     return detail.get("state") if detail else None
 
 
+_CMAKE_SET_RE = re.compile(r'^\s*set\(\s*(RESINSIGHT_\w+)\s+"?([^")]*)"?\s*\)', re.M)
+
+
+def version_at_commit(sha: str) -> str | None:
+    """STRPRODUCTVER as built from `sha`, e.g. `2026.06.2-dev.02`."""
+    detail = gh_json(["api", f"repos/{REPO}/contents/ResInsightVersion.cmake?ref={sha}"])
+    if not detail or "content" not in detail:
+        return None
+    text = base64.b64decode(detail["content"]).decode("utf-8", errors="replace")
+    # Commented-out alternatives (`#set(RESINSIGHT_VERSION_TEXT "-RC_5")`) never
+    # match: the regex anchors on optional whitespace only.
+    v = dict(_CMAKE_SET_RE.findall(text))
+    try:
+        version = (f"{v['RESINSIGHT_MAJOR_VERSION']}.{v['RESINSIGHT_MINOR_VERSION']}."
+                   f"{v['RESINSIGHT_PATCH_VERSION']}")
+    except KeyError:
+        return None
+    version += v.get("RESINSIGHT_VERSION_TEXT", "") + v.get("RESINSIGHT_DEV_VERSION", "")
+    return version if version_key(version) is not None else None
+
+
+def pr_merge_commit(number: int) -> str | None:
+    detail = gh_json(["pr", "view", str(number), "--repo", REPO, "--json", "mergeCommit"])
+    return ((detail or {}).get("mergeCommit") or {}).get("oid")
+
+
+def fix_commit(entry: dict) -> str | None:
+    """Commit the fix landed in, or None while the signature is not fixed.
+
+    A PR is authoritative when present; an issue only counts when closed as
+    completed (not-planned is no fix). For an issue, the PR that closed it is
+    preferred over the last `dev` commit before it closed.
+    """
+    pr = entry.get("pr")
+    if pr:
+        return pr_merge_commit(pr["number"]) if pr.get("state") == "MERGED" else None
+    iss = entry.get("opm_issue")
+    if not iss or iss.get("state") != "CLOSED":
+        return None
+    detail = gh_json(["issue", "view", str(iss["number"]), "--repo", REPO,
+                      "--json", "closedAt,stateReason,closedByPullRequestsReferences"])
+    if not detail or detail.get("stateReason") != "COMPLETED" or not detail.get("closedAt"):
+        return None
+    for ref in detail.get("closedByPullRequestsReferences") or []:
+        sha = pr_merge_commit(ref["number"])
+        if sha:
+            return sha
+    commits = gh_json(["api", f"repos/{REPO}/commits?sha=dev&until={detail['closedAt']}&per_page=1"])
+    return commits[0]["sha"] if commits else None
+
+
+def release_contains(version: str, sha: str) -> bool | None:
+    """Whether release tag `v<version>` includes `sha`; None if unknown."""
+    cmp = gh_json(["api", f"repos/{REPO}/compare/v{version}...{sha}", "--jq", "{status}"])
+    if not cmp or "status" not in cmp:
+        return None
+    return cmp["status"] in ("behind", "identical")
+
+
+def refresh_fixed_in(entry: dict) -> bool:
+    """Fill `fixed_in` once the signature is fixed; clear it if it reopened.
+
+    Version order alone over-reports regressions for releases cut from a bugfix
+    branch (v2026.02.2 came from `bugfix-2026.02.2`, without dev's fixes), so
+    every newer release the signature crashed on is checked against its tag and
+    recorded in `fix_shipped`.
+    """
+    pr = entry.get("pr")
+    iss = entry.get("opm_issue")
+    fixed = (pr.get("state") == "MERGED") if pr else bool(iss and iss.get("state") == "CLOSED")
+    if not fixed:
+        had = "fixed_in" in entry
+        for key in ("fixed_in", "fix_commit", "fix_shipped"):
+            entry.pop(key, None)
+        return had
+
+    changed = False
+    if not entry.get("fixed_in"):
+        sha = fix_commit(entry)
+        version = version_at_commit(sha) if sha else None
+        if not version:
+            return False
+        entry["fixed_in"] = version
+        entry["fix_commit"] = sha
+        print(f"  = fixed in {version}  ({entry['top_frame']})")
+        changed = True
+
+    sha = entry.get("fix_commit")
+    fixed_key = version_key(entry["fixed_in"])
+    if not sha or fixed_key is None:
+        return changed
+    shipped = entry.setdefault("fix_shipped", {})
+    for ver in entry_versions(entry):
+        key = version_key(ver)
+        if key is None or key[1] != 2 or key <= fixed_key or ver in shipped:
+            continue
+        contains = release_contains(ver, sha)
+        if contains is not None:
+            shipped[ver] = contains
+            changed = True
+    if not shipped:
+        entry.pop("fix_shipped")
+    return changed
+
+
 def set_status_from_refs(entry: dict) -> None:
     """Derive a status from whatever references the signature carries.
 
@@ -203,7 +317,7 @@ def main() -> None:
     reg = load_registry()
     sigs = reg["signatures"]
 
-    linked = refreshed = pr_refreshed = changed = 0
+    linked = refreshed = pr_refreshed = fixed_in = changed = 0
     search_cache: dict[str, dict | None] = {}
 
     # Sort by impact so the most frequent crashes are searched first.
@@ -238,6 +352,10 @@ def main() -> None:
                 refreshed += 1
                 changed += 1
 
+        if (iss or pr) and refresh_fixed_in(entry):
+            fixed_in += 1
+            changed += 1
+
         if iss or pr:
             # Already referenced: nothing to search for.
             continue
@@ -259,13 +377,14 @@ def main() -> None:
             changed += 1
 
     if args.dry_run:
-        print(f"[dry-run] would link={linked} refresh={refreshed} pr-refresh={pr_refreshed}")
+        print(f"[dry-run] would link={linked} refresh={refreshed} pr-refresh={pr_refreshed} "
+              f"fixed-in={fixed_in}")
         return
 
     if changed:
         save_registry(reg)
     print(f"linked={linked} refreshed={refreshed} pr-refreshed={pr_refreshed} "
-          "(run registry.py render to update reports)")
+          f"fixed-in={fixed_in} (run registry.py render to update reports)")
 
 
 if __name__ == "__main__":

@@ -8,8 +8,9 @@ dropped into `csv/`, it:
      for every signature
   3. regenerates the week's report + index pages    (registry.py render)
   4. prints the investigation worklist - signatures (registry.py worklist)
-     with no issue and no fix PR, those still
-     crashing the newest released version first
+     with no issue and no fix PR, plus fixed ones
+     that regressed, those still crashing the
+     newest released version first
 
 After it finishes, hand the worklist to the `crash-triage` workflow in the
 ResInsight repo to investigate the top untriaged signatures (step 3 of the

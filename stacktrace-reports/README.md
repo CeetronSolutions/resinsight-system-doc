@@ -96,6 +96,22 @@ Signatures whose PR is still open stay at `pr-open` — do not mark them resolve
 early. Older signatures that carry an OPM issue keep it; issue state is still
 refreshed each week.
 
+### Regressions
+
+When a signature is fixed (PR merged, or issue closed as completed),
+`link_issues.py` records `fixed_in`: the version in `ResInsightVersion.cmake` at
+the fix's merge commit. If the signature later crashes on a **strictly newer**
+version it is labelled **regressed** — `**Status:** resolved · **regressed**`
+plus a `**Regressed:**` line listing the offending versions. A regressed stack
+leaves the closed-out section and is back on the worklist, marked
+`[resolved, regressed]`, until a new fix PR is recorded with `set --pr` (which
+clears `fixed_in`; the new merge sets it again).
+
+Newer *releases* are checked against their `v<version>` tag, since a release cut
+from a bugfix branch (e.g. `v2026.02.2`) need not contain a fix merged on `dev`;
+the result is cached in `fix_shipped`. Dev and RC builds are compared by version
+only. Set or clear the version by hand with `set --fixed-in VER` / `--fixed-in ""`.
+
 Commit the CSV, `registry.json`, the regenerated report and the two index pages
 together on a feature branch.
 
