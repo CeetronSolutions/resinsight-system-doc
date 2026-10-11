@@ -18019,15 +18019,19 @@
       "fix_shipped": {
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14431,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14431"
+        "number": 14899,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14899"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-plot-window-closed",
+        "number": 14900,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14900"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -18049,7 +18053,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "d4f4cc3cc44c",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RicImportGeneralDataFeature::openEclipseCaseFromFileNames",
       "weeks": {
         "2026-09-04": {
