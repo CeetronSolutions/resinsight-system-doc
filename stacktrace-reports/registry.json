@@ -14657,6 +14657,8 @@
       }
     },
     "af23fb5d0598": {
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
@@ -18015,10 +18017,6 @@
       }
     },
     "d4f4cc3cc44c": {
-      "fix_commit": "af2c5d429c5c04984a4adb0b416cfc8f349be2bd",
-      "fix_shipped": {
-        "2026.09.0": true
-      },
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
