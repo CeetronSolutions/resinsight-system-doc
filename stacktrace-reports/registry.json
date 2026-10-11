@@ -1800,15 +1800,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14175,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14175"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -1832,7 +1836,7 @@
         "RiaApplication::closeProject"
       ],
       "signature_id": "0f6ddddd87ad",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "caf::PdmUiEditorHandle::updateUi",
       "weeks": {
         "2026-07-24": {
@@ -2895,15 +2899,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-09-26",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14161,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14161"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -2931,7 +2939,7 @@
         "RimEclipseView::updateVisibleCellColors"
       ],
       "signature_id": "1a259402c999",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-09-04": {
@@ -6882,15 +6890,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 13922,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/13922"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -6915,7 +6927,7 @@
         "RivReservoirViewPartMgr::createGeometry"
       ],
       "signature_id": "43cb673b7481",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimPolygonFilter::updateCellIndexFilter",
       "weeks": {
         "2026-08-07": {
@@ -7030,15 +7042,20 @@
       "fix_shipped": {
         "2026.06.0": true
       },
-      "fixed_in": "2026.06.0-RC_1",
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "fixed_in": "2026.06.1-dev.02",
+      "last_updated": "2026-10-11",
+      "notes": "Re-linked: was mislinked to #14140 (unrelated). Out-of-range m_optionEntryCache index in setValueFromUiEditor; fixed by #14265 (1858529f7d), not in v2026.06.0.",
       "opm_issue": {
-        "number": 14140,
+        "number": 14266,
         "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14140"
+        "url": "https://github.com/OPM/ResInsight/issues/14266"
       },
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14265,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14265"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
@@ -7158,15 +7175,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
-      "last_updated": "2026-09-26",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 13927,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/13927"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -7197,7 +7218,7 @@
         "RifReaderEclipseOutput::buildMetaData"
       ],
       "signature_id": "482d5570b385",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RifEclipseOutputFileTools::timeSteps",
       "weeks": {
         "2026-07-03": {
@@ -10335,15 +10356,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14179,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14179"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -10364,7 +10389,7 @@
         "RiaViewRedrawScheduler::updateAndRedrawScheduledViews"
       ],
       "signature_id": "69f8ebe0f20e",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "cvf::Vector3<double>::operator=",
       "weeks": {
         "2026-04-29": {
@@ -11607,15 +11632,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
-      "last_updated": "2026-09-26",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 13938,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/13938"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -11635,7 +11664,7 @@
         "RiuMultiPlotPage::contextMenuEvent"
       ],
       "signature_id": "77d8eac5b954",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RicNewDefaultSummaryPlotFeature::onActionTriggered",
       "weeks": {
         "2026-09-04": {
@@ -13756,15 +13785,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.3-dev.01",
-      "last_updated": "2026-09-21",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14011,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14011"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -13790,7 +13823,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<bool> >::setValueFromUiEditor"
       ],
       "signature_id": "9f3186ce4814",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimWellFlowRateCurve::onLoadDataAndUpdate",
       "weeks": {
         "2026-07-10": {
@@ -15960,8 +15993,8 @@
     "be4f77a32910": {
       "fix_commit": "f7ccfcfff69ce1789132874c8669e3bdda815ae3",
       "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-10-11",
+      "notes": "Crash at cvf::Object::release in ~RigStatisticsDataCache during project close. Linked fix #14182 (deep AABB tree) unrelated. Ownership/refcounts in destructor chain checked, no defect found; likely heap corruption from elsewhere detected on free. Uncertain because stack frames 2-7 are missing and no single source is identifiable.",
       "opm_issue": {
         "number": 14182,
         "state": "CLOSED",
@@ -16002,7 +16035,7 @@
         "cvf::Object::release"
       ],
       "signature_id": "be4f77a32910",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "cvf::Object::release",
       "weeks": {
         "2026-06-26": {
@@ -16267,15 +16300,19 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
-      "last_updated": "2026-09-01",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 13875,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/13875"
+        "number": 14906,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-batch-2026-10-11",
+        "number": 14907,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14907"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
@@ -16301,7 +16338,7 @@
         "RiuSelectionChangedHandler::addResultCurveFromSelectionItem"
       ],
       "signature_id": "c0fae31c2301",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RifElementPropertyReader::readAllElementPropertiesInFileContainingField",
       "weeks": {
         "2026-04-14": {
