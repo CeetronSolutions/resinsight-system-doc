@@ -3692,8 +3692,17 @@
     "22754eeb655a": {
       "last_updated": "2026-10-11",
       "notes": "Crash at RiuMainWindowBase::setActiveViewer (view->dockWidget()->objectName()) via RiuPlotMainWindow::selectedObjectsChanged. Suspected dangling raw RimViewWindow::m_dockWidget (ads::CDockWidget*); no deletion path confirmed. Suggest QPointer<ads::CDockWidget> hardening + null check.",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14903,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14903"
+      },
+      "pr": {
+        "branch": "crash-triage-14903",
+        "number": 14904,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14904"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -3711,7 +3720,7 @@
         "caf::PdmUiTreeView::slotOnSelectionChanged"
       ],
       "signature_id": "22754eeb655a",
-      "status": "no-fix-found",
+      "status": "pr-open",
       "top_frame": "RiuMainWindowBase::setActiveViewer",
       "weeks": {
         "2026-10-09": {
@@ -5367,15 +5376,19 @@
       "fix_shipped": {
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.1-dev.02",
-      "last_updated": "2026-10-03",
+      "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14289,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14289"
+        "number": 14903,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14903"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-14903",
+        "number": 14904,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14904"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -5396,7 +5409,7 @@
         "RiaViewRedrawScheduler::updateAndRedrawScheduledViews"
       ],
       "signature_id": "349d00d3f661",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseResultDefinition::eclipseCase",
       "weeks": {
         "2026-09-11": {
@@ -7246,15 +7259,19 @@
       "fix_shipped": {
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14007,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14007"
+        "number": 14903,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14903"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-14903",
+        "number": 14904,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14904"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -7288,7 +7305,7 @@
         "RimEclipseContourMapProjection::updateLegend"
       ],
       "signature_id": "49a49b325d1f",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RigEclipseContourMapProjection::generateResults",
       "weeks": {
         "2026-09-25": {
@@ -9042,15 +9059,19 @@
     },
     "599febc5faf6": {
       "fix_commit": "7b05b18d8c5ad8612f2dc6f58f8184ef33fcdd5c",
-      "fixed_in": "2025.09.3-dev.05",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 13139,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/13139"
+        "number": 14903,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14903"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-14903",
+        "number": 14904,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14904"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:313",
@@ -9080,7 +9101,7 @@
         "RiaImportEclipseCaseTools::openEclipseCasesFromFile"
       ],
       "signature_id": "599febc5faf6",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RifReaderOpmCommon::buildMetaData",
       "weeks": {
         "2026-09-25": {
@@ -11945,8 +11966,17 @@
     "84d63aeb1e84": {
       "last_updated": "2026-10-11",
       "notes": "",
-      "opm_issue": null,
-      "pr": null,
+      "opm_issue": {
+        "number": 14903,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14903"
+      },
+      "pr": {
+        "branch": "crash-triage-14903",
+        "number": 14904,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14904"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -11973,7 +12003,7 @@
         "RiuMainWindowBase::selectAsCurrentItem"
       ],
       "signature_id": "84d63aeb1e84",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RiuMainWindowBase::setActiveViewer",
       "weeks": {
         "2026-10-09": {
@@ -14906,15 +14936,19 @@
       "fix_shipped": {
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.2-dev.02",
       "last_updated": "2026-10-11",
-      "notes": "",
+      "notes": "activateWindow on null RiuMainWindow after the 3D window was closed (WA_DeleteOnClose). Covered by PR 14900 (windows hidden instead of deleted).",
       "opm_issue": {
-        "number": 14431,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14431"
+        "number": 14899,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14899"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-plot-window-closed",
+        "number": 14900,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14900"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -14937,7 +14971,7 @@
         "RiaApplication::openFile"
       ],
       "signature_id": "b4a2d2b3be54",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RiaImportEclipseCaseTools::openEclipseCasesFromFile",
       "weeks": {
         "2026-09-18": {
@@ -15986,15 +16020,19 @@
         "2026.06.1": true,
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
-        "number": 14161,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14161"
+        "number": 14903,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/14903"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-14903",
+        "number": 14904,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14904"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -16017,7 +16055,7 @@
         "RiuViewer::slotSetCurrentFrame"
       ],
       "signature_id": "c04ed08279f0",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RimEclipseView::appendWellsAndFracturesToModel",
       "weeks": {
         "2026-07-03": {
@@ -17291,7 +17329,6 @@
       "fix_shipped": {
         "2026.09.0": true
       },
-      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-10-11",
       "notes": "",
       "opm_issue": {
@@ -17299,7 +17336,12 @@
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14374"
       },
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14902,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14902"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -17327,7 +17369,7 @@
         "RimReloadCaseTools::reloadEclipseData"
       ],
       "signature_id": "ca87fa6476a3",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RifReaderEclipseOutput::loadAllGrids",
       "weeks": {
         "2026-09-18": {
