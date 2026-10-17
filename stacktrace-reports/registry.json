@@ -10037,7 +10037,6 @@
       "fix_shipped": {
         "2026.09.1": false
       },
-      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -10045,7 +10044,12 @@
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14699"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-10-17",
+        "number": 14967,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14967"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -10061,7 +10065,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "62961cef7c28",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-10-02": {
@@ -12340,7 +12344,12 @@
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-10-17",
+        "number": 14967,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14967"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -12366,7 +12375,7 @@
         "RicExportEclipseSectorModelFeature::openDialogAndExecuteCommand"
       ],
       "signature_id": "82d1d65c3030",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-16": {
@@ -12843,7 +12852,7 @@
     },
     "8e3c4902e9fc": {
       "last_updated": "2026-10-17",
-      "notes": "",
+      "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -12864,7 +12873,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "8e3c4902e9fc",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuFileDialogTools::getOpenFileNames",
       "weeks": {
         "2026-10-16": {
@@ -13261,7 +13270,12 @@
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-10-17",
+        "number": 14967,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14967"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -13279,7 +13293,7 @@
         "RiuViewerCommands::handlePickAction"
       ],
       "signature_id": "945df3949c34",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::ref<RigLocalGrid>::p",
       "weeks": {
         "2026-10-16": {
@@ -14963,13 +14977,13 @@
       "fix_shipped": {
         "2026.06.1": true
       },
-      "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-08-08",
-      "notes": "",
+      "fixed_in": "2026.09.2-dev.02",
+      "last_updated": "2026-10-17",
+      "notes": "Crash was CAF_ASSERT(!m_isConfiguringUi) on re-entrant updateUi; earlier link to #14175 was unrelated. Fixed on dev by ff093a2773 (#14906), not yet in 2026.09.1.",
       "opm_issue": {
-        "number": 14175,
+        "number": 14906,
         "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14175"
+        "url": "https://github.com/OPM/ResInsight/issues/14906"
       },
       "pr": null,
       "representative_stack": [
@@ -15858,13 +15872,13 @@
       "fix_shipped": {
         "2026.06.0": true
       },
-      "fixed_in": "2026.02.3-dev.01",
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "fixed_in": "2026.09.2-dev.02",
+      "last_updated": "2026-10-17",
+      "notes": "#14118 fix only guarded a null grid after return; crash was main_grid NULL deref inside ecl_grid_alloc_EGRID_all_grids. Fixed on dev by 92e269ef4d (#14901), not yet in 2026.09.1.",
       "opm_issue": {
-        "number": 14118,
+        "number": 14901,
         "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14118"
+        "url": "https://github.com/OPM/ResInsight/issues/14901"
       },
       "pr": null,
       "representative_stack": [
@@ -19386,7 +19400,7 @@
     },
     "daeb19bec01c": {
       "last_updated": "2026-10-17",
-      "notes": "",
+      "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -19413,7 +19427,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "daeb19bec01c",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuFileDialogTools::getOpenFileNames",
       "weeks": {
         "2026-10-16": {
