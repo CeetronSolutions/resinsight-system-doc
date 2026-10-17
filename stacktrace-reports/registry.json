@@ -10046,9 +10046,9 @@
       },
       "pr": {
         "branch": "crash-triage-2026-10-17",
-        "number": 14967,
+        "number": 14968,
         "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14967"
+        "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -12346,9 +12346,9 @@
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-2026-10-17",
-        "number": 14967,
+        "number": 14968,
         "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14967"
+        "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -13272,9 +13272,9 @@
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-2026-10-17",
-        "number": 14967,
+        "number": 14968,
         "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14967"
+        "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
