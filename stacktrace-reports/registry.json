@@ -6551,14 +6551,16 @@
       }
     },
     "3ca398cbb2ac": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-intersection-null-ownercase",
-        "number": 14841,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14841"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -6585,7 +6587,7 @@
         "RicAppendIntersectionFeature::onActionTriggered"
       ],
       "signature_id": "3ca398cbb2ac",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimCase::intersectionViewCollection",
       "weeks": {
         "2026-10-02": {
@@ -9081,14 +9083,16 @@
       }
     },
     "54d87afa4a79": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-dock-window-null-widget",
-        "number": 14842,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14842"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -9118,7 +9122,7 @@
         "RimMainPlotCollection::loadDataAndUpdatePlotCollectionsWithProgressInfo"
       ],
       "signature_id": "54d87afa4a79",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimDockWindowController::updateViewerWidget",
       "weeks": {
         "2026-10-02": {
@@ -9359,14 +9363,16 @@
       }
     },
     "594889920163": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-stimplan-minmax-y",
-        "number": 14838,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14838"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -9396,7 +9402,7 @@
         "RicMeshFractureTemplateHelper<RimStimPlanFractureTemplate>::createNewTemplatesFromFiles"
       ],
       "signature_id": "594889920163",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigStimPlanFractureDefinition::minY",
       "weeks": {
         "2026-10-02": {
@@ -10247,8 +10253,8 @@
       }
     },
     "642357244e71": {
-      "last_updated": "2026-10-17",
-      "notes": "",
+      "last_updated": "2026-10-19",
+      "notes": "PR #14840 closed unmerged and was left out of batch #14849; dev still indexes widthGrids[i] over grids.size() in calculateAreaWeightedStatistics. Fix needs re-submitting.",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-ensemble-fracture-width",
@@ -12626,14 +12632,16 @@
       }
     },
     "89ab5c3ba8b5": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-view-controller-master-view",
-        "number": 14843,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14843"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
@@ -12673,7 +12681,7 @@
         "caf::PdmUiObjectHandle::expandUiTree"
       ],
       "signature_id": "89ab5c3ba8b5",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimViewLinker::masterView",
       "weeks": {
         "2026-10-02": {
@@ -12703,14 +12711,16 @@
       }
     },
     "8b189a4102f4": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-histogram-null-plotwindow",
-        "number": 14844,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14844"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -12738,7 +12748,7 @@
         "Rim3dView::createDisplayModelAndRedraw"
       ],
       "signature_id": "8b189a4102f4",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "caf::PdmPointer<RimViewWindow>::p",
       "weeks": {
         "2026-10-02": {
@@ -13001,14 +13011,16 @@
       }
     },
     "911b6833946a": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-stimplan-formation-oob",
-        "number": 14846,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14846"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
@@ -13034,7 +13046,7 @@
         "RiaGrpcPdmObjectService::CallPdmObjectMethod"
       ],
       "signature_id": "911b6833946a",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimStimPlanModelCalculator::calculateFormation",
       "weeks": {
         "2026-10-02": {
@@ -17449,14 +17461,16 @@
       }
     },
     "c5301dc57661": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-camera-parallel-dir-up",
-        "number": 14845,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14845"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
@@ -17478,7 +17492,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "c5301dc57661",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "cvf::Plane::distanceToOrigin",
       "weeks": {
         "2026-10-02": {
@@ -17894,14 +17908,16 @@
       }
     },
     "c7e519c159b8": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "Same root cause as 89ab5c3ba8b5, fixed by the same PR.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-view-controller-master-view",
-        "number": 14843,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14843"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
@@ -17932,7 +17948,7 @@
         "RimEclipseView::updateIconStateForFilterCollections"
       ],
       "signature_id": "c7e519c159b8",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimViewLinker::masterView",
       "weeks": {
         "2026-10-02": {
@@ -19181,14 +19197,16 @@
       }
     },
     "d79da4c9b4dc": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "Same root cause as 8b189a4102f4, fixed by the same PR.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-histogram-null-plotwindow",
-        "number": 14844,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14844"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -19214,7 +19232,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "d79da4c9b4dc",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "caf::PdmPointer<RimViewWindow>::p",
       "weeks": {
         "2026-10-02": {
@@ -21273,14 +21291,16 @@
       }
     },
     "f4fdced52053": {
-      "last_updated": "2026-10-17",
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
+      "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-qwt-axis-mapping",
-        "number": 14839,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14839"
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
@@ -21303,7 +21323,7 @@
         "RiuMultiPlotPage::performUpdate"
       ],
       "signature_id": "f4fdced52053",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiuQwtPlotWidget::setAxisLabelsAndTicksEnabled",
       "weeks": {
         "2026-10-02": {
