@@ -17466,10 +17466,10 @@
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-2026-10-19b",
-        "number": 14974,
+        "branch": "crash-triage-2026-10-19",
+        "number": 14973,
         "state": "OPEN",
-        "url": "https://github.com/OPM/ResInsight/pull/14974"
+        "url": "https://github.com/OPM/ResInsight/pull/14973"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
