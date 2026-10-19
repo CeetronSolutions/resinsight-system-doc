@@ -1423,8 +1423,8 @@
       }
     },
     "0ac4bb9ffe9f": {
-      "last_updated": "2026-06-11",
-      "notes": "",
+      "last_updated": "2026-10-19",
+      "notes": "Crash inside createSummaryReaderInterfaceThreadSafe, called from OpenMP loop in loadFileSummaryCaseData; frames 2-12 (reader/opm-common internals) are unsymbolized, so real fault site unknown. Likely a thread-safety or corrupt-SMSPEC issue in the file reader, not a one-line guard. Uncertain: no reproducer, no symbolized fault frame.",
       "opm_issue": {
         "number": 11342,
         "state": "OPEN",
@@ -1462,7 +1462,7 @@
         "RimSummaryCaseMainCollection::createSummaryCasesFromFileInfos"
       ],
       "signature_id": "0ac4bb9ffe9f",
-      "status": "linked",
+      "status": "no-fix-found",
       "top_frame": "RimFileSummaryCase::createSummaryReaderInterfaceThreadSafe",
       "weeks": {
         "2026-04-14": {
@@ -5745,8 +5745,8 @@
         "2026.09.0": true
       },
       "fixed_in": "2026.06.2-dev.03",
-      "last_updated": "2026-10-17",
-      "notes": "",
+      "last_updated": "2026-10-19",
+      "notes": "Crash at DrawableGeo::render (cvfDrawableGeo.cpp:141), inside primSet->render/useBundle; frames 2-6 are unsymbolized GL driver calls. Null/empty bundle and primitive-set guards already exist. Likely a GPU driver or GL context fault. Uncertain: single report, no reproducer.",
       "opm_issue": {
         "number": 14009,
         "state": "CLOSED",
@@ -5774,7 +5774,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "35bfa53f2f8b",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "cvf::DrawableGeo::render",
       "weeks": {
         "2026-10-16": {
@@ -10257,10 +10257,10 @@
       "notes": "PR #14840 closed unmerged and was left out of batch #14849; dev still indexes widthGrids[i] over grids.size() in calculateAreaWeightedStatistics. Fix needs re-submitting.",
       "opm_issue": null,
       "pr": {
-        "branch": "crash-triage-ensemble-fracture-width",
-        "number": 14840,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/pull/14840"
+        "branch": "crash-triage-2026-10-19",
+        "number": 14973,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14973"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -10290,7 +10290,7 @@
         "RicMeshFractureTemplateHelper<RimStimPlanFractureTemplate>::createNewTemplatesFromFiles"
       ],
       "signature_id": "642357244e71",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "cvf::cref<RigFractureGrid>::cref",
       "weeks": {
         "2026-10-02": {
@@ -17261,8 +17261,8 @@
         "2026.09.0": true
       },
       "fixed_in": "2026.06.0-RC_2",
-      "last_updated": "2026-10-17",
-      "notes": "",
+      "last_updated": "2026-10-19",
+      "notes": "Crash at RiuViewerCommands::displayContextMenu (line 702 in 2026.09.0 = menu.exec). Fault is in the nested Qt event loop below exec; frames 2-31 unsymbolized, so the real site is unknown (a menu action or repaint while the menu is open). Uncertain: single report, no reproducer.",
       "opm_issue": {
         "number": 14193,
         "state": "CLOSED",
@@ -17283,7 +17283,7 @@
         "RiuViewerCommands::displayContextMenu"
       ],
       "signature_id": "c3ad4727cab3",
-      "status": "resolved",
+      "status": "no-fix-found",
       "top_frame": "RiuViewerCommands::displayContextMenu",
       "weeks": {
         "2026-10-16": {
@@ -17462,15 +17462,14 @@
     },
     "c5301dc57661": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
-      "fixed_in": "2026.09.2-dev.01",
       "last_updated": "2026-10-19",
       "notes": "",
       "opm_issue": null,
       "pr": {
-        "branch": "",
-        "number": 14849,
-        "state": "MERGED",
-        "url": "https://github.com/OPM/ResInsight/pull/14849"
+        "branch": "crash-triage-2026-10-19b",
+        "number": 14974,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/14974"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:181",
@@ -17492,7 +17491,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "c5301dc57661",
-      "status": "resolved",
+      "status": "pr-open",
       "top_frame": "cvf::Plane::distanceToOrigin",
       "weeks": {
         "2026-10-02": {
@@ -21558,8 +21557,8 @@
       }
     },
     "f6c284a0e525": {
-      "last_updated": "2026-07-25",
-      "notes": "",
+      "last_updated": "2026-10-19",
+      "notes": "Crash inside createSummaryReaderInterfaceThreadSafe, called from OpenMP loop in loadFileSummaryCaseData; frames 2-12 (reader/opm-common internals) are unsymbolized, so real fault site unknown. Likely a thread-safety or corrupt-SMSPEC issue in the file reader, not a one-line guard. Uncertain: no reproducer, no symbolized fault frame.",
       "opm_issue": {
         "number": 11342,
         "state": "OPEN",
@@ -21590,7 +21589,7 @@
         "RimSummaryCaseMainCollection::loadAllSummaryCaseData"
       ],
       "signature_id": "f6c284a0e525",
-      "status": "linked",
+      "status": "no-fix-found",
       "top_frame": "RimFileSummaryCase::createSummaryReaderInterfaceThreadSafe",
       "weeks": {
         "2026-05-15": {
