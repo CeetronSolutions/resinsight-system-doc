@@ -2367,6 +2367,8 @@
       }
     },
     "165c754bc6d1": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -4321,6 +4323,8 @@
       }
     },
     "29073aefb4ac": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -4606,6 +4610,8 @@
       }
     },
     "2a174e164d14": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -5734,6 +5740,11 @@
       }
     },
     "35bfa53f2f8b": {
+      "fix_commit": "c8b1ebc2663fd332362c060898234fbdbb53320b",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -10033,10 +10044,11 @@
       }
     },
     "62961cef7c28": {
-      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fix_commit": "4770abda8ee7179a5d555200e027bc4bf2384434",
       "fix_shipped": {
         "2026.09.1": false
       },
+      "fixed_in": "2026.09.2-dev.03",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -10047,7 +10059,7 @@
       "pr": {
         "branch": "crash-triage-2026-10-17",
         "number": 14968,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
@@ -10065,7 +10077,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "62961cef7c28",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-10-02": {
@@ -11559,6 +11571,8 @@
       }
     },
     "751aa35a590f": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -12341,13 +12355,15 @@
       }
     },
     "82d1d65c3030": {
+      "fix_commit": "4770abda8ee7179a5d555200e027bc4bf2384434",
+      "fixed_in": "2026.09.2-dev.03",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-2026-10-17",
         "number": 14968,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
@@ -12375,7 +12391,7 @@
         "RicExportEclipseSectorModelFeature::openDialogAndExecuteCommand"
       ],
       "signature_id": "82d1d65c3030",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-16": {
@@ -13267,13 +13283,15 @@
       }
     },
     "945df3949c34": {
+      "fix_commit": "4770abda8ee7179a5d555200e027bc4bf2384434",
+      "fixed_in": "2026.09.2-dev.03",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-2026-10-17",
         "number": 14968,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
@@ -13293,7 +13311,7 @@
         "RiuViewerCommands::handlePickAction"
       ],
       "signature_id": "945df3949c34",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "cvf::ref<RigLocalGrid>::p",
       "weeks": {
         "2026-10-16": {
@@ -15349,6 +15367,8 @@
       }
     },
     "acbf0ca17855": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -17224,6 +17244,11 @@
       }
     },
     "c3ad4727cab3": {
+      "fix_commit": "22f9053401102f9e36345e468052d01eaff59e32",
+      "fix_shipped": {
+        "2026.09.0": true
+      },
+      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
@@ -20123,6 +20148,8 @@
       }
     },
     "e729e44545de": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-10-17",
       "notes": "",
       "opm_issue": {
