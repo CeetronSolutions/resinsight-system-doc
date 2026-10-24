@@ -36,3 +36,4 @@ Every raw weekly crash-report CSV received from the telemetry pipeline. Each row
 | 2026-10-02 | [2026-10-02-query_data.csv](./csv/2026-10-02-query_data.csv) |        266 |            54 | [2026-10-02](./reports/2026-10-02.md) |
 | 2026-10-09 | [2026-10-09-query_data.csv](./csv/2026-10-09-query_data.csv) |        344 |            52 | [2026-10-09](./reports/2026-10-09.md) |
 | 2026-10-16 | [2026-10-16-query_data.csv](./csv/2026-10-16-query_data.csv) |        503 |            61 | [2026-10-16](./reports/2026-10-16.md) |
+| 2026-10-23 | [2026-10-23-query_data.csv](./csv/2026-10-23-query_data.csv) |        681 |            58 | [2026-10-23](./reports/2026-10-23.md) |
