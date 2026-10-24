@@ -11891,7 +11891,7 @@
       "pr": {
         "branch": "crash-triage-viewer-context-menu",
         "number": 15030,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/15030"
       },
       "representative_stack": [
@@ -11909,7 +11909,7 @@
         "RiuViewerCommands::displayContextMenu"
       ],
       "signature_id": "752616853f49",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-10-23": {
