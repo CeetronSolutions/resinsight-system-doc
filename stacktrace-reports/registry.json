@@ -4595,12 +4595,6 @@
       }
     },
     "2a00a6e3aa2e": {
-      "fix_commit": "9a901d1cac2ce6ce81b3596865190a2e0d5641d1",
-      "fix_shipped": {
-        "2026.06.0": true,
-        "2026.09.0": true
-      },
-      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-10-24",
       "notes": "Only ResInsight frame is RiuMainWindow::customMenuRequested with a mismatched line (RiuPlotMainWindow.cpp:107 ctor). Linked fix #14155 unrelated. Not seen on 2026.06.1 or 2026.09.0. Uncertain because the stack is effectively unsymbolized.",
       "opm_issue": {
@@ -4957,8 +4951,6 @@
       }
     },
     "2fee534b1f8c": {
-      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
-      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-06-12",
       "notes": "SIGSEGV in createReportStepsMetaData via keywordValueCounts/buildMetaData/open. Fault is a wild-pointer deref deep in ERT: ecl_file_iget_named_data_type/size -> ecl_file_view_get_global_index (unchecked index_vector[ith]) -> ecl_file_view_iget_file_kw (unchecked kw_list[global_index]) -> deref garbage file_kw. However, the ResInsight loop is provably self-consistent single-threaded: numKeywords, kw and namedKeywordCount are all queried from the same active_view, and iOcc is bounded by namedKeywordCount = kw_index.at(kw).size(), so index_vector[iOcc] and kw_list[global_index] are in range whether ecl_file_select_block succeeds (block view) or fails (active_view unchanged); push_block/pop_block save/restore correctly. A simple ResInsight bounds guard cannot be proven to prevent it. Most likely triggers: (1) concurrent mutation of the shared ecl_file->active_view (sibling keywordData() wraps ERT access in omp critical, indicating multi-threaded ecl_file use) dangling kw / reshaping kw_index/kw_list mid-loop; (2) malformed/corrupt UNRST with inconsistent on-disk index. Neither has a minimal verifiable fix. Related prior work: PR #14210/#14140 hardened sibling functions keywordData() and results() with occurrence bounds + select_block return check, but those paths could genuinely exceed the bound; this path cannot single-threaded. No issue/PR filed.",
       "opm_issue": {
@@ -5848,11 +5840,6 @@
       }
     },
     "35bfa53f2f8b": {
-      "fix_commit": "c8b1ebc2663fd332362c060898234fbdbb53320b",
-      "fix_shipped": {
-        "2026.09.0": true
-      },
-      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-10-24",
       "notes": "Crash at DrawableGeo::render (cvfDrawableGeo.cpp:141), inside primSet->render/useBundle; frames 2-6 are unsymbolized GL driver calls. Null/empty bundle and primitive-set guards already exist. Likely a GPU driver or GL context fault. Uncertain: single report, no reproducer.",
       "opm_issue": {
@@ -7132,11 +7119,6 @@
       }
     },
     "41a32d4ba74a": {
-      "fix_commit": "c8b1ebc2663fd332362c060898234fbdbb53320b",
-      "fix_shipped": {
-        "2026.09.0": true
-      },
-      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-10-24",
       "notes": "Crash at cvfRenderEngine.cpp:284 (drawable->render). Frames 2-7 are unsymbolized GL driver frames; no ResInsight fault visible. Linked #14009/c8b1ebc (group box deletion) is unrelated to this path. Uncertain because the faulting drawable/GL state cannot be identified from the stack.",
       "opm_issue": {
@@ -8303,26 +8285,8 @@
       }
     },
     "4b98ba7f3609": {
-      "fix_commit": "42d8a4b14a741f7043599c583155e651a02947a4",
-      "fix_shipped": {
-        "2026.06.1": false,
-        "2026.09.0": true,
-        "2026.09.1": true
-      },
-      "fixed_in": "2026.06.1-dev.02",
       "last_updated": "2026-10-24",
-      "notes": "",
-      "opm_issue": {
-        "number": 14270,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14270"
-      },
-      "pr": {
-        "branch": "14270-richer-crash-stacktrace",
-        "number": 14271,
-        "state": "MERGED",
-        "url": "https://github.com/OPM/ResInsight/pull/14271"
-      },
+      "notes": "Catch-all for stacks with no ResInsight frame below the handler; #14270/#14271 (exception throw-site capture) unlinked as they cover none of these segfaults. Since 2026.09.0 dominated by abort in QRhi::endFrame during widget backing-store flush.",
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -8332,7 +8296,7 @@
       ],
       "signature_frames": [],
       "signature_id": "4b98ba7f3609",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "(unsymbolized crash site)",
       "weeks": {
         "2026-04-14": {
@@ -8675,8 +8639,6 @@
       }
     },
     "4bd3f3b19531": {
-      "fix_commit": "3ba47253adca4c3ff6cfd68f721da877caf80aa2",
-      "fixed_in": "2026.06.2-dev.01",
       "last_updated": "2026-08-10",
       "notes": "Crash below RiaGrpcApplicationInterface::processRequests:109, which is 'if ( m_grpcServer ) m_grpcServer->quit();' and already null guarded in the April and May builds the reports come from. Uncertain because the 9 unsymbolized frames below it place the fault inside the gRPC server shutdown path, not in ResInsight code. No reports since 2026-05-08. Previously auto-linked to #14185, but that issue is the RigEclipseWellLogExtractor AABB crash; the link came only from link_issues.py matching frame [16] RiaGrpcApplicationInterface::processRequests inside #14185s pasted stack. Unlinked - this signature has no reference.",
       "opm_issue": {
@@ -11374,8 +11336,6 @@
       }
     },
     "6f0ecfbd6a96": {
-      "fix_commit": "7b05b18d8c5ad8612f2dc6f58f8184ef33fcdd5c",
-      "fixed_in": "2025.09.3-dev.05",
       "last_updated": "2026-10-11",
       "notes": "Crash inside Qt from caf::ProgressInfo ctor during grid import from summary case context menu. Only seen on dev build 2026.06.1-dev.02; linked fix 7b05b18 is unrelated. Uncertain because the faulting frames are in Qt.",
       "opm_issue": {
@@ -11885,6 +11845,8 @@
       }
     },
     "752616853f49": {
+      "fix_commit": "6d8ee8d6852a69355e7fe8561f2a3122eff3e384",
+      "fixed_in": "2026.09.2-dev.04",
       "last_updated": "2026-10-24",
       "notes": "Fix committed locally on ResInsight dev (RiuViewerCommands::displayContextMenu: unguarded eclipseCase()->eclipseCaseData()). No PR yet.",
       "opm_issue": null,
@@ -16797,8 +16759,6 @@
       }
     },
     "b8bc3e3c7278": {
-      "fix_commit": "c8b1ebc2663fd332362c060898234fbdbb53320b",
-      "fixed_in": "2026.06.2-dev.03",
       "last_updated": "2026-07-25",
       "notes": "Crash inside the OpenGL driver at glDrawRangeElements (cvfPrimitiveSetIndexedUInt.cpp:125) during paintGL; frames above the call are unsymbolized driver code. The ResInsight call site is already guarded (null indices and numIndices<=0 both early-return), so there is no ResInsight-side null-deref or OOB access on this path. Most plausible cause is the driver reading vertices out of bounds (m_maxIndex >= vertexCount) or a lost/invalid GL context, but neither is confirmable from the stack and there is no reproduction. A bounds guard is not minimal: base cvf::PrimitiveSet exposes only indexCount()/index(), not minIndex()/maxIndex(), and vertexCount lives in DrawableGeo, so it would require cross-class changes to vendored VizFwk and would only address one unconfirmed hypothesis. Low frequency (~2-3 distinct events, all v2026.02.2). No confident fix; #14009 stays open.",
       "opm_issue": {
@@ -17190,8 +17150,6 @@
       }
     },
     "be4f77a32910": {
-      "fix_commit": "f7ccfcfff69ce1789132874c8669e3bdda815ae3",
-      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-11",
       "notes": "Crash at cvf::Object::release in ~RigStatisticsDataCache during project close. Linked fix #14182 (deep AABB tree) unrelated. Ownership/refcounts in destructor chain checked, no defect found; likely heap corruption from elsewhere detected on free. Uncertain because stack frames 2-7 are missing and no single source is identifiable.",
       "opm_issue": {
@@ -17771,11 +17729,6 @@
       }
     },
     "c3ad4727cab3": {
-      "fix_commit": "22f9053401102f9e36345e468052d01eaff59e32",
-      "fix_shipped": {
-        "2026.09.0": true
-      },
-      "fixed_in": "2026.06.0-RC_2",
       "last_updated": "2026-10-24",
       "notes": "Crash at RiuViewerCommands::displayContextMenu (line 702 in 2026.09.0 = menu.exec). Fault is in the nested Qt event loop below exec; frames 2-31 unsymbolized, so the real site is unknown (a menu action or repaint while the menu is open). Uncertain: single report, no reproducer.",
       "opm_issue": {
@@ -21580,12 +21533,6 @@
       }
     },
     "f3d2f3e86a63": {
-      "fix_commit": "668b844051212d50d59cc149c97babdd95cdf7e6",
-      "fix_shipped": {
-        "2026.06.1": true,
-        "2026.09.1": true
-      },
-      "fixed_in": "2026.06.0-RC_1",
       "last_updated": "2026-10-24",
       "notes": "Segfault in ecl_kw_iget_int on a NULL keyword during ERT well reading (readWellData). ecl_file_view_iget_named_kw returns NULL when a keyword fails to load (corrupt/truncated restart). Uncertain because the ERT caller frames are missing and ~20 call sites are unguarded.",
       "opm_issue": {

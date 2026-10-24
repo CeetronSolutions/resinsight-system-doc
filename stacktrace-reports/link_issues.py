@@ -227,10 +227,16 @@ def refresh_fixed_in(entry: dict) -> bool:
     branch (v2026.02.2 came from `bugfix-2026.02.2`, without dev's fixes), so
     every newer release the signature crashed on is checked against its tag and
     recorded in `fix_shipped`.
+
+    `no-fix-found` means triage judged the linked reference unrelated, and the
+    unsymbolized bucket pools unrelated crashes, so neither has a fix version:
+    later crashes there are not regressions.
     """
     pr = entry.get("pr")
     iss = entry.get("opm_issue")
     fixed = (pr.get("state") == "MERGED") if pr else bool(iss and iss.get("state") == "CLOSED")
+    if entry.get("status") == "no-fix-found" or entry["top_frame"] == UNSYMBOLIZED:
+        fixed = False
     if not fixed:
         had = "fixed_in" in entry
         for key in ("fixed_in", "fix_commit", "fix_shipped"):
