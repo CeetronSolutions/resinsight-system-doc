@@ -6992,7 +6992,7 @@
     },
     "403827fe87c5": {
       "last_updated": "2026-10-24",
-      "notes": "",
+      "notes": "Terminate in RifOdbReader::filteredStepNames (odb API call, via RigFemPartResultsCollection::timeStepCount from tensor legend update). Cause (closed/unreadable odb vs thrown odb_Exception) not determinable; ODB SDK not buildable here, no repro. A try/catch + null-m_odb guard returning empty is a possible mitigation.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -7027,7 +7027,7 @@
         "RigFemPartResultCalculatorPrincipalStress::calculate"
       ],
       "signature_id": "403827fe87c5",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-23": {
@@ -11886,9 +11886,14 @@
     },
     "752616853f49": {
       "last_updated": "2026-10-24",
-      "notes": "Auto-link to #14161 rejected: that issue is the well-centerline crash (RigSimulationWellCenterLineCalculator caller); this stack crashes via RiuViewerCommands::displayContextMenu.",
+      "notes": "Fix committed locally on ResInsight dev (RiuViewerCommands::displayContextMenu: unguarded eclipseCase()->eclipseCaseData()). No PR yet.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-viewer-context-menu",
+        "number": 15030,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15030"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -11904,7 +11909,7 @@
         "RiuViewerCommands::displayContextMenu"
       ],
       "signature_id": "752616853f49",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimEclipseCase::eclipseCaseData",
       "weeks": {
         "2026-10-23": {
@@ -12259,7 +12264,7 @@
     },
     "76e43f568766": {
       "last_updated": "2026-10-24",
-      "notes": "",
+      "notes": "Crash in RifEclipseOutputFileTools::keywordData (vector index). Out-of-range occurrence guard already added in #14140 (25c96f4f31) and RifEclipseUnifiedRestartFileAccess::results now checks ecl_file_select_block; likely already fixed after 2026.09.1. Verify on next release.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -12285,7 +12290,7 @@
         "RigCaseCellResultsData::findOrLoadKnownScalarResultForTimeStep"
       ],
       "signature_id": "76e43f568766",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-23": {
@@ -16606,7 +16611,7 @@
     },
     "b80574ec8daa": {
       "last_updated": "2026-10-24",
-      "notes": "",
+      "notes": "Segfault in objectsWithReferringPtrFieldsOfType<RimEnsembleCurveSet> from ~RimSummaryEnsemble::clearReferringCurveSets during project close (RimDeltaSummaryEnsemble). Plots are deleted before oil fields in RimProject::close so no live curve sets expected; dangling referring ptr-field owner suspected but not confirmed. No repro.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -16637,7 +16642,7 @@
         "caf::PdmChildArrayField<RimSummaryEnsemble*>::deleteChildren"
       ],
       "signature_id": "b80574ec8daa",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "std::vector<RimEnsembleCurveSet*, std::allocator<RimEnsembleCurveSet*> > caf::PdmObjectHandle::objectsWithReferringPtrFieldsOfType<RimEnsembleCurveSet>",
       "weeks": {
         "2026-10-23": {
