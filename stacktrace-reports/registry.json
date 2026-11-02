@@ -8285,8 +8285,13 @@
       }
     },
     "4b98ba7f3609": {
-      "last_updated": "2026-10-24",
-      "notes": "Catch-all for stacks with no ResInsight frame below the handler; #14270/#14271 (exception throw-site capture) unlinked as they cover none of these segfaults. Since 2026.09.0 dominated by abort in QRhi::endFrame during widget backing-store flush.",
+      "last_updated": "2026-10-25",
+      "notes": "Catch-all for stacks with no ResInsight frame below the handler; #14270/#14271 (exception throw-site capture) unlinked as they cover none of these segfaults. Since 2026.09.0 dominated by abort in QRhi::endFrame during widget backing-store flush. Tracked in #15033.",
+      "opm_issue": {
+        "number": 15033,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/15033"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -8296,7 +8301,7 @@
       ],
       "signature_frames": [],
       "signature_id": "4b98ba7f3609",
-      "status": "new",
+      "status": "linked",
       "top_frame": "(unsymbolized crash site)",
       "weeks": {
         "2026-04-14": {
@@ -13233,9 +13238,13 @@
       }
     },
     "8e3c4902e9fc": {
-      "last_updated": "2026-10-24",
-      "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code.",
-      "opm_issue": null,
+      "last_updated": "2026-10-25",
+      "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code. Same QRhi::endFrame abort as #15033.",
+      "opm_issue": {
+        "number": 15033,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/15033"
+      },
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -13255,7 +13264,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "8e3c4902e9fc",
-      "status": "no-fix-found",
+      "status": "linked",
       "top_frame": "RiuFileDialogTools::getOpenFileNames",
       "weeks": {
         "2026-10-16": {
@@ -17729,12 +17738,12 @@
       }
     },
     "c3ad4727cab3": {
-      "last_updated": "2026-10-24",
-      "notes": "Crash at RiuViewerCommands::displayContextMenu (line 702 in 2026.09.0 = menu.exec). Fault is in the nested Qt event loop below exec; frames 2-31 unsymbolized, so the real site is unknown (a menu action or repaint while the menu is open). Uncertain: single report, no reproducer.",
+      "last_updated": "2026-10-25",
+      "notes": "Crash at RiuViewerCommands::displayContextMenu (line 702 in 2026.09.0 = menu.exec). Fault is in the nested Qt event loop below exec; frames 2-31 unsymbolized, so the real site is unknown (a menu action or repaint while the menu is open). Uncertain: single report, no reproducer. Same QRhi::endFrame abort as #15033, which replaces the unrelated #14193 link.",
       "opm_issue": {
-        "number": 14193,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14193"
+        "number": 15033,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/15033"
       },
       "pr": null,
       "representative_stack": [
@@ -17751,7 +17760,7 @@
         "RiuViewerCommands::displayContextMenu"
       ],
       "signature_id": "c3ad4727cab3",
-      "status": "no-fix-found",
+      "status": "linked",
       "top_frame": "RiuViewerCommands::displayContextMenu",
       "weeks": {
         "2026-10-16": {
@@ -19976,9 +19985,13 @@
       }
     },
     "daeb19bec01c": {
-      "last_updated": "2026-10-24",
-      "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code.",
-      "opm_issue": null,
+      "last_updated": "2026-10-25",
+      "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code. Same QRhi::endFrame abort as #15033.",
+      "opm_issue": {
+        "number": 15033,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/issues/15033"
+      },
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -20004,7 +20017,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "daeb19bec01c",
-      "status": "no-fix-found",
+      "status": "linked",
       "top_frame": "RiuFileDialogTools::getOpenFileNames",
       "weeks": {
         "2026-10-16": {
