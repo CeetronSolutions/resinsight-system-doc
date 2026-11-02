@@ -107,6 +107,11 @@
       }
     },
     "009b475636a3": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fix_shipped": {
+        "2026.09.1": false
+      },
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": {
@@ -1502,10 +1507,17 @@
       }
     },
     "0a750847b697": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -1536,7 +1548,7 @@
         "RimPlotCurve::loadDataAndUpdate"
       ],
       "signature_id": "0a750847b697",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigHistogramCalculator::addValue",
       "weeks": {
         "2026-10-30": {
@@ -2114,10 +2126,17 @@
       }
     },
     "1111e3b3ceb1": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -2139,7 +2158,7 @@
         "RiuViewerCommands::handlePickAction"
       ],
       "signature_id": "1111e3b3ceb1",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimPolygonInView::onObjectChanged",
       "weeks": {
         "2026-10-30": {
@@ -4996,7 +5015,7 @@
     },
     "2a6f4af9c050": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash in std::set<PdmUiEditorHandle*> iterator ++ under PdmFieldUiCap<PdmPtrField<RimEclipseCase*>>::setValueFromUiEditor -> notifyFieldChanged (m_editors loop). Findings: the editor set is mutated or freed during the loop, either by updateUi() deleting field editors or by fieldChangedByUi() deleting the owning object. Uncertain because the owning class is not in the stack, and copying the set would still leave dangling editor pointers.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -5021,7 +5040,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "2a6f4af9c050",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "std::_Rb_tree_const_iterator<caf::PdmUiEditorHandle*>::operator++",
       "weeks": {
         "2026-10-30": {
@@ -6576,6 +6595,11 @@
       }
     },
     "399078bbff55": {
+      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fix_shipped": {
+        "2026.09.1": false
+      },
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": {
@@ -7476,10 +7500,17 @@
       }
     },
     "4182d58e2359": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -7502,7 +7533,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "4182d58e2359",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigGeoMechCaseData::femPartResults",
       "weeks": {
         "2026-10-30": {
@@ -7846,6 +7877,11 @@
       }
     },
     "43cfdcd5b18d": {
+      "fix_commit": "de3996ee9e3e21ea60abead243f0aaf305fdba44",
+      "fix_shipped": {
+        "2026.09.1": false
+      },
+      "fixed_in": "2026.09.1-dev.01",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": {
@@ -10191,7 +10227,7 @@
     },
     "5a35066e0fdb": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash inside the modal event loop of RicImportGridAndSummaryEnsembleDialog::runDialog (dialog.exec(), line 123). Frames 2-20 are unsymbolized Qt frames, so no ResInsight fault site is identifiable. Possibly related to bf812bf66890 (slotSearchClicked). Uncertain because there is no symbolized unsafe operation.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -10212,7 +10248,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "5a35066e0fdb",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RicImportGridAndSummaryEnsembleDialog::runDialog",
       "weeks": {
         "2026-10-30": {
@@ -10226,10 +10262,16 @@
       }
     },
     "5a3b34b0071d": {
+      "fixed_in": "2026.09.2-dev.03",
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Same root cause as 642357244e71 (widthGrids[i] out of range in calculateAreaWeightedStatistics), reached via project load. Fixed on dev by 72df8a69f5 / PR #14973.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14973,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14973"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -10255,7 +10297,7 @@
         "RimFractureTemplateCollection::loadAndUpdateData"
       ],
       "signature_id": "5a3b34b0071d",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "cvf::cref<RigFractureGrid>::cref",
       "weeks": {
         "2026-10-30": {
@@ -11386,10 +11428,17 @@
       }
     },
     "678f72fb725b": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -11419,7 +11468,7 @@
         "RimSummaryCaseMainCollection::loadSummaryCaseData"
       ],
       "signature_id": "678f72fb725b",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-30": {
@@ -13164,7 +13213,7 @@
     },
     "7b2d18085329": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash inside the modal event loop of QFileDialog::getSaveFileName (RiuFileDialogTools.cpp:36, non-native dialog on Linux), opened from the RiuTabbedTextDialog export lambda (RicShowPlotDataFeature.cpp:144). Frames 2-32 are unsymbolized Qt frames. The parent is nullptr and the lambda captures nothing, so no dangling ResInsight object was found. Uncertain because no symbolized unsafe operation exists.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -13192,7 +13241,7 @@
         "RiuTabbedTextDialog::slotExportToFile"
       ],
       "signature_id": "7b2d18085329",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuFileDialogTools::getSaveFileName",
       "weeks": {
         "2026-10-30": {
@@ -13206,10 +13255,17 @@
       }
     },
     "7ba31ee67e6a": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -13223,7 +13279,7 @@
         "RimSummaryCaseMainCollection::loadFileSummaryCaseData"
       ],
       "signature_id": "7ba31ee67e6a",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-10-30": {
@@ -13643,7 +13699,7 @@
     },
     "86ee44795f72": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash at cvf::OpenGLResourceManager::deleteOrphanedOglRcObjects (cvfOpenGLResourceManager.cpp:333) during paintGL. Frames 2-15 are unsymbolized, i.e. the fault is inside the GL driver in OglRc::deleteResource. The iteration/erase logic is correct. Uncertain because it is likely a driver/context issue (wrong or lost GL context) with no ResInsight-side unsafe operation identified.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -13667,7 +13723,7 @@
         "caf::Viewer::paintGL"
       ],
       "signature_id": "86ee44795f72",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "cvf::OpenGLResourceManager::deleteOrphanedOglRcObjects",
       "weeks": {
         "2026-10-30": {
@@ -15901,7 +15957,7 @@
     },
     "a47f0a8a9878": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash inside the modal event loop of RicRecursiveFileSearchDialog::runRecursiveSearchDialog (exec()). Frames 2-23 are unsymbolized Qt frames, so no ResInsight fault site is identifiable. Uncertain because there is no symbolized unsafe operation.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -15924,7 +15980,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "a47f0a8a9878",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RicRecursiveFileSearchDialog::runRecursiveSearchDialog",
       "weeks": {
         "2026-10-30": {
@@ -17767,7 +17823,7 @@
     },
     "bafcd1e9202e": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash inside the modal event loop of QFileDialog::getSaveFileName (RiuFileDialogTools.cpp:36), opened from RiaGuiApplication::promptForProjectSaveAsFileName via Save Project As. Frames 2-32 are unsymbolized Qt frames, and the parent widget is the main window. Same pattern as 7b2d18085329. Not seen on the current release. Uncertain because there is no symbolized fault site.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -17790,7 +17846,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "bafcd1e9202e",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuFileDialogTools::getSaveFileName",
       "weeks": {
         "2026-10-30": {
@@ -18188,7 +18244,7 @@
     },
     "bf812bf66890": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash inside QMessageBox::exec() in RicImportGridAndSummaryEnsembleDialog::slotSearchClicked (line 802, the 'Multiple Filenames Found' warning). Frames 2-30 are unsymbolized Qt frames. A spacer item is added to the message box grid layout before exec. This is possibly related to 5a35066e0fdb. Uncertain because there is no symbolized fault site.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -18213,7 +18269,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "bf812bf66890",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RicImportGridAndSummaryEnsembleDialog::slotSearchClicked",
       "weeks": {
         "2026-10-30": {
@@ -18554,7 +18610,7 @@
     },
     "c11f3f117a0b": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash in the third-party ECL::CartesianGridData constructor via Opm::ECLGraph::load(ecl_grid_type*) from RigOpmFlowDiagStaticData (ECLGraph.cpp:2487 at v2026.09.1). The likely cause is a grid/INIT data mismatch (PORV/TRAN sizes). This code was rewritten on dev (e217ffb5c6, ECLGraphGridSource), so the release fault site no longer maps to current code. Uncertain because the inlined frames hide the exact operation.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -18595,7 +18651,7 @@
         "RigFlowDiagResults::findOrCalculateResult"
       ],
       "signature_id": "c11f3f117a0b",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RigOpmFlowDiagStaticData::RigOpmFlowDiagStaticData",
       "weeks": {
         "2026-10-30": {
@@ -22035,7 +22091,7 @@
     },
     "e9cbf66726de": {
       "last_updated": "2026-11-02",
-      "notes": "",
+      "notes": "Crash in ADS CDockManager::removeDockWidget called from RiuMainWindowBase::removeActiveViewWindows (line 930) during tileViewWindows. view->dockWidget() is a QPointer and is null-checked, so it is not dangling. The fault is in unsymbolized ADS frames (area/container removal). Uncertain because the cause is inside third-party docking internals.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -22053,7 +22109,7 @@
         "RiuMainWindowBase::tileViewWindows"
       ],
       "signature_id": "e9cbf66726de",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RiuMainWindowBase::removeActiveViewWindows",
       "weeks": {
         "2026-10-30": {
@@ -22455,10 +22511,17 @@
       }
     },
     "f2dd18176dfa": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -22495,7 +22558,7 @@
         "caf::PdmFieldUiCap<caf::PdmField<QString> >::valueOptions"
       ],
       "signature_id": "f2dd18176dfa",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RimSummaryEnsemble::parameterCorrelationsAllTimeSteps",
       "weeks": {
         "2026-10-30": {
@@ -23385,6 +23448,8 @@
       }
     },
     "f5e65ad26504": {
+      "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
+      "fixed_in": "2026.09.2-dev.01",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": {
@@ -23660,10 +23725,17 @@
       }
     },
     "fe96dd39756a": {
+      "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
+      "fixed_in": "2026.11.0-RC_1",
       "last_updated": "2026-11-02",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-02",
+        "number": 15089,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15089"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -23676,7 +23748,7 @@
         "operator"
       ],
       "signature_id": "fe96dd39756a",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "operator",
       "weeks": {
         "2026-10-30": {
