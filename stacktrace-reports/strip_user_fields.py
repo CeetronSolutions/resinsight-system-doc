@@ -1,7 +1,9 @@
-"""Remove user.name and user.hash from a stacktrace CSV's CustomDimensions, in place.
+"""Remove user-identifying fields from a stacktrace CSV's CustomDimensions, in place.
 
 CSVs are committed to the repo, so these must go before anything else reads the
-file. Safe to re-run; a CSV without the fields or the column is left untouched.
+file. crash.exception_what is included because its messages can quote file paths
+containing user IDs. Safe to re-run; a CSV without the fields or the column is
+left untouched.
 
 Usage: strip_user_fields.py <csv>
 """
@@ -12,7 +14,7 @@ import json
 import os
 import sys
 
-USER_FIELDS = ("user.name", "user.hash")
+USER_FIELDS = ("user.name", "user.hash", "crash.exception_what")
 
 
 def strip(csv_path):

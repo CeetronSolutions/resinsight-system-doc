@@ -16,7 +16,7 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 - `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week (broken down by reporting `APPversion`), any linked OPM issue with its open/closed state, any fix PR with its `OPEN`/`MERGED`/`CLOSED` state, an investigation status, and notes. A signature counts as *referenced* once it has an issue **or** a fix PR — new triage produces only the PR. State persists across weeks here, not in the Markdown.
 - [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the latest report and the index pages from it (`render`), lists untriaged signatures — no issue, no PR — latest-version-first (`worklist`), and records an investigation outcome (`set`).
 - [link_issues.py](./link_issues.py) — searches OPM/ResInsight for each unreferenced signature's top frame and links the issue when it confidently matches; refreshes the state of already-linked issues and of recorded fix PRs, so a merged PR flips its signatures to `resolved`.
-- [strip_user_fields.py](./strip_user_fields.py) — removes `user.name` and `user.hash` from a CSV before it is processed or committed.
+- [strip_user_fields.py](./strip_user_fields.py) — removes `user.name`, `user.hash` and `crash.exception_what` from a CSV before it is processed or committed.
 - [process_week.py](./process_week.py) — one-shot driver chaining strip → update → link → render → worklist.
 - [Analyzer](./analyze_crashes.py) — the original grouping library; `registry.py` reuses its CSV parsing and frame helpers.
 - [Analyzer usage](./analyzer-README.md) — command-line reference for `registry.py` and `analyze_crashes.py`.
@@ -35,9 +35,10 @@ python stacktrace-reports/process_week.py stacktrace-reports/csv/YYYY-MM-DD-quer
 
 That performs, in order:
 
-1. **`strip_user_fields.py`** — removes `user.name` and `user.hash` from the
-   CSV's `CustomDimensions` column, in place, so they are never committed.
-   Stops the run if that column can't be parsed.
+1. **`strip_user_fields.py`** — removes `user.name`, `user.hash` and
+   `crash.exception_what` (its messages can quote paths containing user IDs)
+   from the CSV's `CustomDimensions` column, in place, so they are never
+   committed. Stops the run if that column can't be parsed.
 2. **`registry.py update`** — parses the CSV, drops rows older than the minimum
    version, and folds every stack into `registry.json`. Stacks are keyed by a
    stable *normalised symbol signature* (top-5 non-handler ResInsight frame
@@ -125,4 +126,4 @@ The folder lives at the repo root (not as a Jekyll collection) so the folder nam
 
 ## Data scope
 
-CSVs are committed to the repo so reports remain reproducible. `process_week.py` removes `user.name` and `user.hash` first, which changes the CSV in place, so anything needing those fields must read the original export. Before committing, confirm the CSV contains nothing else identifying. If future exports add user-identifying fields, add them to `strip_user_fields.py`.
+CSVs are committed to the repo so reports remain reproducible. `process_week.py` removes `user.name`, `user.hash` and `crash.exception_what` first, which changes the CSV in place, so anything needing those fields must read the original export. Before committing, confirm the CSV contains nothing else identifying. If future exports add user-identifying fields, add them to `strip_user_fields.py`.
