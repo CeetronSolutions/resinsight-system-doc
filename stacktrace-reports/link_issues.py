@@ -368,6 +368,10 @@ def main() -> None:
 
         if args.refresh_only:
             continue
+        # A symbol match can hit a caller frame of an unrelated crash. Links rejected
+        # in review must not come back on the next run.
+        if entry.get("no_autolink"):
+            continue
         top = entry["top_frame"]
         if top == UNSYMBOLIZED or "::" not in top:
             # Unqualified free-function symbols are too generic to match safely.

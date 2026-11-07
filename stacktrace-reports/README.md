@@ -53,7 +53,8 @@ That performs, in order:
    or body actually contains that symbol; for signatures that already carry an
    issue or a fix PR it re-fetches that reference's state instead of searching.
    A PR that has merged flips its signatures to `resolved`. Paced under the
-   GitHub search rate limit.
+   GitHub search rate limit. Set `"no_autolink": true` on a signature in
+   `registry.json` to keep a rejected match from being linked again.
 4. **`registry.py render`** — regenerates the latest week's
    `reports/YYYY-MM-DD.md` plus `index.md` and `incoming-csvs.md` from the
    registry. Each stack shows its issue and/or fix PR; stacks whose issue is

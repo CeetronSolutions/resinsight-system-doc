@@ -314,12 +314,8 @@
     },
     "0264bf0d33b3": {
       "last_updated": "2026-11-07",
-      "notes": "",
-      "opm_issue": {
-        "number": 14434,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14434"
-      },
+      "notes": "Auto-link to #14434 removed: the symbol is only a caller frame in that issue's different crash (valve template).",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -343,7 +339,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "0264bf0d33b3",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "caf::PdmUiFieldHandle::notifyFieldChanged",
       "weeks": {
         "2026-11-06": {
@@ -354,7 +350,8 @@
             "2026.09.1": 1
           }
         }
-      }
+      },
+      "no_autolink": true
     },
     "03196eb40521": {
       "fix_commit": "2515a4daea7923d8024e3b0ad8a9adc90d803700",
@@ -2113,12 +2110,8 @@
     },
     "0f91bb5de1d4": {
       "last_updated": "2026-11-07",
-      "notes": "",
-      "opm_issue": {
-        "number": 14901,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14901"
-      },
+      "notes": "Auto-link to #14901 removed: the symbol is only a caller frame in that issue's different crashes (corrupt Eclipse files).",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -2141,7 +2134,7 @@
         "RiuRecentFileActionProvider::slotOpenRecentFile"
       ],
       "signature_id": "0f91bb5de1d4",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "RicImportGeneralDataFeature::openEclipseCaseFromFileNames",
       "weeks": {
         "2026-11-06": {
@@ -2152,7 +2145,8 @@
             "2026.09.1": 1
           }
         }
-      }
+      },
+      "no_autolink": true
     },
     "10a3f8949445": {
       "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
@@ -3925,12 +3919,8 @@
     },
     "1c7a45f18002": {
       "last_updated": "2026-11-07",
-      "notes": "",
-      "opm_issue": {
-        "number": 14699,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14699"
-      },
+      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -3971,7 +3961,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "1c7a45f18002",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -3982,7 +3972,8 @@
             "2026.09.1": 12
           }
         }
-      }
+      },
+      "no_autolink": true
     },
     "1dc7071e0402": {
       "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
@@ -4288,12 +4279,8 @@
     },
     "219e31fe474d": {
       "last_updated": "2026-11-07",
-      "notes": "",
-      "opm_issue": {
-        "number": 14699,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14699"
-      },
+      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -4325,7 +4312,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "219e31fe474d",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -4336,7 +4323,8 @@
             "2026.09.1": 2
           }
         }
-      }
+      },
+      "no_autolink": true
     },
     "22754eeb655a": {
       "fix_commit": "fb566f112ca88bd20526642c778d72f45d8de9e4",
@@ -8301,12 +8289,8 @@
     },
     "43d14d48219b": {
       "last_updated": "2026-11-07",
-      "notes": "",
-      "opm_issue": {
-        "number": 14699,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14699"
-      },
+      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -8333,7 +8317,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "43d14d48219b",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -8344,7 +8328,8 @@
             "2026.09.1": 1
           }
         }
-      }
+      },
+      "no_autolink": true
     },
     "440ddd93ed71": {
       "last_updated": "2026-11-07",
@@ -22112,12 +22097,8 @@
     },
     "dbca1f0c0875": {
       "last_updated": "2026-11-07",
-      "notes": "",
-      "opm_issue": {
-        "number": 14699,
-        "state": "CLOSED",
-        "url": "https://github.com/OPM/ResInsight/issues/14699"
-      },
+      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "opm_issue": null,
       "pr": null,
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -22144,7 +22125,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "dbca1f0c0875",
-      "status": "resolved",
+      "status": "new",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -22155,7 +22136,8 @@
             "2026.09.1": 2
           }
         }
-      }
+      },
+      "no_autolink": true
     },
     "dc342505e2ac": {
       "last_updated": "2026-08-07",
