@@ -314,9 +314,15 @@
     },
     "0264bf0d33b3": {
       "last_updated": "2026-11-07",
+      "no_autolink": true,
       "notes": "Auto-link to #14434 removed: the symbol is only a caller frame in that issue's different crash (valve template).",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-fixes-2026-11",
+        "number": 15139,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15139"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -339,7 +345,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "0264bf0d33b3",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "caf::PdmUiFieldHandle::notifyFieldChanged",
       "weeks": {
         "2026-11-06": {
@@ -350,8 +356,7 @@
             "2026.09.1": 1
           }
         }
-      },
-      "no_autolink": true
+      }
     },
     "03196eb40521": {
       "fix_commit": "2515a4daea7923d8024e3b0ad8a9adc90d803700",
@@ -2110,7 +2115,8 @@
     },
     "0f91bb5de1d4": {
       "last_updated": "2026-11-07",
-      "notes": "Auto-link to #14901 removed: the symbol is only a caller frame in that issue's different crashes (corrupt Eclipse files).",
+      "no_autolink": true,
+      "notes": "Single crash on 2026.09.1 when opening a recent Eclipse file. Fault is in 2 unsymbolized frames below RiaImportEclipseCaseTools::openEclipseCasesFromFile (line 377 is only the call site), likely inlined grid/restart reading. Corrupt-file reader crashes (#14901) were fixed after 2026.09.1. Uncertain because the fault site is unknown; revisit if it recurs on 2026.11.0+.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -2134,7 +2140,7 @@
         "RiuRecentFileActionProvider::slotOpenRecentFile"
       ],
       "signature_id": "0f91bb5de1d4",
-      "status": "new",
+      "status": "no-fix-found",
       "top_frame": "RicImportGeneralDataFeature::openEclipseCaseFromFileNames",
       "weeks": {
         "2026-11-06": {
@@ -2145,8 +2151,7 @@
             "2026.09.1": 1
           }
         }
-      },
-      "no_autolink": true
+      }
     },
     "10a3f8949445": {
       "fix_commit": "3437cf9b94dbd67629a306e8f0b18d38dd2b866b",
@@ -3918,8 +3923,10 @@
       }
     },
     "1c7a45f18002": {
+      "fixed_in": "2026.11.0",
       "last_updated": "2026-11-07",
-      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "no_autolink": true,
+      "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -3961,7 +3968,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "1c7a45f18002",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -3972,8 +3979,7 @@
             "2026.09.1": 12
           }
         }
-      },
-      "no_autolink": true
+      }
     },
     "1dc7071e0402": {
       "fix_commit": "25c96f4f315df32ea04eb79eb17ccb3f03c00c85",
@@ -4278,8 +4284,10 @@
       }
     },
     "219e31fe474d": {
+      "fixed_in": "2026.11.0",
       "last_updated": "2026-11-07",
-      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "no_autolink": true,
+      "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -4312,7 +4320,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "219e31fe474d",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -4323,8 +4331,7 @@
             "2026.09.1": 2
           }
         }
-      },
-      "no_autolink": true
+      }
     },
     "22754eeb655a": {
       "fix_commit": "fb566f112ca88bd20526642c778d72f45d8de9e4",
@@ -8288,8 +8295,10 @@
       }
     },
     "43d14d48219b": {
+      "fixed_in": "2026.11.0",
       "last_updated": "2026-11-07",
-      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "no_autolink": true,
+      "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -8317,7 +8326,7 @@
         "caf::CmdFeature::actionTriggered"
       ],
       "signature_id": "43d14d48219b",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -8328,14 +8337,18 @@
             "2026.09.1": 1
           }
         }
-      },
-      "no_autolink": true
+      }
     },
     "440ddd93ed71": {
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-fixes-2026-11",
+        "number": 15139,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15139"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -8357,7 +8370,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "440ddd93ed71",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimWellLogExtractionCurve* RicWellLogTools::addExtractionCurve<RimWellLogExtractionCurve>",
       "weeks": {
         "2026-11-06": {
@@ -14117,15 +14130,20 @@
         "2026.02.2": false,
         "2026.09.1": true
       },
-      "fixed_in": "2026.02.2-dev.01",
+      "fixed_in": "2026.11.0",
       "last_updated": "2026-11-07",
-      "notes": "",
+      "notes": "Not a regression: earlier fix_commit 6d8092cd was unrelated. Real fix b22a2e3106 (PR #14849, null masterView guard in updateCameraLink) shipped in 2026.11.0; crash is on 2026.09.1.",
       "opm_issue": {
         "number": 13878,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/13878"
       },
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 14849,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/14849"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -20026,7 +20044,12 @@
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-fixes-2026-11",
+        "number": 15139,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15139"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -20048,7 +20071,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "c6bc355921ce",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimSummaryCase::caseId",
       "weeks": {
         "2026-11-06": {
@@ -22096,8 +22119,10 @@
       }
     },
     "dbca1f0c0875": {
+      "fixed_in": "2026.11.0",
       "last_updated": "2026-11-07",
-      "notes": "Auto-link to #14699 removed: reportCrash is the crash handler's own frame and #14699 is an unrelated crash (RimNameConfig::autoName).",
+      "no_autolink": true,
+      "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
       "pr": null,
       "representative_stack": [
@@ -22125,7 +22150,7 @@
         "RiaOpenTelemetryManager::reportCrash"
       ],
       "signature_id": "dbca1f0c0875",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RiaOpenTelemetryManager::reportCrash",
       "weeks": {
         "2026-11-06": {
@@ -22136,8 +22161,7 @@
             "2026.09.1": 2
           }
         }
-      },
-      "no_autolink": true
+      }
     },
     "dc342505e2ac": {
       "last_updated": "2026-08-07",
@@ -22332,7 +22356,12 @@
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-fixes-2026-11",
+        "number": 15139,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15139"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -22355,7 +22384,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "dfa62a039d85",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "std::_Rb_tree_const_iterator<caf::PdmUiEditorHandle*>::operator++",
       "weeks": {
         "2026-11-06": {
@@ -22785,7 +22814,12 @@
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-fixes-2026-11",
+        "number": 15139,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15139"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -22811,7 +22845,7 @@
         "RicNewStimPlanFractureTemplateFeature::onActionTriggered"
       ],
       "signature_id": "e500a583ea73",
-      "status": "new",
+      "status": "pr-open",
       "top_frame": "RimStimPlanFractureTemplate::setDefaultsBasedOnFile",
       "weeks": {
         "2026-11-06": {
