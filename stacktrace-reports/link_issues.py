@@ -1,7 +1,7 @@
 """link_issues.py - Link registry signatures to existing OPM/ResInsight issues
 and refresh the state of everything already referenced.
 
-Step 2 of the weekly workflow, automated. For every signature in `registry.json`:
+Step 3 of the weekly workflow, automated. For every signature in `registry.json`:
 
 * If it has no reference at all, search OPM/ResInsight for its top-frame symbol
   and link the first candidate whose title or body actually contains that symbol

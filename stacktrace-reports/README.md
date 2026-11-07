@@ -16,7 +16,8 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 - `registry.json` — **the source of truth.** One entry per unique crash signature, carrying its occurrence counts per week (broken down by reporting `APPversion`), any linked OPM issue with its open/closed state, any fix PR with its `OPEN`/`MERGED`/`CLOSED` state, an investigation status, and notes. A signature counts as *referenced* once it has an issue **or** a fix PR — new triage produces only the PR. State persists across weeks here, not in the Markdown.
 - [registry.py](./registry.py) — folds a weekly CSV into `registry.json` (`update`), regenerates the latest report and the index pages from it (`render`), lists untriaged signatures — no issue, no PR — latest-version-first (`worklist`), and records an investigation outcome (`set`).
 - [link_issues.py](./link_issues.py) — searches OPM/ResInsight for each unreferenced signature's top frame and links the issue when it confidently matches; refreshes the state of already-linked issues and of recorded fix PRs, so a merged PR flips its signatures to `resolved`.
-- [process_week.py](./process_week.py) — one-shot driver chaining update → link → render → worklist.
+- [strip_user_fields.py](./strip_user_fields.py) — removes `user.name` and `user.hash` from a CSV before it is processed or committed.
+- [process_week.py](./process_week.py) — one-shot driver chaining strip → update → link → render → worklist.
 - [Analyzer](./analyze_crashes.py) — the original grouping library; `registry.py` reuses its CSV parsing and frame helpers.
 - [Analyzer usage](./analyzer-README.md) — command-line reference for `registry.py` and `analyze_crashes.py`.
 
@@ -25,8 +26,8 @@ Weekly ResInsight crash telemetry, deduplicated by call-stack signature and cros
 ## Workflow
 
 A new CSV lands every week. Drop it into `stacktrace-reports/csv/` as
-`YYYY-MM-DD-query_data.csv` (only `timestamp`, `APPversion`, `rawstack` are
-expected), then run the driver:
+`YYYY-MM-DD-query_data.csv` (`timestamp`, `APPversion` and `rawstack` are read;
+`CustomDimensions` is kept but unused), then run the driver:
 
 ```
 python stacktrace-reports/process_week.py stacktrace-reports/csv/YYYY-MM-DD-query_data.csv
@@ -34,7 +35,10 @@ python stacktrace-reports/process_week.py stacktrace-reports/csv/YYYY-MM-DD-quer
 
 That performs, in order:
 
-1. **`registry.py update`** — parses the CSV, drops rows older than the minimum
+1. **`strip_user_fields.py`** — removes `user.name` and `user.hash` from the
+   CSV's `CustomDimensions` column, in place, so they are never committed.
+   Stops the run if that column can't be parsed.
+2. **`registry.py update`** — parses the CSV, drops rows older than the minimum
    version, and folds every stack into `registry.json`. Stacks are keyed by a
    stable *normalised symbol signature* (top-5 non-handler ResInsight frame
    symbols, with `file:line`, arguments and template noise stripped), so the
@@ -43,13 +47,13 @@ That performs, in order:
    closely-related upstream `Opm::` (opm-common) and `ecl_` (libecl) frames,
    which often hold the real crash site; those frames are *not* part of the
    signature, so identity stays keyed on ResInsight's own frames.
-2. **`link_issues.py`** — for each signature with no reference at all, searches
+3. **`link_issues.py`** — for each signature with no reference at all, searches
    OPM/ResInsight for its top-frame symbol and links the first issue whose title
    or body actually contains that symbol; for signatures that already carry an
    issue or a fix PR it re-fetches that reference's state instead of searching.
    A PR that has merged flips its signatures to `resolved`. Paced under the
    GitHub search rate limit.
-3. **`registry.py render`** — regenerates the latest week's
+4. **`registry.py render`** — regenerates the latest week's
    `reports/YYYY-MM-DD.md` plus `index.md` and `incoming-csvs.md` from the
    registry. Each stack shows its issue and/or fix PR; stacks whose issue is
    `CLOSED`, whose fix PR is `MERGED`, or that triage settled are gathered under
@@ -59,7 +63,7 @@ That performs, in order:
    report is ever re-rendered: previous weeks' pages are frozen snapshots of
    what was known at the time, so do **not** use `render --all` (it rewrites
    their stack listings and issue states with today's registry contents).
-4. **`registry.py worklist`** — prints the signatures with neither an issue nor
+5. **`registry.py worklist`** — prints the signatures with neither an issue nor
    a fix PR and not already in triage, **ranked by
    how many times they crashed the newest released `APPversion` or later**
    (`cur` column), with all-time occurrences (`all`) only as the tie-breaker.
@@ -121,4 +125,4 @@ The folder lives at the repo root (not as a Jekyll collection) so the folder nam
 
 ## Data scope
 
-CSVs are committed to the repo so reports remain reproducible. Before committing, confirm the CSV contains only non-identifying columns (currently `timestamp`, `rawstack`). If future exports add user-identifying fields, strip them before committing.
+CSVs are committed to the repo so reports remain reproducible. `process_week.py` removes `user.name` and `user.hash` first, which changes the CSV in place, so anything needing those fields must read the original export. Before committing, confirm the CSV contains nothing else identifying. If future exports add user-identifying fields, add them to `strip_user_fields.py`.

@@ -21,8 +21,8 @@ per-signature state.
 | `worklist [--all] [--from-version VER]` | Print untriaged signatures — no OPM issue, no fix PR, not already in triage — those still crashing the newest released `APPversion` first (ties broken by total count). `--all` includes the already-referenced and already-handled ones, annotated with their issue/PR number. `--from-version` overrides which version line counts as current. Fixed signatures that crash on a version newer than their fix come back as `[resolved, regressed]`. |
 | `set --id SID [--issue N --state S] [--pr N --branch B --pr-state S] [--status S] [--note "..."] [--fixed-in VER]` | Record an investigation outcome (used by the `crash-triage` workflow). `--fixed-in` overrides the version the fix shipped in, used for the `regressed` label. |
 
-Typical run is via `process_week.py`, which chains `update` → `link_issues.py`
-→ `render` → `worklist`. Signatures are keyed by their top-N non-handler frame
+Typical run is via `process_week.py`, which chains `strip_user_fields.py` →
+`update` → `link_issues.py` → `render` → `worklist`. Signatures are keyed by their top-N non-handler frame
 *symbols* (file/line and template noise stripped) so identity is stable across
 builds.
 

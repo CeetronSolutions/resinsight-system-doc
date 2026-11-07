@@ -3,11 +3,12 @@
 Replaces the seven manual steps in README.md with a single command. Given a CSV
 dropped into `csv/`, it:
 
-  1. folds the CSV into `registry.json`            (registry.py update)
-  2. links issues and refreshes issue/fix-PR state  (link_issues.py)
+  1. removes user fields from the CSV, in place     (strip_user_fields.py)
+  2. folds the CSV into `registry.json`            (registry.py update)
+  3. links issues and refreshes issue/fix-PR state  (link_issues.py)
      for every signature
-  3. regenerates the week's report + index pages    (registry.py render)
-  4. prints the investigation worklist - signatures (registry.py worklist)
+  4. regenerates the week's report + index pages    (registry.py render)
+  5. prints the investigation worklist - signatures (registry.py worklist)
      with no issue and no fix PR, plus fixed ones
      that regressed, those still crashing the
      newest released version first
@@ -51,6 +52,8 @@ def main() -> None:
     csv_path = Path(args.csv)
     if not csv_path.exists():
         raise SystemExit(f"Error: CSV not found: {csv_path}")
+
+    run("strip_user_fields.py", str(csv_path))
 
     update_args = ["update", "--csv", str(csv_path)]
     if args.date:
