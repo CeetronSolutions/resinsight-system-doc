@@ -313,6 +313,8 @@
       }
     },
     "0264bf0d33b3": {
+      "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
+      "fixed_in": "2026.11.1-dev.02",
       "last_updated": "2026-11-07",
       "no_autolink": true,
       "notes": "Auto-link to #14434 removed: the symbol is only a caller frame in that issue's different crash (valve template).",
@@ -320,7 +322,7 @@
       "pr": {
         "branch": "crash-triage-fixes-2026-11",
         "number": 15139,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/15139"
       },
       "representative_stack": [
@@ -345,7 +347,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "0264bf0d33b3",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "caf::PdmUiFieldHandle::notifyFieldChanged",
       "weeks": {
         "2026-11-06": {
@@ -8340,13 +8342,15 @@
       }
     },
     "440ddd93ed71": {
+      "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
+      "fixed_in": "2026.11.1-dev.02",
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-fixes-2026-11",
         "number": 15139,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/15139"
       },
       "representative_stack": [
@@ -8370,7 +8374,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "440ddd93ed71",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimWellLogExtractionCurve* RicWellLogTools::addExtractionCurve<RimWellLogExtractionCurve>",
       "weeks": {
         "2026-11-06": {
@@ -20041,13 +20045,15 @@
       }
     },
     "c6bc355921ce": {
+      "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
+      "fixed_in": "2026.11.1-dev.02",
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-fixes-2026-11",
         "number": 15139,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/15139"
       },
       "representative_stack": [
@@ -20071,7 +20077,7 @@
         "RiuMainWindow::customMenuRequested"
       ],
       "signature_id": "c6bc355921ce",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimSummaryCase::caseId",
       "weeks": {
         "2026-11-06": {
@@ -22353,13 +22359,15 @@
       }
     },
     "dfa62a039d85": {
+      "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
+      "fixed_in": "2026.11.1-dev.02",
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-fixes-2026-11",
         "number": 15139,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/15139"
       },
       "representative_stack": [
@@ -22384,7 +22392,7 @@
         "caf::PdmUiCommandSystemProxy::setUiValueToField"
       ],
       "signature_id": "dfa62a039d85",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "std::_Rb_tree_const_iterator<caf::PdmUiEditorHandle*>::operator++",
       "weeks": {
         "2026-11-06": {
@@ -22811,13 +22819,15 @@
       }
     },
     "e500a583ea73": {
+      "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
+      "fixed_in": "2026.11.1-dev.02",
       "last_updated": "2026-11-07",
       "notes": "",
       "opm_issue": null,
       "pr": {
         "branch": "crash-triage-fixes-2026-11",
         "number": 15139,
-        "state": "OPEN",
+        "state": "MERGED",
         "url": "https://github.com/OPM/ResInsight/pull/15139"
       },
       "representative_stack": [
@@ -22845,7 +22855,7 @@
         "RicNewStimPlanFractureTemplateFeature::onActionTriggered"
       ],
       "signature_id": "e500a583ea73",
-      "status": "pr-open",
+      "status": "resolved",
       "top_frame": "RimStimPlanFractureTemplate::setDefaultsBasedOnFile",
       "weeks": {
         "2026-11-06": {
