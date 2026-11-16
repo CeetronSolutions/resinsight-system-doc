@@ -112,7 +112,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -157,6 +157,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-26T15:47:26.571Z",
+          "last_seen": "2026-10-26T15:47:26.571Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-26T15:47:26.571Z",
           "last_seen": "2026-10-26T15:47:26.571Z",
@@ -315,7 +323,7 @@
     "0264bf0d33b3": {
       "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
       "fixed_in": "2026.11.1-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "no_autolink": true,
       "notes": "Auto-link to #14434 removed: the symbol is only a caller frame in that issue's different crash (valve template).",
       "opm_issue": null,
@@ -351,6 +359,14 @@
       "top_frame": "caf::PdmUiFieldHandle::notifyFieldChanged",
       "weeks": {
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-05T09:51:01.177Z",
+          "last_seen": "2026-11-05T09:51:01.177Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-05T09:51:01.177Z",
           "last_seen": "2026-11-05T09:51:01.177Z",
@@ -1565,7 +1581,7 @@
     "0a750847b697": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -1616,6 +1632,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-29T10:16:59.955Z",
+          "last_seen": "2026-10-29T10:16:59.955Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-29T10:16:59.955Z",
           "last_seen": "2026-10-29T10:16:59.955Z",
@@ -2116,7 +2140,7 @@
       }
     },
     "0f91bb5de1d4": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "no_autolink": true,
       "notes": "Single crash on 2026.09.1 when opening a recent Eclipse file. Fault is in 2 unsymbolized frames below RiaImportEclipseCaseTools::openEclipseCasesFromFile (line 377 is only the call site), likely inlined grid/restart reading. Corrupt-file reader crashes (#14901) were fixed after 2026.09.1. Uncertain because the fault site is unknown; revisit if it recurs on 2026.11.0+.",
       "opm_issue": null,
@@ -2146,6 +2170,14 @@
       "top_frame": "RicImportGeneralDataFeature::openEclipseCaseFromFileNames",
       "weeks": {
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-06T12:48:47.892Z",
+          "last_seen": "2026-11-06T12:48:47.892Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-06T12:48:47.892Z",
           "last_seen": "2026-11-06T12:48:47.892Z",
@@ -2232,7 +2264,7 @@
     "1111e3b3ceb1": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -2280,6 +2312,14 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-30T12:00:42.059Z",
+          "last_seen": "2026-10-30T12:00:42.059Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
@@ -2289,7 +2329,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Same root cause and fix as f4394a37498f (RimNameConfig::autoName null holder deref).",
       "opm_issue": {
         "number": 14699,
@@ -2435,6 +2475,14 @@
           "last_seen": "2026-10-26T11:12:01.092Z",
           "versions": {
             "2026.09.0": 4,
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-10-26T11:12:00.731Z",
+          "last_seen": "2026-10-26T11:12:01.092Z",
+          "versions": {
             "2026.09.1": 2
           }
         }
@@ -2714,7 +2762,7 @@
     "165c754bc6d1": {
       "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -2769,6 +2817,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-15T10:48:27.88Z",
+          "last_seen": "2026-10-15T10:48:27.88Z",
+          "versions": {
+            "2026.09.0": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-15T10:48:27.88Z",
           "last_seen": "2026-10-15T10:48:27.88Z",
@@ -2929,7 +2985,7 @@
         "2026.09.0": true
       },
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14901,
@@ -3133,6 +3189,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-19T07:55:47.883Z",
+          "last_seen": "2026-10-19T11:48:06.012Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-19T07:55:47.883Z",
           "last_seen": "2026-10-19T11:48:06.012Z",
@@ -3926,7 +3990,7 @@
     },
     "1c7a45f18002": {
       "fixed_in": "2026.11.0",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "no_autolink": true,
       "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
@@ -3934,33 +3998,61 @@
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[21] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[30] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[31] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[32] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[53] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[63] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[64] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[65] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[86] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[96] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[97] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[98] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[119] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[129] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[130] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[131] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[152] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[162] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[163] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[164] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[183] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[193] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[194] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[195] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[215] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[235] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[236] __libc_start_main at :0"
+        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[41] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[42] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[43] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[74] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[83] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[84] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[85] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[116] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[125] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[126] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[127] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[158] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[167] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[168] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[169] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[200] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[209] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[210] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[211] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[242] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[251] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[252] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[253] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[284] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[293] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[294] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[295] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[326] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[335] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[336] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[337] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[368] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[377] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[378] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[379] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[410] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[419] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[420] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[421] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[452] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[461] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[462] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[463] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[494] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[503] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[504] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[505] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[536] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[545] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[546] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[547] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[567] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[577] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[578] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RiaOpenTelemetryManager::reportCrash",
@@ -3979,6 +4071,14 @@
           "last_seen": "2026-11-06T20:05:54.15Z",
           "versions": {
             "2026.09.1": 12
+          }
+        },
+        "2026-11-13": {
+          "count": 21,
+          "first_seen": "2026-11-05T14:54:26.344Z",
+          "last_seen": "2026-11-09T10:54:22.625Z",
+          "versions": {
+            "2026.09.1": 21
           }
         }
       }
@@ -4287,7 +4387,7 @@
     },
     "219e31fe474d": {
       "fixed_in": "2026.11.0",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "no_autolink": true,
       "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
@@ -4295,25 +4395,25 @@
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[22] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[32] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[33] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[34] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[55] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[65] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[66] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[67] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[88] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[98] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[99] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[100] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[119] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[129] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[130] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[131] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[151] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[171] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[172] __libc_start_main at :0"
+        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[41] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[42] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[43] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[74] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[83] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[84] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[85] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[116] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[125] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[126] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[127] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[158] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[167] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[168] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[169] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[189] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[199] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[200] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RiaOpenTelemetryManager::reportCrash",
@@ -4331,6 +4431,14 @@
           "last_seen": "2026-11-06T20:05:44.073Z",
           "versions": {
             "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 3,
+          "first_seen": "2026-11-05T14:54:21.16Z",
+          "last_seen": "2026-11-09T10:53:37.198Z",
+          "versions": {
+            "2026.09.1": 3
           }
         }
       }
@@ -4479,7 +4587,7 @@
         "2026.09.0": true
       },
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14901,
@@ -4654,6 +4762,15 @@
           "last_seen": "2026-10-21T11:36:04.372Z",
           "versions": {
             "2026.09.0": 4,
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 3,
+          "first_seen": "2026-10-19T13:55:18.698Z",
+          "last_seen": "2026-10-21T11:36:04.372Z",
+          "versions": {
+            "2026.09.0": 1,
             "2026.09.1": 2
           }
         }
@@ -4916,8 +5033,11 @@
     },
     "29073aefb4ac": {
       "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fix_shipped": {
+        "2026.09.1": false
+      },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -4977,6 +5097,15 @@
           "last_seen": "2026-10-15T16:08:52.126Z",
           "versions": {
             "2026.09.0": 1
+          }
+        },
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-10-15T16:08:52.126Z",
+          "last_seen": "2026-11-10T16:36:21.277Z",
+          "versions": {
+            "2026.09.0": 1,
+            "2026.09.1": 1
           }
         }
       }
@@ -5123,7 +5252,7 @@
       }
     },
     "2a00a6e3aa2e": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Only ResInsight frame is RiuMainWindow::customMenuRequested with a mismatched line (RiuPlotMainWindow.cpp:107 ctor). Linked fix #14155 unrelated. Not seen on 2026.06.1 or 2026.09.0. Uncertain because the stack is effectively unsymbolized.",
       "opm_issue": {
         "number": 14155,
@@ -5240,6 +5369,14 @@
           "versions": {
             "2026.09.0": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-15T10:48:25.968Z",
+          "last_seen": "2026-10-15T10:48:25.968Z",
+          "versions": {
+            "2026.09.0": 1
+          }
         }
       }
     },
@@ -5249,7 +5386,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -5260,17 +5397,17 @@
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[22] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[32] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[33] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[34] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[53] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[63] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[64] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[65] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[85] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[105] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[106] __libc_start_main at :0"
+        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[41] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[42] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[43] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[74] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[83] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[84] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[85] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[105] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[115] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[116] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RiaOpenTelemetryManager::reportCrash",
@@ -5315,11 +5452,20 @@
             "2026.09.0": 1,
             "2026.09.1": 10
           }
+        },
+        "2026-11-13": {
+          "count": 12,
+          "first_seen": "2026-10-19T13:21:29.542Z",
+          "last_seen": "2026-11-09T10:53:27.117Z",
+          "versions": {
+            "2026.06.1": 1,
+            "2026.09.1": 11
+          }
         }
       }
     },
     "2a6f4af9c050": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash in std::set<PdmUiEditorHandle*> iterator ++ under PdmFieldUiCap<PdmPtrField<RimEclipseCase*>>::setValueFromUiEditor -> notifyFieldChanged (m_editors loop). Findings: the editor set is mutated or freed during the loop, either by updateUi() deleting field editors or by fieldChangedByUi() deleting the owning object. Uncertain because the owning class is not in the stack, and copying the set would still leave dangling editor pointers.",
       "opm_issue": null,
       "pr": null,
@@ -5357,6 +5503,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-26T13:38:23.691Z",
+          "last_seen": "2026-10-26T13:38:23.691Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-26T13:38:23.691Z",
           "last_seen": "2026-10-26T13:38:23.691Z",
@@ -6451,7 +6605,7 @@
       }
     },
     "35bfa53f2f8b": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash at DrawableGeo::render (cvfDrawableGeo.cpp:141), inside primSet->render/useBundle; frames 2-6 are unsymbolized GL driver calls. Null/empty bundle and primitive-set guards already exist. Likely a GPU driver or GL context fault. Uncertain: single report, no reproducer.",
       "opm_issue": {
         "number": 14009,
@@ -6508,6 +6662,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-16T13:08:27.65Z",
+          "last_seen": "2026-10-16T13:08:27.65Z",
+          "versions": {
+            "2026.09.0": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-16T13:08:27.65Z",
           "last_seen": "2026-10-16T13:08:27.65Z",
@@ -6921,7 +7083,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -6964,6 +7126,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-27T07:45:56.883Z",
+          "last_seen": "2026-11-04T14:27:36.74Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-27T07:45:56.883Z",
           "last_seen": "2026-11-04T14:27:36.74Z",
@@ -7207,7 +7377,7 @@
     "3c71291b162c": {
       "fix_commit": "fcaf62dae5b4b01798f56d1cde910ddd23a1e3f8",
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -7360,6 +7530,14 @@
           "last_seen": "2026-11-03T12:07:56.589Z",
           "versions": {
             "2026.09.0": 2,
+            "2026.09.1": 4
+          }
+        },
+        "2026-11-13": {
+          "count": 4,
+          "first_seen": "2026-10-19T06:58:42.845Z",
+          "last_seen": "2026-11-03T12:07:56.589Z",
+          "versions": {
             "2026.09.1": 4
           }
         }
@@ -7594,6 +7772,48 @@
         }
       }
     },
+    "3decdd2a0916": {
+      "last_updated": "2026-11-16",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[3] RiuMainWindow::updateScaleValue() at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1937",
+        "[4] Rim3dView::fieldChangedByUi(caf::PdmFieldHandle const*, QVariant const&, QVariant const&) at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:1020",
+        "[5] RimEclipseView::fieldChangedByUi(caf::PdmFieldHandle const*, QVariant const&, QVariant const&) at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseView.cpp:517",
+        "[6] RiaGrpcServiceInterface::copyPdmObjectFromRipsToCaf(rips::PdmObject const*, caf::PdmObjectHandle*) at ResInsight/GrpcInterface/RiaGrpcServiceInterface.cpp:257",
+        "[7] RiaGrpcPdmObjectService::UpdateExistingPdmObject(grpc::ServerContext*, rips::PdmObject const*, rips::Empty*) at ResInsight/GrpcInterface/RiaGrpcPdmObjectService.cpp:445",
+        "[8] grpc::Status std::__invoke_impl<grpc::Status, grpc::Status (RiaGrpcPdmObjectService::*&)(grpc::ServerContext*, rips::PdmObject const*, rips::Empty*), RiaGrpcPdmObjectService&, grpc::ServerContext*, rips::PdmObject const*, rips::Empty*>(std::__invoke_memfun_ref, grpc::Status (RiaGrpcPdmObjectService::*&)(grpc::ServerContext*, rips::PdmObject const*, rips::Empty*), RiaGrpcPdmObjectService&, grpc::ServerContext*&&, rips::PdmObject const*&&, rips::Empty*&&) at /opt/rh/gcc-toolset-13/root/usr/include/c++/13/bits/invoke.h:67",
+        "[9] std::function<grpc::Status (RiaGrpcPdmObjectService&, grpc::ServerContext*, rips::PdmObject const*, rips::Empty*)>::operator()(RiaGrpcPdmObjectService&, grpc::ServerContext*, rips::PdmObject const*, rips::Empty*) const at /opt/rh/gcc-toolset-13/root/usr/include/c++/13/bits/std_function.h:591",
+        "[10] RiaGrpcServerImpl::processAllQueuedRequests() at ResInsight/GrpcInterface/RiaGrpcServer.cpp:202",
+        "[11] RiaGrpcApplicationInterface::processRequests() at ResInsight/GrpcInterface/RiaGrpcApplicationInterface.cpp:115",
+        "[12] RiaGrpcConsoleApplication::doIdleProcessing() at ResInsight/ApplicationExeCode/RiaGrpcConsoleApplication.cpp:40",
+        "[25] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[26] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "RiuMainWindow::updateScaleValue",
+        "Rim3dView::fieldChangedByUi",
+        "RimEclipseView::fieldChangedByUi",
+        "RiaGrpcServiceInterface::copyPdmObjectFromRipsToCaf",
+        "RiaGrpcPdmObjectService::UpdateExistingPdmObject"
+      ],
+      "signature_id": "3decdd2a0916",
+      "status": "investigating",
+      "top_frame": "RiuMainWindow::updateScaleValue",
+      "weeks": {
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-11-09T13:58:19.309Z",
+          "last_seen": "2026-11-13T09:09:18.177Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        }
+      }
+    },
     "402d54b717bf": {
       "fix_commit": "4a06edea28ab5b6252accfb4d2ac209155717c96",
       "fixed_in": "2026.06.2-dev.01",
@@ -7697,7 +7917,7 @@
       }
     },
     "403827fe87c5": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Terminate in RifOdbReader::filteredStepNames (odb API call, via RigFemPartResultsCollection::timeStepCount from tensor legend update). Cause (closed/unreadable odb vs thrown odb_Exception) not determinable; ODB SDK not buildable here, no repro. A try/catch + null-m_odb guard returning empty is a possible mitigation.",
       "opm_issue": null,
       "pr": null,
@@ -7753,6 +7973,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-23T10:46:51.951Z",
+          "last_seen": "2026-10-23T10:46:52.413Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-23T10:46:51.951Z",
           "last_seen": "2026-10-23T10:46:52.413Z",
@@ -7856,7 +8084,7 @@
     "4182d58e2359": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -7899,6 +8127,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-27T09:51:47.539Z",
+          "last_seen": "2026-10-27T09:51:47.539Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-27T09:51:47.539Z",
           "last_seen": "2026-10-27T09:51:47.539Z",
@@ -8244,7 +8480,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14701,
@@ -8293,12 +8529,20 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-28T18:24:55.833Z",
+          "last_seen": "2026-10-28T18:24:55.833Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
     "43d14d48219b": {
       "fixed_in": "2026.11.0",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "no_autolink": true,
       "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
@@ -8338,13 +8582,21 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-11-02T14:58:47.683Z",
+          "last_seen": "2026-11-02T14:58:47.683Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
     "440ddd93ed71": {
       "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
       "fixed_in": "2026.11.1-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -8378,6 +8630,14 @@
       "top_frame": "RimWellLogExtractionCurve* RicWellLogTools::addExtractionCurve<RimWellLogExtractionCurve>",
       "weeks": {
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-04T11:24:30.339Z",
+          "last_seen": "2026-11-04T11:24:30.339Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-04T11:24:30.339Z",
           "last_seen": "2026-11-04T11:24:30.339Z",
@@ -9131,7 +9391,7 @@
     "4b3ceedc10a8": {
       "fix_commit": "fcaf62dae5b4b01798f56d1cde910ddd23a1e3f8",
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -9236,11 +9496,19 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-11-01T21:31:52.04Z",
+          "last_seen": "2026-11-01T21:31:52.04Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
     "4b98ba7f3609": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Catch-all for stacks with no ResInsight frame below the handler; #14270/#14271 (exception throw-site capture) unlinked as they cover none of these segfaults. Since 2026.09.0 dominated by abort in QRhi::endFrame during widget backing-store flush. Tracked in #15033.",
       "opm_issue": {
         "number": 15033,
@@ -9248,11 +9516,11 @@
         "url": "https://github.com/OPM/ResInsight/issues/15033"
       },
       "representative_stack": [
-        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
-        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[21] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[41] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[42] __libc_start_main at :0"
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
+        "[21] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[31] main at ResInsight/ApplicationExeCode/RiaMain.cpp:287",
+        "[32] __libc_start_main at :0"
       ],
       "signature_frames": [],
       "signature_id": "4b98ba7f3609",
@@ -9518,6 +9786,26 @@
             "2026.11.0": 1,
             "2026.11.0-RC_1": 4,
             "2026.11.1-dev.01": 9
+          }
+        },
+        "2026-11-13": {
+          "count": 784,
+          "first_seen": "2026-10-15T05:05:54.972Z",
+          "last_seen": "2026-11-13T17:17:35.771Z",
+          "versions": {
+            "2026.02.2": 16,
+            "2026.06.1": 3,
+            "2026.09.0": 40,
+            "2026.09.1": 590,
+            "2026.09.2-dev.03": 5,
+            "2026.09.2-dev.04": 5,
+            "2026.09.2-dev.05": 7,
+            "2026.11.0": 1,
+            "2026.11.0-RC_1": 4,
+            "2026.11.1": 90,
+            "2026.11.1-dev.01": 9,
+            "2026.11.1-dev.02": 5,
+            "2026.11.2-dev.01": 9
           }
         }
       }
@@ -10555,7 +10843,7 @@
     "594889920163": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -10628,6 +10916,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-06T13:26:26.93Z",
+          "last_seen": "2026-11-06T13:26:26.93Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-06T13:26:26.93Z",
           "last_seen": "2026-11-06T13:26:26.93Z",
@@ -10720,7 +11016,7 @@
       }
     },
     "5a35066e0fdb": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash inside the modal event loop of RicImportGridAndSummaryEnsembleDialog::runDialog (dialog.exec(), line 123). Frames 2-20 are unsymbolized Qt frames, so no ResInsight fault site is identifiable. Possibly related to bf812bf66890 (slotSearchClicked). Uncertain because there is no symbolized unsafe operation.",
       "opm_issue": null,
       "pr": null,
@@ -10760,12 +11056,20 @@
           "versions": {
             "2026.09.1": 2
           }
+        },
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-10-27T07:45:55.608Z",
+          "last_seen": "2026-11-04T14:27:34.496Z",
+          "versions": {
+            "2026.09.1": 2
+          }
         }
       }
     },
     "5a3b34b0071d": {
       "fixed_in": "2026.09.2-dev.03",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Same root cause as 642357244e71 (widthGrids[i] out of range in calculateAreaWeightedStatistics), reached via project load. Fixed on dev by 72df8a69f5 / PR #14973.",
       "opm_issue": null,
       "pr": {
@@ -10811,6 +11115,14 @@
           }
         },
         "2026-11-06": {
+          "count": 4,
+          "first_seen": "2026-10-30T12:43:44.056Z",
+          "last_seen": "2026-11-06T07:35:50.507Z",
+          "versions": {
+            "2026.09.1": 4
+          }
+        },
+        "2026-11-13": {
           "count": 4,
           "first_seen": "2026-10-30T12:43:44.056Z",
           "last_seen": "2026-11-06T07:35:50.507Z",
@@ -11362,7 +11674,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.2-dev.03",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -11376,15 +11688,15 @@
         "url": "https://github.com/OPM/ResInsight/pull/14968"
       },
       "representative_stack": [
-        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
-        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[20] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[30] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[31] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[32] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[52] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[72] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[73] __libc_start_main at :0"
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:170",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[21] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[30] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:422",
+        "[31] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:203",
+        "[32] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:302",
+        "[52] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1828",
+        "[62] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[63] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RiaOpenTelemetryManager::reportCrash"
@@ -11453,6 +11765,17 @@
             "2026.09.0": 42,
             "2026.09.1": 168,
             "2026.09.2-dev.03": 1
+          }
+        },
+        "2026-11-13": {
+          "count": 221,
+          "first_seen": "2026-10-15T08:34:03.233Z",
+          "last_seen": "2026-11-12T20:00:50.854Z",
+          "versions": {
+            "2026.02.2": 2,
+            "2026.06.1": 2,
+            "2026.09.0": 13,
+            "2026.09.1": 204
           }
         }
       }
@@ -11597,7 +11920,7 @@
     "642357244e71": {
       "fix_commit": "d8dc1c051f631279a8160d819a91e459bddcd5b9",
       "fixed_in": "2026.09.2-dev.03",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "PR #14840 closed unmerged and was left out of batch #14849; dev still indexes widthGrids[i] over grids.size() in calculateAreaWeightedStatistics. Fix needs re-submitting.",
       "opm_issue": null,
       "pr": {
@@ -11678,6 +12001,14 @@
           }
         },
         "2026-11-06": {
+          "count": 4,
+          "first_seen": "2026-10-30T14:12:53.491Z",
+          "last_seen": "2026-10-30T14:30:51.365Z",
+          "versions": {
+            "2026.09.1": 4
+          }
+        },
+        "2026-11-13": {
           "count": 4,
           "first_seen": "2026-10-30T14:12:53.491Z",
           "last_seen": "2026-10-30T14:30:51.365Z",
@@ -11960,7 +12291,7 @@
     "678f72fb725b": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -12010,6 +12341,14 @@
           }
         },
         "2026-11-06": {
+          "count": 22,
+          "first_seen": "2026-10-26T20:43:18.261Z",
+          "last_seen": "2026-10-27T15:45:24.302Z",
+          "versions": {
+            "2026.09.1": 22
+          }
+        },
+        "2026-11-13": {
           "count": 22,
           "first_seen": "2026-10-26T20:43:18.261Z",
           "last_seen": "2026-10-27T15:45:24.302Z",
@@ -12070,6 +12409,46 @@
           "count": 8,
           "first_seen": "2026-04-09T12:06:09.707Z",
           "last_seen": "2026-04-16T11:54:31.102Z"
+        }
+      }
+    },
+    "68c5ac83176e": {
+      "last_updated": "2026-11-16",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
+        "[3] RimEclipsePropertyFilter::applyToCellVisibility(cvf::Array<unsigned char>*, RigGridBase const*, unsigned long, RimEclipseCase*) at ResInsight/ApplicationLibCode/ProjectDataModel/CellFilters/RimEclipsePropertyFilter.cpp:820",
+        "[4] RimCellFilterTools::computeReservoirCellVisibility(RimCellFilter*, RimEclipseCase*, unsigned long) at ResInsight/ApplicationLibCode/ProjectDataModel/CellFilters/RimCellFilterTools.cpp:80",
+        "[5] applyDataFilterVisibility at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:92",
+        "[6] RimStatisticsContourMap::computeStatisticsForMaps(std::vector<RimStatisticsContourMap*, std::allocator<RimStatisticsContourMap*> > const&) at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:861",
+        "[7] RimStatisticsContourMap::computeStatistics() at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:659",
+        "[8] RimStatisticsContourMap::onComputeStatisticsClicked() at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:631",
+        "[17] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[23] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[34] main at ResInsight/ApplicationExeCode/RiaMain.cpp:287",
+        "[35] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "RimEclipsePropertyFilter::applyToCellVisibility",
+        "RimCellFilterTools::computeReservoirCellVisibility",
+        "applyDataFilterVisibility",
+        "RimStatisticsContourMap::computeStatisticsForMaps",
+        "RimStatisticsContourMap::computeStatistics"
+      ],
+      "signature_id": "68c5ac83176e",
+      "status": "investigating",
+      "top_frame": "RimEclipsePropertyFilter::applyToCellVisibility",
+      "weeks": {
+        "2026-11-13": {
+          "count": 4,
+          "first_seen": "2026-11-12T12:03:06.112Z",
+          "last_seen": "2026-11-12T13:02:28.022Z",
+          "versions": {
+            "2026.11.1": 4
+          }
         }
       }
     },
@@ -13074,7 +13453,7 @@
     "752616853f49": {
       "fix_commit": "6d8ee8d6852a69355e7fe8561f2a3122eff3e384",
       "fixed_in": "2026.09.2-dev.04",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Fix committed locally on ResInsight dev (RiuViewerCommands::displayContextMenu: unguarded eclipseCase()->eclipseCaseData()). No PR yet.",
       "opm_issue": null,
       "pr": {
@@ -13118,6 +13497,14 @@
           }
         },
         "2026-11-06": {
+          "count": 3,
+          "first_seen": "2026-10-22T09:00:32.649Z",
+          "last_seen": "2026-11-06T12:23:08.411Z",
+          "versions": {
+            "2026.09.1": 3
+          }
+        },
+        "2026-11-13": {
           "count": 3,
           "first_seen": "2026-10-22T09:00:32.649Z",
           "last_seen": "2026-11-06T12:23:08.411Z",
@@ -13476,7 +13863,7 @@
       }
     },
     "76e43f568766": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash in RifEclipseOutputFileTools::keywordData (vector index). Out-of-range occurrence guard already added in #14140 (25c96f4f31) and RifEclipseUnifiedRestartFileAccess::results now checks ecl_file_select_block; likely already fixed after 2026.09.1. Verify on next release.",
       "opm_issue": null,
       "pr": null,
@@ -13523,6 +13910,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-22T09:04:53.607Z",
+          "last_seen": "2026-10-22T09:04:53.607Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-22T09:04:53.607Z",
           "last_seen": "2026-10-22T09:04:53.607Z",
@@ -13774,7 +14169,7 @@
       }
     },
     "7b2d18085329": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash inside the modal event loop of QFileDialog::getSaveFileName (RiuFileDialogTools.cpp:36, non-native dialog on Linux), opened from the RiuTabbedTextDialog export lambda (RicShowPlotDataFeature.cpp:144). Frames 2-32 are unsymbolized Qt frames. The parent is nullptr and the lambda captures nothing, so no dangling ResInsight object was found. Uncertain because no symbolized unsafe operation exists.",
       "opm_issue": null,
       "pr": null,
@@ -13821,13 +14216,21 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-29T06:48:09.439Z",
+          "last_seen": "2026-10-29T06:48:09.439Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
     "7ba31ee67e6a": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -13861,6 +14264,14 @@
           }
         },
         "2026-11-06": {
+          "count": 158,
+          "first_seen": "2026-10-26T20:43:17.335Z",
+          "last_seen": "2026-10-27T16:02:55.144Z",
+          "versions": {
+            "2026.09.1": 158
+          }
+        },
+        "2026-11-13": {
           "count": 158,
           "first_seen": "2026-10-26T20:43:17.335Z",
           "last_seen": "2026-10-27T16:02:55.144Z",
@@ -14135,7 +14546,7 @@
         "2026.09.1": true
       },
       "fixed_in": "2026.11.0",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Not a regression: earlier fix_commit 6d8092cd was unrelated. Real fix b22a2e3106 (PR #14849, null masterView guard in updateCameraLink) shipped in 2026.11.0; crash is on 2026.09.1.",
       "opm_issue": {
         "number": 13878,
@@ -14209,6 +14620,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-06T12:26:25.2Z",
+          "last_seen": "2026-11-06T12:26:25.2Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-06T12:26:25.2Z",
           "last_seen": "2026-11-06T12:26:25.2Z",
@@ -14306,7 +14725,7 @@
       }
     },
     "86ee44795f72": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash at cvf::OpenGLResourceManager::deleteOrphanedOglRcObjects (cvfOpenGLResourceManager.cpp:333) during paintGL. Frames 2-15 are unsymbolized, i.e. the fault is inside the GL driver in OglRc::deleteResource. The iteration/erase logic is correct. Uncertain because it is likely a driver/context issue (wrong or lost GL context) with no ResInsight-side unsafe operation identified.",
       "opm_issue": null,
       "pr": null,
@@ -14343,6 +14762,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-26T15:47:21.358Z",
+          "last_seen": "2026-10-28T18:59:31.059Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-26T15:47:21.358Z",
           "last_seen": "2026-10-28T18:59:31.059Z",
@@ -14437,7 +14864,7 @@
     "89ab5c3ba8b5": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -14469,12 +14896,13 @@
         "[20] RicDeleteItemFeature::deleteObject(caf::PdmObject*) at ResInsight/ApplicationLibCode/Commands/RicDeleteItemFeature.cpp:128",
         "[21] RicDeleteItemFeature::onActionTriggered(bool) at ResInsight/ApplicationLibCode/Commands/RicDeleteItemFeature.cpp:68",
         "[22] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
-        "[23] RiuTreeViewEventFilter::activateFirstEnabledFeature(std::vector<caf::CmdFeature*, std::allocator<caf::CmdFeature*> > const&) at ResInsight/ApplicationLibCode/UserInterface/RiuTreeViewEventFilter.cpp:95",
-        "[24] RiuTreeViewEventFilter::eventFilter(QObject*, QEvent*) at ResInsight/ApplicationLibCode/UserInterface/RiuTreeViewEventFilter.cpp:143",
-        "[28] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[43] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[44] __libc_start_main at :0"
+        "[31] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[37] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[49] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2094",
+        "[57] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[62] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[73] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[74] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RimViewLinker::masterView",
@@ -14535,6 +14963,14 @@
           "last_seen": "2026-10-26T15:32:12.314Z",
           "versions": {
             "2026.09.1": 8
+          }
+        },
+        "2026-11-13": {
+          "count": 10,
+          "first_seen": "2026-10-19T11:19:20.512Z",
+          "last_seen": "2026-11-10T15:09:06.797Z",
+          "versions": {
+            "2026.09.1": 10
           }
         }
       }
@@ -14722,7 +15158,7 @@
       }
     },
     "8e3c4902e9fc": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code. Same QRhi::endFrame abort as #15033.",
       "opm_issue": {
         "number": 15033,
@@ -14781,6 +15217,14 @@
           "last_seen": "2026-10-15T14:05:23.423Z",
           "versions": {
             "2026.09.0": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-15T14:05:23.423Z",
+          "last_seen": "2026-10-15T14:05:23.423Z",
+          "versions": {
+            "2026.09.0": 1
           }
         }
       }
@@ -14964,7 +15408,7 @@
         "2026.09.0": true
       },
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14901,
@@ -15199,6 +15643,15 @@
             "2026.09.0": 1,
             "2026.09.1": 15
           }
+        },
+        "2026-11-13": {
+          "count": 16,
+          "first_seen": "2026-10-15T16:48:44.889Z",
+          "last_seen": "2026-10-16T13:14:34.195Z",
+          "versions": {
+            "2026.09.0": 1,
+            "2026.09.1": 15
+          }
         }
       }
     },
@@ -15350,6 +15803,60 @@
         }
       }
     },
+    "94b235a335b1": {
+      "last_updated": "2026-11-16",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[5] manageTerminate() at ResInsight/ApplicationExeCode/RiaMainTools.cpp:249",
+        "[9] Rim3dView::timeStepStrings() const at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:683",
+        "[10] RiuMainWindow::refreshAnimationActions() at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1084",
+        "[11] RiuMainWindow::onViewerRemoved() at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:1242",
+        "[12] Rim3dView::~Rim3dView() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim3dView.cpp:213",
+        "[13] Rim2dIntersectionView::~Rim2dIntersectionView() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim2dIntersectionView.cpp:112",
+        "[14] caf::PdmChildArrayField<Rim2dIntersectionView*>::deleteChildren() at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmCore/cafPdmChildArrayField.inl:180",
+        "[15] caf::PdmChildArrayField<Rim2dIntersectionView*>::~PdmChildArrayField() at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmCore/cafPdmChildArrayField.inl:16",
+        "[16] Rim2dIntersectionViewCollection::~Rim2dIntersectionViewCollection() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim2dIntersectionViewCollection.cpp:73",
+        "[17] Rim2dIntersectionViewCollection::~Rim2dIntersectionViewCollection() at ResInsight/ApplicationLibCode/ProjectDataModel/Rim2dIntersectionViewCollection.cpp:73",
+        "[18] caf::PdmChildField<Rim2dIntersectionViewCollection*>::~PdmChildField() at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmCore/cafPdmChildField.inl:80",
+        "[19] RimEclipseResultCase::~RimEclipseResultCase() at ResInsight/ApplicationLibCode/ProjectDataModel/RimEclipseResultCase.cpp:646",
+        "[20] caf::PdmChildArrayField<RimEclipseCase*>::deleteChildren() at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmCore/cafPdmChildArrayField.inl:180",
+        "[21] RimReservoirGridEnsemble::createGridCasesFromEnsembleFileSet() at ResInsight/ApplicationLibCode/ProjectDataModel/RimReservoirGridEnsemble.cpp:618",
+        "[22] std::function<void (caf::SignalEmitter const*)>::operator()(caf::SignalEmitter const*) const at /opt/rh/gcc-toolset-13/root/usr/include/c++/13/bits/std_function.h:591",
+        "[23] RicReloadSummaryCaseFeature::reloadSelectedCasesAndUpdate() at ResInsight/ApplicationLibCode/Commands/RicReloadSummaryCaseFeature.cpp:143",
+        "[24] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
+        "[33] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[39] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[51] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2094",
+        "[59] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[64] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[75] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[76] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "manageTerminate",
+        "Rim3dView::timeStepStrings",
+        "RiuMainWindow::refreshAnimationActions",
+        "RiuMainWindow::onViewerRemoved",
+        "Rim3dView::~Rim3dView"
+      ],
+      "signature_id": "94b235a335b1",
+      "status": "investigating",
+      "top_frame": "manageTerminate",
+      "weeks": {
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-11-11T07:37:26.333Z",
+          "last_seen": "2026-11-11T07:37:26.591Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        }
+      }
+    },
     "95d0cb22fd70": {
       "fix_commit": "134befead42d866aa19621ef112bccf79fc92ee2",
       "fixed_in": "2026.06.2-dev.02",
@@ -15470,7 +15977,7 @@
         "2026.09.0": true
       },
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14901,
@@ -15494,10 +16001,15 @@
         "[8] RiaImportEclipseCaseTools::openEclipseCasesFromFile(QList<QString> const&, bool, std::map<QString, int, std::less<QString>, std::allocator<std::pair<QString const, int> > >*, bool, RifReaderSettings&) at ResInsight/ApplicationLibCode/Application/Tools/RiaImportEclipseCaseTools.cpp:107",
         "[9] RicImportGeneralDataFeature::openEclipseCaseFromFileNames(QList<QString> const&, bool, std::vector<int, std::allocator<int> >&, RifReaderSettings&) at ResInsight/ApplicationLibCode/Commands/RicImportGeneralDataFeature.cpp:377",
         "[10] RicImportGeneralDataFeature::openEclipseFilesFromFileNames(QList<QString> const&, bool, bool, RifReaderSettings&) at ResInsight/ApplicationLibCode/Commands/RicImportGeneralDataFeature.cpp:107",
-        "[11] RicImportGeneralDataFeature::openEclipseFilesFromFileNames(QList<QString> const&, bool, bool) at ResInsight/ApplicationLibCode/Commands/RicImportGeneralDataFeature.cpp:58",
-        "[12] RiaGuiApplication::handleArguments(cvf::ProgramOptions*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:854",
-        "[13] main at ResInsight/ApplicationExeCode/RiaMain.cpp:210",
-        "[14] __libc_start_main at :0"
+        "[11] RicfLoadCase::execute() at ResInsight/ApplicationLibCode/CommandFileInterface/RicfLoadCase.cpp:77",
+        "[12] RiaGrpcCommandService::Execute(grpc::ServerContext*, rips::CommandParams const*, rips::CommandReply*) at ResInsight/GrpcInterface/RiaGrpcCommandService.cpp:100",
+        "[13] grpc::Status std::__invoke_impl<grpc::Status, grpc::Status (RiaGrpcCommandService::*&)(grpc::ServerContext*, rips::CommandParams const*, rips::CommandReply*), RiaGrpcCommandService&, grpc::ServerContext*, rips::CommandParams const*, rips::CommandReply*>(std::__invoke_memfun_ref, grpc::Status (RiaGrpcCommandService::*&)(grpc::ServerContext*, rips::CommandParams const*, rips::CommandReply*), RiaGrpcCommandService&, grpc::ServerContext*&&, rips::CommandParams const*&&, rips::CommandReply*&&) at /opt/rh/gcc-toolset-13/root/usr/include/c++/13/bits/invoke.h:67",
+        "[14] std::function<grpc::Status (RiaGrpcCommandService&, grpc::ServerContext*, rips::CommandParams const*, rips::CommandReply*)>::operator()(RiaGrpcCommandService&, grpc::ServerContext*, rips::CommandParams const*, rips::CommandReply*) const at /opt/rh/gcc-toolset-13/root/usr/include/c++/13/bits/std_function.h:591",
+        "[15] RiaGrpcServerImpl::processAllQueuedRequests() at ResInsight/GrpcInterface/RiaGrpcServer.cpp:202",
+        "[16] RiaGrpcApplicationInterface::processRequests() at ResInsight/GrpcInterface/RiaGrpcApplicationInterface.cpp:115",
+        "[17] RiaGrpcConsoleApplication::doIdleProcessing() at ResInsight/ApplicationExeCode/RiaGrpcConsoleApplication.cpp:40",
+        "[30] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[31] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RifEclipseOutputFileTools::timeSteps",
@@ -15684,6 +16196,15 @@
           "versions": {
             "2026.09.0": 5,
             "2026.09.1": 7
+          }
+        },
+        "2026-11-13": {
+          "count": 9,
+          "first_seen": "2026-10-15T10:19:03.35Z",
+          "last_seen": "2026-11-13T12:59:03.143Z",
+          "versions": {
+            "2026.09.0": 1,
+            "2026.09.1": 8
           }
         }
       }
@@ -16050,7 +16571,7 @@
         "2026.06.1": true
       },
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Null masterView() in RimViewController::updateCameraLink. Linked #13878 fix was unrelated; guarded in #14849 (b22a2e3106).",
       "opm_issue": {
         "number": 13878,
@@ -16165,6 +16686,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-04T12:58:11.528Z",
+          "last_seen": "2026-11-04T12:58:11.528Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-04T12:58:11.528Z",
           "last_seen": "2026-11-04T12:58:11.528Z",
@@ -16622,7 +17151,7 @@
       }
     },
     "a47f0a8a9878": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash inside the modal event loop of RicRecursiveFileSearchDialog::runRecursiveSearchDialog (exec()). Frames 2-23 are unsymbolized Qt frames, so no ResInsight fault site is identifiable. Uncertain because there is no symbolized unsafe operation.",
       "opm_issue": null,
       "pr": null,
@@ -16658,6 +17187,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-27T11:36:45.292Z",
+          "last_seen": "2026-11-02T14:58:46.647Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-27T11:36:45.292Z",
           "last_seen": "2026-11-02T14:58:46.647Z",
@@ -17391,7 +17928,7 @@
     "acbf0ca17855": {
       "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -17461,13 +17998,21 @@
           "versions": {
             "2026.09.0": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-15T20:47:09.947Z",
+          "last_seen": "2026-10-15T20:47:09.947Z",
+          "versions": {
+            "2026.09.0": 1
+          }
         }
       }
     },
     "af23fb5d0598": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14848,
@@ -17537,6 +18082,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-21T17:18:47.663Z",
+          "last_seen": "2026-10-26T08:26:02.809Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-21T17:18:47.663Z",
           "last_seen": "2026-10-26T08:26:02.809Z",
@@ -18237,7 +18790,7 @@
       }
     },
     "b80574ec8daa": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Segfault in objectsWithReferringPtrFieldsOfType<RimEnsembleCurveSet> from ~RimSummaryEnsemble::clearReferringCurveSets during project close (RimDeltaSummaryEnsemble). Plots are deleted before oil fields in RimProject::close so no live curve sets expected; dangling referring ptr-field owner suspected but not confirmed. No repro.",
       "opm_issue": null,
       "pr": null,
@@ -18289,6 +18842,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-21T06:42:31.126Z",
+          "last_seen": "2026-10-21T06:42:31.126Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-21T06:42:31.126Z",
           "last_seen": "2026-10-21T06:42:31.126Z",
@@ -18528,7 +19089,7 @@
       }
     },
     "bafcd1e9202e": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash inside the modal event loop of QFileDialog::getSaveFileName (RiuFileDialogTools.cpp:36), opened from RiaGuiApplication::promptForProjectSaveAsFileName via Save Project As. Frames 2-32 are unsymbolized Qt frames, and the parent widget is the main window. Same pattern as 7b2d18085329. Not seen on the current release. Uncertain because there is no symbolized fault site.",
       "opm_issue": null,
       "pr": null,
@@ -18564,6 +19125,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-29T11:33:18.04Z",
+          "last_seen": "2026-10-29T11:33:18.04Z",
+          "versions": {
+            "2026.02.2": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-29T11:33:18.04Z",
           "last_seen": "2026-10-29T11:33:18.04Z",
@@ -18957,7 +19526,7 @@
       }
     },
     "bf812bf66890": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash inside QMessageBox::exec() in RicImportGridAndSummaryEnsembleDialog::slotSearchClicked (line 802, the 'Multiple Filenames Found' warning). Frames 2-30 are unsymbolized Qt frames. A spacer item is added to the message box grid layout before exec. This is possibly related to 5a35066e0fdb. Uncertain because there is no symbolized fault site.",
       "opm_issue": null,
       "pr": null,
@@ -19000,6 +19569,14 @@
           "last_seen": "2026-10-26T15:34:18.102Z",
           "versions": {
             "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-10-26T15:34:18.102Z",
+          "last_seen": "2026-11-09T11:38:07.817Z",
+          "versions": {
+            "2026.09.1": 2
           }
         }
       }
@@ -19331,7 +19908,7 @@
       }
     },
     "c11f3f117a0b": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash in the third-party ECL::CartesianGridData constructor via Opm::ECLGraph::load(ecl_grid_type*) from RigOpmFlowDiagStaticData (ECLGraph.cpp:2487 at v2026.09.1). The likely cause is a grid/INIT data mismatch (PORV/TRAN sizes). This code was rewritten on dev (e217ffb5c6, ECLGraphGridSource), so the release fault site no longer maps to current code. Uncertain because the inlined frames hide the exact operation.",
       "opm_issue": null,
       "pr": null,
@@ -19385,6 +19962,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-26T12:44:59.892Z",
+          "last_seen": "2026-10-26T12:44:59.892Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-26T12:44:59.892Z",
           "last_seen": "2026-10-26T12:44:59.892Z",
@@ -19568,7 +20153,7 @@
       }
     },
     "c3ad4727cab3": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash at RiuViewerCommands::displayContextMenu (line 702 in 2026.09.0 = menu.exec). Fault is in the nested Qt event loop below exec; frames 2-31 unsymbolized, so the real site is unknown (a menu action or repaint while the menu is open). Uncertain: single report, no reproducer. Same QRhi::endFrame abort as #15033, which replaces the unrelated #14193 link.",
       "opm_issue": {
         "number": 15033,
@@ -19623,6 +20208,15 @@
           "last_seen": "2026-10-15T16:08:49.029Z",
           "versions": {
             "2026.09.0": 1
+          }
+        },
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-10-15T16:08:49.029Z",
+          "last_seen": "2026-11-10T16:36:18.118Z",
+          "versions": {
+            "2026.09.0": 1,
+            "2026.09.1": 1
           }
         }
       }
@@ -19794,7 +20388,7 @@
     "c5301dc57661": {
       "fix_commit": "d8dc1c051f631279a8160d819a91e459bddcd5b9",
       "fixed_in": "2026.09.2-dev.03",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -19869,6 +20463,14 @@
           }
         },
         "2026-11-06": {
+          "count": 4,
+          "first_seen": "2026-10-16T11:44:30.979Z",
+          "last_seen": "2026-10-16T12:58:07.326Z",
+          "versions": {
+            "2026.09.2-dev.03": 4
+          }
+        },
+        "2026-11-13": {
           "count": 4,
           "first_seen": "2026-10-16T11:44:30.979Z",
           "last_seen": "2026-10-16T12:58:07.326Z",
@@ -20047,7 +20649,7 @@
     "c6bc355921ce": {
       "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
       "fixed_in": "2026.11.1-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -20081,6 +20683,14 @@
       "top_frame": "RimSummaryCase::caseId",
       "weeks": {
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-03T09:09:57.445Z",
+          "last_seen": "2026-11-03T09:09:57.445Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-03T09:09:57.445Z",
           "last_seen": "2026-11-03T09:09:57.445Z",
@@ -20312,7 +20922,7 @@
     "c7e519c159b8": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Same root cause as 89ab5c3ba8b5, fixed by the same PR.",
       "opm_issue": null,
       "pr": {
@@ -20402,11 +21012,19 @@
           "versions": {
             "2026.09.1": 6
           }
+        },
+        "2026-11-13": {
+          "count": 6,
+          "first_seen": "2026-10-21T08:58:46.652Z",
+          "last_seen": "2026-11-06T17:20:56.246Z",
+          "versions": {
+            "2026.09.1": 6
+          }
         }
       }
     },
     "c815a64fad71": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash at dynamic_cast in objectsWithReferringPtrFieldsOfType<RimEnsembleCurveSet> from ~RimSummaryEnsemble::clearReferringCurveSets during RimProject::close. A referrer of the ensemble was already destroyed while still registered. Ruled out: #14493 (old code walked the same referrers), curve sets (plot collections deleted first), delta ensemble ordering. Uncertain because the dangling referrer type is unidentified without the crashing project.",
       "opm_issue": null,
       "pr": null,
@@ -20498,6 +21116,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-21T06:42:16.782Z",
+          "last_seen": "2026-10-21T06:42:16.782Z",
+          "versions": {
+            "2026.09.0": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-21T06:42:16.782Z",
           "last_seen": "2026-10-21T06:42:16.782Z",
@@ -21381,7 +22007,7 @@
     "d4f4cc3cc44c": {
       "fix_commit": "f0dc8c47f0816e4468cf4e48b3971db60be3831d",
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14899,
@@ -21500,6 +22126,14 @@
           "versions": {
             "2026.09.0": 11,
             "2026.09.1": 34
+          }
+        },
+        "2026-11-13": {
+          "count": 42,
+          "first_seen": "2026-10-16T16:28:56.674Z",
+          "last_seen": "2026-11-13T10:50:50.677Z",
+          "versions": {
+            "2026.09.1": 42
           }
         }
       }
@@ -21678,7 +22312,7 @@
     "d79da4c9b4dc": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Same root cause as 8b189a4102f4, fixed by the same PR.",
       "opm_issue": null,
       "pr": {
@@ -21763,6 +22397,14 @@
           "versions": {
             "2026.09.0": 1,
             "2026.09.1": 6
+          }
+        },
+        "2026-11-13": {
+          "count": 7,
+          "first_seen": "2026-10-22T11:20:48.501Z",
+          "last_seen": "2026-11-10T15:11:33.275Z",
+          "versions": {
+            "2026.09.1": 7
           }
         }
       }
@@ -21849,7 +22491,7 @@
     "da71960994c9": {
       "fix_commit": "fcaf62dae5b4b01798f56d1cde910ddd23a1e3f8",
       "fixed_in": "2026.09.2-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14161,
@@ -21971,11 +22613,19 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-22T18:05:03.383Z",
+          "last_seen": "2026-10-22T18:05:03.383Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
     "daeb19bec01c": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Abort inside Qt QRhi::endFrame (rhiFlush during widget repaint) while the non-native file dialog runs; no ResInsight frame at fault. Likely graphics driver / remote display. Uncertain because the fault is in Qt/driver code. Same QRhi::endFrame abort as #15033.",
       "opm_issue": {
         "number": 15033,
@@ -22035,6 +22685,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-15T20:47:08.815Z",
+          "last_seen": "2026-10-15T20:47:08.815Z",
+          "versions": {
+            "2026.09.0": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-15T20:47:08.815Z",
           "last_seen": "2026-10-15T20:47:08.815Z",
@@ -22126,7 +22784,7 @@
     },
     "dbca1f0c0875": {
       "fixed_in": "2026.11.0",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "no_autolink": true,
       "notes": "Nested crash inside the crash handler event pump (2026.09.1 only). Fixed by #15035 re-entry guard (4d5e6e0d70), shipped in 2026.11.0. Original fault site not symbolized.",
       "opm_issue": null,
@@ -22134,21 +22792,21 @@
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[22] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[32] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[33] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[34] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[55] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[65] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[66] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[67] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[86] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[96] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
-        "[97] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
-        "[98] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
-        "[118] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[138] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[139] __libc_start_main at :0"
+        "[32] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[41] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[42] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[43] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[74] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[83] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[84] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[85] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[116] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[125] RiaOpenTelemetryManager::reportCrash(int, std::basic_stacktrace<std::allocator<std::stacktrace_entry> > const&, std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) at ResInsight/ApplicationLibCode/Application/Tools/Telemetry/RiaOpenTelemetryManager.cpp:429",
+        "[126] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:211",
+        "[127] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
+        "[147] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[157] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[158] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RiaOpenTelemetryManager::reportCrash",
@@ -22165,6 +22823,14 @@
           "last_seen": "2026-11-06T20:05:39.034Z",
           "versions": {
             "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 3,
+          "first_seen": "2026-11-05T14:54:15.975Z",
+          "last_seen": "2026-11-09T10:53:32.158Z",
+          "versions": {
+            "2026.09.1": 3
           }
         }
       }
@@ -22361,7 +23027,7 @@
     "dfa62a039d85": {
       "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
       "fixed_in": "2026.11.1-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -22396,6 +23062,14 @@
       "top_frame": "std::_Rb_tree_const_iterator<caf::PdmUiEditorHandle*>::operator++",
       "weeks": {
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-11-06T13:23:17.337Z",
+          "last_seen": "2026-11-06T13:23:17.337Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-11-06T13:23:17.337Z",
           "last_seen": "2026-11-06T13:23:17.337Z",
@@ -22821,7 +23495,7 @@
     "e500a583ea73": {
       "fix_commit": "c8f3928d4f9c07b520cafebff10a91d786654116",
       "fixed_in": "2026.11.1-dev.02",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -22865,13 +23539,21 @@
           "versions": {
             "2026.09.1": 2
           }
+        },
+        "2026-11-13": {
+          "count": 2,
+          "first_seen": "2026-10-31T20:21:55.517Z",
+          "last_seen": "2026-10-31T20:24:21.706Z",
+          "versions": {
+            "2026.09.1": 2
+          }
         }
       }
     },
     "e729e44545de": {
       "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -22935,6 +23617,14 @@
           "last_seen": "2026-10-15T14:05:24.654Z",
           "versions": {
             "2026.09.0": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-15T14:05:24.654Z",
+          "last_seen": "2026-10-15T14:05:24.654Z",
+          "versions": {
+            "2026.09.0": 1
           }
         }
       }
@@ -23083,7 +23773,7 @@
       }
     },
     "e9cbf66726de": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Crash in ADS CDockManager::removeDockWidget called from RiuMainWindowBase::removeActiveViewWindows (line 930) during tileViewWindows. view->dockWidget() is a QPointer and is null-checked, so it is not dangling. The fault is in unsymbolized ADS frames (area/container removal). Uncertain because the cause is inside third-party docking internals.",
       "opm_issue": null,
       "pr": null,
@@ -23120,13 +23810,21 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-29T07:32:02.945Z",
+          "last_seen": "2026-10-29T07:32:02.945Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
     "ecc32871d757": {
       "fix_commit": "81f4628fa65252d1c265fc23a9eec9ed9fbfc064",
       "fixed_in": "2026.06.1-dev.02",
-      "last_updated": "2026-07-28",
+      "last_updated": "2026-11-16",
       "notes": "Crash was inlined askUserToRestoreOriginalCellFilterCollection: activeView->viewer() null deref. Fixed by #14302 / PR #14303 (merged 2026-06-23), not yet in a shipped release; crash events are from 2026.06.0 and earlier.",
       "opm_issue": {
         "number": 14302,
@@ -23140,18 +23838,18 @@
         "url": "https://github.com/OPM/ResInsight/pull/14303"
       },
       "representative_stack": [
-        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:167",
-        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:263",
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:147",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:227",
         "[4] RimViewController::applyCellFilterCollectionByUserChoice() at ResInsight/ApplicationLibCode/ProjectDataModel/RimViewController.cpp:1105",
         "[5] RimViewLinker::applyCellFilterCollectionByUserChoice() at ResInsight/ApplicationLibCode/ProjectDataModel/RimViewLinker.cpp:669",
         "[6] RicDeleteAllLinkedViewsFeature::onActionTriggered(bool) at ResInsight/ApplicationLibCode/Commands/ViewLink/RicDeleteAllLinkedViewsFeature.cpp:81",
         "[7] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
-        "[16] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1831",
-        "[22] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1831",
-        "[34] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2092",
-        "[42] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1831",
-        "[47] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1831",
-        "[58] main at ResInsight/ApplicationExeCode/RiaMain.cpp:258",
+        "[16] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
+        "[22] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
+        "[34] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2056",
+        "[42] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
+        "[47] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1823",
+        "[58] main at ResInsight/ApplicationExeCode/RiaMain.cpp:226",
         "[59] __libc_start_main at :0"
       ],
       "signature_frames": [
@@ -23210,6 +23908,14 @@
           "last_seen": "2026-06-25T13:17:48.938Z",
           "versions": {
             "2026.06.0": 1
+          }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-11-11T11:23:51.293Z",
+          "last_seen": "2026-11-11T11:23:51.293Z",
+          "versions": {
+            "2026.02.2": 1
           }
         }
       }
@@ -23376,6 +24082,50 @@
         }
       }
     },
+    "f08006da24e4": {
+      "last_updated": "2026-11-16",
+      "notes": "",
+      "opm_issue": null,
+      "pr": null,
+      "representative_stack": [
+        "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
+        "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
+        "[3] RimEclipsePropertyFilter::applyToCellVisibility(cvf::Array<unsigned char>*, RigGridBase const*, unsigned long, RimEclipseCase*) at ResInsight/ApplicationLibCode/ProjectDataModel/CellFilters/RimEclipsePropertyFilter.cpp:820",
+        "[4] RimCellFilterTools::computeReservoirCellVisibility(RimCellFilter*, RimEclipseCase*, unsigned long) at ResInsight/ApplicationLibCode/ProjectDataModel/CellFilters/RimCellFilterTools.cpp:80",
+        "[5] applyDataFilterVisibility at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:92",
+        "[6] RimStatisticsContourMap::computeStatisticsForMaps(std::vector<RimStatisticsContourMap*, std::allocator<RimStatisticsContourMap*> > const&) at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:883",
+        "[7] RimStatisticsContourMap::ensureResultsComputed() at ResInsight/ApplicationLibCode/ProjectDataModel/ContourMap/RimStatisticsContourMap.cpp:1104",
+        "[8] RicNewStatisticsContourMapViewFeature::onActionTriggered(bool) at ResInsight/ApplicationLibCode/Commands/RicNewStatisticsContourMapViewFeature.cpp:61",
+        "[9] caf::CmdFeature::actionTriggered(bool) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFeature.cpp:176",
+        "[18] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[24] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[36] RiuMainWindow::customMenuRequested(QPoint const&) at ResInsight/ApplicationLibCode/UserInterface/RiuMainWindow.cpp:2268",
+        "[44] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[49] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1957",
+        "[60] main at ResInsight/ApplicationExeCode/RiaMain.cpp:287",
+        "[61] __libc_start_main at :0"
+      ],
+      "signature_frames": [
+        "RimEclipsePropertyFilter::applyToCellVisibility",
+        "RimCellFilterTools::computeReservoirCellVisibility",
+        "applyDataFilterVisibility",
+        "RimStatisticsContourMap::computeStatisticsForMaps",
+        "RimStatisticsContourMap::ensureResultsComputed"
+      ],
+      "signature_id": "f08006da24e4",
+      "status": "investigating",
+      "top_frame": "RimEclipsePropertyFilter::applyToCellVisibility",
+      "weeks": {
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-11-12T11:46:27.01Z",
+          "last_seen": "2026-11-12T11:46:27.01Z",
+          "versions": {
+            "2026.11.1": 1
+          }
+        }
+      }
+    },
     "f20aa1d03f76": {
       "fix_commit": "fe0e691e6c4b7419998ea64ce1d9611a76171ecb",
       "fixed_in": "2026.06.2-dev.02",
@@ -23522,7 +24272,7 @@
     "f2dd18176dfa": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -23546,18 +24296,14 @@
         "[12] caf::PdmUiFormLayoutObjectEditor::recursivelyConfigureAndUpdateUiOrderingInGridLayout(caf::PdmUiOrdering const&, QWidget*, QString const&, bool) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiFormLayoutObjectEditor.cpp:199",
         "[13] caf::PdmUiFormLayoutObjectEditor::recursivelyConfigureAndUpdateUiOrderingInNewGridLayout(caf::PdmUiOrdering const&, QWidget*, QString const&, bool) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiFormLayoutObjectEditor.cpp:122",
         "[14] caf::PdmUiFormLayoutObjectEditor::configureAndUpdateUi(QString const&) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiFormLayoutObjectEditor.cpp:713",
-        "[15] caf::PdmUiEditorHandle::updateUi() at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiEditorHandle.cpp:84",
-        "[16] caf::PdmUiItem::updateConnectedEditors() const at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiItem.cpp:493",
-        "[17] caf::PdmUiFieldHandle::notifyFieldChanged(QVariant const&, QVariant const&) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiFieldHandle.cpp:76",
-        "[18] caf::PdmFieldUiCap<caf::PdmField<caf::AppEnum<RimEnsembleCurveSetColorManager::ColorMode> > >::setValueFromUiEditor(QVariant const&, bool) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafInternalPdmUiFieldCapability.inl:116",
-        "[19] caf::CmdFieldChangeExec::redo() at ResInsight/Fwk/AppFwk/cafCommand/cafCmdFieldChangeExec.cpp:139",
-        "[21] caf::CmdUiCommandSystemImpl::fieldChangedCommand(std::vector<caf::PdmFieldHandle*, std::allocator<caf::PdmFieldHandle*> > const&, QVariant const&) at ResInsight/Fwk/AppFwk/cafCommand/cafCmdUiCommandSystemImpl.cpp:146",
-        "[22] caf::PdmUiCommandSystemProxy::setUiValueToField(caf::PdmUiFieldHandle*, QVariant const&) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiCommandSystemProxy.cpp:113",
-        "[23] caf::PdmUiComboBoxEditor::slotIndexActivated(int) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiComboBoxEditor.cpp:455",
-        "[34] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[40] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
-        "[51] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
-        "[52] __libc_start_main at :0"
+        "[15] caf::PdmUiEditorHandle::updateUi(QString const&) at ResInsight/Fwk/AppFwk/cafProjectDataModel/cafPdmUiCore/cafPdmUiEditorHandle.cpp:68",
+        "[16] caf::PdmUiPropertyView::showProperties(caf::PdmObjectHandle*) at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiPropertyView.cpp:217",
+        "[17] RiuPlotMainWindow::selectedObjectsChanged(caf::PdmUiTreeView*, caf::PdmUiPropertyView*) at ResInsight/ApplicationLibCode/UserInterface/RiuPlotMainWindow.cpp:884",
+        "[19] caf::PdmUiTreeView::slotOnSelectionChanged() at ResInsight/Fwk/AppFwk/cafUserInterface/cafPdmUiTreeView.cpp:154",
+        "[33] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[39] RiaGuiApplication::notify(QObject*, QEvent*) at ResInsight/ApplicationLibCode/Application/RiaGuiApplication.cpp:1879",
+        "[50] main at ResInsight/ApplicationExeCode/RiaMain.cpp:267",
+        "[51] __libc_start_main at :0"
       ],
       "signature_frames": [
         "RimSummaryEnsemble::parameterCorrelationsAllTimeSteps",
@@ -23584,6 +24330,14 @@
           "last_seen": "2026-10-29T18:09:22.777Z",
           "versions": {
             "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
+          "count": 3,
+          "first_seen": "2026-10-29T17:54:31.175Z",
+          "last_seen": "2026-11-13T19:53:09.979Z",
+          "versions": {
+            "2026.09.1": 3
           }
         }
       }
@@ -23836,7 +24590,7 @@
       }
     },
     "f3d2f3e86a63": {
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "Segfault in ecl_kw_iget_int on a NULL keyword during ERT well reading (readWellData). ecl_file_view_iget_named_kw returns NULL when a keyword fails to load (corrupt/truncated restart). Uncertain because the ERT caller frames are missing and ~20 call sites are unguarded.",
       "opm_issue": {
         "number": 14144,
@@ -23967,6 +24721,14 @@
           "versions": {
             "2026.09.1": 1
           }
+        },
+        "2026-11-13": {
+          "count": 1,
+          "first_seen": "2026-10-16T12:15:06.126Z",
+          "last_seen": "2026-10-16T12:15:06.126Z",
+          "versions": {
+            "2026.09.1": 1
+          }
         }
       }
     },
@@ -23976,7 +24738,7 @@
         "2026.09.1": false
       },
       "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14699,
@@ -24095,6 +24857,14 @@
           "last_seen": "2026-11-04T10:55:53.346Z",
           "versions": {
             "2026.09.0": 5,
+            "2026.09.1": 13
+          }
+        },
+        "2026-11-13": {
+          "count": 13,
+          "first_seen": "2026-10-28T11:09:38.254Z",
+          "last_seen": "2026-11-04T10:55:53.346Z",
+          "versions": {
             "2026.09.1": 13
           }
         }
@@ -24462,7 +25232,7 @@
     "f5e65ad26504": {
       "fix_commit": "63eaa1266d17bb4ff01c42869db8a3fc577a8993",
       "fixed_in": "2026.09.2-dev.01",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": {
         "number": 14848,
@@ -24509,6 +25279,14 @@
           }
         },
         "2026-11-06": {
+          "count": 1,
+          "first_seen": "2026-10-29T07:37:27.364Z",
+          "last_seen": "2026-10-29T07:37:27.364Z",
+          "versions": {
+            "2026.09.1": 1
+          }
+        },
+        "2026-11-13": {
           "count": 1,
           "first_seen": "2026-10-29T07:37:27.364Z",
           "last_seen": "2026-10-29T07:37:27.364Z",
@@ -24747,7 +25525,7 @@
     "fe96dd39756a": {
       "fix_commit": "0d862856ffc3aaebca7e52bedf0c65bcd8acedf9",
       "fixed_in": "2026.11.0-RC_1",
-      "last_updated": "2026-11-07",
+      "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
       "pr": {
@@ -24780,6 +25558,14 @@
           }
         },
         "2026-11-06": {
+          "count": 2,
+          "first_seen": "2026-10-26T13:58:45.489Z",
+          "last_seen": "2026-11-03T14:03:44.073Z",
+          "versions": {
+            "2026.09.1": 2
+          }
+        },
+        "2026-11-13": {
           "count": 2,
           "first_seen": "2026-10-26T13:58:45.489Z",
           "last_seen": "2026-11-03T14:03:44.073Z",
@@ -24964,6 +25750,12 @@
       "skipped_old_version": 318,
       "total_rows": 1285,
       "unique_stacks": 78
+    },
+    "2026-11-13": {
+      "csv": "2026-11-13-query_data.csv",
+      "skipped_old_version": 254,
+      "total_rows": 1421,
+      "unique_stacks": 73
     }
   }
 }
