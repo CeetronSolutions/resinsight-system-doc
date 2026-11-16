@@ -24611,13 +24611,18 @@
     },
     "f3d2f3e86a63": {
       "last_updated": "2026-11-16",
-      "notes": "Segfault in ecl_kw_iget_int on a NULL keyword during ERT well reading (readWellData). ecl_file_view_iget_named_kw returns NULL when a keyword fails to load (corrupt/truncated restart). Uncertain because the ERT caller frames are missing and ~20 call sites are unguarded.",
+      "notes": "Crash in well_state_alloc_from_file2 (inlined into readWellCells): IWEL is indexed but its data cannot be read, so the keyword lookup returns NULL. Fixed by guarding the NULL keywords in well_state.cpp.",
       "opm_issue": {
         "number": 14144,
         "state": "CLOSED",
         "url": "https://github.com/OPM/ResInsight/issues/14144"
       },
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-16-2",
+        "number": 15189,
+        "state": "OPEN",
+        "url": "https://github.com/OPM/ResInsight/pull/15189"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -24646,7 +24651,7 @@
         "RiaImportEclipseCaseTools::openEclipseCasesFromFile"
       ],
       "signature_id": "f3d2f3e86a63",
-      "status": "no-fix-found",
+      "status": "pr-open",
       "top_frame": "RifReaderEclipseWell::readWellCells",
       "weeks": {
         "2026-06-05": {
