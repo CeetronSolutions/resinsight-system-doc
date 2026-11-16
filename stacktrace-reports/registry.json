@@ -7774,9 +7774,14 @@
     },
     "3decdd2a0916": {
       "last_updated": "2026-11-16",
-      "notes": "",
+      "notes": "Fixed by #15132 (guarded RiuMainWindow::instance() in Rim3dView). Remaining unchecked calls in view updates guarded in #15185.",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "",
+        "number": 15132,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15132"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -7801,7 +7806,7 @@
         "RiaGrpcPdmObjectService::UpdateExistingPdmObject"
       ],
       "signature_id": "3decdd2a0916",
-      "status": "investigating",
+      "status": "resolved",
       "top_frame": "RiuMainWindow::updateScaleValue",
       "weeks": {
         "2026-11-13": {
@@ -12416,7 +12421,12 @@
       "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-16",
+        "number": 15185,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15185"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
@@ -12439,7 +12449,7 @@
         "RimStatisticsContourMap::computeStatistics"
       ],
       "signature_id": "68c5ac83176e",
-      "status": "investigating",
+      "status": "resolved",
       "top_frame": "RimEclipsePropertyFilter::applyToCellVisibility",
       "weeks": {
         "2026-11-13": {
@@ -15807,7 +15817,12 @@
       "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-16",
+        "number": 15185,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15185"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:310",
@@ -15844,7 +15859,7 @@
         "Rim3dView::~Rim3dView"
       ],
       "signature_id": "94b235a335b1",
-      "status": "investigating",
+      "status": "resolved",
       "top_frame": "manageTerminate",
       "weeks": {
         "2026-11-13": {
@@ -24086,7 +24101,12 @@
       "last_updated": "2026-11-16",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-16",
+        "number": 15185,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15185"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
@@ -24113,7 +24133,7 @@
         "RimStatisticsContourMap::ensureResultsComputed"
       ],
       "signature_id": "f08006da24e4",
-      "status": "investigating",
+      "status": "resolved",
       "top_frame": "RimEclipsePropertyFilter::applyToCellVisibility",
       "weeks": {
         "2026-11-13": {
