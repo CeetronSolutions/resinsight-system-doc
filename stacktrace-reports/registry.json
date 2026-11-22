@@ -9703,8 +9703,8 @@
       }
     },
     "4b98ba7f3609": {
-      "last_updated": "2026-11-21",
-      "notes": "Catch-all for stacks with no ResInsight frame below the handler; #14270/#14271 (exception throw-site capture) unlinked as they cover none of these segfaults. Since 2026.09.0 dominated by abort in QRhi::endFrame during widget backing-store flush. Tracked in #15033.",
+      "last_updated": "2026-11-22",
+      "notes": "Catch-all, tracked in #15033. 2026.11.* data (383 reports, 371 SIGABRT in QRhi::endFrame via QPlatformBackingStore::rhiFlush/QWidgetRepaintManager::flush; 12 SIGSEGV, fault 0x61, in Qt QWidgetPrivate::shouldPaintOnScreen during paintSiblingsRecursive). No ResInsight frame between the handler and RiaGuiApplication::notify; frames 5-11 below endFrame are unsymbolized GL-driver internals. Env is uniform: RHEL 8.10, Qt 6.6.3, xcb/x11, GNOME, NVIDIA vGPU Q-profiles (A40-16Q, L40-16Q; driver 525.147.05 and 550.127.05), no remote hints or env overrides. Uniform vGPU environment points to driver/Qt-RHI interaction, not a ResInsight defect. Uncertain because it is not reproducible without that GPU stack, so no patch or test can be verified; candidate workaround QT_XCB_GL_INTEGRATION=xcb_egl untested.",
       "opm_issue": {
         "number": 15033,
         "state": "OPEN",
@@ -9719,7 +9719,7 @@
       ],
       "signature_frames": [],
       "signature_id": "4b98ba7f3609",
-      "status": "linked",
+      "status": "no-fix-found",
       "top_frame": "(unsymbolized crash site)",
       "weeks": {
         "2026-04-14": {
