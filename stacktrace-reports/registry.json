@@ -2364,13 +2364,13 @@
       }
     },
     "12f26117f677": {
-      "fix_commit": "6b4620715cc219be5f37d2d1c392804eb8db2a85",
+      "fix_commit": "23ab3f03968c3c57a60a66b746f90b9ce6823dcf",
       "fix_shipped": {
         "2026.09.1": false,
         "2026.11.1": true
       },
-      "fixed_in": "2026.09.1-dev.01",
-      "last_updated": "2026-11-21",
+      "fixed_in": "2026.11.2-dev.01",
+      "last_updated": "2026-11-23",
       "notes": "Same root cause and fix as f4394a37498f (RimNameConfig::autoName null holder deref).",
       "opm_issue": {
         "number": 14699,
@@ -2378,10 +2378,10 @@
         "url": "https://github.com/OPM/ResInsight/issues/14699"
       },
       "pr": {
-        "branch": "fix-14699-name-config-null-holder",
-        "number": 14700,
+        "branch": "crash-triage-2026-11-21",
+        "number": 15233,
         "state": "MERGED",
-        "url": "https://github.com/OPM/ResInsight/pull/14700"
+        "url": "https://github.com/OPM/ResInsight/pull/15233"
       },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:178",
@@ -24216,11 +24216,18 @@
       }
     },
     "e91fcf778c07": {
-      "last_updated": "2026-11-21",
+      "fix_commit": "23ab3f03968c3c57a60a66b746f90b9ce6823dcf",
+      "fixed_in": "2026.11.2-dev.01",
+      "last_updated": "2026-11-23",
       "no_autolink": true,
       "notes": "Auto-link to #14140 removed: the symbol is only a caller frame in that issue's different crash (RifEclipseOutputFileTools::keywordData).",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-21",
+        "number": 15233,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15233"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
@@ -24234,7 +24241,7 @@
         "caf::PdmUiTreeSelectionQModel::setData"
       ],
       "signature_id": "e91fcf778c07",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "caf::PdmUiTreeSelectionQModel::setData",
       "weeks": {
         "2026-11-20": {
@@ -25744,10 +25751,17 @@
       }
     },
     "f5744058c34d": {
-      "last_updated": "2026-11-21",
+      "fix_commit": "23ab3f03968c3c57a60a66b746f90b9ce6823dcf",
+      "fixed_in": "2026.11.2-dev.01",
+      "last_updated": "2026-11-23",
       "notes": "",
       "opm_issue": null,
-      "pr": null,
+      "pr": {
+        "branch": "crash-triage-2026-11-21",
+        "number": 15233,
+        "state": "MERGED",
+        "url": "https://github.com/OPM/ResInsight/pull/15233"
+      },
       "representative_stack": [
         "[0] performCrashLogging at ResInsight/ApplicationExeCode/RiaMainTools.cpp:259",
         "[1] manageSegFailureSA(int, siginfo_t*, void*) at ResInsight/ApplicationExeCode/RiaMainTools.cpp:400",
@@ -25772,7 +25786,7 @@
         "RiuRelativePermeabilityPlotPanel::showEvent"
       ],
       "signature_id": "f5744058c34d",
-      "status": "new",
+      "status": "resolved",
       "top_frame": "RigFlowDiagSolverInterface::calculateRelPermCurves",
       "weeks": {
         "2026-11-20": {
